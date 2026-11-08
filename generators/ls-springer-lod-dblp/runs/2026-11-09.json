@@ -1,0 +1,77 @@
+{
+ "slug": "ls-springer-lod-dblp",
+ "run": "run-20261108T233302Z",
+ "generator": "generators/ls-springer-lod-dblp/generate.py",
+ "commit": "3ea4797e12041c6b2a02bef831b026debda6878c",
+ "uncommitted": [],
+ "python": "3.15.0",
+ "params": {},
+ "input_overrides": [],
+ "started": "2026-11-08T23:33:02Z",
+ "inputs": [
+  {
+   "name": "springer",
+   "ref": "springer-lod/2026-11-08/springer-lod-confref-2018.ttl.gz",
+   "file": "springer-lod-confref-2018.ttl.gz",
+   "sha256": "8be718f470be40dd190564aab68f0b0a155652f464c5c39a052b6b31ebc134e6",
+   "bytes": 447295
+  },
+  {
+   "name": "springer",
+   "ref": "springer-lod/2026-11-08/springer-lod-ontology.ttl.gz",
+   "file": "springer-lod-ontology.ttl.gz",
+   "sha256": "beeb0820456e8cc13b3566f5823f7ef154fe91c4c3d911bc028ea022eef1c60e",
+   "bytes": 1958
+  },
+  {
+   "name": "springer",
+   "ref": "springer-lod/2026-11-08/springer-lod.ttl.gz",
+   "file": "springer-lod.ttl.gz",
+   "sha256": "21d369c3bca40a38ba6f7b9b303ea433481d618a49be278df3281dcea337023e",
+   "bytes": 6368828
+  },
+  {
+   "name": "dblp",
+   "ref": "dblp/2026-11-08/dblp.ttl.gz",
+   "file": "dblp.ttl.gz",
+   "sha256": "b64ef95d5c2059478e226069d7f71c757db9f921089bf67774df61dc6ff6ab88",
+   "bytes": 16376345
+  },
+  {
+   "name": "verdicts",
+   "ref": "inputs:springer/dblp-verdicts-2026-11-09/verdicts.tsv",
+   "file": "verdicts.tsv",
+   "sha256": "933960ead8a23f4f6588c3ab50ea53b4f26df7764b7bc7785990673054585297",
+   "bytes": 98863
+  }
+ ],
+ "input_descriptions": {
+  "inputs:springer/dblp-verdicts-2026-11-09": {
+   "title": "The judgements of the dblp ids of the Springer series",
+   "origin": "generators/ls-springer-lod-dblp/evidence.py on springer-lod 2026-11-08 and dblp 2026-11-08; judged by an LLM (Claude) by instruction.md in seven chunks and a second pass by instruction-review.md, 2026-11-09",
+   "description": "1,763 dblp ids of springer-lod: 387 left out by the rules (venue not in dblp); 1,376 judged: 1,311 correct, 62 wrong, 3 undecidable (24 of them in the second pass). verdicts.tsv: series, dblp, verdict, reason, pass; evidence.jsonl, rules.tsv, the instructions and the verdicts of each pass. Not checked by people. CC0.",
+   "date": "2026-11-09",
+   "note": "Input of the linkset ls-springer-lod-dblp (kg-commons 0037)."
+  }
+ },
+ "status": "ok",
+ "finished": "2026-11-08T23:33:15Z",
+ "seconds": 12.8,
+ "notes": [
+  "1,311 links of 1,763 dblp ids of springer-lod; left out: judged undecidable in the second pass 3, left out: judged wrong 56, left out: judged wrong in the second pass 6, left out: venue not in dblp 387, linked: judged correct 1,296, linked: judged correct in the second pass 15."
+ ],
+ "files": [
+  {
+   "path": "ls-springer-lod-dblp-decisions.tsv.gz",
+   "bytes": 15110,
+   "sha256": "759e60946661de3d53d74788be3e3f4891a437fccc428c75a670bb769fc88df2"
+  },
+  {
+   "path": "ls-springer-lod-dblp.ttl.gz",
+   "bytes": 8436,
+   "sha256": "c9e70bbffd4ab3a5010c50b94ae9a0c08920e674e03e34c2f0372eb892f65141",
+   "triples": 1311
+  }
+ ],
+ "version": "2026-11-09"
+}
