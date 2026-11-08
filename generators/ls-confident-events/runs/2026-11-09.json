@@ -1,13 +1,13 @@
 {
  "slug": "ls-confident-events",
- "run": "run-20261108T234010Z",
+ "run": "run-20261108T235137Z",
  "generator": "generators/ls-confident-events/generate.py",
- "commit": "933fbf2f445c3b7f020aa4b30cf631ba5c365f7c",
+ "commit": "0cabaf81e04ca2b1e79948a7d00335d635e0857e",
  "uncommitted": [],
  "python": "3.15.0",
  "params": {},
  "input_overrides": [],
- "started": "2026-11-08T23:40:10Z",
+ "started": "2026-11-08T23:51:37Z",
  "shared_code": [
   "generators/ls-springer-lod-events/events.py"
  ],
@@ -91,22 +91,22 @@
   }
  ],
  "status": "ok",
- "finished": "2026-11-08T23:40:35Z",
- "seconds": 25.6,
+ "finished": "2026-11-08T23:52:03Z",
+ "seconds": 26.1,
  "notes": [
-  "8,651 links of the events of confident: to dblp-event (agrees in number, date or acronym) 1,587, to dblp-event (only event of the series in the year) 5,413, to wikidata (agrees in number, date or acronym) 351, to wikidata (only event of the series in the year) 1,300."
+  "8,649 links of the events of confident: to dblp-event (agrees in number, date or acronym) 1,587, to dblp-event (only event of the series in the year) 5,413, to wikidata (agrees in number, date or acronym) 351, to wikidata (only event of the series in the year) 1,298."
  ],
  "files": [
   {
    "path": "ls-confident-events-matches.tsv.gz",
-   "bytes": 500431,
-   "sha256": "f394e0f1876107d59231c9eabb418558e87cd6eaef3c81819699bc9528784c40"
+   "bytes": 500352,
+   "sha256": "785129442e48bd9b18e9cdae8b081c57c63017065b7bb1f67d9c5bde0777be5c"
   },
   {
    "path": "ls-confident-events.ttl.gz",
-   "bytes": 55690,
-   "sha256": "ab0332557c3ac8b91cf53150b378e42340fb0718f4fb3bc74eb87c10055932f4",
-   "triples": 8651
+   "bytes": 55671,
+   "sha256": "fabea65657be599185bc53661d6d06d64a896209504553b3b037d981c033d054",
+   "triples": 8649
   }
  ],
  "version": "2026-11-09"

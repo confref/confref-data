@@ -69,6 +69,43 @@ These join without a measurement (kg-commons 0032).
   series sharing an acronym or key: ICC, ICIS, ICMC, TOOLS, IDT; IFIP working-group umbrella venues; workshops linked
   to their host), 3 undecidable.
 
+## Event linksets (phase 3, step 3)
+
+The rule-based linksets `ls-springer-lod-events`, `ls-confref-portal-events`, `ls-confident-events` and
+`ls-wikidata-events` (rules in `generators/ls-springer-lod-events/events.py`), samples drawn from their matches files
+(`sample.py`, seed 2026), judged with the same criteria, strict about the edition and about a main event vs. its
+workshops or satellite events. Measured on the versions before the workshop rule (below); the versions of 2026-11-09
+replace them on the same day (kg-commons 0100).
+
+| Dataset | Property | Target | Links | Sample | Correct | Wrong | Undecidable | Accuracy (95% interval) |
+|---|---|---|--:|--:|--:|--:|--:|---|
+| ls-confident-events | sameAs | dblp-event | 7,000 | 100 | 99 | 1 | 0 | 99% (95%–100%) |
+| ls-confident-events | sameAs | wikidata | 1,651 | 100 | 99 | 1 | 0 | 99% (95%–100%) |
+| ls-confref-portal-events | sameAs | dblp-event | 31,323 | 100 | 99 | 1 | 0 | 99% (95%–100%) |
+| ls-confref-portal-events | sameAs | wikidata | 5,668 | 100 | 99 | 1 | 0 | 99% (95%–100%) |
+| ls-confref-portal-events | sameAs | confident | 4,875 | 100 | 99 | 1 | 0 | 99% (95%–100%) |
+| ls-springer-lod-events | sameAs | confref-portal | 7,680 | 100 | 100 | 0 | 0 | 100% (96%–100%) |
+| ls-springer-lod-events | sameAs | dblp-event | 7,343 | 100 | 100 | 0 | 0 | 100% (96%–100%) |
+| ls-springer-lod-events | sameAs | wikidata | 1,960 | 100 | 99 | 0 | 1 | 100% (96%–100%) |
+| ls-springer-lod-events | sameAs | confident | 1,204 | 100 | 100 | 0 | 0 | 100% (96%–100%) |
+| ls-wikidata-events | sameAs | dblp-event | 6,446 | 100 | 100 | 0 | 0 | 100% (96%–100%) |
+
+- Check without judges: for the 171 Wikidata items that state a dblp event ID themselves (P10692), the rules find the
+  same dblp event for 170; the other is the joint ESEC/FSE 2009, listed by dblp under both conferences.
+- Wrong (4 of 1,000): an umbrella event and one of its parts (CISSE 2009 → SCSS 2009; IC3K 2011 → KDIR 2011); a
+  workshop matched by its start date to the conference it was held with (SPLC 2008 → SOAPL 2008); the Wikidata item
+  of the workshops of a conference (ICCBR 2021 → "ICCBR-WS 2021"). Undecidable (1): IC3K 2013 → a Wikidata item named
+  after the proceedings of two IC3K conferences.
+- Rule added: an event whose acronym marks it as the workshops of a conference ("ICCBR-WS 2021") does not match the
+  conference; this removes 2 links (ICCBR 2019 and 2021). Tried and not taken: "Workshops" in a name or a dblp
+  proceedings title (it removed 21 correct links of events that publish "Workshops" proceedings themselves: JSAI-isAI,
+  LWDA, AICOL), and a start date only counting where the acronyms agree (it removed renamed events: HT/Hypertext,
+  ISW/ISC).
+- Found in ConfIDent: the event "ETAPS 2003" (number 6, Warsaw) is filed under the series CMCS (probably CMCS 2003,
+  held at ETAPS); a case for reporting to ConfIDent.
+
 ## Next
 
 - The evidence for samples: resolve GND places and Wikidata places to names.
+- Umbrella events (federated and joint conferences) and their parts: links between them are the main remaining risk
+  of the event rules.

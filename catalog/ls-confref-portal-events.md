@@ -24,7 +24,7 @@ path = "generators/ls-confref-portal-events"
 version = "2026-11-09"
 issued = "2026-11-09"
 author = "Kai Eckert"
-commit = "933fbf2f445c3b7f020aa4b30cf631ba5c365f7c"
+commit = "0cabaf81e04ca2b1e79948a7d00335d635e0857e"
 description = "Made by the rules of events.py from springer-lod 2026-11-08, confref-portal 2026-11-09, confident, wikidata and dblp 2026-11-08 and ls-springer-lod-dblp 2026-11-09."
 
   [[versions.files]]
@@ -40,15 +40,15 @@ description = "Made by the rules of events.py from springer-lod 2026-11-08, conf
 
   [[versions.files]]
   path = "ls-confref-portal-events-meta.ttl.gz"
-  bytes = 2073
-  sha256 = "f8e8cc7d53d3bbd0a7f5e8413dcc29e7c2151116f4a8d0b8b621cfbc4d6e940a"
+  bytes = 2067
+  sha256 = "759b294ef8adbed39fd649867c49e6644549c82d4b83b580368b102c6f2f0cf1"
   triples = 87
 
 [[changelog]]
 date = "2026-11-09"
 version = "2026-11-09"
 author = "Kai Eckert"
-text = "New version, made by the generator in confref-data (run-20261108T233944Z)."
+text = "New version, made by the generator in confref-data (run-20261108T235110Z)."
 +++
 
 The events of `confref-portal` linked to the same events of other sources (`cr:sameAs`), found by rules within series that

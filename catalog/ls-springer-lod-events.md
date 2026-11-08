@@ -24,7 +24,7 @@ path = "generators/ls-springer-lod-events"
 version = "2026-11-09"
 issued = "2026-11-09"
 author = "Kai Eckert"
-commit = "933fbf2f445c3b7f020aa4b30cf631ba5c365f7c"
+commit = "0cabaf81e04ca2b1e79948a7d00335d635e0857e"
 description = "Made by the rules of events.py from springer-lod 2026-11-08, confref-portal 2026-11-09, confident, wikidata and dblp 2026-11-08 and ls-springer-lod-dblp 2026-11-09."
 
   [[versions.files]]
@@ -40,15 +40,15 @@ description = "Made by the rules of events.py from springer-lod 2026-11-08, conf
 
   [[versions.files]]
   path = "ls-springer-lod-events-meta.ttl.gz"
-  bytes = 2082
-  sha256 = "d4a9a01562c08328672c5483e0f620e6a56331ca5e82aa9fada66294dc7c2bd9"
+  bytes = 2079
+  sha256 = "b8debc10f7af3a8c352c8615bdaa1ff6037e77650e8a610952c6f1a688ad0661"
   triples = 87
 
 [[changelog]]
 date = "2026-11-09"
 version = "2026-11-09"
 author = "Kai Eckert"
-text = "New version, made by the generator in confref-data (run-20261108T233919Z)."
+text = "New version, made by the generator in confref-data (run-20261108T235044Z)."
 +++
 
 The events of `springer-lod` linked to the same events of other sources (`cr:sameAs`), found by rules within series that

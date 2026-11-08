@@ -24,31 +24,31 @@ path = "generators/ls-confident-events"
 version = "2026-11-09"
 issued = "2026-11-09"
 author = "Kai Eckert"
-commit = "933fbf2f445c3b7f020aa4b30cf631ba5c365f7c"
+commit = "0cabaf81e04ca2b1e79948a7d00335d635e0857e"
 description = "Made by the rules of events.py from springer-lod 2026-11-08, confref-portal 2026-11-09, confident, wikidata and dblp 2026-11-08 and ls-springer-lod-dblp 2026-11-09."
 
   [[versions.files]]
   path = "ls-confident-events-matches.tsv.gz"
-  bytes = 500431
-  sha256 = "f394e0f1876107d59231c9eabb418558e87cd6eaef3c81819699bc9528784c40"
+  bytes = 500352
+  sha256 = "785129442e48bd9b18e9cdae8b081c57c63017065b7bb1f67d9c5bde0777be5c"
 
   [[versions.files]]
   path = "ls-confident-events.ttl.gz"
-  bytes = 55690
-  sha256 = "ab0332557c3ac8b91cf53150b378e42340fb0718f4fb3bc74eb87c10055932f4"
-  triples = 8651
+  bytes = 55671
+  sha256 = "fabea65657be599185bc53661d6d06d64a896209504553b3b037d981c033d054"
+  triples = 8649
 
   [[versions.files]]
   path = "ls-confident-events-meta.ttl.gz"
-  bytes = 2028
-  sha256 = "58048cc6352dfefeee15efc8164ea93b0b0bc44924412c60dd4a88172d50631c"
+  bytes = 2027
+  sha256 = "e87b43dfed4b816141479f159f4f51f6dd00da883d5f221cf4dbaf2041307b73"
   triples = 87
 
 [[changelog]]
 date = "2026-11-09"
 version = "2026-11-09"
 author = "Kai Eckert"
-text = "New version, made by the generator in confref-data (run-20261108T234010Z)."
+text = "New version, made by the generator in confref-data (run-20261108T235137Z)."
 +++
 
 The events of `confident` linked to the same events of other sources (`cr:sameAs`), found by rules within series that

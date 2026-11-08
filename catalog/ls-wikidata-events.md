@@ -24,7 +24,7 @@ path = "generators/ls-wikidata-events"
 version = "2026-11-09"
 issued = "2026-11-09"
 author = "Kai Eckert"
-commit = "933fbf2f445c3b7f020aa4b30cf631ba5c365f7c"
+commit = "0cabaf81e04ca2b1e79948a7d00335d635e0857e"
 description = "Made by the rules of events.py from springer-lod 2026-11-08, confref-portal 2026-11-09, confident, wikidata and dblp 2026-11-08 and ls-springer-lod-dblp 2026-11-09."
 
   [[versions.files]]
@@ -40,15 +40,15 @@ description = "Made by the rules of events.py from springer-lod 2026-11-08, conf
 
   [[versions.files]]
   path = "ls-wikidata-events-meta.ttl.gz"
-  bytes = 2018
-  sha256 = "98c13172376c6a091bdc9530cee0d9ec26a939a5c5b419f484408412477edd82"
+  bytes = 2015
+  sha256 = "c33ec0ad21fcd386a020ac640ef77b043b00a14b347610c016d757e00130703f"
   triples = 87
 
 [[changelog]]
 date = "2026-11-09"
 version = "2026-11-09"
 author = "Kai Eckert"
-text = "New version, made by the generator in confref-data (run-20261108T234036Z)."
+text = "New version, made by the generator in confref-data (run-20261108T235204Z)."
 +++
 
 The events of `wikidata` linked to the same events of other sources (`cr:sameAs`), found by rules within series that

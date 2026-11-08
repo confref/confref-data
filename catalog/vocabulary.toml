@@ -19,7 +19,7 @@ definition = "Records from one source about conference series, events, proceedin
 
 [kind.values.authority]
 label = "Authority data"
-definition = "Records of an authority file, registry or knowledge base (e.g. DBLP, Wikidata, GND, ROR) that confref uses as reference points and as the evidence for its links, kept as the source states them."
+definition = "Records of an authority file selected because our datasets name them (e.g. the GND), kept as the source states them: reference points and evidence for links, not a source of series and events of its own. A source taken as a whole for its series and events (dblp, Wikidata, ConfIDent) is records."
 
 [kind.values.complement]
 label = "Complement"
