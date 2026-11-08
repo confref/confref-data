@@ -9,6 +9,9 @@ kind = "authority"
 method = ["lookup"]
 inputs = ["springer-lod", "dblp", "wikidata"]
 
+[identity]   # the properties that state identity, and towards which sources (kg-commons 0032)
+"owl:sameAs" = ["wikidata"]
+
 [license]
 name = "CC0 1.0"
 uri = "https://creativecommons.org/publicdomain/zero/1.0/"

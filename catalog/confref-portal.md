@@ -9,6 +9,9 @@ stable = "2026-11-08"
 kind = "records"
 method = ["converted"]
 
+[identity]   # the properties that state identity, and towards which sources (kg-commons 0032)
+"portal:dblpId" = ["dblp-venue"]   # on the series
+
 [license]
 name = "CC0 1.0"
 uri = "https://creativecommons.org/publicdomain/zero/1.0/"

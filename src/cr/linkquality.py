@@ -1,7 +1,7 @@
 """The quality of identity links: random samples with evidence, verdicts, accuracy per dataset and property.
 
-sample(): for every unit (dataset, property, source) of candidate identity statements (identifiers.IDENTITY, and the
-Wikipedia links foaf:isPrimaryTopicOf, foaf:page), a random sample of its links (fixed seed; all links of a small
+sample(): for every unit (dataset, property, source) of candidate identity statements (identifiers.IDENTITY, the
+properties of the identity declarations, and the further candidates of domain.toml), a random sample of its links (fixed seed; all links of a small
 unit), each with the evidence of both sides: the facts of the source record (names, dates, places, classes, the
 beginning of its description) and of the target, our record of it in the authority dataset (gnd, lc, viaf, wikidata,
 geonames; a Wikipedia article through the Wikidata item that has it). Writes <unit>.jsonl per unit into a directory.
@@ -28,8 +28,15 @@ FOAF = PREFIXES["foaf"]
 CANDIDATES = identifiers.IDENTITY | domain.QUALITY_CANDIDATES
 LABELS = domain.QUALITY_LABELS
 FACTS = domain.QUALITY_FACTS
-NS = {src: t["namespace"] for src, t in domain.QUALITY_TARGETS.items()}
+NS = {src: t["namespace"] for src, t in domain.QUALITY_TARGETS.items() if "namespace" in t}
 AUTH_SLUG = {src: t["slug"] for src, t in domain.QUALITY_TARGETS.items()}
+
+
+def target_iri(source, ident):
+    """The IRI of the record of a target in its dataset: our record data/<namespace>/<id>, or the IRI of the source
+    (domain.toml: target "iri", e.g. "https://d-nb.info/gnd/{0}")."""
+    t = domain.QUALITY_TARGETS[source]
+    return JL + t["namespace"] + ident if "namespace" in t else t["iri"].format(ident)
 MAX = domain.QUALITY_MAX
 
 
@@ -90,13 +97,14 @@ def sample(cfg, out, use=None, size=100, small=150, seed=2026, only=None, log=pr
         if only and slug not in only:
             continue
         own = authorities.SOURCE.get(slug, ())
+        declared = set(identifiers.declared(slug))   # the declared identity properties are always candidates
         for s, p, o in triples(ref):
-            if str(p) not in CANDIDATES or not str(s).startswith(JL):
+            if isinstance(s, rdf.BNode) or (str(p) not in CANDIDATES and str(p) not in declared):
                 continue
             x = identifiers.identify(o, p)
-            if not x or x[0] in own or (x[0] not in NS and domain.NORMAL.get(x[0]) != "wiki-title"):
+            if not x or x[0] in own or (x[0] not in AUTH_SLUG and domain.NORMAL.get(x[0]) != "wiki-title"):
                 continue
-            units[(slug, str(p), x[0])].append((str(s), x[1], str(o)))
+            units[(slug, str(p), x[0])].append((str(s), x[1], o.value if isinstance(o, rdf.Literal) else str(o)))
         log(f"  links of {ref}: {sum(len(v) for k, v in units.items() if k[0] == slug):,}")
 
     # 2. the samples
@@ -129,7 +137,7 @@ def sample(cfg, out, use=None, size=100, small=150, seed=2026, only=None, log=pr
         for _s, ident, _o in links:
             if src in auth:
                 cur, _st = auth[src][0].current(ident)
-                want[src] |= {JL + NS[src] + c for c in cur}
+                want[src] |= {target_iri(src, c) for c in cur}
             elif domain.NORMAL.get(src) == "wiki-title":
                 wiki_titles[src].add(ident)
     wiki_item = {}
@@ -156,7 +164,7 @@ def sample(cfg, out, use=None, size=100, small=150, seed=2026, only=None, log=pr
                 if src in auth:
                     cur, status = auth[src][0].current(ident)
                     target["status"] = status
-                    target["records"] = [{"iri": JL + NS[src] + c, **tgt_facts.get(JL + NS[src] + c, {})} for c in sorted(cur)]
+                    target["records"] = [{"iri": target_iri(src, c), **tgt_facts.get(target_iri(src, c), {})} for c in sorted(cur)]
                 elif (src, ident) in wiki_item:
                     w = wiki_item[(src, ident)]
                     target["status"] = "through the Wikidata item that has this article"

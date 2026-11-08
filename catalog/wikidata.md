@@ -8,6 +8,15 @@ stable = "2026-11-08"
 kind = "records"
 method = ["converted"]
 
+[identity]   # the properties that state identity, and towards which sources (kg-commons 0032)
+"wdt:P8926" = ["dblp-venue"]        # series
+"wdt:P10692" = ["dblp-event"]       # events (the key of the table of contents)
+"wdt:P227" = ["gnd"]                # events and series
+"wdt:P8978" = ["dblp-rec"]          # proceedings
+"wdt:P356" = ["doi"]                # proceedings
+"wdt:P5124" = ["wikicfp-event"]
+"wdt:P5127" = ["wikicfp-series"]
+
 [license]
 name = "CC0 1.0"
 uri = "https://creativecommons.org/publicdomain/zero/1.0/"

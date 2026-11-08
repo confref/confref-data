@@ -155,6 +155,7 @@ lc-rwo = "lc-names"
 "cf:Wikidata_Organization_ID" = "wikidata"
 "cf:WikiCFP_Series_ID" = "wikicfp-series"
 "cf:ROR_ID" = "ror"
+"portal:dblpId" = { source = "dblp-venue", prefix = "conf/" }   # where the portal gives the bare key, not the page
 
 # ---------------------------------------------------------------------------------------------------------------------
 # Authority datasets (cr.authorities): the records of a source selected by what our datasets name
@@ -201,8 +202,56 @@ contradicting = [["Series", "Event"], ["Series", "Proceedings"], ["Event", "Proc
                  ["Event", "Organization"], ["Proceedings", "Organization"]]
 
 # ---------------------------------------------------------------------------------------------------------------------
-# Link quality (cr.linkquality): set up with the identity declarations and linksets (phase 3, step 2)
+# Link quality (cr.linkquality): the facts shown as evidence for both sides of a link, and the datasets that hold the
+# records of the targets (with the IRI of a record)
 
 [linkquality]
-labels = ["skos:prefLabel", "rdfs:label", "schema:name", "dcterms:title",
-          "gndo:preferredNameForTheConferenceOrEvent", "cf:Title"]
+labels = ["skos:prefLabel", "rdfs:label", "schema:name", "dcterms:title", "dblp:title", "dblp:streamTitle",
+          "gndo:preferredNameForTheConferenceOrEvent", "cf:Title", "spr:confName", "spr:confSeriesName", "spr:title",
+          "portal:name"]
+max = { label = 3, alt = 4, date = 3, place = 3, series = 2, number = 1, instanceOf = 3 }
+
+[linkquality.facts]
+"skos:altLabel" = "alt"
+"wdt:P1813" = "alt"
+"gndo:variantNameForTheConferenceOrEvent" = "alt"
+"gndo:abbreviatedNameForTheConferenceOrEvent" = "alt"
+"cf:Acronym" = "alt"
+"spr:confAcronym" = "alt"
+"portal:acronym" = "alt"
+"dblp:formerStreamTitle" = "alt"
+"wdt:P580" = "date"
+"wdt:P582" = "date"
+"wdt:P585" = "date"
+"wdt:P571" = "date"
+"gndo:dateOfConferenceOrEvent" = "date"
+"cf:Start_Date" = "date"
+"cf:Year" = "date"
+"spr:confStartDate" = "date"
+"spr:confYear" = "date"
+"portal:year" = "date"
+"dblp:yearOfPublication" = "date"
+"wdt:P276" = "place"
+"wdt:P17" = "place"
+"gndo:placeOfConferenceOrEvent" = "place"
+"cf:City" = "place"
+"cf:Country" = "place"
+"spr:confCity" = "place"
+"spr:confCountry" = "place"
+"portal:city" = "place"
+"portal:country" = "place"
+"wdt:P179" = "series"
+"cf:In_Event_Series" = "series"
+"spr:hasSeries" = "series"
+"dblp:publishedInStream" = "series"
+"portal:series" = "series"
+"wdt:P393" = "number"
+"cf:Ordinal" = "number"
+"spr:confNumber" = "number"
+"wdt:P31" = "instanceOf"
+
+[linkquality.target]
+gnd = { slug = "gnd", iri = "https://d-nb.info/gnd/{0}" }
+wikidata = { slug = "wikidata", iri = "http://www.wikidata.org/entity/{0}" }
+dblp-venue = { slug = "dblp", iri = "https://dblp.org/streams/{0}" }
+dblp-rec = { slug = "dblp", iri = "https://dblp.org/rec/{0}" }

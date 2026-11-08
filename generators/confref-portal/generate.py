@@ -56,7 +56,7 @@ TERMS = [
     ("series", "property", "series", "The series of the conference (the field confSeries)."),
     ("issn", "property", "ISSN", "The ISSN of the proceedings series."),
     ("eissn", "property", "eISSN", "The electronic ISSN of the proceedings series."),
-    ("dblpId", "property", "DBLP id", "The DBLP page of the series, as the portal gave it."),
+    ("dblpId", "property", "DBLP id", "The DBLP page of the series, as the portal gave it, or the key of the venue (literal) where the portal gave only that."),
     ("area", "property", "research area", "The research area of the conference."),
     ("keyword", "property", "keyword", "A keyword of the conference (the field keywords, one value each)."),
     ("portalPage", "property", "page on the portal", "The page of the conference on portal.confref.org (offline)."),
@@ -113,8 +113,9 @@ def records(items, log):
         for field in ("name", "issn", "eissn", "description"):
             if s.get(field):
                 yield x, IRI(V + field), text(s[field])
-        if s.get("dblpId"):
-            yield x, IRI(V + "dblpId"), IRI(s["dblpId"])
+        if s.get("dblpId"):   # a page of dblp, or (145 series) only the key of the venue: then a literal
+            d = s["dblpId"].strip()
+            yield x, IRI(V + "dblpId"), IRI(d) if re.match(r"^https?://", d) else Literal(d, None, None)
     for aid, label in sorted(areas.items()):
         x = iri("area", aid)
         yield x, IRI(RDF_TYPE), IRI(V + "Area")

@@ -9,6 +9,12 @@ stable = "2026-11-08"
 kind = "records"
 method = ["converted"]
 
+[identity]   # the properties that state identity, and towards which sources (kg-commons 0032)
+"cf:DBLP_Series_ID" = ["dblp-venue"]   # series
+"cf:Wikidata_Series_ID" = ["wikidata"]   # series
+"cf:WikiCFP_Series_ID" = ["wikicfp-series"]
+"cf:DOI" = ["doi"]                     # events and series: the DOI of the record
+
 [license]
 name = "CC0 1.0"
 uri = "https://creativecommons.org/publicdomain/zero/1.0/"
