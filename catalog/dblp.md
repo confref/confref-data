@@ -5,6 +5,7 @@ author = "Kai Eckert"
 website = "https://dblp.org/"
 example = "https://dblp.org/streams/conf/esws"
 namespaces = ["dblp"]
+stable = "2026-11-08"
 kind = "records"
 method = ["converted"]
 
@@ -18,6 +19,31 @@ statement = "https://dblp.org/rdf/README.txt"
 [generator]
 repo = "https://github.com/confref/confref-data"
 path = "generators/dblp"
+
+[[versions]]
+version = "2026-11-08"
+issued = "2026-11-08"
+author = "Kai Eckert"
+commit = "d67949a11581a3c4afef09d54dae9698deda7670"
+description = "The conference part of dblp as on 2026-11-08 (dump of 2026-11-08 01:34 UTC), true to the source."
+
+  [[versions.files]]
+  path = "dblp.ttl.gz"
+  bytes = 16376345
+  sha256 = "b64ef95d5c2059478e226069d7f71c757db9f921089bf67774df61dc6ff6ab88"
+  triples = 2072947
+
+  [[versions.files]]
+  path = "dblp-meta.ttl.gz"
+  bytes = 2072
+  sha256 = "f379702a7b75a4e1a31617af47538b2ea6133ace266a698c1162fb40d66da43c"
+  triples = 67
+
+[[changelog]]
+date = "2026-11-08"
+version = "2026-11-08"
+author = "Kai Eckert"
+text = "New version, made by the generator in confref-data (run-20261108T193027Z)."
 +++
 
 The conference part of dblp, the computer science bibliography of Schloss Dagstuhl: its 7,196 conference series

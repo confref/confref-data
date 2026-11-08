@@ -1,0 +1,98 @@
+{
+ "slug": "dblp",
+ "run": "run-20261108T193027Z",
+ "generator": "generators/dblp/generate.py",
+ "commit": "d67949a11581a3c4afef09d54dae9698deda7670",
+ "uncommitted": [],
+ "python": "3.15.0",
+ "params": {},
+ "input_overrides": [],
+ "started": "2026-11-08T19:30:27Z",
+ "inputs": [
+  {
+   "name": "harvest",
+   "ref": "inputs:dblp/2026-11-08/dblp-harvest-2026-11-08/conference-streams.nt",
+   "file": "conference-streams.nt",
+   "sha256": "f29d60d07287e3266b04ee97c02c1bb4c78ea2ec890dd3d7660c1dc1af7555c6",
+   "bytes": 8476683
+  },
+  {
+   "name": "harvest",
+   "ref": "inputs:dblp/2026-11-08/dblp-harvest-2026-11-08/conference-streams.rq",
+   "file": "conference-streams.rq",
+   "sha256": "bb97ad206832998ece43786491d0f6b8363f6b34d6dc4f8440c534c6d37f1be7",
+   "bytes": 227
+  },
+  {
+   "name": "harvest",
+   "ref": "inputs:dblp/2026-11-08/dblp-harvest-2026-11-08/harvest.json",
+   "file": "harvest.json",
+   "sha256": "141a9c87256413846bdf2a05c8ce61a15e6bc0196d8e0c945c8a4334a65d2cca",
+   "bytes": 601
+  },
+  {
+   "name": "harvest",
+   "ref": "inputs:dblp/2026-11-08/dblp-harvest-2026-11-08/identifiers.rq",
+   "file": "identifiers.rq",
+   "sha256": "7efaf9476446f452c9754f25ac3ed9f501a24d564c228a532e3d2ad415dcc35a",
+   "bytes": 618
+  },
+  {
+   "name": "harvest",
+   "ref": "inputs:dblp/2026-11-08/dblp-harvest-2026-11-08/identifiers.tsv",
+   "file": "identifiers.tsv",
+   "sha256": "6da51695a4117319b35cb32ed12df2bedbefb2dc2fa52dd262f569257a80ae09",
+   "bytes": 18966017
+  },
+  {
+   "name": "harvest",
+   "ref": "inputs:dblp/2026-11-08/dblp-harvest-2026-11-08/other-streams.nt",
+   "file": "other-streams.nt",
+   "sha256": "2d5360ec472eae8f571161623eb4c26e23301ac10fa060322d62749eb6414bcf",
+   "bytes": 126265
+  },
+  {
+   "name": "harvest",
+   "ref": "inputs:dblp/2026-11-08/dblp-harvest-2026-11-08/other-streams.rq",
+   "file": "other-streams.rq",
+   "sha256": "ceddbabc3a0a7858be00bdd8ce67908b64a8653a8b735e0746310edf3ca7577e",
+   "bytes": 390
+  },
+  {
+   "name": "harvest",
+   "ref": "inputs:dblp/2026-11-08/dblp-harvest-2026-11-08/proceedings.nt",
+   "file": "proceedings.nt",
+   "sha256": "1402cba62c39a81c5f25d559d34c748f665cbb16d32e3175a828a2fef8d209d7",
+   "bytes": 188015347
+  },
+  {
+   "name": "harvest",
+   "ref": "inputs:dblp/2026-11-08/dblp-harvest-2026-11-08/proceedings.rq",
+   "file": "proceedings.rq",
+   "sha256": "2a0531b32b360828dd54116b78a764f61b79ed3b8b4a229fb71f32e28ff5b51f",
+   "bytes": 316
+  }
+ ],
+ "input_descriptions": {
+  "inputs:dblp/2026-11-08": {
+   "title": "dblp: the conference streams and their proceedings, from the dblp SPARQL endpoint",
+   "origin": "https://sparql.dblp.org/sparql (queried 2026-11-08T19:28:50Z to 19:29:22Z with generators/dblp/harvest.py; dblp.ttl.gz of that time: Last-Modified Sun, 08 Nov 2026 01:34:02 GMT)",
+   "description": "CONSTRUCT answers (N-Triples) for the 7,196 conference streams, the 62,560 proceedings (editorships published in a conference stream) and the 76 other streams they name; the typed identifiers of all of them (TSV); the queries beside the answers. CC0.",
+   "date": "2026-11-08",
+   "note": "Published as the dataset dblp."
+  }
+ },
+ "status": "ok",
+ "finished": "2026-11-08T19:30:50Z",
+ "seconds": 22.8,
+ "notes": [],
+ "files": [
+  {
+   "path": "dblp.ttl.gz",
+   "bytes": 16376345,
+   "sha256": "b64ef95d5c2059478e226069d7f71c757db9f921089bf67774df61dc6ff6ab88",
+   "triples": 2072947
+  }
+ ],
+ "version": "2026-11-08"
+}
