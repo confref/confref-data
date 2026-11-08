@@ -55,8 +55,20 @@ These join without a measurement (kg-commons 0032).
 - **Verdicts based on knowledge beyond the evidence** (marked correct): ConfIDent AAMAS → `conf/atal` (dblp files
   AAMAS under ATAL), ConfIDent RBAC → SACMAT (renamed), portal Independent Component Analysis → LVA/ICA.
 
+## Outcome
+
+- **springer-lod-2015** no longer declares identity: the series are those of springer-lod (2018), more complete.
+- **springer-lod → dblp, a larger sample:** 300 links (the 100 above and 200 more, same seed): 224 correct, 13 wrong,
+  63 undecidable (60 of them keys dblp no longer has): 94.5% (90.8%–96.8%), still below the threshold.
+- **Every link judged** (kg-commons 0037): the linkset `ls-springer-lod-dblp` (version 2026-11-09). Rules first: 387
+  of the 1,763 dblp ids name venues dblp no longer has. The other 1,376 were judged with richer evidence (up to five
+  Springer conferences of the series, the former titles and up to five proceedings of the dblp venue), in seven
+  chunks by one instruction; the first pass agreed with the 300-link sample on 233 of 239 links. A second pass with
+  added rules (umbrella venues, venues with a main line, mixed Springer series, workshops at conferences, renames)
+  judged the 6 disagreements and 18 cases the judges had flagged. Result: 1,311 linked, 62 wrong (mostly different
+  series sharing an acronym or key: ICC, ICIS, ICMC, TOOLS, IDT; IFIP working-group umbrella venues; workshops linked
+  to their host), 3 undecidable.
+
 ## Next
 
-- springer-lod → dblp: a judged linkset (kg-commons 0037) with the correct links, or a rule (equal keys) checked on a
-  sample. The Springer series are the largest legacy source of dblp keys.
-- The evidence: resolve GND places and Wikidata places to names for the samples.
+- The evidence for samples: resolve GND places and Wikidata places to names.
