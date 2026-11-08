@@ -4,7 +4,7 @@ Source: inputs:gnd/<date>, the records fetched from the Linked Data Service of t
 versions of the datasets that name them (selection.SOURCES; the selection is made again here from the same versions
 and must be covered by the harvest). CC0 (DNB).
 
-1. The selection list (gnd-selection.tsv.gz, the format of judaicalink-data's authority datasets): one row per GND
+1. The selection list (gnd-selection.tsv.gz, the format of the authority datasets of the framework): one row per GND
    number and reason, with the current number the DNB answers with (empty if the number does not exist any more).
    - linked: a number named in one of the datasets (the detail is the dataset).
    - follows: a number a selected record names as its place or as a related conference (the detail is the property).

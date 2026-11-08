@@ -1,4 +1,4 @@
-"""The canonical form of RDF files and comparisons on it (decision 0018).
+"""The canonical form of RDF files and comparisons on it (kg-commons 0018).
 
 The canonical form of a file is its triples as N-Triples lines, sorted by code point (the order of
 `LC_ALL=C sort`) and deduplicated, with only the normalisation that RDF 1.1 term equality allows: no

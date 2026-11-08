@@ -1,4 +1,4 @@
-"""From a run to a version, and rendering the -meta of a version (decision 0018).
+"""From a run to a version, and rendering the -meta of a version (kg-commons 0018).
 
 add-version <slug>/<run-id> …: refuses runs that failed, ran uncommitted code or used runs as inputs (except runs
 of the same call, which become versions together: the authority datasets); gives the
@@ -8,7 +8,7 @@ the files as they are in the version); adds the version and a changelog entry to
 the files into the store <slug>/<version>/. It does not move `stable` and publishes nothing.
 
 render-meta <slug>/<version>: renders the -meta again and replaces it (and its size and checksum in the
-entry) only when its content changed (0018).
+entry) only when its content changed (kg-commons 0018).
 
 The catalogue entry is edited as text (comments and layout stay); every edit is checked by parsing the result
 and comparing it with the expected data.
@@ -376,7 +376,7 @@ def prepare(cfg, j, author, description, text, issued, registry, commit):
     for i in rec.get("inputs", []):
         if not isinstance(i.get("ref"), str):
             warnings.append(f"input {i.get('name')} ({i.get('file')}) is named by checksum only, not in the inputs "
-                            "area (decision 0021)")
+                            "area (kg-commons 0021)")
     stats = measure(cfg, files, stage)
     public = [{k: f.get(k) for k in ("path", "bytes", "sha256", "triples")} for f in files]
     vtable = {"version": vid, "issued": issued or rec["started"][:10], "author": author, "commit": rec["commit"]}
@@ -512,7 +512,7 @@ def import_version(cfg, slug, vid, description, origin=None, sources=(), notes=(
 
 def import_files(cfg, slug, paths, origin, description, sources=(), notes=()):
     """Take files made elsewhere in as a run (mode "import"); add-version makes it a version. The files are
-    kept byte for byte (no header comments). Files with blank nodes are refused (0018). Returns (dir, record)."""
+    kept byte for byte (no header comments). Files with blank nodes are refused (kg-commons 0018). Returns (dir, record)."""
     if catalog.Catalog().get(slug) is None:
         raise VersionError(f"no dataset '{slug}' in the catalogue")
     if not origin or not description:
@@ -533,7 +533,7 @@ def import_files(cfg, slug, paths, origin, description, sources=(), notes=()):
             info = canonical.canonical(p, cfg)
             if info["blank_node_triples"]:
                 raise VersionError(f"{p.name}: {info['blank_node_triples']:,} triples with blank nodes; blank nodes "
-                                   "are not taken in (0018)")
+                                   "are not taken in (kg-commons 0018)")
     commit, dirty = framework_state()
     started = datetime.datetime.now(datetime.timezone.utc)
     run_id = "run-" + started.strftime("%Y%m%dT%H%M%SZ")
@@ -594,7 +594,7 @@ def remove_version_text(text, data, vid):
 
 
 def version_refs(rec):
-    """The catalogued versions a run record names: its inputs and the corrections applied to them (decision 0023),
+    """The catalogued versions a run record names: its inputs and the corrections applied to them (kg-commons 0023),
     as {(slug, version)}; inputs of the inputs area, runs and repository files are not versions."""
     out = set()
     for i in rec.get("inputs", []) + rec.get("corrections", []):
@@ -624,7 +624,7 @@ def latest_version(e):
 
 def remove_version(cfg, slug, vid, latest_ok=False, warn=print):
     """Remove a version that was never published: from the catalogue (version, its changelog entries, stable),
-    the store, its run record and its run directory (decision 0018: one version per piece of work)."""
+    the store, its run record and its run directory (kg-commons 0018: one version per piece of work)."""
     e = catalog.Catalog().get(slug)
     if e is None or e.version(vid) is None:
         raise VersionError(f"no version {slug}/{vid} in the catalogue")

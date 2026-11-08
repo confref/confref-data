@@ -5,7 +5,7 @@ Status: accepted · Date: 2026-11-08
 ## Context
 
 confref (2014–2022: the Springer LOD pilot, lod.confref.org, portal.confref.org) is restarted at TH Mannheim as an
-open knowledge graph, set up like JudaicaLink. The analysis of 2026-11-08 (workspace,
+open knowledge graph. The analysis of 2026-11-08 (workspace,
 `ANALYSIS-2026-11-08-what-exists.md`) found no open infrastructure that gives every conference series and edition
 an identifier; the sources (DBLP, Wikidata, GND, Crossref, ConfIDent) each hold a part.
 

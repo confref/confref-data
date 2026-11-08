@@ -1,4 +1,4 @@
-# Where the dumps and the catalogue pages are (judaicalink-data decision 0014). Entries and -meta files never name
+# Where the dumps and the catalogue pages are (kg-commons 0014). Entries and -meta files never name
 # these; a location is a prefix: dumps + <slug>/<version>/<path>, catalogues + <slug>/. Read by `cr update-dataindex`.
 # Planned (decision 0002 of confref-data); nothing is published there yet.
 

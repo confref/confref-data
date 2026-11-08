@@ -1,4 +1,4 @@
-"""The framework's index of RDF inputs (decision 0018): the declared input files in memory, triple patterns.
+"""The framework's index of RDF inputs (kg-commons 0018): the declared input files in memory, triple patterns.
 
     g = Graph.load([path, ...])
     g.objects(s, p)          # objects of a subject and predicate
@@ -9,7 +9,7 @@
 
 Terms as in rdf.py (IRI, Literal, BNode), exactly as in the files. Duplicates are kept once. Results come in
 the order in which the triples were read (file order), never in hash order, so they are the same for the same
-inputs. Joins are written in Python; generators sort what they write (0011).
+inputs. Joins are written in Python; generators sort what they write (kg-commons 0011).
 """
 
 from .corrections import key
@@ -26,7 +26,7 @@ class Graph:
 
     @classmethod
     def load(cls, paths, skip=None):
-        """skip: a set of triple keys (corrections.key) to leave out, the deletions of the corrections (0023)."""
+        """skip: a set of triple keys (corrections.key) to leave out, the deletions of the corrections (kg-commons 0023)."""
         g = cls()
         for p in paths:
             g.add_file(p, skip)

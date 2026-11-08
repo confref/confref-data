@@ -12,7 +12,7 @@ the first harvest. Then `./cr add-input gnd/<date> <out dir>`.
 
 ## The generator
 
-The selection list `gnd-selection.tsv.gz` (format of judaicalink-data's authority datasets: number, current number,
+The selection list `gnd-selection.tsv.gz` (the format of the authority datasets of the framework: number, current number,
 reason, detail), the records as the DNB gives them without their description documents, and the replacements
 (`dcterms:isReplacedBy`, `owl:deprecated`). The selection is made again from the same versions of the datasets, and the
 run fails if the harvest does not cover it. New versions of the source datasets need a new harvest (only the new
@@ -20,7 +20,7 @@ numbers are fetched if the same directory is used).
 
 ## Later
 
-The full cascade of judaicalink-data (identity links between the authority datasets until nothing is pending) comes
+The full cascade of the framework (identity links between the authority datasets until nothing is pending) comes
 with the identity layer (phase 3); then also the GND numbers ConfIDent might name.
 
 ## History

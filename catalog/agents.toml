@@ -1,4 +1,4 @@
-# The agents of confref (format of judaicalink-data decision 0018).
+# The agents of confref (format of kg-commons 0018).
 #
 # Persons: [persons.<n>], numbered in sequence, never reused; IRI https://id.confref.org/datasets/agents/persons/<n>.
 #   name       the name as used in the catalogue (author, version author, changelog author)

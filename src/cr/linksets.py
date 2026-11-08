@@ -1,12 +1,12 @@
-"""Linksets per authority dataset (decision 0029): every record of ours that refers to an authority is linked to our
+"""Linksets per authority dataset (kg-commons 0029): every record of ours that refers to an authority is linked to our
 record of the current authority entry.
 
 authority_linkset(run, source, authority, inputs, prefix) reads the authority dataset (its records <prefix><id>, the
 replacements of its identifiers, dcterms:isReplacedBy, and the deprecated ones, owl:deprecated), finds every
 reference to the source in the inputs (cr.identifiers: IRIs as objects in any form, identifier literals), resolves it
 to the current record and states <record> cr:sameAs <prefix><current id> (a subproperty of owl:sameAs: the identity
-as JudaicaLink states it). Only identity statements count, as the catalogue
-entry of each dataset declares them (field identity, decision 0032): a place of birth or an occupation that is an
+as the project states it). Only identity statements count, as the catalogue
+entry of each dataset declares them (field identity, kg-commons 0032): a place of birth or an occupation that is an
 authority entry does not make the record that entry. Left out and logged: references to
 identifiers that are deprecated or not in the authority dataset, references by blank nodes or by records of the
 authority itself, and links whose two sides are of contradicting kinds (a person and a work, a person or a work and
@@ -22,7 +22,7 @@ from .rdf import RDF_TYPE, BNode, IRI, Literal
 from .turtle import PREFIXES
 
 SAME = PREFIXES["owl"] + "sameAs"
-JLSAME = project.ONTOLOGY + "sameAs"   # identity as JudaicaLink states it (decision 0029)
+JLSAME = project.ONTOLOGY + "sameAs"   # identity as the project states it (kg-commons 0029)
 REPLACED = PREFIXES["dcterms"] + "isReplacedBy"
 DEPRECATED = PREFIXES["owl"] + "deprecated"
 # the statements that say a record is the authority entry (also Wikidata's identifier properties); other references
@@ -89,9 +89,9 @@ def authority_linkset(run, source, authority, inputs, prefix, leave_out=None):
         slug = ref.split("/", 1)[0]
         for s, p, o in run.triples(name):
             x = identifiers.identify(o, p)
-            if not x or x[0] != source or not identifiers.identity(slug, p, source):   # the declaration (0032)
+            if not x or x[0] != source or not identifiers.identity(slug, p, source):   # the declaration (kg-commons 0032)
                 continue
-            if identifiers.below_threshold(slug, p, source):   # measured link quality (0032): linked, not joined
+            if identifiers.below_threshold(slug, p, source):   # measured link quality (kg-commons 0032): linked, not joined
                 c[f"left out: link quality of {slug} below the threshold"] += 1
                 continue
             c["references"] += 1

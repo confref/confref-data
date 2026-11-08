@@ -1,4 +1,4 @@
-"""The data index and the copy of the catalogue into the sites (decision 0014).
+"""The data index and the copy of the catalogue into the sites (kg-commons 0014).
 
 update(): checks every file of every version at every dumps location of catalog/locations.toml and every dataset
 at every catalogue (HTTP HEAD, following redirects), and returns the index: when it was checked, the locations,
@@ -123,7 +123,7 @@ def sync(site, index_path=INDEX, add=(), out=print):
         if old != new:
             target.write_text(new, encoding="utf-8")
             out(f"{slug}: {'added' if old is None else 'updated'}")
-        # the pictures of the entry (decision 0040), at /catalog/pictures/<slug>/ of the site
+        # the pictures of the entry (kg-commons 0040), at /catalog/pictures/<slug>/ of the site
         pictures = CATALOG / "pictures" / slug
         if pictures.is_dir():
             dest = site / "static" / "catalog" / "pictures" / slug

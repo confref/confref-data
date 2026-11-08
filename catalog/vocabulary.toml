@@ -1,4 +1,4 @@
-# The values of the catalogue fields `kind` and `method` (decision 0013) with their definitions (decision 0018).
+# The values of the catalogue fields `kind` and `method` (kg-commons 0013) with their definitions (kg-commons 0018).
 #
 # Each value is a SKOS concept, https://id.confref.org/datasets/vocabulary/<field>/<value>, in the concept
 # scheme https://id.confref.org/datasets/vocabulary/<field>; the -meta files state them as dcterms:type of the

@@ -27,6 +27,6 @@ which never existed.
   namespace (`…/vocab/`), true to the API.
 - **`tuwien-pc`**: the TU Wien programme committees, a dataset of its own, kept for reference: **nothing builds on it**
   (no linkset, complement or `ids` reads it). Basis: the informal OK of TU Wien (Amin Anjomshoaa, 2018-09-23).
-- As everywhere (judaicalink-data 0030), Dublin Core elements of the sources are written as `dcterms:`, and IRIs of
+- As everywhere (kg-commons 0030), Dublin Core elements of the sources are written as `dcterms:`, and IRIs of
   known sources in their canonical form.
 - The 2018 data (both datasets) is deposited on Zenodo (CC0) when we publish, with both IRI sets.

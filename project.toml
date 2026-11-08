@@ -1,13 +1,13 @@
-# The project this framework works for (src/cr/project.py). Everything that differs between projects using the
-# framework copied from judaicalink-data is set here, so that the code is the same for both (deviation X1,
-# docs/judaicalink-deviations.md). Committed; local paths are in local.toml.
+# The project this framework works for (src/cr/project.py). Everything that differs between the projects that share
+# the framework is set here, so that the code is the same for all (deviation X1, kg-commons projects/confref.md).
+# Committed; local paths are in local.toml.
 
 name = "confref"                              # the project; also the name of our own IRIs as an identifier source
 title = "confref"                             # in titles: "<title> dataset <slug>, version <version>"
 base = "https://id.confref.org/"              # our IRIs: datasets/, dumps/, data/ below it (decision 0002)
 landing_page = "https://confref.org/"
 finder = "https://confref.org/dataindex/?file="   # dcat:accessURL of a file: finder + <slug>/<version>/<path>
-user_agent = "confref-data (https://confref.org)" # every HTTP request (judaicalink-data decision 0028)
+user_agent = "confref-data (https://confref.org)" # every HTTP request (kg-commons 0028)
 
 [framework]
 name = "confref-data"                         # the software agent that makes versions and -meta files

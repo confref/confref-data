@@ -1,4 +1,4 @@
-"""Normalised dates (decision 0035): xsd:date, xsd:gYearMonth or xsd:gYear where the value is one day, month or year,
+"""Normalised dates (kg-commons 0035): xsd:date, xsd:gYearMonth or xsd:gYear where the value is one day, month or year,
 else the EDTF value typed with the datatype of the Library of Congress.
 
 normalised(edtf) takes an EDTF value as a source writes it (the LC specification of 2012, which Footprints uses:

@@ -16,7 +16,7 @@ Saves every response of the API unchanged, so that the generator reads exactly w
 - harvest.json: what was fetched, when, and the counts.
 
 An interrupted harvest continues (files already there are kept); for a new harvest use a new directory. One request
-per second; the User-Agent of the project (project.toml, judaicalink-data 0028).
+per second; the User-Agent of the project (project.toml, kg-commons 0028).
 """
 
 import datetime

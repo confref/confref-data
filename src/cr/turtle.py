@@ -1,4 +1,4 @@
-"""The deterministic Turtle writer of the framework (decision 0018): same triples, same bytes.
+"""The deterministic Turtle writer of the framework (kg-commons 0018): same triples, same bytes.
 
 - Prefixes come from one fixed table (PREFIXES); a file declares those it uses, sorted by name, only at the top.
 - Subjects are sorted, predicates sorted with rdf:type ("a") first, objects sorted; the order is that of the
@@ -6,9 +6,9 @@
 - Literals are written in their quoted form with the datatype as given (no number shortcuts, so the lexical
   form is visible); only canonical N-Triples escapes.
 - gzip with a fixed header (no file name, mtime 0).
-- Optional header comments (add-version writes "# JudaicaLink dataset <slug>, version <version>" and the
+- Optional header comments (add-version writes "# <project title> dataset <slug>, version <version>" and the
   version IRI); comments are not triples.
-- Blank nodes are refused (decision 0018).
+- Blank nodes are refused (kg-commons 0018).
 """
 
 import gzip
@@ -33,7 +33,7 @@ PREFIXES = {
     "geosparql": "http://www.opengis.net/ont/geosparql#",
     "gn": "https://www.geonames.org/ontology#",
     "gndo": "https://d-nb.info/standards/elementset/gnd#",
-    project.PREFIX: project.ONTOLOGY,   # our own terms (judaicalink-data: "jl")
+    project.PREFIX: project.ONTOLOGY,   # our own terms
     "oa": "http://www.w3.org/ns/oa#",
     "owl": "http://www.w3.org/2002/07/owl#",
     "prov": "http://www.w3.org/ns/prov#",
@@ -102,7 +102,7 @@ class Writer:
                 return f"{s}^^{self.iri(t.datatype)}"
             return s
         if isinstance(t, BNode):
-            raise ValueError(f"blank node _:{t}: the framework writes no blank nodes (decision 0018)")
+            raise ValueError(f"blank node _:{t}: the framework writes no blank nodes (kg-commons 0018)")
         return self.iri(t)
 
     def body(self, triples):
@@ -111,7 +111,7 @@ class Writer:
         for s, p, o in triples:
             if not isinstance(s, IRI) or not isinstance(p, IRI) or not isinstance(o, (IRI, Literal)):
                 if isinstance(s, BNode) or isinstance(o, BNode):
-                    raise ValueError("blank nodes are not written (decision 0018)")
+                    raise ValueError("blank nodes are not written (kg-commons 0018)")
                 raise TypeError(f"not a triple of IRI/Literal terms: {(s, p, o)!r}")
             graph.setdefault(s, {}).setdefault(p, set()).add(o)
         n = 0

@@ -1,4 +1,4 @@
-"""The identifiers of external sources in our data (decision 0029): which dataset names which identifier.
+"""The identifiers of external sources in our data (kg-commons 0029): which dataset names which identifier.
 
 identify(term) gives (source, identifier) for an IRI of a known source in any of its forms (cr.iris), for our
 records in an authority namespace (data/gnd/<n> is GND n, data/geonames/<n> is GeoNames n), and for a literal of an
@@ -14,14 +14,14 @@ from urllib.parse import unquote
 from . import iris, project
 from .rdf import BNode, Literal
 
-JL = project.DATA   # records we coin (judaicalink-data: http://data.judaicalink.org/data/)
+JL = project.DATA   # records we coin
 # our records that are the identifier of a source
 AUTHORITY_NAMESPACES = [("gnd", re.compile(re.escape(JL) + r"gnd/([0-9]+[0-9X-]*)$")),
                         ("geonames", re.compile(re.escape(JL) + r"geonames/([0-9]+)$")),
                         ("lc-names", re.compile(re.escape(JL) + r"lc/([a-z]+[0-9]+)$")),
                         ("wikidata", re.compile(re.escape(JL) + r"wikidata/(Q[0-9]+)$")),
                         ("viaf", re.compile(re.escape(JL) + r"viaf/([0-9]+)$")),
-                        ("wikipedia-en", re.compile(re.escape(JL) + r"dbpedia/en/(.+)$")),   # decision 0031
+                        ("wikipedia-en", re.compile(re.escape(JL) + r"dbpedia/en/(.+)$")),   # kg-commons 0031
                         ("wikipedia-de", re.compile(re.escape(JL) + r"dbpedia/de/(.+)$"))]
 # properties whose literal value is an identifier
 LITERAL_PROPERTIES = {"http://d-nb.info/standards/elementset/gnd#gndIdentifier": "gnd",
@@ -57,7 +57,7 @@ def expand(term):
 
 def declared(slug):
     """{property IRI (canonical form): {sources}}: the identity declaration of the dataset (catalogue field
-    "identity", decision 0032): which properties of the dataset state that a record is the same as a record of which
+    "identity", kg-commons 0032): which properties of the dataset state that a record is the same as a record of which
     source. A dataset without a declaration states no identity."""
     if slug not in _declared:
         from . import catalog
@@ -76,7 +76,7 @@ _quality = {}
 
 
 def below_threshold(slug, predicate, source):
-    """Whether the measured quality of this unit (catalog/link-quality.toml, decision 0032) is below the threshold:
+    """Whether the measured quality of this unit (catalog/link-quality.toml, kg-commons 0032) is below the threshold:
     accuracy under the threshold, or, when only a sample was checked, the lower bound of its interval under the
     threshold of the lower bound. A unit not measured is not below."""
     if not _quality:
@@ -98,12 +98,12 @@ def below_threshold(slug, predicate, source):
 
 def joins(slug, predicate, source):
     """Whether a statement joins records (linksets, entity pages): declared identity of a unit not below the
-    threshold of the measured link quality (decision 0032); below it, the link is kept but joins nothing."""
+    threshold of the measured link quality (kg-commons 0032); below it, the link is kept but joins nothing."""
     return identity(slug, predicate, source) and not below_threshold(slug, predicate, source)
 
 
 def selects(slug, predicate, source=None):
-    """Whether a statement of the dataset slug selects the records it names in the authority datasets (decision 0029):
+    """Whether a statement of the dataset slug selects the records it names in the authority datasets (kg-commons 0029):
     every statement of our datasets (also places of birth, occupations), of the authority datasets only their declared
     identity statements (otherwise the cascade would follow the places, occupations and related persons of authority
     records)."""
@@ -119,7 +119,7 @@ def normal(source, identifier):
     return identifier.strip().upper() if source == "gnd" else identifier.strip()
 
 
-# characters of a title that an IRI path cannot hold as they are (our records data/dbpedia/<lang>/<title>, 0031)
+# characters of a title that an IRI path cannot hold as they are (our records data/dbpedia/<lang>/<title>, kg-commons 0031)
 _TITLE_ESCAPE = re.compile(r'[\x00-\x20<>"{}|\\^`?#%]')
 
 
@@ -134,7 +134,7 @@ def title_iri_part(title):
     return _TITLE_ESCAPE.sub(lambda m: "%{:02X}".format(ord(m.group(0))), title.replace(" ", "_"))
 
 
-# Wikipedia and DBpedia: one source per language (decision 0031); the article and the resource are one identifier
+# Wikipedia and DBpedia: one source per language (kg-commons 0031); the article and the resource are one identifier
 WIKI = [("wikipedia-en", re.compile(r"^https?://(?:en\.(?:m\.)?wikipedia\.org/wiki/|dbpedia\.org/resource/)(.+)$")),
         ("wikipedia-de", re.compile(r"^https?://(?:de\.(?:m\.)?wikipedia\.org/wiki/|de\.dbpedia\.org/resource/)(.+)$"))]
 
@@ -171,7 +171,7 @@ def identify(term, predicate=None):
 
 
 def source_of(term, predicate=None):
-    """identify(), and for one of our records outside the authority namespaces ("judaicalink", the IRI)."""
+    """identify(), and for one of our records outside the authority namespaces (the project name, the IRI)."""
     x = identify(term, predicate)
     if x is None and isinstance(term, str) and not isinstance(term, (Literal, BNode)) and \
             iris.canonical(term).startswith(JL):
@@ -195,5 +195,5 @@ def scan(run, inputs, sources=None):
 
 
 def is_ours(term):
-    """An IRI of JudaicaLink (any form): never evidence when it comes from an external source (decision 0029)."""
+    """An IRI of the project (any form): never evidence when it comes from an external source (kg-commons 0029)."""
     return isinstance(term, str) and not isinstance(term, BNode) and iris.kind(term) == project.NAME

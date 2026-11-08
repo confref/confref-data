@@ -1,7 +1,7 @@
-"""The values of the catalogue fields kind and method, catalog/vocabulary.toml (decisions 0013, 0018).
+"""The values of the catalogue fields kind and method, catalog/vocabulary.toml (kg-commons 0013, 0018).
 
 Each value is a SKOS concept datasets/vocabulary/<field>/<value> in the scheme datasets/vocabulary/<field>; the
--meta files state them as dcterms:type of the dataset, the dataset judaicalink-vocabulary defines them.
+-meta files state them as dcterms:type of the dataset, the vocabulary dataset of the project defines them.
 """
 
 import tomllib

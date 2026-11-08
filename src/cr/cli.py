@@ -1,4 +1,4 @@
-"""The cr command line (decision 0018). Commands are verb-noun; the read commands take --json."""
+"""The cr command line (kg-commons 0018). Commands are verb-noun; the read commands take --json."""
 
 import argparse
 import json
@@ -797,20 +797,20 @@ def parser():
                           "help": "write the version into the build area only; catalogue, store, run unchanged"}),
         json_out=False)
     add("check-authorities", cmd_check_authorities,
-        "list per authority dataset the identifiers our datasets name that it does not have (decision 0029)",
+        "list per authority dataset the identifiers our datasets name that it does not have (kg-commons 0029)",
         (("--use",), {"metavar": "SLUG/REF", "action": "append", "default": [],
                       "help": "count this version or run instead of the stable version; repeatable"}),
         (("--verbose",), {"action": "store_true", "help": "list the datasets read"}))
     add("check-authority-links", cmd_check_authority_links,
         "check the identity links between the authority datasets: several targets, old identifiers, links not "
-        "returned, chains (decision 0029)",
+        "returned, chains (kg-commons 0029)",
         (("--use",), {"metavar": "SLUG/REF", "action": "append", "default": [],
                       "help": "read this version or run instead of the stable version; repeatable"}),
         (("--tsv",), {"metavar": "FILE", "type": Path, "help": "write every finding to FILE"}),
         (("--examples",), {"type": int, "default": 3, "help": "examples per kind of finding (default 3)"}))
     add("cascade", cmd_cascade,
         "the selections of the authority datasets: seeds, then the identity links of the selected records until nothing "
-        "is pending (decision 0029); writes the selections to DIR, the input of the authority generators",
+        "is pending (kg-commons 0029); writes the selections to DIR, the input of the authority generators",
         (("out",), {"metavar": "DIR", "type": Path}),
         (("--use",), {"metavar": "SLUG/REF", "action": "append", "default": [],
                       "help": "read this version or run instead of the stable version (seeds); repeatable"}),
@@ -850,7 +850,7 @@ def parser():
         (("--dry-run",), {"action": "store_true", "help": "only say whether it would change"}),
         (("--out",), {"metavar": "FILE", "type": Path, "help": "write the -meta to FILE; nothing else changes"}),
         json_out=False)
-    add("add-input", cmd_add_input, "put files into the inputs area and describe them (input.toml, decision 0021)",
+    add("add-input", cmd_add_input, "put files into the inputs area and describe them (input.toml, kg-commons 0021)",
         (("name",), {"metavar": "<source>/<name>"}),
         (("files",), {"nargs": "+", "type": Path, "metavar": "FILE_OR_DIR"}),
         (("--title",), {}), (("--origin",), {"help": "a URL where there is one, else text"}),
@@ -859,13 +859,13 @@ def parser():
         (("--move",), {"action": "store_true", "help": "move instead of copy"}), json_out=False)
     add("check-inputs", cmd_check_inputs, "check the inputs area: every file described, sizes and checksums",
         (("--quick",), {"action": "store_true", "help": "sizes only, no checksums"}), json_out=False)
-    add("check-corrections", cmd_check_corrections, "check the stable corrections (0023) against the stable versions: "
+    add("check-corrections", cmd_check_corrections, "check the stable corrections (kg-commons 0023) against the stable versions: "
         "stale deletions, conflicts, which datasets they concern", json_out=False)
     add("clean-runs", cmd_clean_runs, "delete the runs in the build area that did not become a version",
         (("slug",), {"nargs": "*", "help": "only these datasets (default: all)"}),
         (("--dry-run",), {"action": "store_true", "help": "only list them"}), json_out=False)
     add("list-agents", cmd_list_agents, "list the agents (registry) and the names used in the catalogue")
-    add("check-catalog", cmd_check_catalog, "check the catalogue entries (0013, 0018) and local copies of the files",
+    add("check-catalog", cmd_check_catalog, "check the catalogue entries (kg-commons 0013, 0018) and local copies of the files",
         (("--store",), {"action": "store_true", "help": "also compare with the store (local.toml)"}),
         (("--dumps",), {"metavar": "DIR", "type": Path, "action": "append", "default": [],
                         "help": "another tree <slug>/<version>/<path> to compare with; repeatable"}),
@@ -879,13 +879,13 @@ def parser():
         (("--dry-run",), {"action": "store_true", "help": "only report what would be linked"}),
         json_out=False)
     add("update-dataindex", cmd_update_dataindex,
-        "check the dumps locations and catalogues of catalog/locations.toml and write catalog/dataindex.json (0014)",
+        "check the dumps locations and catalogues of catalog/locations.toml and write catalog/dataindex.json (kg-commons 0014)",
         (("--assume",), {"metavar": "NAME=DIR", "action": "append", "default": [],
                          "help": "take a local tree (or 'store') as the content of dumps location NAME (test)"}),
         (("--out",), {"metavar": "FILE", "type": Path, "help": "write the index here (required with --assume)"}),
         json_out=False)
     add("sync-site", cmd_sync_site,
-        "copy the catalogue entries a Hugo site has, and the data index, into the site (0014)",
+        "copy the catalogue entries a Hugo site has, and the data index, into the site (kg-commons 0014)",
         (("site",), {"type": Path, "help": "the site repository (content/datasets/, data/)"}),
         (("--add",), {"metavar": "SLUG", "nargs": "+", "default": [], "help": "also add these entries"}),
         (("--index",), {"metavar": "FILE", "type": Path, "help": "the index to copy (default: catalog/dataindex.json)"}),

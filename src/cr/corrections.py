@@ -1,4 +1,4 @@
-"""Correction datasets (decision 0023): kind `correction`. The additions are the data of the dataset, in its own graph;
+"""Correction datasets (kg-commons 0023): kind `correction`. The additions are the data of the dataset, in its own graph;
 the deletions are a SPARQL 1.1 Update file <slug>-deletions.ru.gz that removes triples from every graph that contains
 them. Corrections are applied after all other datasets; among them the order does not matter (no correction adds a
 triple that another deletes).
@@ -10,7 +10,7 @@ The deletions file always has this form (prefixes and comments allowed, only exp
     WHERE {
       VALUES (?s ?p ?o) {
         # why
-        (<http://data.judaicalink.org/data/bhr/X> owl:sameAs <http://example.org/page>)
+        (<https://id.confref.org/data/dblp/X> owl:sameAs <http://example.org/page>)
       }
       GRAPH ?g { ?s ?p ?o }
     }
@@ -52,11 +52,11 @@ class DeletionsParser(rdf.TurtleParser):
     def word(self, w):
         k, v = self.next_token()
         if k != "word" or v.upper() != w:
-            self.error(f"expected {w}, found {v!r} (decision 0023: one fixed form)")
+            self.error(f"expected {w}, found {v!r} (kg-commons 0023: one fixed form)")
 
     def var(self, name):
         if self.next_token() != ("var", "?" + name):
-            self.error(f"expected ?{name} (decision 0023: one fixed form)")
+            self.error(f"expected ?{name} (kg-commons 0023: one fixed form)")
 
     def pattern(self):
         self.expect("{")
@@ -89,7 +89,7 @@ class DeletionsParser(rdf.TurtleParser):
             o = self.term(self.next_token(), "object")
             self.expect(")")
             if isinstance(s, BNode) or isinstance(o, BNode):
-                self.error("blank nodes cannot be deleted (decision 0023)")
+                self.error("blank nodes cannot be deleted (kg-commons 0023)")
             yield (s, p, o)
         self.expect("}")
         self.word("GRAPH")
@@ -99,7 +99,7 @@ class DeletionsParser(rdf.TurtleParser):
         if self.peek()[1] == ";":
             self.next_token()
         if self.peek()[0] != "eof":
-            self.error(f"unexpected {self.peek()[1]!r} after the operation (decision 0023: one operation)")
+            self.error(f"unexpected {self.peek()[1]!r} after the operation (kg-commons 0023: one operation)")
 
 
 def read(path):

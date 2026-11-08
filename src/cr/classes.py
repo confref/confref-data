@@ -1,4 +1,4 @@
-"""The classes of the entities in our data (the common layer, judaicalink-ontology).
+"""The classes of the entities in our data (the common layer, the ontology of the project).
 
 Generators write PERSON, ORGANISATION, PLACE, WORK, SUBJECT; readers use kind(), which also knows the deprecated
 cr:Place, cr:Work, cr:Subject (and cr:Person, never defined).

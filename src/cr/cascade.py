@@ -1,4 +1,4 @@
-"""The cascade of the authority datasets as a worklist (decision 0029): which records each authority dataset holds.
+"""The cascade of the authority datasets as a worklist (kg-commons 0029): which records each authority dataset holds.
 
 The selection starts from the seeds: every identifier of an authority source that our record datasets name (every
 statement, cr.identifiers.selects) and our linksets that are not made from the authority datasets (2014links,
@@ -25,7 +25,7 @@ An authority dataset takes part with a module generators/<slug>/lookup.py that d
         def write(self, out, selection): ...  # optional: what the generator needs besides the selection
 
 Identifiers are normalised as cr.identifiers does (identify). The links a Lookup gives are filtered here by the
-declaration of its dataset; links to our own records (source judaicalink) are not followed.
+declaration of its dataset; links to our own records (source: the project name) are not followed.
 """
 
 import csv

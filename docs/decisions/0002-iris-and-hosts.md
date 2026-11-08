@@ -4,13 +4,13 @@ Status: accepted · Date: 2026-11-08
 
 ## Context
 
-The domain confref.org is fully under our control (registered until 2027-05-18). JudaicaLink showed that a host of
-its own for the IRIs pays off: data.judaicalink.org could be handed to Frankfurt without touching the website; it
-also showed that paths left out of such a handover stop resolving.
+The domain confref.org is fully under our control (registered until 2027-05-18). A host of its
+own for the IRIs can be handed over to another operator without touching the website; paths left out of such a
+handover stop resolving.
 
 ## Decision
 
-- **Every IRI we coin is on `https://id.confref.org/`** (https), with the paths of judaicalink-data decision 0018
+- **Every IRI we coin is on `https://id.confref.org/`** (https), with the paths of kg-commons 0018
   below it:
 
   | What | IRI |

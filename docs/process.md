@@ -1,6 +1,6 @@
 # Process: from development to the catalogue and the dumps locations
 
-As in judaicalink-data (`docs/process.md` there), with the confref names. Short version:
+The process of the framework (kg-commons 0018, 0021), with the confref names:
 
 1. **Inputs** that are not published (archives, harvests, files from partners) go to the inputs area
    (`../lokal/inputs/<source>/<name>/` with `input.toml`): `./cr add-input`, `./cr check-inputs`.
@@ -13,5 +13,5 @@ As in judaicalink-data (`docs/process.md` there), with the confref names. Short 
 4. **Publishing** (dumps on confref.org and labs.confref.org, loading into Fuseki, Zenodo) only after the OK of Kai
    Eckert ([0001](decisions/0001-what-confref-is.md)).
 
-Fixes follow judaicalink-data 0024: a systematic error of a dataset → a new version of it; single findings →
+Fixes follow kg-commons 0024: a systematic error of a dataset → a new version of it; single findings →
 correction datasets; new facts → complements.

@@ -1,4 +1,4 @@
-"""Tests of the normalised dates (decision 0035): python3 -m unittest (repository root)."""
+"""Tests of the normalised dates (kg-commons 0035): python3 -m unittest (repository root)."""
 
 import sys
 import unittest

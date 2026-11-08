@@ -1,4 +1,4 @@
-"""The inputs area (decision 0021): inputs of generators that are not published, kept in one place outside the store.
+"""The inputs area (kg-commons 0021): inputs of generators that are not published, kept in one place outside the store.
 
 <inputs>/<source>/<name>/ is one input: its files (any layout below the folder) and input.toml, which describes it:
 
@@ -154,7 +154,7 @@ def resolve(root, ref, verify=True):
     """An input reference 'inputs:<source>/<name>[/<path>]' as (texts of the input, [{ref, file, sha256, bytes,
     path}]); files are checked against input.toml."""
     if root is None:
-        raise InputError("'inputs' is not configured in local.toml (decision 0021)")
+        raise InputError("'inputs' is not configured in local.toml (kg-commons 0021)")
     name, path = find(root, ref[len("inputs:"):])
     data = load(root, name)
     described = data["files"]

@@ -1,4 +1,4 @@
-"""Running a generator (decision 0018): generators/<slug>/generate.py -> <build>/<slug>/<run-id>/.
+"""Running a generator (kg-commons 0018): generators/<slug>/generate.py -> <build>/<slug>/<run-id>/.
 
 A generator is a Python file with module constants and one function:
 
@@ -13,7 +13,7 @@ Input references:
     "repo:<path>"               a file of this repository (e.g. catalog/agents.toml), fixed by the commit like
                                 the code: uncommitted changes to it are noted, and add-version refuses the run
     "inputs:<source>/<name>[/<path>]"
-                                an input that is not published, in the inputs area (decision 0021): all its files, or
+                                an input that is not published, in the inputs area (kg-commons 0021): all its files, or
                                 one; described by its input.toml (origin, description), whose texts the run record copies
 
 The run object gives the generator its inputs, parameters, a log, the RDF reader and index, and the writers;
@@ -62,7 +62,7 @@ _shared = []   # files of other generator folders that the generator being loade
 
 
 def load_shared(slug, name):
-    """A module of another generator's folder, for datasets that share code (0018: they share code, not runs),
+    """A module of another generator's folder, for datasets that share code (kg-commons 0018: they share code, not runs),
     e.g. load_shared("nli-records", "nli_export"). The file is checked for uncommitted changes like the generator's
     own code and named in the run record."""
     path = GENERATORS / slug / f"{name}.py"
@@ -146,7 +146,7 @@ def resolve(cfg, cat, ref):
             f["input"] = texts
         return files
     if not isinstance(ref, str):
-        raise GeneratorError(f"input {ref!r}: give a reference string (decision 0021: files made outside are in the "
+        raise GeneratorError(f"input {ref!r}: give a reference string (kg-commons 0021: files made outside are in the "
                              "inputs area, 'inputs:<source>/<name>')")
     slug, _, rest = ref.partition("/")
     head, _, path = rest.partition("/")
@@ -204,7 +204,7 @@ class Run:
         self._logf = logf
         self.notes = []
         self.written = {}   # path -> {triples}
-        self.deleted = deleted   # keys of the triples deleted by the stable corrections (decision 0023)
+        self.deleted = deleted   # keys of the triples deleted by the stable corrections (kg-commons 0023)
         self.deleted_from = {}   # input name -> number of statements left out
 
     def log(self, *msg):
@@ -276,7 +276,7 @@ class Run:
         return info
 
     def write_deletions(self, rel, blocks, prefixes=None):
-        """The deletions file of a correction dataset (decision 0023): blocks [(comment lines, triples)]."""
+        """The deletions file of a correction dataset (kg-commons 0023): blocks [(comment lines, triples)]."""
         if not rel.endswith(corrections.SUFFIX):
             raise GeneratorError(f"a deletions file is named <slug>{corrections.SUFFIX}: {rel}")
         info = corrections.write(self.path(rel), blocks, prefixes)

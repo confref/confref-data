@@ -1,9 +1,9 @@
-"""Rendering the -meta file of a version (decision 0018).
+"""Rendering the -meta file of a version (kg-commons 0018).
 
 The -meta is rendered from the catalogue entry, the run record of the version and statistics measured on its
 files; generators never write it. It describes the dataset and the version, but no catalogue state that moves
 (stable, replaced_by, the maintainer, contributors): moving the stable pointer rewrites no -meta. It names no
-dumps location (0014) and names persons only by IRI (agents registry).
+dumps location (kg-commons 0014) and names persons only by IRI (agents registry).
 
 Two parts: the content, and the provenance of the metadata itself (all triples about the rendering activity:
 time, framework commit). A -meta file is only rewritten when its content changed.
@@ -17,7 +17,7 @@ from .agents import software_iri
 from .rdf import RDF_TYPE, XSD, IRI, Literal, nt_line, read_triples
 from .turtle import PREFIXES, Namespace
 
-JL = project.BASE   # our IRIs (judaicalink-data: http://data.judaicalink.org/)
+JL = project.BASE   # our IRIs
 REPO = project.REPOSITORY
 LANDING_PAGE = project.LANDING_PAGE
 FINDER = project.FINDER
@@ -56,7 +56,7 @@ def meta_path(slug):
 
 
 def header(slug, version, meta=False):
-    """The header comments of a file of a version (0018)."""
+    """The header comments of a file of a version (kg-commons 0018)."""
     return [f"{project.TITLE} dataset {slug}, version {version}" + (": metadata" if meta else ""),
             f"{version_iri(slug, version)}" + (f" (graph {meta_graph(slug)})" if meta else "")]
 
@@ -85,7 +85,7 @@ def media_type(path):
     return None
 
 
-# predicates that say a subject is no longer current: replaced, merged, split, retired or deprecated (0022, 0029)
+# predicates that say a subject is no longer current: replaced, merged, split, retired or deprecated (kg-commons 0022, 0029)
 NOT_CURRENT = {f"<{x}>" for x in (PREFIXES["dcterms"] + "isReplacedBy", project.ONTOLOGY + "mergedInto",
                                   project.ONTOLOGY + "splitInto", project.ONTOLOGY + "retiredDate",
                                   PREFIXES["owl"] + "deprecated")}
@@ -153,14 +153,14 @@ def render(entry, version, files, record, stats, registry):
         v = d.get(field)
         for x in [v] if isinstance(v, str) else v if isinstance(v, list) else []:
             t.append((D, DCTERMS.type, IRI(vocabulary.value_iri(field, x))))
-    if set(d.get("method") or []) & vocabulary.automated():   # derived flag (0018)
+    if set(d.get("method") or []) & vocabulary.automated():   # derived flag (kg-commons 0018)
         t.append((D, DCTERMS.type, IRI(vocabulary.value_iri("method", vocabulary.AUTOMATED))))
     lic = d.get("license") or {}
     if is_url(lic.get("uri")):
         t.append((D, DCTERMS.license, IRI(lic["uri"])))
-    if lic.get("attribution"):   # the credit the licence asks for (0013)
+    if lic.get("attribution"):   # the credit the licence asks for (kg-commons 0013)
         t.append((D, CC.attributionName, Literal(lic["attribution"])))
-    if is_url(lic.get("statement")):   # where the source states the licence (0013)
+    if is_url(lic.get("statement")):   # where the source states the licence (kg-commons 0013)
         t.append((D, DCTERMS.rights, IRI(lic["statement"])))
     if is_url(d.get("website")):
         t.append((D, DCTERMS.source, IRI(d["website"])))
@@ -259,7 +259,7 @@ def render(entry, version, files, record, stats, registry):
                 t += [(G, PROV.used, file_iri(s, v, p)), (V, PROV.wasDerivedFrom, version_iri(s, v))]
             elif isinstance(ref, str) and ref.startswith("inputs:"):
                 pass   # described once per input below
-            elif isinstance(ref, dict):   # the form of 0018, before the inputs area (0021)
+            elif isinstance(ref, dict):   # the form of kg-commons 0018, before the inputs area (kg-commons 0021)
                 if is_url(ref.get("origin")):
                     t.append((G, PROV.used, IRI(ref["origin"])))
         for name, d in sorted((record.get("input_descriptions") or {}).items()):
@@ -283,7 +283,7 @@ def provenance(slug, vid, commit, now, dirty=()):
          (M, PROV.wasAssociatedWith, IRI(software_iri(FRAMEWORK))),
          (M, PROV.endedAtTime, datetime(now)),
          (M, RDFS.comment, Literal("Rendered by the framework from the catalogue entry, the run record of the "
-                                   "version and statistics measured on its files (decision 0018)."))]
+                                   "version and statistics measured on its files (kg-commons 0018)."))]
     if commit:
         t.append((M, PROV.used, IRI(f"{REPO}/tree/{commit}")))
     return t

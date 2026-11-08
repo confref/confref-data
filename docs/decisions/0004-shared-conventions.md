@@ -1,18 +1,18 @@
-# 0004 The conventions of judaicalink-data apply
+# 0004 The shared conventions of kg-commons apply
 
 Status: accepted · Date: 2026-11-08
 
 ## Context
 
 With the framework ([0003](0003-repository-and-framework.md)) come the conventions it was built for. Deviating only for
-a good reason keeps both projects consistent.
+a good reason keeps the projects consistent.
 
 ## Decision
 
-These decisions of judaicalink-data (<https://github.com/judaicalink/judaicalink-data/tree/main/docs/decisions>)
-apply to confref as written there, with our names (confref-data, `cr`, `id.confref.org`):
+These decisions of kg-commons apply to confref as written there, with our names (confref-data, `cr`,
+`id.confref.org`):
 
-| judaicalink-data | Subject |
+| kg-commons | Subject |
 |---|---|
 | 0006 | one file = one named graph = dataset IRI; `-meta` files with provenance |
 | 0007, 0024 | prefer complementary datasets; fix by new versions, corrections or complements, never by editing published files |
@@ -31,10 +31,9 @@ apply to confref as written there, with our names (confref-data, `cr`, `id.confr
 | 0033 | withdrawn datasets |
 | 0035 | normalised dates: `xsd:date`/`gYearMonth`/`gYear`, else EDTF |
 
-Not taken over (about JudaicaLink's history, hosts or sources): 0001–0005, 0010, 0015, 0020, 0025–0027, 0031,
-0034, 0036, 0039.
+Not applicable (about the dumps and sources of another project; cited in the copied code only): 0015, 0031.
 
 ## Consequences
 
-A change of one of these conventions for confref is a decision here, and a deviation in
-[`../judaicalink-deviations.md`](../judaicalink-deviations.md).
+A change of one of these conventions for confref is a decision here, and a deviation recorded in kg-commons
+(`projects/confref.md`).

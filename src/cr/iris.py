@@ -3,7 +3,7 @@
 The same thing can be written in several forms (http or https, with or without a final slash, the address of the
 description document instead of the thing). canonical(iri) gives the one form we write; it changes only the
 spelling of an identifier, never which identifier it is (deprecated identifiers are data: dcterms:isReplacedBy,
-owl:deprecated, decision 0029). Generators write external IRIs through canonical(); every run reports the IRIs of
+owl:deprecated, kg-commons 0029). Generators write external IRIs through canonical(); every run reports the IRIs of
 its output that are not in canonical form (Run.write_turtle, cr generate).
 """
 
@@ -89,7 +89,7 @@ def canonical_triples(triples):
 
 # vocabularies we do not write, with the namespace to use instead (docs/iri-forms.md); a run that writes one fails
 NOT_USED = [
-    ("http://purl.org/dc/elements/1.1/", "http://purl.org/dc/terms/", "DC Elements: dcterms: only (decision 0030)"),
+    ("http://purl.org/dc/elements/1.1/", "http://purl.org/dc/terms/", "DC Elements: dcterms: only (kg-commons 0030)"),
 ]
 
 

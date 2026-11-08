@@ -1,4 +1,4 @@
-# The measured quality of the identity links per dataset, property and target source (judaicalink-data decision
+# The measured quality of the identity links per dataset, property and target source (kg-commons
 # 0032). A unit joins records (linksets, identifiers) if accuracy >= 0.95 and, when only a sample was checked, the
 # lower bound of its 95% interval >= 0.90; below, it is linked but joins nothing. Units not measured join. Made from
 # the verdicts of the report named in each entry.

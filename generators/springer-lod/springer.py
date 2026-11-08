@@ -2,7 +2,7 @@
 writing them true to the source (decision 0010).
 
 True to the source means: every triple as Springer published it, with two changes that apply to every dataset
-(judaicalink-data 0030 and docs/iri-forms.md there): Dublin Core elements become dcterms (the dataset descriptions use
+(kg-commons 0030): Dublin Core elements become dcterms (the dataset descriptions use
 dc:creator, dc:date, …), and IRIs of known sources are written in their canonical form (GND: https). Known oddities of
 the source stay (see the READMEs).
 """

@@ -1,4 +1,4 @@
-"""Runs in the build area and the run records of versions (decision 0018).
+"""Runs in the build area and the run records of versions (kg-commons 0018).
 
 A run is <build>/<slug>/<run-id>/ with the output files, run.json (the run record) and log.txt; the run id
 is "run-" and a UTC timestamp. When a run becomes a version, its run record is copied to

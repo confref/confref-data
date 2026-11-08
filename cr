@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""cr: the generator framework of judaicalink-data (decision 0018). Run ./cr --help for the commands."""
+"""cr: the generator framework (kg-commons 0018). Run ./cr --help for the commands."""
 
 import sys
 from pathlib import Path

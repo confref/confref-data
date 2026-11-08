@@ -1,6 +1,6 @@
-"""The agents registry catalog/agents.toml (decision 0018).
+"""The agents registry catalog/agents.toml (kg-commons 0018).
 
-Persons are numbered in sequence (never reused) and named only in the dataset judaicalink-agents; everything
+Persons are numbered in sequence (never reused) and named only in the agents dataset of the project; everything
 else (the -meta files) names them by IRI. Software agents keep descriptive names.
 """
 
@@ -63,7 +63,7 @@ class Registry:
         for n, t in self.persons.items():
             if t.get("name") == name:
                 return n
-        raise AgentError(f"'{name}' is not in {self.path.name} (decision 0018: add the person with the next number)")
+        raise AgentError(f"'{name}' is not in {self.path.name} (kg-commons 0018: add the person with the next number)")
 
     def person(self, name):
         return person_iri(self.number(name))

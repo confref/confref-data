@@ -1,4 +1,4 @@
-"""The authority datasets and how they select their records (decision 0029, the cascade).
+"""The authority datasets and how they select their records (kg-commons 0029, the cascade).
 
 An authority dataset (gnd, lc, geonames, wikidata, viaf) holds the records of one source that our datasets link to:
 the record datasets and the other authority datasets (linking_inputs). It lists them in <slug>-selection.tsv.gz
@@ -15,18 +15,18 @@ datasets, never for its own (a GND record that names another GND record does not
 import gzip
 from collections import defaultdict
 
-from . import catalog, corrections, generator, identifiers, rdf, runs
+from . import catalog, corrections, generator, identifiers, project, rdf, runs
 
 # authority dataset -> its source (cr.identifiers)
 SOURCE = {"gnd": ("gnd",), "lc": ("lc-names",), "geonames": ("geonames",), "wikidata": ("wikidata",),
-          "viaf": ("viaf",), "dbpedia": ("wikipedia-en", "wikipedia-de")}   # dbpedia: one source per language (0031)
+          "viaf": ("viaf",), "dbpedia": ("wikipedia-en", "wikipedia-de")}   # dbpedia: one source per language (kg-commons 0031)
 DATASET = {src: slug for slug, srcs in SOURCE.items() for src in srcs}
 # datasets whose links never select records: made from the others (ep, quality-annotations), without links to records
 # of a source, or replaced (gnd-persons); and our linksets to the authority datasets, which only link what these
-# already have (also the judged linksets, decision 0037)
+# already have (also the judged linksets, kg-commons 0037)
 NOT_LINKING = {"gnd-persons", "gnd-persons-entityfacts", "ep", "compact-memory", "compact-memory-supp", "cm-ocr-quality",
-               "cm-tagme", "corrections-links", "quality-annotations", "judaicalink-agents", "judaicalink-vocabulary",
-               "judaicalink-terms", "ontology", "ls-footprints-viaf"} | {"ls-" + s for s in SOURCE}
+               "cm-tagme", "corrections-links", "quality-annotations", "ontology", "ls-footprints-viaf"} | \
+              {f"{project.NAME}-{s}" for s in ("agents", "vocabulary", "terms")} | {"ls-" + s for s in SOURCE}
 SELECTION = "{}-selection.tsv.gz"
 EXAMPLES = 5
 

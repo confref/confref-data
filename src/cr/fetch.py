@@ -1,4 +1,4 @@
-"""HTTP requests of the framework and the generators: JudaicaLink identifies itself consistently (decision 0028).
+"""HTTP requests of the framework and the generators: the project identifies itself consistently (kg-commons 0028).
 
 Every request sends USER_AGENT, unless a source needs another one: a generator passes user_agent=, or local.toml
 names one per host (not committed, so a string given to us by a source stays private):

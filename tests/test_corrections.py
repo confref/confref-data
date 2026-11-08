@@ -1,4 +1,4 @@
-"""Correction datasets (decision 0023): the fixed form of the deletions file; inputs read without deleted triples."""
+"""Correction datasets (kg-commons 0023): the fixed form of the deletions file; inputs read without deleted triples."""
 
 import gzip
 import io

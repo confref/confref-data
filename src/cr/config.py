@@ -2,7 +2,7 @@
 
 local.toml names where the data is on this machine; the template is local.example.toml. Paths in it are
 relative to the repository root. Nothing in it is ever written into a catalogue entry, run record or -meta
-file (decision 0018: no local paths in what is published).
+file (kg-commons 0018: no local paths in what is published).
 """
 
 import tomllib

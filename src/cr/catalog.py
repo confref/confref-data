@@ -1,5 +1,5 @@
-"""The catalogue: reading the entries, derived values, the check, and collecting the store (decisions 0013,
-0014, 0015, 0018, 0019).
+"""The catalogue: reading the entries, derived values, the check, and collecting the store (kg-commons 0013,
+kg-commons 0014, 0015, 0018, 0019).
 
 An entry is catalog/<slug>.md, TOML front matter between +++ lines and a Markdown body. Values that the
 tooling derives (replaced_by, used_by, contributors, the status of a version) are never stored in entries.
@@ -21,8 +21,8 @@ SLUG = re.compile(r"^[a-z0-9][a-z0-9.-]*$")
 ISO_DATE = re.compile(r"^\d{4}-\d{2}-\d{2}")
 FRONT_MATTER = re.compile(r"^﻿?\+\+\+[ \t]*\r?\n(.*?)\r?\n\+\+\+[ \t]*(?:\r?\n|$)", re.S)
 
-RESERVED_SLUGS = {"agents"}                # datasets/agents/… holds the agents (0018)
-RESERVED_VERSIONS = {"meta", "current"}    # datasets/<slug>/meta, <slug>/current (0018)
+RESERVED_SLUGS = {"agents"}                # datasets/agents/… holds the agents (kg-commons 0018)
+RESERVED_VERSIONS = {"meta", "current"}    # datasets/<slug>/meta, <slug>/current (kg-commons 0018)
 
 
 # --- reading -------------------------------------------------------------------------------------
@@ -97,7 +97,7 @@ class Entry:
         return "\n\n".join(p.strip() for p in text.split("<!--more-->") if p.strip())
 
     def contributors(self):
-        """Everyone named as author of a version or a changelog entry (0013), sorted by name."""
+        """Everyone named as author of a version or a changelog entry (kg-commons 0013), sorted by name."""
         names = set()
         for v in self.versions():
             names.update(as_list(v.get("author")))
@@ -274,12 +274,12 @@ DATASET = {
     "files": (lambda v: True, ""), "versions": (lambda v: True, ""),
     "changelog": (lambda v: True, ""),
     "identity": (lambda v: isinstance(v, dict) and all(is_str_list(x) for x in v.values()),
-                 "a table: property -> list of sources (decision 0032)"),
-    "several_per_entity": TEXT,   # why several records of the dataset may belong to one entity (0032)
+                 "a table: property -> list of sources (kg-commons 0032)"),
+    "several_per_entity": TEXT,   # why several records of the dataset may belong to one entity (kg-commons 0032)
 }
 REQUIRED = ("slug", "title", "author", "license")
-PRUNING = "0041"   # the decision a changelog entry refers to when it records a pruned version
-# pictures of an entry (decision 0040): files in catalog/pictures/<slug>/, small images the sites copy
+PRUNING = "kg-commons 0041"   # the decision a changelog entry refers to when it records a pruned version
+# pictures of an entry (kg-commons 0040): files in catalog/pictures/<slug>/, small images the sites copy
 PICTURE_TYPES = {".png", ".jpg", ".jpeg", ".svg", ".webp"}
 PICTURE_MAX_BYTES = 500_000
 
@@ -299,7 +299,7 @@ def check_entry(r, e, slugs, decisions):
     if isinstance(d.get("slug"), str) and d["slug"] != e.name:
         r.error(where, f"slug '{d['slug']}' differs from the file name '{e.name}'")
     if e.name in RESERVED_SLUGS:
-        r.error(where, f"'{e.name}' is a reserved slug (0018)")
+        r.error(where, f"'{e.name}' is a reserved slug (kg-commons 0018)")
 
     if "license" in d:
         check_table(r, f"{where} license", d["license"], LICENSE, ("name",))
@@ -307,7 +307,7 @@ def check_entry(r, e, slugs, decisions):
     if isinstance(pic, str):
         path = e.path.parent / pic
         if not pic.startswith(f"pictures/{e.name}/") or ".." in pic.split("/"):
-            r.error(where, f"picture: a file in pictures/{e.name}/, relative to catalog/ (decision 0040)")
+            r.error(where, f"picture: a file in pictures/{e.name}/, relative to catalog/ (kg-commons 0040)")
         elif not path.is_file():
             r.error(where, f"picture: {pic} does not exist")
         elif path.suffix.lower() not in PICTURE_TYPES:
@@ -344,7 +344,7 @@ def check_entry(r, e, slugs, decisions):
                 if vid in ids:
                     r.error(vwhere, "version id is not unique")
                 if vid in RESERVED_VERSIONS:
-                    r.error(vwhere, f"'{vid}' is a reserved version id (0018)")
+                    r.error(vwhere, f"'{vid}' is a reserved version id (kg-commons 0018)")
                 ids.append(vid)
             issued = as_date(v.get("issued"))
             if issued and previous and issued > previous:
@@ -385,7 +385,7 @@ def check_entry(r, e, slugs, decisions):
     # changelog
     if "changelog" in d:
         entries = check_list_of_tables(r, f"{where} changelog", d["changelog"], CHANGE, ("date", "text"))
-        # pruned versions (0041) leave the versions; the changelog entry of their pruning refers to 0041
+        # pruned versions (kg-commons 0041) leave the versions; the changelog entry of their pruning refers to kg-commons 0041
         pruned = {c.get("version") for c in entries if PRUNING in (c.get("refs") or [])}
         for i, c in enumerate(entries, 1):
             if isinstance(c.get("version"), str) and c["version"] not in ids and c["version"] not in pruned:
@@ -430,7 +430,7 @@ def check_local_files(r, e, dumps, complete=False):
 
 
 def check_corrections(r, e, dumps):
-    """Deletions files (decision 0023) only in correction datasets, in the fixed form (read from a local copy)."""
+    """Deletions files (kg-commons 0023) only in correction datasets, in the fixed form (read from a local copy)."""
     from . import corrections
     for v in e.versions():
         for f in v.get("files", []):
@@ -438,7 +438,7 @@ def check_corrections(r, e, dumps):
                 continue
             where = f"{e.path.name} {e.name}/{v.get('version')}/{f['path']}"
             if e.data.get("kind") != corrections.KIND:
-                r.error(where, f"a deletions file in a dataset of kind {e.data.get('kind')!r} (only kind 'correction', 0023)")
+                r.error(where, f"a deletions file in a dataset of kind {e.data.get('kind')!r} (only kind 'correction', kg-commons 0023)")
                 continue
             for root in dumps:
                 local = root / e.name / str(v.get("version")) / f["path"]
@@ -446,12 +446,12 @@ def check_corrections(r, e, dumps):
                     try:
                         corrections.read(local)
                     except corrections.ParseError as err:
-                        r.error(where, f"not in the form of decision 0023: {err}")
+                        r.error(where, f"not in the form of kg-commons 0023: {err}")
 
 
 def check_version_inputs(r, cat):
     """Every version that a version's run record names (input, applied correction) is in the catalogue: a version that a
-    later one was made from is not removed (0018), unless it was pruned (0041): then its changelog names it."""
+    later one was made from is not removed (kg-commons 0018), unless it was pruned (kg-commons 0041): then its changelog names it."""
     from . import runs, versions
     for e in cat.entries.values():
         for v in e.versions():
@@ -464,7 +464,7 @@ def check_version_inputs(r, cat):
 
 
 def check_vocabulary(r, cat):
-    """kind and method use the values of catalog/vocabulary.toml (0013, 0018)."""
+    """kind and method use the values of catalog/vocabulary.toml (kg-commons 0013, 0018)."""
     from . import vocabulary
     try:
         allowed = {f: vocabulary.values(f) for f in vocabulary.FIELDS}
@@ -480,7 +480,7 @@ def check_vocabulary(r, cat):
 
 
 def check_agents(r, cat, registry):
-    """Every name in the catalogue is in the agents registry (0018)."""
+    """Every name in the catalogue is in the agents registry (kg-commons 0018)."""
     for err in registry.errors:
         r.error(registry.path.name, err)
     for name, slugs in cat.names().items():
@@ -491,7 +491,7 @@ def check_agents(r, cat, registry):
 
 
 def check(catalog=CATALOG, dumps=(), complete=False, out=print, registry=None):
-    """Check all entries (format of 0013, reserved names of 0018), the agents registry; with dumps, the local
+    """Check all entries (format of kg-commons 0013, reserved names of kg-commons 0018), the agents registry; with dumps, the local
     copies. Returns (entries, errors, warnings)."""
     from .agents import Registry
     registry = registry or Registry()

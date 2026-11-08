@@ -15,8 +15,8 @@ Random IDs would need a lookup for collisions and break deterministic generation
   IRIs: `https://id.confref.org/series/<id>`, `…/event/<id>` ([0002](0002-iris-and-hosts.md)).
 - **One counter for all types**, starting at 32⁴, so that IDs have five characters (plus type and check) up to about
   32 million, and the number alone never means two things.
-- **Minted only by the generator of the identifier set `ids`**, like the entity pages of JudaicaLink
-  (judaicalink-data 0022): the highest number of the previous set + 1 (kept in the run record), new entities numbered
+- **Minted only by the generator of the identifier set `ids`**, like the entity pages of the framework
+  (kg-commons 0022): the highest number of the previous set + 1 (kept in the run record), new entities numbered
   in a stable order (sorted by their smallest source record IRI), so runs are deterministic. Every ID ever issued,
   retired ones included, stays in the set (merged, split, withdrawn, with a date) and is checked against as a
   safeguard. No ID is ever reused.

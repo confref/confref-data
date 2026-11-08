@@ -1,4 +1,4 @@
-"""RDF terms, N-Triples terms and a reader for Turtle and N-Triples files (decision 0018).
+"""RDF terms, N-Triples terms and a reader for Turtle and N-Triples files (kg-commons 0018).
 
 The framework reads RDF itself, with the standard library: QLever normalises literal values when it indexes
 (xsd:integer becomes xsd:int, xsd:float is rounded to a decimal, dateTime loses its microseconds, WKT points

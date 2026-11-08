@@ -384,7 +384,7 @@ if __name__ == "__main__":
 
 class RemoveGuards(unittest.TestCase):
     """remove-version refuses stable versions, asks for --latest on the latest one, and never touches anything
-    when it refuses (decision 0018)."""
+    when it refuses (kg-commons 0018)."""
 
     def entry(self, stable):
         from cr import catalog

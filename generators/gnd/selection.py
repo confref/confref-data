@@ -3,7 +3,7 @@
 Seeds: every GND IRI in the stable versions of springer-lod (hasGNDID), dblp and wikidata (as IRI), and every GND
 number of wikidata as a literal (P227, the GND ID). One step further (follow): the records that a selected record
 names as its place (gndo:placeOfConferenceOrEvent) or as a related conference or event (preceding, succeeding,
-hierarchically superior). This is not the full cascade of judaicalink-data (0029); that comes with the identity
+hierarchically superior). This is not the full cascade of the framework (kg-commons 0029); that comes with the identity
 layer.
 """
 
