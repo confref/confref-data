@@ -1,0 +1,208 @@
+# The domain tables of confref (src/cr/domain.py, deviation X8 in kg-commons): the sources and the forms of their
+# IRIs, the identifiers in our data, the authority datasets, the classes, the tables of the link quality check.
+# Terms are prefixed names (cr.turtle.PREFIXES and [prefixes] below) or full IRIs.
+
+identity = []   # further properties by which an authority record names itself elsewhere (owl:sameAs, skos:exactMatch
+                # and the literal properties below always count)
+
+not_linking = ["ontology"]   # datasets whose links never select records of the authority datasets
+
+[prefixes]
+wdt = "http://www.wikidata.org/prop/direct/"
+wdtn = "http://www.wikidata.org/prop/direct-normalized/"
+dblp = "https://dblp.org/rdf/schema#"
+spr = "http://lod.springer.com/data/ontology/property/"
+sprc = "http://lod.springer.com/data/ontology/class/"
+cf = "https://id.confref.org/data/confident/vocab/"
+portal = "https://id.confref.org/data/confref-portal/vocab/"
+
+# ---------------------------------------------------------------------------------------------------------------------
+# IRI forms: the canonical form of each identifier IRI (cr.iris). Pages that only name an identifier are aliases below.
+
+[[form]]
+name = "gnd"
+pattern = '^https?://d-nb\.info/gnd/([0-9]+[0-9X-]*)(?:/about(?:/[a-z]+)?)?/?$'
+flags = "i"
+canonical = "https://d-nb.info/gnd/{0}"
+statement = "the GND Linked Data Service dumps (data.dnb.de/opendata)"
+
+[[form]]
+name = "wikidata"
+pattern = '^https?://(?:www\.)?wikidata\.org/entity/([QPL][0-9]+)$'
+canonical = "http://www.wikidata.org/entity/{0}"
+statement = "the concept URIs of the Wikidata RDF dumps"
+
+[[form]]
+name = "dblp-venue"
+pattern = '^https?://(?:dblp\.org|dblp\.uni-trier\.de|dblp2\.uni-trier\.de|dblp\.dagstuhl\.de)/streams/((?:conf|journals|series)/[^/#?]+)/?$'
+canonical = "https://dblp.org/streams/{0}"
+statement = "the dblp RDF (streams: conference series, journals, book series)"
+
+[[form]]
+name = "dblp-event"
+pattern = '^https?://(?:dblp\.org|dblp\.uni-trier\.de|dblp2\.uni-trier\.de|dblp\.dagstuhl\.de)/db/((?:conf|journals|series)/[^/#?]+/(?!index(?:\.html)?$)[^/#?]+?)(?:\.html)?$'
+canonical = "https://dblp.org/db/{0}"
+statement = "the dblp RDF (dblp:listedOnTocPage): the table of contents of an event, whose key is the dblp event ID (Wikidata P10692)"
+
+[[form]]
+name = "dblp-rec"
+pattern = '^https?://(?:dblp\.org|dblp\.uni-trier\.de)/rec/((?:conf|journals|series|books|reference)/[^?#]+?)(?:\.html|\.rdf|\.nt|\.ttl|\.bib|\.xml)?$'
+canonical = "https://dblp.org/rec/{0}"
+statement = "the dblp RDF (publications, among them the proceedings)"
+
+[[form]]
+name = "doi"
+pattern = '^https?://(?:dx\.)?doi\.org/(10\.[0-9]{4,}(?:\.[0-9]+)*/.+)$'
+canonical = "https://doi.org/{0}"
+statement = "DOI Handbook 3.7.3: the https://doi.org/ form for display and linking"
+
+[[form]]
+name = "ror"
+pattern = '^https?://(?:www\.)?ror\.org/(0[a-z0-9]{6}[0-9]{2})/?$'
+canonical = "https://ror.org/{0}"
+statement = "ROR (ror.org): the ROR ID is the full URL"
+
+[[form]]
+name = "viaf"
+pattern = '^https?://(?:www\.)?viaf\.org/viaf/([0-9]+)/?$'
+canonical = "https://viaf.org/viaf/{0}"
+statement = "VIAF, viaf.org/en/viaf/data: 'The canonical structure of a VIAF URI'"
+
+[[form]]
+name = "geonames"
+pattern = '^https?://(?:sws\.|www\.)?geonames\.org/([0-9]+)(?:/|/about\.rdf)?$'
+canonical = "https://sws.geonames.org/{0}/"
+statement = "GeoNames RDF (rdf:about of sws.geonames.org/<id>/about.rdf)"
+
+[[form]]
+name = "lc-names"
+pattern = '^https?://id\.loc\.gov/authorities/names/([a-z]+[0-9]+)(?:\.html|\.rdf|\.json)?$'
+canonical = "http://id.loc.gov/authorities/names/{0}"
+statement = "the LC Name Authority File dumps (id.loc.gov/download)"
+
+[[form]]
+name = "lc-rwo"
+pattern = '^https?://id\.loc\.gov/rwo/agents/([a-z]+[0-9]+)(?:\.html|\.rdf|\.json)?$'
+canonical = "http://id.loc.gov/rwo/agents/{0}"
+statement = "the LC dumps: the Real World Object of a name authority (in the GND records)"
+
+[[vocabulary]]
+old = "http://d-nb.info/standards/elementset/gnd#"
+new = "https://d-nb.info/standards/elementset/gnd#"
+statement = "the GND ontology"
+
+[[vocabulary]]
+old = "http://www.geonames.org/ontology#"
+new = "https://www.geonames.org/ontology#"
+statement = "the GeoNames ontology"
+
+# the pages of a dblp venue (springer-lod, confref-portal, Wikidata P973): they name the venue, but dblp uses them as
+# pages of their own (dblp:indexPage), so they are not rewritten
+[[alias]]
+source = "dblp-venue"
+pattern = '^https?://(?:dblp\.org|dblp\.uni-trier\.de|dblp2\.uni-trier\.de|dblp\.dagstuhl\.de)/db/((?:conf|journals|series)/[^/#?]+)(?:/|/index(?:\.html)?)?$'
+
+# ---------------------------------------------------------------------------------------------------------------------
+# Sources an identity declaration can name (and the project itself): the syntax of a literal identifier, the form in
+# which identifiers are compared
+
+[source.gnd]
+normal = "upper"
+syntax = '^[0-9]+[0-9X-]*$'
+flags = "i"
+[source.wikidata]
+syntax = '^Q[0-9]+$'
+[source.dblp-venue]
+syntax = '^(?:conf|journals|series)/[^/\s]+$'
+[source.dblp-event]
+syntax = '^(?:conf|journals|series)/[^/\s]+/[^/\s]+$'
+[source.dblp-rec]
+syntax = '^(?:conf|journals|series|books|reference)/\S+$'
+[source.doi]
+normal = "upper"   # DOIs are case-insensitive
+syntax = '^10\.[0-9]{4,}(?:\.[0-9]+)*/\S+$'
+[source.ror]
+syntax = '^0[a-z0-9]{6}[0-9]{2}$'
+[source.wikicfp-series]
+syntax = '^[0-9]+$'
+[source.wikicfp-event]
+syntax = '^[0-9]+$'
+[source.viaf]
+[source.geonames]
+[source.lc-names]
+
+[same_identifier]
+lc-rwo = "lc-names"
+
+# properties whose literal value is an identifier
+[literal_properties]
+"http://d-nb.info/standards/elementset/gnd#gndIdentifier" = "gnd"
+"https://d-nb.info/standards/elementset/gnd#gndIdentifier" = "gnd"
+"wdt:P227" = "gnd"
+"wdt:P214" = "viaf"
+"wdt:P8926" = "dblp-venue"
+"wdt:P10692" = "dblp-event"
+"wdt:P8978" = "dblp-rec"
+"wdt:P356" = "doi"
+"wdt:P6782" = "ror"
+"wdt:P5124" = "wikicfp-event"
+"wdt:P5127" = "wikicfp-series"
+"spr:bookDOI" = "doi"
+"cf:DOI" = "doi"
+"cf:DBLP_Series_ID" = { source = "dblp-venue", prefix = "conf/" }   # ConfIDent gives the key without "conf/"
+"cf:DBLP_Event_ID" = "dblp-event"
+"cf:Wikidata_Series_ID" = "wikidata"
+"cf:Wikidata_Organization_ID" = "wikidata"
+"cf:WikiCFP_Series_ID" = "wikicfp-series"
+"cf:ROR_ID" = "ror"
+
+# ---------------------------------------------------------------------------------------------------------------------
+# Authority datasets (cr.authorities): the records of a source selected by what our datasets name
+
+[authorities]
+gnd = ["gnd"]
+
+# ---------------------------------------------------------------------------------------------------------------------
+# Classes (cr.classes): the kind of each class of our data and of the sources (decision 0013); kinds that cannot be one
+# thing. Wikidata items have no rdf:type (their classes are wdt:P31 values).
+
+[classes.kind]
+"cr:Series" = "Series"
+"cr:Event" = "Event"
+"sprc:ConferenceSeries" = "Series"
+"sprc:Conference" = "Event"
+"sprc:Book" = "Proceedings"
+"sprc:ProceedingsVolume" = "Proceedings"
+"portal:Series" = "Series"
+"portal:Conference" = "Event"
+"dblp:Conference" = "Series"
+"dblp:Editorship" = "Proceedings"
+"dblp:Series" = "PublicationSeries"
+"dblp:Journal" = "PublicationSeries"
+"cf:Category_Event_Series" = "Series"
+"cf:Category_Event" = "Event"
+"cf:Category_Organization" = "Organization"
+"gndo:SeriesOfConferenceOrEvent" = "Series"
+"gndo:ConferenceOrEvent" = "Event"
+"gndo:CorporateBody" = "Organization"
+"gndo:TerritorialCorporateBodyOrAdministrativeUnit" = "Place"
+"gndo:PlaceOrGeographicName" = "Place"
+"gndo:Country" = "Place"
+"gndo:MemberState" = "Place"
+"gndo:NaturalGeographicUnit" = "Place"
+"gndo:AdministrativeUnit" = "Place"
+"foaf:Organization" = "Organization"
+"schema:Place" = "Place"
+
+[classes]
+contradicting = [["Series", "Event"], ["Series", "Proceedings"], ["Event", "Proceedings"],
+                 ["Event", "PublicationSeries"], ["Proceedings", "PublicationSeries"],
+                 ["Series", "Place"], ["Event", "Place"], ["Proceedings", "Place"],
+                 ["Event", "Organization"], ["Proceedings", "Organization"]]
+
+# ---------------------------------------------------------------------------------------------------------------------
+# Link quality (cr.linkquality): set up with the identity declarations and linksets (phase 3, step 2)
+
+[linkquality]
+labels = ["skos:prefLabel", "rdfs:label", "schema:name", "dcterms:title",
+          "gndo:preferredNameForTheConferenceOrEvent", "cf:Title"]

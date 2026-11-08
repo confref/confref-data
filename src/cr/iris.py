@@ -1,4 +1,4 @@
-"""Canonical forms of the IRIs we link to and of coordinates (docs/iri-forms.md).
+"""Canonical forms of the IRIs we link to and of coordinates (the forms: domain.toml).
 
 The same thing can be written in several forms (http or https, with or without a final slash, the address of the
 description document instead of the thing). canonical(iri) gives the one form we write; it changes only the
@@ -9,30 +9,14 @@ its output that are not in canonical form (Run.write_turtle, cr generate).
 
 import re
 
-from . import project
+from . import domain, project
 
-# (name, pattern of the variants, the canonical form, where the source states it)
+# (name, pattern of the variants, the canonical form, where the source states it): our own IRIs, then the forms of the
+# sources of the project (domain.toml)
 FORMS = [
     (project.NAME, re.compile(r"^https?://" + re.escape(project.BASE.split("://", 1)[1]) + "(.+)$"),
      project.BASE + "{0}", "our own IRIs (decision 0002)"),
-    ("gnd", re.compile(r"^https?://d-nb\.info/gnd/([0-9]+[0-9X-]*)(?:/about(?:/[a-z]+)?)?/?$", re.I),
-     "https://d-nb.info/gnd/{0}", "the GND Linked Data Service dumps (data.dnb.de/opendata)"),
-    ("viaf", re.compile(r"^https?://(?:www\.)?viaf\.org/viaf/([0-9]+)/?$"),
-     "https://viaf.org/viaf/{0}", "VIAF, viaf.org/en/viaf/data: 'The canonical structure of a VIAF URI'"),
-    ("wikidata", re.compile(r"^https?://(?:www\.)?wikidata\.org/entity/([QPL][0-9]+)$"),
-     "http://www.wikidata.org/entity/{0}", "the concept URIs of the Wikidata RDF dumps"),
-    ("geonames", re.compile(r"^https?://(?:sws\.|www\.)?geonames\.org/([0-9]+)(?:/|/about\.rdf)?$"),
-     "https://sws.geonames.org/{0}/", "GeoNames RDF (rdf:about of sws.geonames.org/<id>/about.rdf)"),
-    ("lc-names", re.compile(r"^https?://id\.loc\.gov/authorities/names/([a-z]+[0-9]+)(?:\.html|\.rdf|\.json)?$"),
-     "http://id.loc.gov/authorities/names/{0}", "the LC Name Authority File dumps (id.loc.gov/download)"),
-    ("lc-rwo", re.compile(r"^https?://id\.loc\.gov/rwo/agents/([a-z]+[0-9]+)(?:\.html|\.rdf|\.json)?$"),
-     "http://id.loc.gov/rwo/agents/{0}", "the LC dumps: the Real World Object (the person) of a name authority"),
-    ("isni", re.compile(r"^https?://(?:www\.)?isni\.org/(?:isni/)?([0-9]{15}[0-9X])$"),
-     "https://isni.org/isni/{0}", "ISNI (isni.org)"),
-    ("dbpedia", re.compile(r"^https?://dbpedia\.org/resource/(.+)$"),
-     "http://dbpedia.org/resource/{0}", "the DBpedia resource IRIs"),
-    ("tgn", re.compile(r"^https?://vocab\.getty\.edu/tgn/([0-9]+)(?:-place)?$"),
-     "http://vocab.getty.edu/tgn/{0}", "the Getty vocabularies (vocab.getty.edu)"),
+    *domain.FORMS,
 ]
 
 
@@ -55,11 +39,7 @@ def canonical_wkt(value):
 
 
 # vocabulary namespaces in the form their publisher uses (old prefix, canonical prefix, where the publisher states it)
-VOCABULARIES = [
-    ("http://d-nb.info/standards/elementset/gnd#", "https://d-nb.info/standards/elementset/gnd#", "the GND ontology"),
-    ("http://www.geonames.org/ontology#", "https://www.geonames.org/ontology#", "the GeoNames ontology"),
-    ("http://www.loc.gov/standards/mads/rdf/v1#", "http://www.loc.gov/mads/rdf/v1#", "MADS/RDF"),
-]
+VOCABULARIES = domain.VOCABULARIES
 
 
 def canonical(iri):
@@ -87,7 +67,7 @@ def canonical_triples(triples):
         yield (s if isinstance(s, BNode) else IRI(canonical(s))), IRI(canonical(p)), o
 
 
-# vocabularies we do not write, with the namespace to use instead (docs/iri-forms.md); a run that writes one fails
+# vocabularies we do not write, with the namespace to use instead; a run that writes one fails
 NOT_USED = [
     ("http://purl.org/dc/elements/1.1/", "http://purl.org/dc/terms/", "DC Elements: dcterms: only (kg-commons 0030)"),
 ]

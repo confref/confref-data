@@ -11,37 +11,27 @@ import re
 from collections import defaultdict
 from urllib.parse import unquote
 
-from . import iris, project
+from . import domain, iris, project
 from .rdf import BNode, Literal
 
 JL = project.DATA   # records we coin
-# our records that are the identifier of a source
-AUTHORITY_NAMESPACES = [("gnd", re.compile(re.escape(JL) + r"gnd/([0-9]+[0-9X-]*)$")),
-                        ("geonames", re.compile(re.escape(JL) + r"geonames/([0-9]+)$")),
-                        ("lc-names", re.compile(re.escape(JL) + r"lc/([a-z]+[0-9]+)$")),
-                        ("wikidata", re.compile(re.escape(JL) + r"wikidata/(Q[0-9]+)$")),
-                        ("viaf", re.compile(re.escape(JL) + r"viaf/([0-9]+)$")),
-                        ("wikipedia-en", re.compile(re.escape(JL) + r"dbpedia/en/(.+)$")),   # kg-commons 0031
-                        ("wikipedia-de", re.compile(re.escape(JL) + r"dbpedia/de/(.+)$"))]
-# properties whose literal value is an identifier
-LITERAL_PROPERTIES = {"http://d-nb.info/standards/elementset/gnd#gndIdentifier": "gnd",
-                      "https://d-nb.info/standards/elementset/gnd#gndIdentifier": "gnd"}
-# IRI forms that name the same identifier (the LC Real World Object is the person of the authority record)
-SAME_IDENTIFIER = {"lc-rwo": "lc-names"}
-SYNTAX = {"gnd": re.compile(r"[0-9]+[0-9X-]*$", re.I)}
+# the tables of the project (domain.toml): our records that are the identifier of a source, properties whose literal
+# value is an identifier, IRI forms that name the identifiers of another source, the syntax of literal identifiers
+AUTHORITY_NAMESPACES = domain.NAMESPACES
+LITERAL_PROPERTIES = domain.LITERAL_PROPERTIES
+SAME_IDENTIFIER = domain.SAME_IDENTIFIER
+SYNTAX = domain.SYNTAX
 # the authority datasets (cr.authorities) and the statements by which a record of one names itself in another source
-AUTHORITY_DATASETS = {"gnd", "lc", "geonames", "wikidata", "viaf", "dbpedia"}
+AUTHORITY_DATASETS = set(domain.AUTHORITIES)
 WDTN = "http://www.wikidata.org/prop/direct-normalized/"
 IDENTITY = {"http://www.w3.org/2002/07/owl#sameAs", "http://www.w3.org/2004/02/skos/core#exactMatch",
-            "http://www.loc.gov/mads/rdf/v1#hasExactExternalAuthority", *LITERAL_PROPERTIES,
-            WDTN + "P227", WDTN + "P214", WDTN + "P244", WDTN + "P1566"}
+            *LITERAL_PROPERTIES, *domain.IDENTITY}
 
 
 # the sources an identity declaration can name (catalogue field "identity")
-SOURCES = {"gnd", "viaf", "wikidata", "geonames", "lc-names", "isni", "tgn", "wikipedia-en", "wikipedia-de",
-           project.NAME}   # links between our own records (not in an authority namespace)
+SOURCES = set(domain.SOURCES) | {project.NAME}   # project.NAME: links between our own records (no authority namespace)
 # prefixes of the declarations beyond cr.turtle.PREFIXES
-DECLARATION_PREFIXES = {"madsrdf": "http://www.loc.gov/mads/rdf/v1#", "wdtn": WDTN}
+DECLARATION_PREFIXES = domain.PREFIXES
 _declared = {}
 
 
@@ -114,9 +104,12 @@ def selects(slug, predicate, source=None):
 
 
 def normal(source, identifier):
-    if source.startswith("wikipedia-"):
+    """The identifier in the form we compare it: as the domain says for its source ("upper", "wiki-title"), else
+    stripped."""
+    how = domain.NORMAL.get(source, "strip")
+    if how == "wiki-title":
         return wiki_title(identifier.strip())
-    return identifier.strip().upper() if source == "gnd" else identifier.strip()
+    return identifier.strip().upper() if how == "upper" else identifier.strip()
 
 
 # characters of a title that an IRI path cannot hold as they are (our records data/dbpedia/<lang>/<title>, kg-commons 0031)
@@ -126,7 +119,7 @@ _TITLE_ESCAPE = re.compile(r'[\x00-\x20<>"{}|\\^`?#%]')
 def iri_part(source, identifier):
     """The identifier as the last part of the IRI of our record of it (data/<namespace>/<part>): a Wikipedia title
     escaped (title_iri_part), the others as they are."""
-    return title_iri_part(identifier) if source.startswith("wikipedia-") else identifier
+    return title_iri_part(identifier) if domain.NORMAL.get(source) == "wiki-title" else identifier
 
 
 def title_iri_part(title):
@@ -134,9 +127,9 @@ def title_iri_part(title):
     return _TITLE_ESCAPE.sub(lambda m: "%{:02X}".format(ord(m.group(0))), title.replace(" ", "_"))
 
 
-# Wikipedia and DBpedia: one source per language (kg-commons 0031); the article and the resource are one identifier
-WIKI = [("wikipedia-en", re.compile(r"^https?://(?:en\.(?:m\.)?wikipedia\.org/wiki/|dbpedia\.org/resource/)(.+)$")),
-        ("wikipedia-de", re.compile(r"^https?://(?:de\.(?:m\.)?wikipedia\.org/wiki/|de\.dbpedia\.org/resource/)(.+)$"))]
+# IRIs that name the identifiers of a source without a canonical form of their own (domain.toml, e.g. Wikipedia
+# articles and DBpedia resources, one source per language, kg-commons 0031)
+WIKI = domain.ALIASES
 
 
 def wiki_title(t):
@@ -147,8 +140,9 @@ def identify(term, predicate=None):
     """(source, identifier) or None."""
     if isinstance(term, Literal):
         source = LITERAL_PROPERTIES.get(predicate)
-        if source and SYNTAX[source].match(term.value.strip()):
-            return source, normal(source, term.value)
+        value = domain.LITERAL_PREFIX.get(predicate, "") + term.value.strip() if source else ""
+        if source and term.value.strip() and (source not in SYNTAX or SYNTAX[source].match(value)):
+            return source, normal(source, value)
         return None
     if not isinstance(term, str) or isinstance(term, BNode):
         return None
@@ -161,7 +155,7 @@ def identify(term, predicate=None):
         if m:
             return name, wiki_title(m.group(1))
     for name, pattern, _form, _src in iris.FORMS:
-        if name in (project.NAME, "dbpedia"):
+        if name == project.NAME or name in domain.NOT_IDENTIFYING:
             continue
         m = pattern.match(term)
         if m:

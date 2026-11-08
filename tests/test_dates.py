@@ -1,10 +1,12 @@
 """Tests of the normalised dates (kg-commons 0035): python3 -m unittest (repository root)."""
 
+import os
 import sys
 import unittest
 from pathlib import Path
 
 sys.path.insert(0, str(Path(__file__).resolve().parents[1] / "src"))
+os.environ.setdefault("CR_DOMAIN", str(Path(__file__).resolve().parent / "domain.toml"))   # cr.domain
 
 from cr.dates import EDTF, normalised  # noqa: E402
 from cr.rdf import XSD  # noqa: E402

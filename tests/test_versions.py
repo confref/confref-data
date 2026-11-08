@@ -3,6 +3,7 @@ python3 -m unittest discover -s tests."""
 
 import gzip
 import json
+import os
 import sys
 import tempfile
 import tomllib
@@ -11,6 +12,7 @@ from pathlib import Path
 from unittest import mock
 
 sys.path.insert(0, str(Path(__file__).resolve().parents[1] / "src"))
+os.environ.setdefault("CR_DOMAIN", str(Path(__file__).resolve().parent / "domain.toml"))   # cr.domain
 
 from cr import agents, authorities, catalog, config, generator, meta, rdf, runs, versions  # noqa: E402
 

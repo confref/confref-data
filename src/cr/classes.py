@@ -1,25 +1,14 @@
 """The classes of the entities in our data (the common layer, the ontology of the project).
 
-Generators write PERSON, ORGANISATION, PLACE, WORK, SUBJECT; readers use kind(), which also knows the deprecated
-cr:Place, cr:Work, cr:Subject (and cr:Person, never defined).
+The classes and their kinds come from domain.toml; readers use kind(), which also knows the deprecated classes and
+the classes that replace them.
 """
 
-from . import project
-from .turtle import PREFIXES
+from . import domain
 
-FOAF, SCHEMA, SKOS = (PREFIXES[p] for p in ("foaf", "schema", "skos"))
-JL = project.ONTOLOGY
-
-PERSON = FOAF + "Person"
-ORGANISATION = FOAF + "Organization"
-PLACE = SCHEMA + "Place"
-WORK = SCHEMA + "CreativeWork"
-SUBJECT = SKOS + "Concept"
-
-# deprecated classes and what replaces them (cr:Person was never defined; rujen used it)
-DEPRECATED = {JL + "Place": PLACE, JL + "Work": WORK, JL + "Subject": SUBJECT, JL + "Person": PERSON}
-
-KIND = {PERSON: "Person", ORGANISATION: "Organization", PLACE: "Place", WORK: "Work", SUBJECT: "Subject"}
+KIND = domain.KINDS                    # class -> kind (e.g. Person, Place, Series, Event)
+CLASS = {k: c for c, k in KIND.items()}   # kind -> the class to write
+DEPRECATED = domain.DEPRECATED_CLASSES   # deprecated class -> the class that replaces it
 
 
 def current(cls):
@@ -28,5 +17,5 @@ def current(cls):
 
 
 def kind(cls):
-    """Person, Organization, Place, Work, Subject or None, for the current and the deprecated classes."""
+    """The kind of a class, for the current and the deprecated classes; None for other classes."""
     return KIND.get(current(cls))

@@ -16,6 +16,7 @@ consolidation ([decision 0003](docs/decisions/0003-repository-and-framework.md))
 | `catalog/` | one entry per dataset (`<slug>.md`, format of kg-commons 0013), `agents.toml`, `vocabulary.toml`, `locations.toml`, `link-quality.toml` |
 | `generators/` | one folder per dataset: its generator, README, run records |
 | `project.toml` | the project: base IRI, names, User-Agent, own ontology (deviation X1) |
+| `domain.toml` | the sources and the forms of their IRIs, identifier properties, authority datasets, classes (deviation X8; the tests use `tests/domain.toml`) |
 | `cr`, `src/cr/` | the framework and its command line: `./cr --help` |
 | `tests/` | `python3 -m unittest discover -s tests` |
 

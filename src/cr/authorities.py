@@ -1,6 +1,6 @@
 """The authority datasets and how they select their records (kg-commons 0029, the cascade).
 
-An authority dataset (gnd, lc, geonames, wikidata, viaf) holds the records of one source that our datasets link to:
+An authority dataset (domain.toml, e.g. gnd) holds the records of one source that our datasets link to:
 the record datasets and the other authority datasets (linking_inputs). It lists them in <slug>-selection.tsv.gz
 (first column: the identifier, as linked). After every run of an authority dataset the framework lists the
 identifiers of the other sources that the run names and that their datasets do not have yet (new_links, in the run
@@ -15,18 +15,16 @@ datasets, never for its own (a GND record that names another GND record does not
 import gzip
 from collections import defaultdict
 
-from . import catalog, corrections, generator, identifiers, project, rdf, runs
+from . import catalog, corrections, domain, generator, identifiers, project, rdf, runs
 
-# authority dataset -> its source (cr.identifiers)
-SOURCE = {"gnd": ("gnd",), "lc": ("lc-names",), "geonames": ("geonames",), "wikidata": ("wikidata",),
-          "viaf": ("viaf",), "dbpedia": ("wikipedia-en", "wikipedia-de")}   # dbpedia: one source per language (kg-commons 0031)
+# authority dataset -> its sources (cr.identifiers), from domain.toml
+SOURCE = domain.AUTHORITIES
 DATASET = {src: slug for slug, srcs in SOURCE.items() for src in srcs}
-# datasets whose links never select records: made from the others (ep, quality-annotations), without links to records
-# of a source, or replaced (gnd-persons); and our linksets to the authority datasets, which only link what these
-# already have (also the judged linksets, kg-commons 0037)
-NOT_LINKING = {"gnd-persons", "gnd-persons-entityfacts", "ep", "compact-memory", "compact-memory-supp", "cm-ocr-quality",
-               "cm-tagme", "corrections-links", "quality-annotations", "ontology", "ls-footprints-viaf"} | \
-              {f"{project.NAME}-{s}" for s in ("agents", "vocabulary", "terms")} | {"ls-" + s for s in SOURCE}
+# datasets whose links never select records: made from the others, without links to records of a source, or replaced
+# (domain.toml); the datasets of the project itself (agents, vocabulary, terms); and our linksets to the authority
+# datasets, which only link what these already have (also the judged linksets, kg-commons 0037)
+NOT_LINKING = domain.NOT_LINKING | {f"{project.NAME}-{s}" for s in ("agents", "vocabulary", "terms")} | \
+              {"ls-" + s for s in SOURCE}
 SELECTION = "{}-selection.tsv.gz"
 EXAMPLES = 5
 

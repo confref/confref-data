@@ -17,7 +17,7 @@ before) and listed in the log for review.
 
 from collections import Counter, defaultdict
 
-from . import classes, identifiers, project
+from . import classes, domain, identifiers, project
 from .rdf import RDF_TYPE, BNode, IRI, Literal
 from .turtle import PREFIXES
 
@@ -32,11 +32,11 @@ IDENTITY = identifiers.IDENTITY
 
 # kinds that cannot be the same thing (an organisation can be a place, e.g. a city, or a person's firm, e.g. a printer)
 HUB = 3   # records of one dataset on one target from which the target is listed as a hub
-CONTRADICTING = {frozenset({"Person", "Work"}), frozenset({"Person", "Place"}), frozenset({"Work", "Place"})}
+CONTRADICTING = domain.CONTRADICTING   # domain.toml
 
 
 def kinds(run, names, prefix=identifiers.JL):
-    """{record: {Person, Place, Work, Organization, Subject}} from the rdf:type statements of the inputs."""
+    """{record: {kinds}} (cr.classes) from the rdf:type statements of the inputs."""
     out = defaultdict(set)
     for name in names:
         for s, p, o in run.triples(name):

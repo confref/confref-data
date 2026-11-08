@@ -1,0 +1,185 @@
+# The domain tables the tests were written for (the framework's tables as copied; cr.domain, CR_DOMAIN). The tests of
+# the framework read this file, not the project's domain.toml, so that they do not depend on the project.
+
+identity = ["madsrdf:hasExactExternalAuthority", "wdtn:P227", "wdtn:P214", "wdtn:P244", "wdtn:P1566"]
+
+not_linking = ["gnd-persons", "gnd-persons-entityfacts", "ep", "compact-memory", "compact-memory-supp",
+               "cm-ocr-quality", "cm-tagme", "corrections-links", "quality-annotations", "ontology",
+               "ls-footprints-viaf"]
+
+[prefixes]
+madsrdf = "http://www.loc.gov/mads/rdf/v1#"
+wdtn = "http://www.wikidata.org/prop/direct-normalized/"
+
+[[form]]
+name = "gnd"
+pattern = '^https?://d-nb\.info/gnd/([0-9]+[0-9X-]*)(?:/about(?:/[a-z]+)?)?/?$'
+flags = "i"
+canonical = "https://d-nb.info/gnd/{0}"
+statement = "the GND Linked Data Service dumps (data.dnb.de/opendata)"
+
+[[form]]
+name = "viaf"
+pattern = '^https?://(?:www\.)?viaf\.org/viaf/([0-9]+)/?$'
+canonical = "https://viaf.org/viaf/{0}"
+statement = "VIAF, viaf.org/en/viaf/data: 'The canonical structure of a VIAF URI'"
+
+[[form]]
+name = "wikidata"
+pattern = '^https?://(?:www\.)?wikidata\.org/entity/([QPL][0-9]+)$'
+canonical = "http://www.wikidata.org/entity/{0}"
+statement = "the concept URIs of the Wikidata RDF dumps"
+
+[[form]]
+name = "geonames"
+pattern = '^https?://(?:sws\.|www\.)?geonames\.org/([0-9]+)(?:/|/about\.rdf)?$'
+canonical = "https://sws.geonames.org/{0}/"
+statement = "GeoNames RDF (rdf:about of sws.geonames.org/<id>/about.rdf)"
+
+[[form]]
+name = "lc-names"
+pattern = '^https?://id\.loc\.gov/authorities/names/([a-z]+[0-9]+)(?:\.html|\.rdf|\.json)?$'
+canonical = "http://id.loc.gov/authorities/names/{0}"
+statement = "the LC Name Authority File dumps (id.loc.gov/download)"
+
+[[form]]
+name = "lc-rwo"
+pattern = '^https?://id\.loc\.gov/rwo/agents/([a-z]+[0-9]+)(?:\.html|\.rdf|\.json)?$'
+canonical = "http://id.loc.gov/rwo/agents/{0}"
+statement = "the LC dumps: the Real World Object (the person) of a name authority"
+
+[[form]]
+name = "isni"
+pattern = '^https?://(?:www\.)?isni\.org/(?:isni/)?([0-9]{15}[0-9X])$'
+canonical = "https://isni.org/isni/{0}"
+statement = "ISNI (isni.org)"
+
+[[form]]
+name = "dbpedia"
+pattern = '^https?://dbpedia\.org/resource/(.+)$'
+canonical = "http://dbpedia.org/resource/{0}"
+statement = "the DBpedia resource IRIs"
+identify = false
+
+[[form]]
+name = "tgn"
+pattern = '^https?://vocab\.getty\.edu/tgn/([0-9]+)(?:-place)?$'
+canonical = "http://vocab.getty.edu/tgn/{0}"
+statement = "the Getty vocabularies (vocab.getty.edu)"
+
+[[vocabulary]]
+old = "http://d-nb.info/standards/elementset/gnd#"
+new = "https://d-nb.info/standards/elementset/gnd#"
+statement = "the GND ontology"
+
+[[vocabulary]]
+old = "http://www.geonames.org/ontology#"
+new = "https://www.geonames.org/ontology#"
+statement = "the GeoNames ontology"
+
+[[vocabulary]]
+old = "http://www.loc.gov/standards/mads/rdf/v1#"
+new = "http://www.loc.gov/mads/rdf/v1#"
+statement = "MADS/RDF"
+
+[source.gnd]
+normal = "upper"
+syntax = '[0-9]+[0-9X-]*$'
+flags = "i"
+[source.viaf]
+[source.wikidata]
+[source.geonames]
+[source.lc-names]
+[source.isni]
+[source.tgn]
+[source.wikipedia-en]
+normal = "wiki-title"
+[source.wikipedia-de]
+normal = "wiki-title"
+
+[[namespace]]
+source = "gnd"
+pattern = 'gnd/([0-9]+[0-9X-]*)'
+[[namespace]]
+source = "geonames"
+pattern = 'geonames/([0-9]+)'
+[[namespace]]
+source = "lc-names"
+pattern = 'lc/([a-z]+[0-9]+)'
+[[namespace]]
+source = "wikidata"
+pattern = 'wikidata/(Q[0-9]+)'
+[[namespace]]
+source = "viaf"
+pattern = 'viaf/([0-9]+)'
+[[namespace]]
+source = "wikipedia-en"
+pattern = 'dbpedia/en/(.+)'
+[[namespace]]
+source = "wikipedia-de"
+pattern = 'dbpedia/de/(.+)'
+
+[[alias]]
+source = "wikipedia-en"
+pattern = '^https?://(?:en\.(?:m\.)?wikipedia\.org/wiki/|dbpedia\.org/resource/)(.+)$'
+[[alias]]
+source = "wikipedia-de"
+pattern = '^https?://(?:de\.(?:m\.)?wikipedia\.org/wiki/|de\.dbpedia\.org/resource/)(.+)$'
+
+[literal_properties]
+"http://d-nb.info/standards/elementset/gnd#gndIdentifier" = "gnd"
+"https://d-nb.info/standards/elementset/gnd#gndIdentifier" = "gnd"
+
+[same_identifier]
+lc-rwo = "lc-names"
+
+[authorities]
+gnd = ["gnd"]
+lc = ["lc-names"]
+geonames = ["geonames"]
+wikidata = ["wikidata"]
+viaf = ["viaf"]
+dbpedia = ["wikipedia-en", "wikipedia-de"]
+
+[classes.kind]
+"foaf:Person" = "Person"
+"foaf:Organization" = "Organization"
+"schema:Place" = "Place"
+"schema:CreativeWork" = "Work"
+"skos:Concept" = "Subject"
+
+[classes.deprecated]
+"cr:Place" = "schema:Place"
+"cr:Work" = "schema:CreativeWork"
+"cr:Subject" = "skos:Concept"
+"cr:Person" = "foaf:Person"
+
+[classes]
+contradicting = [["Person", "Work"], ["Person", "Place"], ["Work", "Place"]]
+
+[linkquality]
+candidates = ["foaf:isPrimaryTopicOf", "foaf:page"]
+labels = ["skos:prefLabel", "foaf:name", "rdfs:label", "dcterms:title", "http://purl.org/dc/elements/1.1/title",
+          "gndo:preferredNameForThePerson", "madsrdf:authoritativeLabel"]
+max = { label = 4, alt = 4, about = 1, occupation = 3, page = 2, instanceOf = 3 }
+
+[linkquality.facts]
+"cr:birthDate" = "birth"
+"cr:deathDate" = "death"
+"cr:birthLocation" = "birthplace"
+"cr:deathLocation" = "deathplace"
+"cr:occupation" = "occupation"
+"gndo:biographicalOrHistoricalInformation" = "about"
+"cr:hasAbstract" = "about"
+"cr:describedAt" = "page"
+"skos:altLabel" = "alt"
+"gn:featureCode" = "featureCode"
+"gn:countryCode" = "country"
+"http://www.wikidata.org/prop/direct/P31" = "instanceOf"
+
+[linkquality.target]
+gnd = { slug = "gnd", namespace = "gnd/" }
+lc-names = { slug = "lc", namespace = "lc/" }
+viaf = { slug = "viaf", namespace = "viaf/" }
+wikidata = { slug = "wikidata", namespace = "wikidata/" }
+geonames = { slug = "geonames", namespace = "geonames/" }

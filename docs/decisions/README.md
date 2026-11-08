@@ -20,3 +20,4 @@ decision, consequences. Short is better than complete.
 | [0012](0012-logo-of-the-portal.md) | The logo is the "cr" mark of portal.confref.org, redrawn as SVG | accepted | 2026-11-08 |
 | [0013](0013-series-and-events.md) | Series and events: the model (series, events, proceedings; in series and held at, both many-to-many) | accepted | 2026-11-08 |
 | [0014](0014-landing-pages-iris-ontology.md) | Landing pages; the IRI scheme and the ontology are published | accepted | 2026-11-08 |
+| [0015](0015-site-and-dumps-on-bart.md) | The website (`www.confref.org`, `confref.org` redirects) and the dumps (`archive.confref.org`) on bart until the VMs exist | accepted | 2026-11-08 |

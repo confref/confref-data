@@ -1,8 +1,9 @@
 # Open issues
 
-- **Domain tables of the framework are still those of the copied original** (authorities, identifier sources and
-  forms, classes): replace with confref's sources in phase 3 (consolidation register in kg-commons,
-  `projects/confref.md`).
+- **Link quality for confref:** the `[linkquality]` tables of `domain.toml` and the evidence for record datasets as
+  targets (dblp, Wikidata, ConfIDent) come with the identity declarations (phase 3, step 2).
+- **Data errors found in Wikidata** (rejected by the syntax of `domain.toml`): P8926 `streams/conf/cibb` (2), a URL as
+  P8926 (1), P10692 `conf/bncod` (a venue key, not an event).
 - **ConfIDent:** regular updates of `confident` to stay in sync (frequency open); later a process for following
   their curation (deletions, merges) and for reporting disagreements to them (decision 0011).
 - **Governance of the identifiers** (who keeps them, what happens if confref ends): a decision before publishing; asked

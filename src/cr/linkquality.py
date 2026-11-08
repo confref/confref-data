@@ -18,24 +18,19 @@ import re
 from collections import defaultdict
 from pathlib import Path
 
-from . import authorities, catalog, corrections, generator, identifiers, project, rdf
+from . import authorities, catalog, corrections, domain, generator, identifiers, project, rdf
 from .turtle import PREFIXES
 
 JL = project.DATA
-FOAF, SKOS, RDFS, JLO = PREFIXES["foaf"], PREFIXES["skos"], PREFIXES["rdfs"], project.ONTOLOGY
-CANDIDATES = identifiers.IDENTITY | {FOAF + "isPrimaryTopicOf", FOAF + "page"}
-LABELS = {SKOS + "prefLabel", FOAF + "name", RDFS + "label", "http://purl.org/dc/terms/title",
-          "http://purl.org/dc/elements/1.1/title", "https://d-nb.info/standards/elementset/gnd#preferredNameForThePerson",
-          "http://www.loc.gov/mads/rdf/v1#authoritativeLabel"}
-FACTS = {JLO + "birthDate": "birth", JLO + "deathDate": "death", JLO + "birthLocation": "birthplace",
-         JLO + "deathLocation": "deathplace", JLO + "occupation": "occupation",
-         "https://d-nb.info/standards/elementset/gnd#biographicalOrHistoricalInformation": "about",
-         JLO + "hasAbstract": "about", JLO + "describedAt": "page", SKOS + "altLabel": "alt",
-         "https://www.geonames.org/ontology#featureCode": "featureCode", "https://www.geonames.org/ontology#countryCode": "country",
-         "http://www.wikidata.org/prop/direct/P31": "instanceOf"}
-NS = {"gnd": "gnd/", "lc-names": "lc/", "viaf": "viaf/", "wikidata": "wikidata/", "geonames": "geonames/"}
-AUTH_SLUG = {"gnd": "gnd", "lc-names": "lc", "viaf": "viaf", "wikidata": "wikidata", "geonames": "geonames"}
-MAX = {"label": 4, "alt": 4, "about": 1, "occupation": 3, "page": 2, "instanceOf": 3}
+FOAF = PREFIXES["foaf"]
+# the tables of the project (domain.toml): further candidate properties (e.g. links to Wikipedia), the labels and facts
+# shown as evidence, the authority datasets that hold the targets (source -> namespace and slug)
+CANDIDATES = identifiers.IDENTITY | domain.QUALITY_CANDIDATES
+LABELS = domain.QUALITY_LABELS
+FACTS = domain.QUALITY_FACTS
+NS = {src: t["namespace"] for src, t in domain.QUALITY_TARGETS.items()}
+AUTH_SLUG = {src: t["slug"] for src, t in domain.QUALITY_TARGETS.items()}
+MAX = domain.QUALITY_MAX
 
 
 def unit_name(slug, prop, source):
@@ -99,7 +94,7 @@ def sample(cfg, out, use=None, size=100, small=150, seed=2026, only=None, log=pr
             if str(p) not in CANDIDATES or not str(s).startswith(JL):
                 continue
             x = identifiers.identify(o, p)
-            if not x or x[0] in own or (x[0] not in NS and not x[0].startswith("wikipedia-")):
+            if not x or x[0] in own or (x[0] not in NS and domain.NORMAL.get(x[0]) != "wiki-title"):
                 continue
             units[(slug, str(p), x[0])].append((str(s), x[1], str(o)))
         log(f"  links of {ref}: {sum(len(v) for k, v in units.items() if k[0] == slug):,}")
@@ -135,7 +130,7 @@ def sample(cfg, out, use=None, size=100, small=150, seed=2026, only=None, log=pr
             if src in auth:
                 cur, _st = auth[src][0].current(ident)
                 want[src] |= {JL + NS[src] + c for c in cur}
-            elif src.startswith("wikipedia-"):
+            elif domain.NORMAL.get(src) == "wiki-title":
                 wiki_titles[src].add(ident)
     wiki_item = {}
     if "wikidata" in auth:
