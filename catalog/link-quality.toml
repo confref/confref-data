@@ -173,3 +173,143 @@ undecidable = 30
 links = 4311
 sample = 100
 report = "docs/reports/2026-11-09-link-quality.md"
+
+[[unit]]
+dataset = "ls-confident-events"
+property = "cr:sameAs"
+source = "dblp-event"
+accuracy = 0.990
+lower = 0.946
+upper = 0.998
+correct = 99
+wrong = 1
+undecidable = 0
+links = 7000
+sample = 100
+report = "docs/reports/2026-11-09-link-quality.md"
+
+[[unit]]
+dataset = "ls-confident-events"
+property = "cr:sameAs"
+source = "wikidata"
+accuracy = 0.990
+lower = 0.946
+upper = 0.998
+correct = 99
+wrong = 1
+undecidable = 0
+links = 1651
+sample = 100
+report = "docs/reports/2026-11-09-link-quality.md"
+
+[[unit]]
+dataset = "ls-confref-portal-events"
+property = "cr:sameAs"
+source = "confident"
+accuracy = 0.990
+lower = 0.946
+upper = 0.998
+correct = 99
+wrong = 1
+undecidable = 0
+links = 4875
+sample = 100
+report = "docs/reports/2026-11-09-link-quality.md"
+
+[[unit]]
+dataset = "ls-confref-portal-events"
+property = "cr:sameAs"
+source = "dblp-event"
+accuracy = 0.990
+lower = 0.946
+upper = 0.998
+correct = 99
+wrong = 1
+undecidable = 0
+links = 31323
+sample = 100
+report = "docs/reports/2026-11-09-link-quality.md"
+
+[[unit]]
+dataset = "ls-confref-portal-events"
+property = "cr:sameAs"
+source = "wikidata"
+accuracy = 0.990
+lower = 0.946
+upper = 0.998
+correct = 99
+wrong = 1
+undecidable = 0
+links = 5668
+sample = 100
+report = "docs/reports/2026-11-09-link-quality.md"
+
+[[unit]]
+dataset = "ls-springer-lod-events"
+property = "cr:sameAs"
+source = "confident"
+accuracy = 1.000
+lower = 0.963
+upper = 1.000
+correct = 100
+wrong = 0
+undecidable = 0
+links = 1204
+sample = 100
+report = "docs/reports/2026-11-09-link-quality.md"
+
+[[unit]]
+dataset = "ls-springer-lod-events"
+property = "cr:sameAs"
+source = "confref-portal"
+accuracy = 1.000
+lower = 0.963
+upper = 1.000
+correct = 100
+wrong = 0
+undecidable = 0
+links = 7680
+sample = 100
+report = "docs/reports/2026-11-09-link-quality.md"
+
+[[unit]]
+dataset = "ls-springer-lod-events"
+property = "cr:sameAs"
+source = "dblp-event"
+accuracy = 1.000
+lower = 0.963
+upper = 1.000
+correct = 100
+wrong = 0
+undecidable = 0
+links = 7343
+sample = 100
+report = "docs/reports/2026-11-09-link-quality.md"
+
+[[unit]]
+dataset = "ls-springer-lod-events"
+property = "cr:sameAs"
+source = "wikidata"
+accuracy = 1.000
+lower = 0.963
+upper = 1.000
+correct = 99
+wrong = 0
+undecidable = 1
+links = 1960
+sample = 100
+report = "docs/reports/2026-11-09-link-quality.md"
+
+[[unit]]
+dataset = "ls-wikidata-events"
+property = "cr:sameAs"
+source = "dblp-event"
+accuracy = 1.000
+lower = 0.963
+upper = 1.000
+correct = 100
+wrong = 0
+undecidable = 0
+links = 6446
+sample = 100
+report = "docs/reports/2026-11-09-link-quality.md"

@@ -30,6 +30,14 @@ COPY_NOTE = ("<!-- Copy of catalog/{slug}.md of " + project.REPOSITORY + " "
              "(cr sync-site); change it there. -->\n")
 
 
+
+def _write(path, text):
+    """Write a file of the site in one step (a temporary file renamed), so that a running Hugo server never reads a
+    file half written."""
+    tmp = path.with_name("." + path.name + ".tmp")
+    tmp.write_text(text, encoding="utf-8")
+    tmp.replace(path)
+
 def locations(path=LOCATIONS):
     data = tomllib.loads(path.read_text(encoding="utf-8"))
     return {"dumps": dict(data.get("dumps", {})), "catalogues": dict(data.get("catalogues", {}))}
@@ -121,7 +129,7 @@ def sync(site, index_path=INDEX, add=(), out=print):
         target = content / f"{slug}.md"
         old = target.read_text(encoding="utf-8") if target.exists() else None
         if old != new:
-            target.write_text(new, encoding="utf-8")
+            _write(target, new)
             out(f"{slug}: {'added' if old is None else 'updated'}")
         # the pictures of the entry (kg-commons 0040), at /catalog/pictures/<slug>/ of the site
         pictures = CATALOG / "pictures" / slug
@@ -138,6 +146,6 @@ def sync(site, index_path=INDEX, add=(), out=print):
     data = site / "data"
     data.mkdir(exist_ok=True)
     vocab = tomllib.loads((CATALOG / "vocabulary.toml").read_text(encoding="utf-8"))
-    (data / "catalogvocabulary.json").write_text(json.dumps(vocab, ensure_ascii=False, indent=1) + "\n", encoding="utf-8")
-    (data / "dataindex.json").write_text(json.dumps(index, ensure_ascii=False) + "\n", encoding="utf-8")
+    _write(data / "catalogvocabulary.json", json.dumps(vocab, ensure_ascii=False, indent=1) + "\n")
+    _write(data / "dataindex.json", json.dumps(index, ensure_ascii=False) + "\n")
     out(f"data/dataindex.json: checked {index['checked']}" + (" (TEST: assumed locations)" if index.get("assumed") else ""))

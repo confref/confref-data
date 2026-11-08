@@ -13,7 +13,7 @@
 3. Matching, per cluster and year, between the events of two sources:
    - only event: each source has one event of the cluster in that year, the cluster has at most one series record
      per source, and nothing contradicts (edition numbers both given and different; start dates more than 3 days
-     apart);
+     apart; one of the two marked as the workshops of a conference by its acronym, "ICCBR-WS 2021", the other not);
    - agreement: otherwise, an event is matched to the one event of the other source that agrees with it (same edition
      number, start dates at most 1 day apart, or the same acronym, with or without its year) and with no other, and
      nothing contradicts.
@@ -261,8 +261,20 @@ def read(run):
     return uf, events
 
 
+WORKSHOPS_ACRONYM = re.compile(r"[\s-]WS(?:\b|[0-9])", re.I)   # ICCBR-WS 2021
+
+
+def workshops(e):
+    """Whether an event is marked as the workshops of a conference by its acronym ("ICCBR-WS 2021"). Not the key of
+    a dblp event (dhandnlp-ws2020 is a workshop series of its own) and not "Workshops" in a name: many events publish
+    "Workshops" proceedings themselves (JSAI-isAI, LWDA, AICOL)."""
+    return e.source != "dblp-event" and bool(WORKSHOPS_ACRONYM.search(e.acronym or ""))
+
+
 def contradicts(a, b):
     if a.number and b.number and a.number != b.number:
+        return True
+    if workshops(a) != workshops(b):   # the workshops of a conference are not the conference
         return True
     return bool(a.start and b.start and abs((a.start - b.start).days) > 3)
 

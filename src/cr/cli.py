@@ -538,6 +538,38 @@ def cmd_add_version(args, cfg):
     return 0
 
 
+def cmd_drop_version(args, cfg):
+    """Drop a version that is replaced by one of the same day (kg-commons 0100): its folder in the store, its entry
+    and changelog entry in the catalogue, its run record. Only for versions not yet published."""
+    import re
+    import shutil
+    slug, vid = split_id(args.id)
+    if not vid:
+        return fail(f"{args.id}: give <slug>/<version>")
+    entry = catalog.CATALOG / f"{slug}.md"
+    if not entry.is_file():
+        return fail(f"no catalogue entry {entry.name}")
+    text = entry.read_text(encoding="utf-8")
+    end = text.index("\n+++", 3)
+    head, rest = text[:end + 1], text[end + 1:]
+    blocks = re.split(r"(?m)^(?=\[\[(?:versions|changelog)\]\]\n)", head)
+    keep = [b for b in blocks if not (b.startswith(("[[versions]]", "[[changelog]]"))
+                                      and re.search(r'(?m)^version = "' + re.escape(vid) + '"$', b))]
+    if len(keep) == len(blocks):
+        return fail(f"{slug}: no version {vid} in the catalogue")
+    folder = cfg.require("store") / slug / vid
+    record = catalog.GENERATORS / slug / "runs" / f"{vid}.json"
+    print(f"{slug}/{vid}: drop {len(blocks) - len(keep)} catalogue blocks, {folder}, {record.name}"
+          + (" (dry run)" if args.dry_run else ""))
+    if not args.dry_run:
+        entry.write_text("".join(keep) + rest, encoding="utf-8")
+        if folder.is_dir():
+            shutil.rmtree(folder)
+        if record.is_file():
+            record.unlink()
+    return 0
+
+
 def cmd_check_authority_links(args, cfg):
     counts, rows = authorities.check_links(cfg, generator.parse_use(args.use))
     if args.tsv:
@@ -785,6 +817,10 @@ def parser():
         (("--meta",), {"action": "store_true", "help": "the -meta files instead of the data files"}),
         (("--all",), {"action": "store_true", "help": "data and -meta files together"}),
         (("--count",), {"action": "store_true", "help": "only count the triples"}), json_out=False)
+    add("drop-version", cmd_drop_version,
+        "drop an unpublished version that a version of the same day replaces (kg-commons 0100)",
+        (("id",), {"metavar": "<slug>/<version>"}),
+        (("--dry-run",), {"action": "store_true", "help": "show what would be dropped"}))
     add("add-version", cmd_add_version, "make a run a version: header comments, -meta, run record, catalogue, store",
         (("ids",), {"metavar": "<slug>/<run-id>", "nargs": "+",
                     "help": "one run, or several that become versions together (runs that read each other)"}),
