@@ -1,0 +1,99 @@
+{
+ "slug": "wikidata",
+ "run": "run-20261108T193259Z",
+ "generator": "generators/wikidata/generate.py",
+ "commit": "cc4d6ff12f9133b526435b06c6e951e3c0ed254a",
+ "uncommitted": [],
+ "python": "3.15.0",
+ "params": {},
+ "input_overrides": [],
+ "started": "2026-11-08T19:32:59Z",
+ "inputs": [
+  {
+   "name": "harvest",
+   "ref": "inputs:wikidata/2026-11-08/wikidata-harvest-2026-11-08/aliases.nt",
+   "file": "aliases.nt",
+   "sha256": "64d51f3c938d7db5ffaa532b023ee3133a575956f5346caa849a5992a3b60f5b",
+   "bytes": 1941419
+  },
+  {
+   "name": "harvest",
+   "ref": "inputs:wikidata/2026-11-08/wikidata-harvest-2026-11-08/aliases.rq",
+   "file": "aliases.rq",
+   "sha256": "d268684cbcc9d750e6d0ea7800a14e0628f64fc6d44f3650b52538f8e4ae900c",
+   "bytes": 584
+  },
+  {
+   "name": "harvest",
+   "ref": "inputs:wikidata/2026-11-08/wikidata-harvest-2026-11-08/descriptions.nt",
+   "file": "descriptions.nt",
+   "sha256": "29458d63cbc831d17a67cf0638588efe203566bc5c933176e71ec810a0aec9e1",
+   "bytes": 2452846
+  },
+  {
+   "name": "harvest",
+   "ref": "inputs:wikidata/2026-11-08/wikidata-harvest-2026-11-08/descriptions.rq",
+   "file": "descriptions.rq",
+   "sha256": "59cf64c3b7a2e82362fe57afe0e3431de0a2335a8466fb643d27e6ea3bab4d85",
+   "bytes": 594
+  },
+  {
+   "name": "harvest",
+   "ref": "inputs:wikidata/2026-11-08/wikidata-harvest-2026-11-08/harvest.json",
+   "file": "harvest.json",
+   "sha256": "9bf65afb90c41f08414f45c6ae9009c9cdd45d903576b3e0bc7e64523a239f9c",
+   "bytes": 715
+  },
+  {
+   "name": "harvest",
+   "ref": "inputs:wikidata/2026-11-08/wikidata-harvest-2026-11-08/labels.nt",
+   "file": "labels.nt",
+   "sha256": "dea1d41d01fa1e14bc2a669285b8e9391d5d606a49b0e8484ffabb60822212af",
+   "bytes": 6455190
+  },
+  {
+   "name": "harvest",
+   "ref": "inputs:wikidata/2026-11-08/wikidata-harvest-2026-11-08/labels.rq",
+   "file": "labels.rq",
+   "sha256": "f553b49f1f77b48378ac83999af370f90f509d0ecce372d557b7f9ac17e76067",
+   "bytes": 578
+  },
+  {
+   "name": "harvest",
+   "ref": "inputs:wikidata/2026-11-08/wikidata-harvest-2026-11-08/statements.nt",
+   "file": "statements.nt",
+   "sha256": "1a3de4223755d49a81314f5708bc93b18f9d29622a1a7b34a20aaf5becee878c",
+   "bytes": 44397543
+  },
+  {
+   "name": "harvest",
+   "ref": "inputs:wikidata/2026-11-08/wikidata-harvest-2026-11-08/statements.rq",
+   "file": "statements.rq",
+   "sha256": "1c200cfaef49a25b0ff90fbda7a2105d8c110ce729317b3b49d4855d33174d04",
+   "bytes": 589
+  }
+ ],
+ "input_descriptions": {
+  "inputs:wikidata/2026-11-08": {
+   "title": "Wikidata: academic conferences, conference series and proceedings (truthy statements, labels, aliases, descriptions)",
+   "origin": "https://qlever.dev/api/wikidata (queried 2026-11-08T19:31:56Z to 19:32:17Z with generators/wikidata/harvest.py; complete Wikidata, dump of 2026-08-10 updated live)",
+   "description": "35,271 items: academic conferences (P31/P279* Q2020153), conference series (Q47258130), items with a conference or series identifier, proceedings of events (P4745); 331,507 truthy statements, labels, aliases and descriptions in en, de and mul. CC0.",
+   "date": "2026-11-08",
+   "note": "Published as the dataset wikidata."
+  }
+ },
+ "status": "ok",
+ "finished": "2026-11-08T19:33:03Z",
+ "seconds": 4.5,
+ "notes": [],
+ "files": [
+  {
+   "path": "wikidata.ttl.gz",
+   "bytes": 2980130,
+   "sha256": "24690ef858082821465685960d248dce39afd46cec406f5a5cafd56c1c5f5422",
+   "triples": 405837
+  }
+ ],
+ "authority_links": {},
+ "version": "2026-11-08"
+}
