@@ -1,0 +1,51 @@
+{
+ "slug": "confref-portal",
+ "run": "run-20261108T231328Z",
+ "generator": "generators/confref-portal/generate.py",
+ "commit": "33bd4ffa4497321479d386b7213e250df5e9a351",
+ "uncommitted": [],
+ "python": "3.15.0",
+ "params": {},
+ "input_overrides": [],
+ "started": "2026-11-08T23:13:28Z",
+ "inputs": [
+  {
+   "name": "api",
+   "ref": "inputs:confref/portal-2020/confref.tgz",
+   "file": "confref.tgz",
+   "sha256": "5ee5541a41e6f0ab179ffd8af99fa270026d72e0e1e73489eece356b6b5c9405",
+   "bytes": 3561419
+  }
+ ],
+ "input_descriptions": {
+  "inputs:confref/portal-2020": {
+   "title": "portal.confref.org: the conferences of the portal API (confref-conferences.json)",
+   "origin": "https://github.com/WolfgangFahl/ConferenceCorpus/wiki/data/confref.tgz (downloaded by Wolfgang Fahl through the portal API on 2020-07-11; files in the archive dated 2021-06-03)",
+   "description": "37,945 events, 5,668 series ids (36,817 events with a series DBLP id); Springer Nature metadata API (2002 on) plus DBLP. The areas and countries files in the archive are HTML 404 pages.",
+   "date": "2020-07-11",
+   "note": "Source of the dataset confref-portal (decision 0010); our own portal's data."
+  }
+ },
+ "status": "ok",
+ "finished": "2026-11-08T23:13:32Z",
+ "seconds": 3.5,
+ "notes": [],
+ "files": [
+  {
+   "path": "confref-portal-vocabulary.ttl.gz",
+   "bytes": 840,
+   "sha256": "c84c707fc68b709c6de9a47602f09100c0b5d7ac43520ef72a32a0aa1cc31247",
+   "triples": 72
+  },
+  {
+   "path": "confref-portal.ttl.gz",
+   "bytes": 3292995,
+   "sha256": "ad0e6b9015d4888e583431bba235adcc3e4ce8fa4858f239cb53b96a6a1e36b7",
+   "triples": 702108,
+   "noncanonical": {
+    "dblp-event": 1
+   }
+  }
+ ],
+ "version": "2026-11-09"
+}
