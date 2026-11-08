@@ -1,0 +1,2413 @@
+{
+ "slug": "confident",
+ "run": "run-20261108T190509Z",
+ "generator": "generators/confident/generate.py",
+ "commit": "a5a5ac72ecf8246f49e492404cd3dcb05cb316d0",
+ "uncommitted": [],
+ "python": "3.15.0",
+ "params": {},
+ "input_overrides": [],
+ "started": "2026-11-08T19:05:09Z",
+ "inputs": [
+  {
+   "name": "harvest",
+   "ref": "inputs:confident/2026-11-08/confident-harvest-2026-11-08/ask/Academic_Field/001.json",
+   "file": "001.json",
+   "sha256": "129479b5da447f46e6cc3ae7d6caf132265780f5aa00b8be424ad10d9ca4e664",
+   "bytes": 519785
+  },
+  {
+   "name": "harvest",
+   "ref": "inputs:confident/2026-11-08/confident-harvest-2026-11-08/ask/Academic_Field/002.json",
+   "file": "002.json",
+   "sha256": "c8d8405edec7d26d49091960015f63f9542b2978b558d2c0519a113d38fc42e6",
+   "bytes": 523663
+  },
+  {
+   "name": "harvest",
+   "ref": "inputs:confident/2026-11-08/confident-harvest-2026-11-08/ask/Academic_Field/003.json",
+   "file": "003.json",
+   "sha256": "de9822054c52c35cc6180a97466602d69c09c5240291bc5bee7170ad984e3956",
+   "bytes": 522061
+  },
+  {
+   "name": "harvest",
+   "ref": "inputs:confident/2026-11-08/confident-harvest-2026-11-08/ask/Academic_Field/004.json",
+   "file": "004.json",
+   "sha256": "59ca6a1b059f768df369158fd4e7b26fc50d5b6f15f2e95a7aabe0c563d2ac65",
+   "bytes": 524982
+  },
+  {
+   "name": "harvest",
+   "ref": "inputs:confident/2026-11-08/confident-harvest-2026-11-08/ask/Academic_Field/005.json",
+   "file": "005.json",
+   "sha256": "8fac9c8178d4a452020e46c73223e4468951a5417442509c9bfcf35487f7c832",
+   "bytes": 521540
+  },
+  {
+   "name": "harvest",
+   "ref": "inputs:confident/2026-11-08/confident-harvest-2026-11-08/ask/Academic_Field/006.json",
+   "file": "006.json",
+   "sha256": "085f6c0e5667d31b92a51e3151e00c209b1339a616f5bcae505a65042ea2334f",
+   "bytes": 520251
+  },
+  {
+   "name": "harvest",
+   "ref": "inputs:confident/2026-11-08/confident-harvest-2026-11-08/ask/Academic_Field/007.json",
+   "file": "007.json",
+   "sha256": "7759e96166db55eddf3147ec7d7bdf4ce358641eb7f75133bebabdc97b9e4539",
+   "bytes": 521925
+  },
+  {
+   "name": "harvest",
+   "ref": "inputs:confident/2026-11-08/confident-harvest-2026-11-08/ask/Academic_Field/008.json",
+   "file": "008.json",
+   "sha256": "dd5ed3b9970060a130faaf0eceff54e183978330ca208f5355d03a6b58e11d8b",
+   "bytes": 102170
+  },
+  {
+   "name": "harvest",
+   "ref": "inputs:confident/2026-11-08/confident-harvest-2026-11-08/ask/Country/001.json",
+   "file": "001.json",
+   "sha256": "81bd45fad21aa47d1dcf34334db0b8a1bcaab5b54d4d5ed1e9c85625588bbd32",
+   "bytes": 489046
+  },
+  {
+   "name": "harvest",
+   "ref": "inputs:confident/2026-11-08/confident-harvest-2026-11-08/ask/Deadline/001.json",
+   "file": "001.json",
+   "sha256": "c06c56bc601ffabc4687bb722c5e9aaaafe802e34c94b07860d18c599eb1af19",
+   "bytes": 564406
+  },
+  {
+   "name": "harvest",
+   "ref": "inputs:confident/2026-11-08/confident-harvest-2026-11-08/ask/Deadline/002.json",
+   "file": "002.json",
+   "sha256": "eff8b6ee5590290d496ff25b73227afa11bc502f37bde4d23a50669fcdb1dd7e",
+   "bytes": 558413
+  },
+  {
+   "name": "harvest",
+   "ref": "inputs:confident/2026-11-08/confident-harvest-2026-11-08/ask/Deadline/003.json",
+   "file": "003.json",
+   "sha256": "82e795cbbf537d22f9578ee25ec362e62e73e3e7cf1c5899d02e5dca97f94156",
+   "bytes": 560298
+  },
+  {
+   "name": "harvest",
+   "ref": "inputs:confident/2026-11-08/confident-harvest-2026-11-08/ask/Deadline/004.json",
+   "file": "004.json",
+   "sha256": "0bb438bf42b70e9e6f1dd2de25a5356c59f457095ae885aa53227604ebfe9ccf",
+   "bytes": 554113
+  },
+  {
+   "name": "harvest",
+   "ref": "inputs:confident/2026-11-08/confident-harvest-2026-11-08/ask/Deadline/005.json",
+   "file": "005.json",
+   "sha256": "18ed8d0020b896ec2c59c34134b3f5c5d0ac5e769d3306da23aac95b53dd62c0",
+   "bytes": 559493
+  },
+  {
+   "name": "harvest",
+   "ref": "inputs:confident/2026-11-08/confident-harvest-2026-11-08/ask/Deadline/006.json",
+   "file": "006.json",
+   "sha256": "a2aa3b7262e2a8b6e01bf5e5768c5ef2c2ff2513c320c7c9c44fa2dc3eaf913b",
+   "bytes": 552822
+  },
+  {
+   "name": "harvest",
+   "ref": "inputs:confident/2026-11-08/confident-harvest-2026-11-08/ask/Deadline/007.json",
+   "file": "007.json",
+   "sha256": "427a1758eac2dfb57372f89f2e04896169630948f28bc29dc0ad3720657421a5",
+   "bytes": 556396
+  },
+  {
+   "name": "harvest",
+   "ref": "inputs:confident/2026-11-08/confident-harvest-2026-11-08/ask/Deadline/008.json",
+   "file": "008.json",
+   "sha256": "d116634df5cc1e750633de2105efd84e0fa9990507e42a052f757d5ac22d006a",
+   "bytes": 563380
+  },
+  {
+   "name": "harvest",
+   "ref": "inputs:confident/2026-11-08/confident-harvest-2026-11-08/ask/Deadline/009.json",
+   "file": "009.json",
+   "sha256": "78a06d26cb9f771a2b17773a223d36a5b4ec1a7b5723d72ba9ef8f5b9dcd0cca",
+   "bytes": 555665
+  },
+  {
+   "name": "harvest",
+   "ref": "inputs:confident/2026-11-08/confident-harvest-2026-11-08/ask/Deadline/010.json",
+   "file": "010.json",
+   "sha256": "4ae2d88c33c2240eaa4416784778a7c765ce8d60296d09c24f554b49770160ec",
+   "bytes": 552831
+  },
+  {
+   "name": "harvest",
+   "ref": "inputs:confident/2026-11-08/confident-harvest-2026-11-08/ask/Deadline/011.json",
+   "file": "011.json",
+   "sha256": "94aead3766039bab624f2eae80dfdee8639bbfa5adfb6e888ea3320b313c68f2",
+   "bytes": 549930
+  },
+  {
+   "name": "harvest",
+   "ref": "inputs:confident/2026-11-08/confident-harvest-2026-11-08/ask/Deadline/012.json",
+   "file": "012.json",
+   "sha256": "6a2fb0a74ad4e0c7feb799827f3d4e23629cf97148a2d064e8d39a3b775cfe28",
+   "bytes": 543135
+  },
+  {
+   "name": "harvest",
+   "ref": "inputs:confident/2026-11-08/confident-harvest-2026-11-08/ask/Deadline/013.json",
+   "file": "013.json",
+   "sha256": "5403db563050631c50b46f1c8ebff38312b40e9b8c6a948caeda9e385ff294e5",
+   "bytes": 551249
+  },
+  {
+   "name": "harvest",
+   "ref": "inputs:confident/2026-11-08/confident-harvest-2026-11-08/ask/Deadline/014.json",
+   "file": "014.json",
+   "sha256": "22d770ccce7ce99a40f9e95696945b5d621071f734cb7b7e04aafaf80af53c30",
+   "bytes": 543192
+  },
+  {
+   "name": "harvest",
+   "ref": "inputs:confident/2026-11-08/confident-harvest-2026-11-08/ask/Deadline/015.json",
+   "file": "015.json",
+   "sha256": "a7a5da266f69a303286a3132f1c1f316b92f95a9b13dc90c42968ed1e78c0950",
+   "bytes": 556771
+  },
+  {
+   "name": "harvest",
+   "ref": "inputs:confident/2026-11-08/confident-harvest-2026-11-08/ask/Deadline/016.json",
+   "file": "016.json",
+   "sha256": "3e65dbd5f94cf9ba1eafacc801c05812268eeba8535cdfb5fa4592091d88f443",
+   "bytes": 549633
+  },
+  {
+   "name": "harvest",
+   "ref": "inputs:confident/2026-11-08/confident-harvest-2026-11-08/ask/Deadline/017.json",
+   "file": "017.json",
+   "sha256": "8034645aa171c02114b63fe56830109d9fac8184cd6638a82414e6de3a6497cb",
+   "bytes": 556586
+  },
+  {
+   "name": "harvest",
+   "ref": "inputs:confident/2026-11-08/confident-harvest-2026-11-08/ask/Deadline/018.json",
+   "file": "018.json",
+   "sha256": "5bd60aebfabfad5c79f05c8f808b0006b87000b442034d447ef702a563bbc2c7",
+   "bytes": 560942
+  },
+  {
+   "name": "harvest",
+   "ref": "inputs:confident/2026-11-08/confident-harvest-2026-11-08/ask/Deadline/019.json",
+   "file": "019.json",
+   "sha256": "e8fa45c8147a34719248ee4f5866f6a862d6d57f22ede79be143cf7e1327ff2a",
+   "bytes": 554879
+  },
+  {
+   "name": "harvest",
+   "ref": "inputs:confident/2026-11-08/confident-harvest-2026-11-08/ask/Deadline/020.json",
+   "file": "020.json",
+   "sha256": "28b4b006c9c2286599a188ebf7eaf1171ee5bbfc801abeb8be16448945c61417",
+   "bytes": 553831
+  },
+  {
+   "name": "harvest",
+   "ref": "inputs:confident/2026-11-08/confident-harvest-2026-11-08/ask/Deadline/021.json",
+   "file": "021.json",
+   "sha256": "4ea67c9e2215dc9a25f33c938a9549745c504ab06740d43c506328059ff9b72d",
+   "bytes": 545949
+  },
+  {
+   "name": "harvest",
+   "ref": "inputs:confident/2026-11-08/confident-harvest-2026-11-08/ask/Deadline/022.json",
+   "file": "022.json",
+   "sha256": "1a8bd4bfca13dd013d7e6e04b3806c3de64d552838aef37f1def0751964a6bbe",
+   "bytes": 558378
+  },
+  {
+   "name": "harvest",
+   "ref": "inputs:confident/2026-11-08/confident-harvest-2026-11-08/ask/Deadline/023.json",
+   "file": "023.json",
+   "sha256": "1a8a0630152d7f9ded4788582fc7fe098c8977fdbfd61bbf5dfc21e2dad113e8",
+   "bytes": 550851
+  },
+  {
+   "name": "harvest",
+   "ref": "inputs:confident/2026-11-08/confident-harvest-2026-11-08/ask/Deadline/024.json",
+   "file": "024.json",
+   "sha256": "b46e9a31d0841d72bd7bdacfc36d5794817b3f5b195dd4880446030fdd1ad5a1",
+   "bytes": 554505
+  },
+  {
+   "name": "harvest",
+   "ref": "inputs:confident/2026-11-08/confident-harvest-2026-11-08/ask/Deadline/025.json",
+   "file": "025.json",
+   "sha256": "ae4840c758194bfb5019257c3092591ab93fe06889c43023448e47fb115c67f2",
+   "bytes": 551137
+  },
+  {
+   "name": "harvest",
+   "ref": "inputs:confident/2026-11-08/confident-harvest-2026-11-08/ask/Deadline/026.json",
+   "file": "026.json",
+   "sha256": "689f184a0b1195d3da11a453afade54cd91634d5a75f536c5feeaf54713d0730",
+   "bytes": 556282
+  },
+  {
+   "name": "harvest",
+   "ref": "inputs:confident/2026-11-08/confident-harvest-2026-11-08/ask/Deadline/027.json",
+   "file": "027.json",
+   "sha256": "e47f1a42d84af46b6967ef219a69c98e51b40d192277ad3960a193579ac7012d",
+   "bytes": 551497
+  },
+  {
+   "name": "harvest",
+   "ref": "inputs:confident/2026-11-08/confident-harvest-2026-11-08/ask/Deadline/028.json",
+   "file": "028.json",
+   "sha256": "dff0a87c01b944baff8d6c684498fc5e772478a6179b38043f0b29bb6b5d821a",
+   "bytes": 561662
+  },
+  {
+   "name": "harvest",
+   "ref": "inputs:confident/2026-11-08/confident-harvest-2026-11-08/ask/Deadline/029.json",
+   "file": "029.json",
+   "sha256": "63d19d68b9978ab0a7a8dc8bcb544eaed21c24200ddee4b9dd31b8698b5ce9c0",
+   "bytes": 555456
+  },
+  {
+   "name": "harvest",
+   "ref": "inputs:confident/2026-11-08/confident-harvest-2026-11-08/ask/Deadline/030.json",
+   "file": "030.json",
+   "sha256": "c55df8c15f667012c144d5af91cd70f363c6501f68f56e147f3c8b958063af68",
+   "bytes": 550474
+  },
+  {
+   "name": "harvest",
+   "ref": "inputs:confident/2026-11-08/confident-harvest-2026-11-08/ask/Deadline/031.json",
+   "file": "031.json",
+   "sha256": "7f2c8b586087183f81862f7c8c2477cb134ae63fa84202392004585d9b5edf66",
+   "bytes": 556536
+  },
+  {
+   "name": "harvest",
+   "ref": "inputs:confident/2026-11-08/confident-harvest-2026-11-08/ask/Deadline/032.json",
+   "file": "032.json",
+   "sha256": "839779960e39d486c8cd25bb21f75eb31c46cd157738e4b0128f8000e8ac47ea",
+   "bytes": 550294
+  },
+  {
+   "name": "harvest",
+   "ref": "inputs:confident/2026-11-08/confident-harvest-2026-11-08/ask/Deadline/033.json",
+   "file": "033.json",
+   "sha256": "635d6522bc19b6c53e7840349d7f22efe9cbedc194daff5d9e08093ab2c0ffc0",
+   "bytes": 554490
+  },
+  {
+   "name": "harvest",
+   "ref": "inputs:confident/2026-11-08/confident-harvest-2026-11-08/ask/Deadline/034.json",
+   "file": "034.json",
+   "sha256": "18916f770bee4c250a68733083dee97f62b7383da80b1a52ab39c38cfc97eff2",
+   "bytes": 547552
+  },
+  {
+   "name": "harvest",
+   "ref": "inputs:confident/2026-11-08/confident-harvest-2026-11-08/ask/Deadline/035.json",
+   "file": "035.json",
+   "sha256": "936f6874a78c65031a4950a2f4c3f71d398ca638b15d7a6a3577b14bbcd2042d",
+   "bytes": 555038
+  },
+  {
+   "name": "harvest",
+   "ref": "inputs:confident/2026-11-08/confident-harvest-2026-11-08/ask/Deadline/036.json",
+   "file": "036.json",
+   "sha256": "5befbeb58f6d9f1cdffffa7d22c5177013e3302d449ac43bd3aac046f24d241d",
+   "bytes": 551663
+  },
+  {
+   "name": "harvest",
+   "ref": "inputs:confident/2026-11-08/confident-harvest-2026-11-08/ask/Deadline/037.json",
+   "file": "037.json",
+   "sha256": "f97b49cf3bc3538df3ba7b98aeb28f5517621f878960897ea58972fcf4cca2ba",
+   "bytes": 550426
+  },
+  {
+   "name": "harvest",
+   "ref": "inputs:confident/2026-11-08/confident-harvest-2026-11-08/ask/Deadline/038.json",
+   "file": "038.json",
+   "sha256": "f5e5931c5c49e36634145c37259cf1878f19a50835b7ffd50b4ea88c1db87e5c",
+   "bytes": 550383
+  },
+  {
+   "name": "harvest",
+   "ref": "inputs:confident/2026-11-08/confident-harvest-2026-11-08/ask/Deadline/039.json",
+   "file": "039.json",
+   "sha256": "c30f0c8bd5e1c9b793777a0a1e8ece0bf58867248bcf0611676b7094828de359",
+   "bytes": 554270
+  },
+  {
+   "name": "harvest",
+   "ref": "inputs:confident/2026-11-08/confident-harvest-2026-11-08/ask/Deadline/040.json",
+   "file": "040.json",
+   "sha256": "cbf1b9672f74c92c01cef2554b2b02eb203a35f99ad4fab82b44fe48dee96be0",
+   "bytes": 548362
+  },
+  {
+   "name": "harvest",
+   "ref": "inputs:confident/2026-11-08/confident-harvest-2026-11-08/ask/Deadline/041.json",
+   "file": "041.json",
+   "sha256": "f436df35fe5c227e4e508fbfffa1a03159cb9e671120b038f9ac9960717ee018",
+   "bytes": 558627
+  },
+  {
+   "name": "harvest",
+   "ref": "inputs:confident/2026-11-08/confident-harvest-2026-11-08/ask/Deadline/042.json",
+   "file": "042.json",
+   "sha256": "a6e7fa05ccb44d078ed55b7d91af0f9701cdbde8c532edfcbd816c42a2bdc371",
+   "bytes": 553969
+  },
+  {
+   "name": "harvest",
+   "ref": "inputs:confident/2026-11-08/confident-harvest-2026-11-08/ask/Deadline/043.json",
+   "file": "043.json",
+   "sha256": "f41c81d8c1a06e15bfd7d7de7539892faa9e5890189d966baf0a20e5968fc388",
+   "bytes": 551308
+  },
+  {
+   "name": "harvest",
+   "ref": "inputs:confident/2026-11-08/confident-harvest-2026-11-08/ask/Deadline/044.json",
+   "file": "044.json",
+   "sha256": "e25ff3920ea852c0c2c41a77da66513cc32ca895544e3dd1ba718373cd917169",
+   "bytes": 553170
+  },
+  {
+   "name": "harvest",
+   "ref": "inputs:confident/2026-11-08/confident-harvest-2026-11-08/ask/Deadline/045.json",
+   "file": "045.json",
+   "sha256": "4590294dd34adcde08814fd17f5557511bd811876a2cd850ae26d27e24f1e36c",
+   "bytes": 557713
+  },
+  {
+   "name": "harvest",
+   "ref": "inputs:confident/2026-11-08/confident-harvest-2026-11-08/ask/Deadline/046.json",
+   "file": "046.json",
+   "sha256": "7d2e8763af6ca6ed1372b55ba5053f004e859b708624f50e292f13456274ac80",
+   "bytes": 553150
+  },
+  {
+   "name": "harvest",
+   "ref": "inputs:confident/2026-11-08/confident-harvest-2026-11-08/ask/Deadline/047.json",
+   "file": "047.json",
+   "sha256": "986ad024b51abdf759e71480dfb8d4962a41fac8f327fab72339473e47c32633",
+   "bytes": 561945
+  },
+  {
+   "name": "harvest",
+   "ref": "inputs:confident/2026-11-08/confident-harvest-2026-11-08/ask/Deadline/048.json",
+   "file": "048.json",
+   "sha256": "a1c3512af3e3b0385a5b687f2a1b59625e32a39e16cbd63dbee6efbbc925a6e7",
+   "bytes": 549939
+  },
+  {
+   "name": "harvest",
+   "ref": "inputs:confident/2026-11-08/confident-harvest-2026-11-08/ask/Deadline/049.json",
+   "file": "049.json",
+   "sha256": "c63e40fd25ae6999f955b715a41634764c4a17f57158fd7c44382ac3ca2e342e",
+   "bytes": 554392
+  },
+  {
+   "name": "harvest",
+   "ref": "inputs:confident/2026-11-08/confident-harvest-2026-11-08/ask/Deadline/050.json",
+   "file": "050.json",
+   "sha256": "ff267e43cc6614f346d52117ec167e93de314ec10e7bff2f63ab994714fa5300",
+   "bytes": 554339
+  },
+  {
+   "name": "harvest",
+   "ref": "inputs:confident/2026-11-08/confident-harvest-2026-11-08/ask/Deadline/051.json",
+   "file": "051.json",
+   "sha256": "27c87dda3ef8f7d64c6c222aadec7eaa0090a65c4510621a1e62c4002dce230a",
+   "bytes": 547082
+  },
+  {
+   "name": "harvest",
+   "ref": "inputs:confident/2026-11-08/confident-harvest-2026-11-08/ask/Deadline/052.json",
+   "file": "052.json",
+   "sha256": "2d855d5562574d1257eb86b28a2c33c46f07d04932e0fad9cfd8db7b5ea4fa71",
+   "bytes": 547060
+  },
+  {
+   "name": "harvest",
+   "ref": "inputs:confident/2026-11-08/confident-harvest-2026-11-08/ask/Deadline/053.json",
+   "file": "053.json",
+   "sha256": "1cf74603c736eb2f315feb6f615b708b87c56f2d1fd0c2d4de5560e4baef3504",
+   "bytes": 552474
+  },
+  {
+   "name": "harvest",
+   "ref": "inputs:confident/2026-11-08/confident-harvest-2026-11-08/ask/Deadline/054.json",
+   "file": "054.json",
+   "sha256": "b8355e900be6672757fc9870e4a295fbf367971e7fb0e9ce6ac41f30f3d10149",
+   "bytes": 556923
+  },
+  {
+   "name": "harvest",
+   "ref": "inputs:confident/2026-11-08/confident-harvest-2026-11-08/ask/Deadline/055.json",
+   "file": "055.json",
+   "sha256": "fc94462a41007dc6975953cf6c9a04e1a5dd2cabac070a1fe6d38ef35009f0c9",
+   "bytes": 553447
+  },
+  {
+   "name": "harvest",
+   "ref": "inputs:confident/2026-11-08/confident-harvest-2026-11-08/ask/Deadline/056.json",
+   "file": "056.json",
+   "sha256": "2765082c7fb2318f91605264e95a0fa2825e8fb69dd9d60f0577c2b76013739b",
+   "bytes": 555635
+  },
+  {
+   "name": "harvest",
+   "ref": "inputs:confident/2026-11-08/confident-harvest-2026-11-08/ask/Deadline/057.json",
+   "file": "057.json",
+   "sha256": "6a96a5be276f476ced393079d9436fa04b24940ea6608e6fcb4ba5c2512dc582",
+   "bytes": 553248
+  },
+  {
+   "name": "harvest",
+   "ref": "inputs:confident/2026-11-08/confident-harvest-2026-11-08/ask/Deadline/058.json",
+   "file": "058.json",
+   "sha256": "795c9d4c3f938626dce765d1f4c5cf74c04db862e4ce48d221d17edda0e94bc8",
+   "bytes": 558391
+  },
+  {
+   "name": "harvest",
+   "ref": "inputs:confident/2026-11-08/confident-harvest-2026-11-08/ask/Deadline/059.json",
+   "file": "059.json",
+   "sha256": "399751c619554eedebc47b19abee7338ae8c2454ff299d17f122fbd86caaec43",
+   "bytes": 561846
+  },
+  {
+   "name": "harvest",
+   "ref": "inputs:confident/2026-11-08/confident-harvest-2026-11-08/ask/Deadline/060.json",
+   "file": "060.json",
+   "sha256": "b11ee507ae74f56db1ef782882a6636e74988789c21c4edb90877c3f43be67b1",
+   "bytes": 561651
+  },
+  {
+   "name": "harvest",
+   "ref": "inputs:confident/2026-11-08/confident-harvest-2026-11-08/ask/Deadline/061.json",
+   "file": "061.json",
+   "sha256": "f4f55e0ccae68fd25d24fc1aab52f31f66b37b8713778c8c7f1c20ac9ff586d3",
+   "bytes": 559315
+  },
+  {
+   "name": "harvest",
+   "ref": "inputs:confident/2026-11-08/confident-harvest-2026-11-08/ask/Deadline/062.json",
+   "file": "062.json",
+   "sha256": "c8cf5db5f124b7970a5e564b9d2c56987f9842360e0aad4fb94d7e6d7f2feaab",
+   "bytes": 559967
+  },
+  {
+   "name": "harvest",
+   "ref": "inputs:confident/2026-11-08/confident-harvest-2026-11-08/ask/Deadline/063.json",
+   "file": "063.json",
+   "sha256": "025ccbd9f67d733b0e7cb84067b1ecfdd3d4251c886a6b755c35fc0d2eb8b75d",
+   "bytes": 551225
+  },
+  {
+   "name": "harvest",
+   "ref": "inputs:confident/2026-11-08/confident-harvest-2026-11-08/ask/Deadline/064.json",
+   "file": "064.json",
+   "sha256": "544f1577d53eadd3e3123d17699170e0952351350657b087673dccba3580c20a",
+   "bytes": 554000
+  },
+  {
+   "name": "harvest",
+   "ref": "inputs:confident/2026-11-08/confident-harvest-2026-11-08/ask/Deadline/065.json",
+   "file": "065.json",
+   "sha256": "b3de2718c8bb97531a7fa27e394516d2f2b38cb8a4462e5dfb5bbd991bef9e9a",
+   "bytes": 551100
+  },
+  {
+   "name": "harvest",
+   "ref": "inputs:confident/2026-11-08/confident-harvest-2026-11-08/ask/Deadline/066.json",
+   "file": "066.json",
+   "sha256": "6bddf17b640881b8c47572edbe4f3184a1c183cfba5a90f6187dedc4603d881b",
+   "bytes": 549783
+  },
+  {
+   "name": "harvest",
+   "ref": "inputs:confident/2026-11-08/confident-harvest-2026-11-08/ask/Deadline/067.json",
+   "file": "067.json",
+   "sha256": "4540e05208f8194e92bbf67a5e548d508760f15b63c658262fde10c188ba62f8",
+   "bytes": 565869
+  },
+  {
+   "name": "harvest",
+   "ref": "inputs:confident/2026-11-08/confident-harvest-2026-11-08/ask/Deadline/068.json",
+   "file": "068.json",
+   "sha256": "27ae15022d5d691b79c4d1d0a503a443a51f705a58f1d9470decf110761adcea",
+   "bytes": 268249
+  },
+  {
+   "name": "harvest",
+   "ref": "inputs:confident/2026-11-08/confident-harvest-2026-11-08/ask/Event/001.json",
+   "file": "001.json",
+   "sha256": "f60710c990dd31eb0c6121c3cf807d737ec4bb9c52a007943d260b93882ad6dd",
+   "bytes": 833321
+  },
+  {
+   "name": "harvest",
+   "ref": "inputs:confident/2026-11-08/confident-harvest-2026-11-08/ask/Event/002.json",
+   "file": "002.json",
+   "sha256": "ed1646e26c5010d22d86f7ce86e5f35664c896972fa98d2d912088277501ce07",
+   "bytes": 826074
+  },
+  {
+   "name": "harvest",
+   "ref": "inputs:confident/2026-11-08/confident-harvest-2026-11-08/ask/Event/003.json",
+   "file": "003.json",
+   "sha256": "213fa98b43145686cc647465fe29195ae6e12f1e38b6796c287af8951476aaf2",
+   "bytes": 820669
+  },
+  {
+   "name": "harvest",
+   "ref": "inputs:confident/2026-11-08/confident-harvest-2026-11-08/ask/Event/004.json",
+   "file": "004.json",
+   "sha256": "9a1da5c9d4bee76d1f8b53ca8048dcf9f2ef34533d5c7f723f39fd68511ede5e",
+   "bytes": 767707
+  },
+  {
+   "name": "harvest",
+   "ref": "inputs:confident/2026-11-08/confident-harvest-2026-11-08/ask/Event/005.json",
+   "file": "005.json",
+   "sha256": "b661148b82ceaa66d780b7f6ca157f44fd2f63125619e8d38135c2895b5831f2",
+   "bytes": 775658
+  },
+  {
+   "name": "harvest",
+   "ref": "inputs:confident/2026-11-08/confident-harvest-2026-11-08/ask/Event/006.json",
+   "file": "006.json",
+   "sha256": "2a601f5acf303d1dbebafb0d74e073edbb699326342c8292f6fe020db4fa9593",
+   "bytes": 782567
+  },
+  {
+   "name": "harvest",
+   "ref": "inputs:confident/2026-11-08/confident-harvest-2026-11-08/ask/Event/007.json",
+   "file": "007.json",
+   "sha256": "20410efe46408fe35f27361afd8e3b6db41098c801fbabf2e83ff934b128df58",
+   "bytes": 791388
+  },
+  {
+   "name": "harvest",
+   "ref": "inputs:confident/2026-11-08/confident-harvest-2026-11-08/ask/Event/008.json",
+   "file": "008.json",
+   "sha256": "9baa047556da799b7db43cfba38ec776a777104f36aa9a1b327a3ed3d95ea41a",
+   "bytes": 760359
+  },
+  {
+   "name": "harvest",
+   "ref": "inputs:confident/2026-11-08/confident-harvest-2026-11-08/ask/Event/009.json",
+   "file": "009.json",
+   "sha256": "eec1c215d5c8db9a074f83ea4c4e85f8d7bf96bf174b1ea4d41eb2189fc35d51",
+   "bytes": 754347
+  },
+  {
+   "name": "harvest",
+   "ref": "inputs:confident/2026-11-08/confident-harvest-2026-11-08/ask/Event/010.json",
+   "file": "010.json",
+   "sha256": "933359926016475107a4a40a63ab3fee38692949014414dd1c7ecc2a170c1af9",
+   "bytes": 787050
+  },
+  {
+   "name": "harvest",
+   "ref": "inputs:confident/2026-11-08/confident-harvest-2026-11-08/ask/Event/011.json",
+   "file": "011.json",
+   "sha256": "54ffa5c6da1b0f0a196a813949ea2b74a77b03c7e6d23cbc39502bf7e73d7820",
+   "bytes": 800388
+  },
+  {
+   "name": "harvest",
+   "ref": "inputs:confident/2026-11-08/confident-harvest-2026-11-08/ask/Event/012.json",
+   "file": "012.json",
+   "sha256": "f2bb60ba0a36e179818e09f04f810de9796fbfd5628d50999194882f145f700d",
+   "bytes": 787559
+  },
+  {
+   "name": "harvest",
+   "ref": "inputs:confident/2026-11-08/confident-harvest-2026-11-08/ask/Event/013.json",
+   "file": "013.json",
+   "sha256": "3e33cd30a32b85cd8e6c6516d104544fc948155fe67cfe31482f3598e0ae81b7",
+   "bytes": 741594
+  },
+  {
+   "name": "harvest",
+   "ref": "inputs:confident/2026-11-08/confident-harvest-2026-11-08/ask/Event/014.json",
+   "file": "014.json",
+   "sha256": "b513bad647d1052e1053bca1b4b86243567a8e3a65f595494859a70bcc909609",
+   "bytes": 774262
+  },
+  {
+   "name": "harvest",
+   "ref": "inputs:confident/2026-11-08/confident-harvest-2026-11-08/ask/Event/015.json",
+   "file": "015.json",
+   "sha256": "1247df5ded87b5005d908226db05feaf7cdd7e11b5f4f9e8048d8dcdb8f011ed",
+   "bytes": 772754
+  },
+  {
+   "name": "harvest",
+   "ref": "inputs:confident/2026-11-08/confident-harvest-2026-11-08/ask/Event/016.json",
+   "file": "016.json",
+   "sha256": "07618e020f35060dd9b6bb22a0d628e118759343fbeb5c7781a4021f38bf65b0",
+   "bytes": 764386
+  },
+  {
+   "name": "harvest",
+   "ref": "inputs:confident/2026-11-08/confident-harvest-2026-11-08/ask/Event/017.json",
+   "file": "017.json",
+   "sha256": "4e209d997efe471cee81acfeca912f8ea62f794bfbf46caf37ce7b90640a6312",
+   "bytes": 774241
+  },
+  {
+   "name": "harvest",
+   "ref": "inputs:confident/2026-11-08/confident-harvest-2026-11-08/ask/Event/018.json",
+   "file": "018.json",
+   "sha256": "b8673f18ddf918c9b98a9e273c53c7520ad0e7065baf2701057110965969499f",
+   "bytes": 803702
+  },
+  {
+   "name": "harvest",
+   "ref": "inputs:confident/2026-11-08/confident-harvest-2026-11-08/ask/Event/019.json",
+   "file": "019.json",
+   "sha256": "b45a2858a67f23a19a8c007231e669715b55b1eefd0c00715f42aa5fd9ac0137",
+   "bytes": 793928
+  },
+  {
+   "name": "harvest",
+   "ref": "inputs:confident/2026-11-08/confident-harvest-2026-11-08/ask/Event/020.json",
+   "file": "020.json",
+   "sha256": "6ef29a9a28f859a80a102a2a69112dcf2cf190b1ebe95b4356b55319a3a6a507",
+   "bytes": 745658
+  },
+  {
+   "name": "harvest",
+   "ref": "inputs:confident/2026-11-08/confident-harvest-2026-11-08/ask/Event/021.json",
+   "file": "021.json",
+   "sha256": "3b4357bdc4516aaa59472a8ab0d91f1700b0af8d50dd396f4a48627c39d4b55d",
+   "bytes": 761308
+  },
+  {
+   "name": "harvest",
+   "ref": "inputs:confident/2026-11-08/confident-harvest-2026-11-08/ask/Event/022.json",
+   "file": "022.json",
+   "sha256": "a647c09de7f81d404f1e11ff14fd129799ed162758fe71f0e7b8cf91090af992",
+   "bytes": 800465
+  },
+  {
+   "name": "harvest",
+   "ref": "inputs:confident/2026-11-08/confident-harvest-2026-11-08/ask/Event/023.json",
+   "file": "023.json",
+   "sha256": "72cb4134410329b17d67071bc745ca1db4db89b8ddb3b50e3d2016cc3cb3454c",
+   "bytes": 771024
+  },
+  {
+   "name": "harvest",
+   "ref": "inputs:confident/2026-11-08/confident-harvest-2026-11-08/ask/Event/024.json",
+   "file": "024.json",
+   "sha256": "2e479382bdb50f35b6bfddf57f8008b57548cf59144dbc434700c375c1bf035d",
+   "bytes": 774805
+  },
+  {
+   "name": "harvest",
+   "ref": "inputs:confident/2026-11-08/confident-harvest-2026-11-08/ask/Event/025.json",
+   "file": "025.json",
+   "sha256": "f0c1839c18b848ec0be35ddc6db27620260908eda670228fbb5baa936fa52e7d",
+   "bytes": 761332
+  },
+  {
+   "name": "harvest",
+   "ref": "inputs:confident/2026-11-08/confident-harvest-2026-11-08/ask/Event/026.json",
+   "file": "026.json",
+   "sha256": "966c35a22455aa8d63a3e80d01e00674f0e12f8207b8f0b63529cdd250417cd2",
+   "bytes": 752876
+  },
+  {
+   "name": "harvest",
+   "ref": "inputs:confident/2026-11-08/confident-harvest-2026-11-08/ask/Event/027.json",
+   "file": "027.json",
+   "sha256": "d795c514b4c409853bd36370eb4a28127dfa9587efe0aa250a1bad214e545070",
+   "bytes": 778229
+  },
+  {
+   "name": "harvest",
+   "ref": "inputs:confident/2026-11-08/confident-harvest-2026-11-08/ask/Event/028.json",
+   "file": "028.json",
+   "sha256": "cbe62a521c4f2ffa754dc2dc210b3be15fc2cfd58128e6370bed9245c2b90a16",
+   "bytes": 796068
+  },
+  {
+   "name": "harvest",
+   "ref": "inputs:confident/2026-11-08/confident-harvest-2026-11-08/ask/Event/029.json",
+   "file": "029.json",
+   "sha256": "9c0ced2700284446497550af48393bc3016a814d957732c4fe8b627182613619",
+   "bytes": 793004
+  },
+  {
+   "name": "harvest",
+   "ref": "inputs:confident/2026-11-08/confident-harvest-2026-11-08/ask/Event/030.json",
+   "file": "030.json",
+   "sha256": "1b1c4554ef0451596ee82900de3e3d51fbbde30c43ad0b2962982bf04eaaa1f2",
+   "bytes": 786646
+  },
+  {
+   "name": "harvest",
+   "ref": "inputs:confident/2026-11-08/confident-harvest-2026-11-08/ask/Event/031.json",
+   "file": "031.json",
+   "sha256": "9eca1afb4905ddf42cd7d6c9d169e40e7ae8a3aef9b39ec7f16048cb367cbf31",
+   "bytes": 774408
+  },
+  {
+   "name": "harvest",
+   "ref": "inputs:confident/2026-11-08/confident-harvest-2026-11-08/ask/Event/032.json",
+   "file": "032.json",
+   "sha256": "87c54157e0a6976e5991b3e1619aa81fd966964088b187dbd21fe5eadf9fd455",
+   "bytes": 823569
+  },
+  {
+   "name": "harvest",
+   "ref": "inputs:confident/2026-11-08/confident-harvest-2026-11-08/ask/Event/033.json",
+   "file": "033.json",
+   "sha256": "184872813506f12081b64b7a82407c5482b222f4e79dedb9648635a307795749",
+   "bytes": 774560
+  },
+  {
+   "name": "harvest",
+   "ref": "inputs:confident/2026-11-08/confident-harvest-2026-11-08/ask/Event/034.json",
+   "file": "034.json",
+   "sha256": "129f7e8cacfc736badc9979dd4379680856813a0730954f52600379102cae3b7",
+   "bytes": 798270
+  },
+  {
+   "name": "harvest",
+   "ref": "inputs:confident/2026-11-08/confident-harvest-2026-11-08/ask/Event/035.json",
+   "file": "035.json",
+   "sha256": "0e02eff879066d9bcc55f55512bd28f9cb5387f8f89997380033a522c67546f5",
+   "bytes": 816417
+  },
+  {
+   "name": "harvest",
+   "ref": "inputs:confident/2026-11-08/confident-harvest-2026-11-08/ask/Event/036.json",
+   "file": "036.json",
+   "sha256": "c98b0861623de530e4bbe5cded28235dbdeaa47f47752add2070d0fd5e786008",
+   "bytes": 782820
+  },
+  {
+   "name": "harvest",
+   "ref": "inputs:confident/2026-11-08/confident-harvest-2026-11-08/ask/Event/037.json",
+   "file": "037.json",
+   "sha256": "23bd441d16b4cff3a86c1e47999b68382982a20abffdf4f320f320729641dc4a",
+   "bytes": 759554
+  },
+  {
+   "name": "harvest",
+   "ref": "inputs:confident/2026-11-08/confident-harvest-2026-11-08/ask/Event/038.json",
+   "file": "038.json",
+   "sha256": "7407101918ac4083d73d5cae3b539685e7dfc6233f1b4f45b20f3512d29cf548",
+   "bytes": 772091
+  },
+  {
+   "name": "harvest",
+   "ref": "inputs:confident/2026-11-08/confident-harvest-2026-11-08/ask/Event/039.json",
+   "file": "039.json",
+   "sha256": "ded3b9b2f89ebb661030e6ef336b3a5483abe597980cd69822f644abf8eee08b",
+   "bytes": 787267
+  },
+  {
+   "name": "harvest",
+   "ref": "inputs:confident/2026-11-08/confident-harvest-2026-11-08/ask/Event/040.json",
+   "file": "040.json",
+   "sha256": "f1e90c8df4ebcf726cd03755ee7632945b109c3121d56b5cb4feeeb2384cd62c",
+   "bytes": 766449
+  },
+  {
+   "name": "harvest",
+   "ref": "inputs:confident/2026-11-08/confident-harvest-2026-11-08/ask/Event/041.json",
+   "file": "041.json",
+   "sha256": "5909a74b8699b74127776dcb0598936b47518669f4f53752352bb650b0cc3278",
+   "bytes": 767833
+  },
+  {
+   "name": "harvest",
+   "ref": "inputs:confident/2026-11-08/confident-harvest-2026-11-08/ask/Event/042.json",
+   "file": "042.json",
+   "sha256": "15272ada7d39cb4bca7ffa95677cdb56aa5b2fd049ff7aa15c8af4ba2416e4ab",
+   "bytes": 789875
+  },
+  {
+   "name": "harvest",
+   "ref": "inputs:confident/2026-11-08/confident-harvest-2026-11-08/ask/Event/043.json",
+   "file": "043.json",
+   "sha256": "2d6621799d229107fd3b155ecb958b6ac3c57fc9d702126e04c6d8aacf3f975f",
+   "bytes": 793367
+  },
+  {
+   "name": "harvest",
+   "ref": "inputs:confident/2026-11-08/confident-harvest-2026-11-08/ask/Event/044.json",
+   "file": "044.json",
+   "sha256": "786dad3df65a8b9f9c1047fa4393baedc23e8f1cb23dd9577b80fb692bd66f4e",
+   "bytes": 782646
+  },
+  {
+   "name": "harvest",
+   "ref": "inputs:confident/2026-11-08/confident-harvest-2026-11-08/ask/Event/045.json",
+   "file": "045.json",
+   "sha256": "70ea6abf7973fa0165260dc91a4346e3225e08457bef72d04a842a2e29fa445d",
+   "bytes": 750271
+  },
+  {
+   "name": "harvest",
+   "ref": "inputs:confident/2026-11-08/confident-harvest-2026-11-08/ask/Event/046.json",
+   "file": "046.json",
+   "sha256": "5b0fe5da723edf488e598411de0b93ac29a4924802bd3bbce58a92b7f6ee63be",
+   "bytes": 767173
+  },
+  {
+   "name": "harvest",
+   "ref": "inputs:confident/2026-11-08/confident-harvest-2026-11-08/ask/Event/047.json",
+   "file": "047.json",
+   "sha256": "b295a22699ad5b395b24a9c7234568df1eeed4e746247e83a474607e7b732e07",
+   "bytes": 745289
+  },
+  {
+   "name": "harvest",
+   "ref": "inputs:confident/2026-11-08/confident-harvest-2026-11-08/ask/Event/048.json",
+   "file": "048.json",
+   "sha256": "eb7d9a0819c89da75ee975b0e64fae4367c03aa62adeef5f17eefb9b23418dc7",
+   "bytes": 768984
+  },
+  {
+   "name": "harvest",
+   "ref": "inputs:confident/2026-11-08/confident-harvest-2026-11-08/ask/Event/049.json",
+   "file": "049.json",
+   "sha256": "7df4a65aa7c14556c2928ae39c97f4ecf6bb5f4bb60cde7cc35a6bfcedcdf2d0",
+   "bytes": 770494
+  },
+  {
+   "name": "harvest",
+   "ref": "inputs:confident/2026-11-08/confident-harvest-2026-11-08/ask/Event/050.json",
+   "file": "050.json",
+   "sha256": "2fc463f78ca1dd9a5e170c046786267201f3061e4f341f9f4bdd0462ba38ebb0",
+   "bytes": 743811
+  },
+  {
+   "name": "harvest",
+   "ref": "inputs:confident/2026-11-08/confident-harvest-2026-11-08/ask/Event/051.json",
+   "file": "051.json",
+   "sha256": "47f88fda2150eb331b6c4ad578193a2e0c08cb32034ed003320509c5ce3586ec",
+   "bytes": 743867
+  },
+  {
+   "name": "harvest",
+   "ref": "inputs:confident/2026-11-08/confident-harvest-2026-11-08/ask/Event/052.json",
+   "file": "052.json",
+   "sha256": "ca2334e284fe294ccf60cb5b4a62777a41cdfa93851076b4cf3b1f60d4219014",
+   "bytes": 754774
+  },
+  {
+   "name": "harvest",
+   "ref": "inputs:confident/2026-11-08/confident-harvest-2026-11-08/ask/Event/053.json",
+   "file": "053.json",
+   "sha256": "959c59b3e18785b01f5e116de38e0c361169a9ac94827d41eef4510126b6ae3f",
+   "bytes": 751985
+  },
+  {
+   "name": "harvest",
+   "ref": "inputs:confident/2026-11-08/confident-harvest-2026-11-08/ask/Event/054.json",
+   "file": "054.json",
+   "sha256": "23c028d7c973fde4c8fed5efc574642c0ccff099e6b30dffcf1e3df856c80172",
+   "bytes": 742031
+  },
+  {
+   "name": "harvest",
+   "ref": "inputs:confident/2026-11-08/confident-harvest-2026-11-08/ask/Event/055.json",
+   "file": "055.json",
+   "sha256": "6771957ad95bfd6a10b1b1aaafb3de00098cc9fc394d430fef2cdd0c71bafbd2",
+   "bytes": 749869
+  },
+  {
+   "name": "harvest",
+   "ref": "inputs:confident/2026-11-08/confident-harvest-2026-11-08/ask/Event/056.json",
+   "file": "056.json",
+   "sha256": "e63bf95e4216d4f0958de61c8e421d90e68ac10fa3539e14737e42c99fbed189",
+   "bytes": 748625
+  },
+  {
+   "name": "harvest",
+   "ref": "inputs:confident/2026-11-08/confident-harvest-2026-11-08/ask/Event/057.json",
+   "file": "057.json",
+   "sha256": "1d2a595f116740d3c96fecb1be1ffc732c0818b3673c6e4d593d06fd4e366211",
+   "bytes": 789765
+  },
+  {
+   "name": "harvest",
+   "ref": "inputs:confident/2026-11-08/confident-harvest-2026-11-08/ask/Event/058.json",
+   "file": "058.json",
+   "sha256": "3ce2318545b5ac30b3d6cdb67da78eabfd4a77b0a0d0a7482c100a553f3b3910",
+   "bytes": 742285
+  },
+  {
+   "name": "harvest",
+   "ref": "inputs:confident/2026-11-08/confident-harvest-2026-11-08/ask/Event/059.json",
+   "file": "059.json",
+   "sha256": "74f78849ededf9e850fb944454361c063874d3aba83af50991fd9e3c822758a3",
+   "bytes": 754207
+  },
+  {
+   "name": "harvest",
+   "ref": "inputs:confident/2026-11-08/confident-harvest-2026-11-08/ask/Event/060.json",
+   "file": "060.json",
+   "sha256": "6a9a9d1a4b39e50c1b3982caae64fceb09eadff405e945cef24a06418c82aa65",
+   "bytes": 747304
+  },
+  {
+   "name": "harvest",
+   "ref": "inputs:confident/2026-11-08/confident-harvest-2026-11-08/ask/Event/061.json",
+   "file": "061.json",
+   "sha256": "7430343e29b6b1035acd7f375af22ac96d57b0b1a52cd292ace5db04b75ba6c8",
+   "bytes": 742370
+  },
+  {
+   "name": "harvest",
+   "ref": "inputs:confident/2026-11-08/confident-harvest-2026-11-08/ask/Event/062.json",
+   "file": "062.json",
+   "sha256": "5fc7021c59a005b8446b43136f15b595b3bb88f1836fcfd64694616d94bd483d",
+   "bytes": 731957
+  },
+  {
+   "name": "harvest",
+   "ref": "inputs:confident/2026-11-08/confident-harvest-2026-11-08/ask/Event/063.json",
+   "file": "063.json",
+   "sha256": "02ca0e466c50cffba9469957aeb7a720b9b3117881751c02a18e0be06aee8298",
+   "bytes": 760060
+  },
+  {
+   "name": "harvest",
+   "ref": "inputs:confident/2026-11-08/confident-harvest-2026-11-08/ask/Event/064.json",
+   "file": "064.json",
+   "sha256": "0c1df05fd6c647fe7cb40670d5355a1b2acc8cbfcd5010ebcf7de2eeb38a561f",
+   "bytes": 720148
+  },
+  {
+   "name": "harvest",
+   "ref": "inputs:confident/2026-11-08/confident-harvest-2026-11-08/ask/Event/065.json",
+   "file": "065.json",
+   "sha256": "680d96c4d86e9f6a5002a6d51b6be10fac7170c887a334fcfe5cb5fc55c4034b",
+   "bytes": 751418
+  },
+  {
+   "name": "harvest",
+   "ref": "inputs:confident/2026-11-08/confident-harvest-2026-11-08/ask/Event/066.json",
+   "file": "066.json",
+   "sha256": "155e530b3c92ab32f5bb24e3a9d20a3469ada2399741a4f5b6be32bbb916aeb3",
+   "bytes": 760527
+  },
+  {
+   "name": "harvest",
+   "ref": "inputs:confident/2026-11-08/confident-harvest-2026-11-08/ask/Event/067.json",
+   "file": "067.json",
+   "sha256": "99f3e95460ff1126287bef5ed38349c36f90ae411052e3ff2c82c5c3a75beb96",
+   "bytes": 744997
+  },
+  {
+   "name": "harvest",
+   "ref": "inputs:confident/2026-11-08/confident-harvest-2026-11-08/ask/Event/068.json",
+   "file": "068.json",
+   "sha256": "bc57c582c9de2483d0e98905118f1d811cdb4d1e488152ac72eaf366f86209e2",
+   "bytes": 771154
+  },
+  {
+   "name": "harvest",
+   "ref": "inputs:confident/2026-11-08/confident-harvest-2026-11-08/ask/Event/069.json",
+   "file": "069.json",
+   "sha256": "abba95a26e73e71f54aa85792eaec3061f22f5899e576b5af6609591d2e8e010",
+   "bytes": 742538
+  },
+  {
+   "name": "harvest",
+   "ref": "inputs:confident/2026-11-08/confident-harvest-2026-11-08/ask/Event/070.json",
+   "file": "070.json",
+   "sha256": "c9a44596818c68ea930e95196bb951c937bfbd928b572194a7a6e75880cfa01b",
+   "bytes": 743268
+  },
+  {
+   "name": "harvest",
+   "ref": "inputs:confident/2026-11-08/confident-harvest-2026-11-08/ask/Event/071.json",
+   "file": "071.json",
+   "sha256": "96052fe87a4d6e41a2142f6c8dd3974b1292fbe2d102bb99180ac311b424bd3e",
+   "bytes": 748424
+  },
+  {
+   "name": "harvest",
+   "ref": "inputs:confident/2026-11-08/confident-harvest-2026-11-08/ask/Event/072.json",
+   "file": "072.json",
+   "sha256": "77f73db42a61737289676dc6599aa52af58c8bf03b28cf8bf71199f87fcc98cf",
+   "bytes": 774906
+  },
+  {
+   "name": "harvest",
+   "ref": "inputs:confident/2026-11-08/confident-harvest-2026-11-08/ask/Event/073.json",
+   "file": "073.json",
+   "sha256": "0e803a3249464a3ade76f34f473faae775fb85fa8e08d7d55433949ff6bad80e",
+   "bytes": 750085
+  },
+  {
+   "name": "harvest",
+   "ref": "inputs:confident/2026-11-08/confident-harvest-2026-11-08/ask/Event/074.json",
+   "file": "074.json",
+   "sha256": "d999eec716d64ac92af5e4aee81ea59b12fbe2d2dc67ff7868b5c1db6b4ed314",
+   "bytes": 755444
+  },
+  {
+   "name": "harvest",
+   "ref": "inputs:confident/2026-11-08/confident-harvest-2026-11-08/ask/Event/075.json",
+   "file": "075.json",
+   "sha256": "8177256fc52645eb071a856dd46eac8ab95fb87c81697f53a475a7e8a6fc4742",
+   "bytes": 747156
+  },
+  {
+   "name": "harvest",
+   "ref": "inputs:confident/2026-11-08/confident-harvest-2026-11-08/ask/Event/076.json",
+   "file": "076.json",
+   "sha256": "1a5c4dbd04998dedd26f3d7ad2202b575a694aec6a045164f910af91db3dccb5",
+   "bytes": 746602
+  },
+  {
+   "name": "harvest",
+   "ref": "inputs:confident/2026-11-08/confident-harvest-2026-11-08/ask/Event/077.json",
+   "file": "077.json",
+   "sha256": "fcf947608570cc3f6d188b75b183780c09b68fb158235e7b552eeaa9d3b6dc4f",
+   "bytes": 752403
+  },
+  {
+   "name": "harvest",
+   "ref": "inputs:confident/2026-11-08/confident-harvest-2026-11-08/ask/Event/078.json",
+   "file": "078.json",
+   "sha256": "8eebf34b30ddbfa4719ce7f4e1f6f49e01ab0bdb3a418948ca56ea28272758ec",
+   "bytes": 757048
+  },
+  {
+   "name": "harvest",
+   "ref": "inputs:confident/2026-11-08/confident-harvest-2026-11-08/ask/Event/079.json",
+   "file": "079.json",
+   "sha256": "8ac43f0fb2f5d37cdd673505378d9c936e4ce779dee05a3d25c728e97056c21a",
+   "bytes": 770884
+  },
+  {
+   "name": "harvest",
+   "ref": "inputs:confident/2026-11-08/confident-harvest-2026-11-08/ask/Event/080.json",
+   "file": "080.json",
+   "sha256": "491083a3302e1f6306dee8a6e515d20ce51d0bb8318544669088014e5352e124",
+   "bytes": 781058
+  },
+  {
+   "name": "harvest",
+   "ref": "inputs:confident/2026-11-08/confident-harvest-2026-11-08/ask/Event_Series/001.json",
+   "file": "001.json",
+   "sha256": "6ad8b83b814870c04dc92b19c6fcc72b42a7df5be2e44c9e553768f141ab7d9b",
+   "bytes": 647307
+  },
+  {
+   "name": "harvest",
+   "ref": "inputs:confident/2026-11-08/confident-harvest-2026-11-08/ask/Event_Series/002.json",
+   "file": "002.json",
+   "sha256": "ef4671371d14d07368b5a946913d3d9b7308d24b63a790b3eda106f2a146cfed",
+   "bytes": 651663
+  },
+  {
+   "name": "harvest",
+   "ref": "inputs:confident/2026-11-08/confident-harvest-2026-11-08/ask/Event_Series/003.json",
+   "file": "003.json",
+   "sha256": "a88f5cc8df101dd3d1962cef51298971916854174ceb4e1117ba74eb321df5cf",
+   "bytes": 635041
+  },
+  {
+   "name": "harvest",
+   "ref": "inputs:confident/2026-11-08/confident-harvest-2026-11-08/ask/Event_Series/004.json",
+   "file": "004.json",
+   "sha256": "800796ad7256e9ab70a11dea57cbdd3cce5f48a0bd05829537ee7e0f031a111e",
+   "bytes": 648239
+  },
+  {
+   "name": "harvest",
+   "ref": "inputs:confident/2026-11-08/confident-harvest-2026-11-08/ask/Event_Series/005.json",
+   "file": "005.json",
+   "sha256": "e9790a9c0c2b88af9e81a9eb45bde98cb0a8f389636cd7c29a2df47ba70a0037",
+   "bytes": 637752
+  },
+  {
+   "name": "harvest",
+   "ref": "inputs:confident/2026-11-08/confident-harvest-2026-11-08/ask/Event_Series/006.json",
+   "file": "006.json",
+   "sha256": "1e7b61d14f35f84a8f36db82d9ae0dcdd0aa025e4ab038da712ed81930bcc85d",
+   "bytes": 639355
+  },
+  {
+   "name": "harvest",
+   "ref": "inputs:confident/2026-11-08/confident-harvest-2026-11-08/ask/Event_Series/007.json",
+   "file": "007.json",
+   "sha256": "550e80d7cdea1a972855eb90aac0467431b92d35e1cac83c1e038b256eb2ea81",
+   "bytes": 624514
+  },
+  {
+   "name": "harvest",
+   "ref": "inputs:confident/2026-11-08/confident-harvest-2026-11-08/ask/Event_Series/008.json",
+   "file": "008.json",
+   "sha256": "6104e7daa4291a7107d3b8b7300b26a04538674bba12872066cd59bdc45703a3",
+   "bytes": 622114
+  },
+  {
+   "name": "harvest",
+   "ref": "inputs:confident/2026-11-08/confident-harvest-2026-11-08/ask/Event_Series/009.json",
+   "file": "009.json",
+   "sha256": "c9c251bac1663948e81ab533d84a08ec4475edb2b22035fc2123b9f168c22fa0",
+   "bytes": 582289
+  },
+  {
+   "name": "harvest",
+   "ref": "inputs:confident/2026-11-08/confident-harvest-2026-11-08/ask/Maintainer/001.json",
+   "file": "001.json",
+   "sha256": "55ffbe13ea7fe606dd46e11f7ede8d1a757732da824a004ce03131ca53111840",
+   "bytes": 658260
+  },
+  {
+   "name": "harvest",
+   "ref": "inputs:confident/2026-11-08/confident-harvest-2026-11-08/ask/Maintainer/002.json",
+   "file": "002.json",
+   "sha256": "619802c6216b19b4bad588cbe611f43d8e567262f16f108f7ffa1e9a3a99a8bc",
+   "bytes": 659483
+  },
+  {
+   "name": "harvest",
+   "ref": "inputs:confident/2026-11-08/confident-harvest-2026-11-08/ask/Maintainer/003.json",
+   "file": "003.json",
+   "sha256": "758241bddd5269e5181e181fe2261a84233161c0c019430e73693bdef466a06d",
+   "bytes": 660506
+  },
+  {
+   "name": "harvest",
+   "ref": "inputs:confident/2026-11-08/confident-harvest-2026-11-08/ask/Maintainer/004.json",
+   "file": "004.json",
+   "sha256": "15a6d8cf4dd773c8a07f1e8822236e2bb217fcfa63837cc991433ad877842092",
+   "bytes": 659180
+  },
+  {
+   "name": "harvest",
+   "ref": "inputs:confident/2026-11-08/confident-harvest-2026-11-08/ask/Maintainer/005.json",
+   "file": "005.json",
+   "sha256": "9e9d5142dcda0d9440ea819cea4f9fad98c7d9cc1aa3e1278be10e5b153fc59d",
+   "bytes": 660765
+  },
+  {
+   "name": "harvest",
+   "ref": "inputs:confident/2026-11-08/confident-harvest-2026-11-08/ask/Maintainer/006.json",
+   "file": "006.json",
+   "sha256": "a102721f2b5a49e3e73182ed36d1285a776b0519f7253a46787b9239413b65aa",
+   "bytes": 153844
+  },
+  {
+   "name": "harvest",
+   "ref": "inputs:confident/2026-11-08/confident-harvest-2026-11-08/ask/Organization/001.json",
+   "file": "001.json",
+   "sha256": "77387d8bf852e046de997c50983121ce0801117e15eb1177ca0915d9f9df2c65",
+   "bytes": 546397
+  },
+  {
+   "name": "harvest",
+   "ref": "inputs:confident/2026-11-08/confident-harvest-2026-11-08/ask/Organization/002.json",
+   "file": "002.json",
+   "sha256": "5015dfc36167f52acc072e224e374348eef905c7bec1283c67637100f88ed1ff",
+   "bytes": 546039
+  },
+  {
+   "name": "harvest",
+   "ref": "inputs:confident/2026-11-08/confident-harvest-2026-11-08/ask/Organization/003.json",
+   "file": "003.json",
+   "sha256": "26f7d9107a8ad335d20562e34ff0c14d8846a52c7ed8122f1505e3060fad9c8f",
+   "bytes": 565567
+  },
+  {
+   "name": "harvest",
+   "ref": "inputs:confident/2026-11-08/confident-harvest-2026-11-08/ask/Organization/004.json",
+   "file": "004.json",
+   "sha256": "6d218d8f95d0d979b13ce4527eaf3fb1a7b891e1827c867fdde0bfac637b266d",
+   "bytes": 555119
+  },
+  {
+   "name": "harvest",
+   "ref": "inputs:confident/2026-11-08/confident-harvest-2026-11-08/ask/Organization/005.json",
+   "file": "005.json",
+   "sha256": "ee3380bd74cddd480e43cf3a48d0c8849a2210843a4be95b648aa91c4b284a3c",
+   "bytes": 546620
+  },
+  {
+   "name": "harvest",
+   "ref": "inputs:confident/2026-11-08/confident-harvest-2026-11-08/ask/Organization/006.json",
+   "file": "006.json",
+   "sha256": "4eaed6399d691734a1f8772fce7e2721b8e479a1cd31fdcce3fa5af2778c6983",
+   "bytes": 575988
+  },
+  {
+   "name": "harvest",
+   "ref": "inputs:confident/2026-11-08/confident-harvest-2026-11-08/ask/Organization/007.json",
+   "file": "007.json",
+   "sha256": "cd550b577b17b52538e845b36b5fa7573cf40cfca69b2422470ddfc7d6fde64f",
+   "bytes": 559873
+  },
+  {
+   "name": "harvest",
+   "ref": "inputs:confident/2026-11-08/confident-harvest-2026-11-08/ask/Organization/008.json",
+   "file": "008.json",
+   "sha256": "49d44203be3346c9b51871ee9f2949b46862f0c14ed662e3f88ded3df969c6a4",
+   "bytes": 545221
+  },
+  {
+   "name": "harvest",
+   "ref": "inputs:confident/2026-11-08/confident-harvest-2026-11-08/ask/Organization/009.json",
+   "file": "009.json",
+   "sha256": "fe0b8da2443e2c1e20472b5caff15cecd70532b053125bd574e598840c12e168",
+   "bytes": 546448
+  },
+  {
+   "name": "harvest",
+   "ref": "inputs:confident/2026-11-08/confident-harvest-2026-11-08/ask/Organization/010.json",
+   "file": "010.json",
+   "sha256": "4bcac3ee0ada3192c0f75895dd14b917fc4bdae24c39d6fad3f3d2112bc844b2",
+   "bytes": 563017
+  },
+  {
+   "name": "harvest",
+   "ref": "inputs:confident/2026-11-08/confident-harvest-2026-11-08/ask/Organization/011.json",
+   "file": "011.json",
+   "sha256": "4291620a1234c6de029c213147dc7c4b4acee07692545fc5351c8ef76ea288c2",
+   "bytes": 550380
+  },
+  {
+   "name": "harvest",
+   "ref": "inputs:confident/2026-11-08/confident-harvest-2026-11-08/ask/Organization/012.json",
+   "file": "012.json",
+   "sha256": "98acc083c7e361c3756542ecc42b6b306808f04a49983e2b4d4dedc844a144fa",
+   "bytes": 530755
+  },
+  {
+   "name": "harvest",
+   "ref": "inputs:confident/2026-11-08/confident-harvest-2026-11-08/ask/Organization/013.json",
+   "file": "013.json",
+   "sha256": "58fa62dd256b149727b3834c9cbf0af25d670e5673f579fcc771a59764138b82",
+   "bytes": 530264
+  },
+  {
+   "name": "harvest",
+   "ref": "inputs:confident/2026-11-08/confident-harvest-2026-11-08/ask/Organization/014.json",
+   "file": "014.json",
+   "sha256": "6f11248721806d737162fc8d0fa58b448d81113789d0e8407c91f50cbd4d7f88",
+   "bytes": 383240
+  },
+  {
+   "name": "harvest",
+   "ref": "inputs:confident/2026-11-08/confident-harvest-2026-11-08/ask/Organizer/001.json",
+   "file": "001.json",
+   "sha256": "e77f49737474d30ee9916808b3fcc987be7a989144d8f195c73304dc197e2062",
+   "bytes": 648448
+  },
+  {
+   "name": "harvest",
+   "ref": "inputs:confident/2026-11-08/confident-harvest-2026-11-08/ask/Organizer/002.json",
+   "file": "002.json",
+   "sha256": "a10cd3f7601589863db7c7723310f8795b724ab3da67f6383c44d2ad921c51a8",
+   "bytes": 644549
+  },
+  {
+   "name": "harvest",
+   "ref": "inputs:confident/2026-11-08/confident-harvest-2026-11-08/ask/Organizer/003.json",
+   "file": "003.json",
+   "sha256": "8d6e2efd2704a9c50eb0bb8d5610515b5d1129896841792b8323c3d359cd3927",
+   "bytes": 657912
+  },
+  {
+   "name": "harvest",
+   "ref": "inputs:confident/2026-11-08/confident-harvest-2026-11-08/ask/Organizer/004.json",
+   "file": "004.json",
+   "sha256": "18f9ae985935a4ce507019b727b193a15c4308681b472f87861da61e7f4cf597",
+   "bytes": 644026
+  },
+  {
+   "name": "harvest",
+   "ref": "inputs:confident/2026-11-08/confident-harvest-2026-11-08/ask/Organizer/005.json",
+   "file": "005.json",
+   "sha256": "614a65affcab0144e261abb5cd331d973d4fb0353ddac092d45cdb962c2b5fef",
+   "bytes": 639325
+  },
+  {
+   "name": "harvest",
+   "ref": "inputs:confident/2026-11-08/confident-harvest-2026-11-08/ask/Organizer/006.json",
+   "file": "006.json",
+   "sha256": "d8905e638df321a2035933d2615fd2664d47862398f1d4916ff2c1e7c9dd5910",
+   "bytes": 615854
+  },
+  {
+   "name": "harvest",
+   "ref": "inputs:confident/2026-11-08/confident-harvest-2026-11-08/ask/Organizer/007.json",
+   "file": "007.json",
+   "sha256": "69ddb8aa22a5e0a7be0b98c5cc7f366c187d20a0615847ee840be0acd7ab828a",
+   "bytes": 617997
+  },
+  {
+   "name": "harvest",
+   "ref": "inputs:confident/2026-11-08/confident-harvest-2026-11-08/ask/Organizer/008.json",
+   "file": "008.json",
+   "sha256": "249a584a2f8833792d0e2fea2c53dc7337b5623dc2c07b251eb64e5eedb76a1d",
+   "bytes": 614517
+  },
+  {
+   "name": "harvest",
+   "ref": "inputs:confident/2026-11-08/confident-harvest-2026-11-08/ask/Organizer/009.json",
+   "file": "009.json",
+   "sha256": "fa8327a537c8e75502b7fa767b8cf925ceef911aa924b8be5905347e251f845f",
+   "bytes": 620735
+  },
+  {
+   "name": "harvest",
+   "ref": "inputs:confident/2026-11-08/confident-harvest-2026-11-08/ask/Organizer/010.json",
+   "file": "010.json",
+   "sha256": "af7a82fe6df2923f6ae5efd8238bcb6475dcfb23751bcd197ef53c8b4378658e",
+   "bytes": 627034
+  },
+  {
+   "name": "harvest",
+   "ref": "inputs:confident/2026-11-08/confident-harvest-2026-11-08/ask/Organizer/011.json",
+   "file": "011.json",
+   "sha256": "adbbde8fbdb2781a96f872a7b8c3d8c4e0221c858a83be837d0f45ce3039af1b",
+   "bytes": 624537
+  },
+  {
+   "name": "harvest",
+   "ref": "inputs:confident/2026-11-08/confident-harvest-2026-11-08/ask/Organizer/012.json",
+   "file": "012.json",
+   "sha256": "086d7573c1a54fcdb33a88790f5fc6e17840236616862ccfde1b4d733559f375",
+   "bytes": 621200
+  },
+  {
+   "name": "harvest",
+   "ref": "inputs:confident/2026-11-08/confident-harvest-2026-11-08/ask/Organizer/013.json",
+   "file": "013.json",
+   "sha256": "18966dfd65e7338d66e3e79bb5230112c003f08ad7e6bb8316db310f09abd6b3",
+   "bytes": 633366
+  },
+  {
+   "name": "harvest",
+   "ref": "inputs:confident/2026-11-08/confident-harvest-2026-11-08/ask/Organizer/014.json",
+   "file": "014.json",
+   "sha256": "eeae40aaa8043f8e671a0976febcb667b64af14864744a456b28e6916f02bb20",
+   "bytes": 614111
+  },
+  {
+   "name": "harvest",
+   "ref": "inputs:confident/2026-11-08/confident-harvest-2026-11-08/ask/Organizer/015.json",
+   "file": "015.json",
+   "sha256": "f94fc17a8157fb209c0c7e7e1bc93bdd16a696e89e8bd7d0a8d6de56e11d589e",
+   "bytes": 627623
+  },
+  {
+   "name": "harvest",
+   "ref": "inputs:confident/2026-11-08/confident-harvest-2026-11-08/ask/Organizer/016.json",
+   "file": "016.json",
+   "sha256": "26cb2409cbd194972f3353473fb29930ab58e223119c383944e2348ebb3d7002",
+   "bytes": 606496
+  },
+  {
+   "name": "harvest",
+   "ref": "inputs:confident/2026-11-08/confident-harvest-2026-11-08/ask/Organizer/017.json",
+   "file": "017.json",
+   "sha256": "8830bd065f1ce43ca76a121a5342b1ca78988f13ef85c16dbf7b7d9f98a9c8c8",
+   "bytes": 628518
+  },
+  {
+   "name": "harvest",
+   "ref": "inputs:confident/2026-11-08/confident-harvest-2026-11-08/ask/Organizer/018.json",
+   "file": "018.json",
+   "sha256": "cd1d61f2c2a28a3e2eb6e7ec320870dec2c22e4776c94e28e3ed48ebe8a21564",
+   "bytes": 628634
+  },
+  {
+   "name": "harvest",
+   "ref": "inputs:confident/2026-11-08/confident-harvest-2026-11-08/ask/Organizer/019.json",
+   "file": "019.json",
+   "sha256": "77dd51b7b08c4747321f00c5c0796a492b6a831a6dfa7b7da535d3b4f3e501a4",
+   "bytes": 624816
+  },
+  {
+   "name": "harvest",
+   "ref": "inputs:confident/2026-11-08/confident-harvest-2026-11-08/ask/Organizer/020.json",
+   "file": "020.json",
+   "sha256": "b45874a8dff38d87a7784afbec7336729a353fad15cf73dbf64fa69be7961d5c",
+   "bytes": 612677
+  },
+  {
+   "name": "harvest",
+   "ref": "inputs:confident/2026-11-08/confident-harvest-2026-11-08/ask/Organizer/021.json",
+   "file": "021.json",
+   "sha256": "4563293f357376dd7abf55a07305d04abc666b3fa9d4d55073a6696be3a2e96e",
+   "bytes": 618732
+  },
+  {
+   "name": "harvest",
+   "ref": "inputs:confident/2026-11-08/confident-harvest-2026-11-08/ask/Organizer/022.json",
+   "file": "022.json",
+   "sha256": "13cf4298a7d4f417293d017cddb7e0c77bb4f4ba69963770814610f0db2e0c06",
+   "bytes": 607324
+  },
+  {
+   "name": "harvest",
+   "ref": "inputs:confident/2026-11-08/confident-harvest-2026-11-08/ask/Organizer/023.json",
+   "file": "023.json",
+   "sha256": "3a138bcec30ab138a378fd19c7398f861aad0eb38c2bf09b73db6bd0315e80e5",
+   "bytes": 632851
+  },
+  {
+   "name": "harvest",
+   "ref": "inputs:confident/2026-11-08/confident-harvest-2026-11-08/ask/Organizer/024.json",
+   "file": "024.json",
+   "sha256": "5e94b57716df2ba5333d08fefa1c11cf2565ba810b88b55561f8de6dad768672",
+   "bytes": 636578
+  },
+  {
+   "name": "harvest",
+   "ref": "inputs:confident/2026-11-08/confident-harvest-2026-11-08/ask/Organizer/025.json",
+   "file": "025.json",
+   "sha256": "9dc82062cd50ea093ad98ace095c40d99e5c0ffb3c650a2d2e1eea03e5c727b6",
+   "bytes": 619986
+  },
+  {
+   "name": "harvest",
+   "ref": "inputs:confident/2026-11-08/confident-harvest-2026-11-08/ask/Organizer/026.json",
+   "file": "026.json",
+   "sha256": "89ef6c28f6fb404798cded7290ab808ee885540fca735ccac90965c615311be1",
+   "bytes": 632010
+  },
+  {
+   "name": "harvest",
+   "ref": "inputs:confident/2026-11-08/confident-harvest-2026-11-08/ask/Organizer/027.json",
+   "file": "027.json",
+   "sha256": "7924ba6733d3084593ab487973f01a6e8f943df3d443f182eacb758eeb87eb7c",
+   "bytes": 637647
+  },
+  {
+   "name": "harvest",
+   "ref": "inputs:confident/2026-11-08/confident-harvest-2026-11-08/ask/Organizer/028.json",
+   "file": "028.json",
+   "sha256": "4b099b59fc6b57ffbfdc1bedbf2ec52098dc3ee0ceaec52818b170d9065facaa",
+   "bytes": 643564
+  },
+  {
+   "name": "harvest",
+   "ref": "inputs:confident/2026-11-08/confident-harvest-2026-11-08/ask/Organizer/029.json",
+   "file": "029.json",
+   "sha256": "eecc13d12e2dac659ebc17285346302d34168152a633b9743f939de0184eb1a5",
+   "bytes": 628606
+  },
+  {
+   "name": "harvest",
+   "ref": "inputs:confident/2026-11-08/confident-harvest-2026-11-08/ask/Organizer/030.json",
+   "file": "030.json",
+   "sha256": "da97dedf15197b3ba1b728f63e6620efebff3e448767325d278c389a2d0f3e93",
+   "bytes": 633116
+  },
+  {
+   "name": "harvest",
+   "ref": "inputs:confident/2026-11-08/confident-harvest-2026-11-08/ask/Organizer/031.json",
+   "file": "031.json",
+   "sha256": "9db67447a0509b17e7bdd4777d36c123a31b39cf932a930d56797c472e25a0a2",
+   "bytes": 620449
+  },
+  {
+   "name": "harvest",
+   "ref": "inputs:confident/2026-11-08/confident-harvest-2026-11-08/ask/Organizer/032.json",
+   "file": "032.json",
+   "sha256": "d44441dcc226a2bfd3786a0b944815d285cc2c6f2286bef1a1ee18c48d34cfe6",
+   "bytes": 631232
+  },
+  {
+   "name": "harvest",
+   "ref": "inputs:confident/2026-11-08/confident-harvest-2026-11-08/ask/Organizer/033.json",
+   "file": "033.json",
+   "sha256": "9b915ce3c98c4c11c7497380b9bcece4ab8020b44b2fae04665eb0aaadb4bce6",
+   "bytes": 621276
+  },
+  {
+   "name": "harvest",
+   "ref": "inputs:confident/2026-11-08/confident-harvest-2026-11-08/ask/Organizer/034.json",
+   "file": "034.json",
+   "sha256": "3d03f316bd22c5b0491cd91be36a30826d195c81a71356514b81e569a19691b6",
+   "bytes": 629595
+  },
+  {
+   "name": "harvest",
+   "ref": "inputs:confident/2026-11-08/confident-harvest-2026-11-08/ask/Organizer/035.json",
+   "file": "035.json",
+   "sha256": "544e49252c96ecf6f100aa7a9e53963df06a2d827baf5adcb6f73c74ac7bda2b",
+   "bytes": 634520
+  },
+  {
+   "name": "harvest",
+   "ref": "inputs:confident/2026-11-08/confident-harvest-2026-11-08/ask/Organizer/036.json",
+   "file": "036.json",
+   "sha256": "06972953ef8932464871c8e2e6c21a49d3111cf186e93e90b951f154946fa0b7",
+   "bytes": 640321
+  },
+  {
+   "name": "harvest",
+   "ref": "inputs:confident/2026-11-08/confident-harvest-2026-11-08/ask/Organizer/037.json",
+   "file": "037.json",
+   "sha256": "cdf2af2b6ef88ea98dc42e4e3080ad3f45ed785bd33ccc5e57dce6230beb8be7",
+   "bytes": 646295
+  },
+  {
+   "name": "harvest",
+   "ref": "inputs:confident/2026-11-08/confident-harvest-2026-11-08/ask/Organizer/038.json",
+   "file": "038.json",
+   "sha256": "e643c05d4c617607ab80a1d7c3cae32dfe873450c0a15531325a8c78d83f1cbd",
+   "bytes": 645808
+  },
+  {
+   "name": "harvest",
+   "ref": "inputs:confident/2026-11-08/confident-harvest-2026-11-08/ask/Organizer/039.json",
+   "file": "039.json",
+   "sha256": "b9b174f81f483540559c888cc436e7d7a100961584a68605afc4f4e34e1ab4ff",
+   "bytes": 629072
+  },
+  {
+   "name": "harvest",
+   "ref": "inputs:confident/2026-11-08/confident-harvest-2026-11-08/ask/Organizer/040.json",
+   "file": "040.json",
+   "sha256": "9fe8c15d012529952775c510e0d53d8bd8d00a58c33b4e4b59e0bd2535546688",
+   "bytes": 627552
+  },
+  {
+   "name": "harvest",
+   "ref": "inputs:confident/2026-11-08/confident-harvest-2026-11-08/ask/Organizer/041.json",
+   "file": "041.json",
+   "sha256": "fba038422278bb000abd21a0a0bb685a13ddc5593d7ed515a8dc83b4297cd37d",
+   "bytes": 632986
+  },
+  {
+   "name": "harvest",
+   "ref": "inputs:confident/2026-11-08/confident-harvest-2026-11-08/ask/Organizer/042.json",
+   "file": "042.json",
+   "sha256": "72e208b35bc69adf3a2817744fa12131d6883cb7ed523fb311a18e024c01e05d",
+   "bytes": 635281
+  },
+  {
+   "name": "harvest",
+   "ref": "inputs:confident/2026-11-08/confident-harvest-2026-11-08/ask/Organizer/043.json",
+   "file": "043.json",
+   "sha256": "4721e2e4c1a57311e1b808b6b2d27778867279af88e97310c4eb547ece4e35c1",
+   "bytes": 633852
+  },
+  {
+   "name": "harvest",
+   "ref": "inputs:confident/2026-11-08/confident-harvest-2026-11-08/ask/Organizer/044.json",
+   "file": "044.json",
+   "sha256": "3506c508e769317096a9336167cf074f146478e5bc5070838a9ea2ec249a87c4",
+   "bytes": 630170
+  },
+  {
+   "name": "harvest",
+   "ref": "inputs:confident/2026-11-08/confident-harvest-2026-11-08/ask/Organizer/045.json",
+   "file": "045.json",
+   "sha256": "664e5c528946b9f491a084af6b727654b967a76ad4cc1f88e3699f53bd0fc57a",
+   "bytes": 647042
+  },
+  {
+   "name": "harvest",
+   "ref": "inputs:confident/2026-11-08/confident-harvest-2026-11-08/ask/Organizer/046.json",
+   "file": "046.json",
+   "sha256": "833c9f132961c55ba0043bd1ae8ccadbf096eb2a54585b3553b108075b77dec3",
+   "bytes": 641433
+  },
+  {
+   "name": "harvest",
+   "ref": "inputs:confident/2026-11-08/confident-harvest-2026-11-08/ask/Organizer/047.json",
+   "file": "047.json",
+   "sha256": "9e3606f7fc1f683ffdf4b6848e2364e284a884e2d6586f45c530d13b4f092d75",
+   "bytes": 635773
+  },
+  {
+   "name": "harvest",
+   "ref": "inputs:confident/2026-11-08/confident-harvest-2026-11-08/ask/Organizer/048.json",
+   "file": "048.json",
+   "sha256": "bf7cca003c234420a6684aae648dd9229604add2f00fbbaf784d18ba7051afa2",
+   "bytes": 630309
+  },
+  {
+   "name": "harvest",
+   "ref": "inputs:confident/2026-11-08/confident-harvest-2026-11-08/ask/Organizer/049.json",
+   "file": "049.json",
+   "sha256": "95e46f9400d52ff8e29a3a47f280058e7781afb44b0655133cc2c8e14d8e5e6c",
+   "bytes": 635832
+  },
+  {
+   "name": "harvest",
+   "ref": "inputs:confident/2026-11-08/confident-harvest-2026-11-08/ask/Organizer/050.json",
+   "file": "050.json",
+   "sha256": "c9e4c084473385d9c52c54d23516f5caefa72a2896168c32756c041f1ddc2bbd",
+   "bytes": 630193
+  },
+  {
+   "name": "harvest",
+   "ref": "inputs:confident/2026-11-08/confident-harvest-2026-11-08/ask/Organizer/051.json",
+   "file": "051.json",
+   "sha256": "d8025075c3358c9e227b4557986527d9daf1112650bda236acfe75ebaebf95bc",
+   "bytes": 630920
+  },
+  {
+   "name": "harvest",
+   "ref": "inputs:confident/2026-11-08/confident-harvest-2026-11-08/ask/Organizer/052.json",
+   "file": "052.json",
+   "sha256": "da279d8165da563f1b2bbfedb703a022be97e2b9eeaedb08e1a7cdc4e25f7ac2",
+   "bytes": 633356
+  },
+  {
+   "name": "harvest",
+   "ref": "inputs:confident/2026-11-08/confident-harvest-2026-11-08/ask/Organizer/053.json",
+   "file": "053.json",
+   "sha256": "8771b37119673ea4a744b7a1584940156765c3b9fd59e2208255fcb74d0cb8e8",
+   "bytes": 642480
+  },
+  {
+   "name": "harvest",
+   "ref": "inputs:confident/2026-11-08/confident-harvest-2026-11-08/ask/Organizer/054.json",
+   "file": "054.json",
+   "sha256": "a33430c931134bc8c1e29bb5f699e1b993b149dc407139ba3b4e03a938c9e21f",
+   "bytes": 636376
+  },
+  {
+   "name": "harvest",
+   "ref": "inputs:confident/2026-11-08/confident-harvest-2026-11-08/ask/Organizer/055.json",
+   "file": "055.json",
+   "sha256": "98b903952fbd619d4a25f3cc5d9c97f3ae0dec69da81505a8109ae58829872d6",
+   "bytes": 639883
+  },
+  {
+   "name": "harvest",
+   "ref": "inputs:confident/2026-11-08/confident-harvest-2026-11-08/ask/Organizer/056.json",
+   "file": "056.json",
+   "sha256": "3a39efbab2ee222ae2ee6fa742c7ad447c111e04cc8d919ec4a84b67a9a109e5",
+   "bytes": 630688
+  },
+  {
+   "name": "harvest",
+   "ref": "inputs:confident/2026-11-08/confident-harvest-2026-11-08/ask/Organizer/057.json",
+   "file": "057.json",
+   "sha256": "11ae86dcc24e39475a9f78cbbbbd5fa831404e41a39b09b22433fe072fdcbdc9",
+   "bytes": 634767
+  },
+  {
+   "name": "harvest",
+   "ref": "inputs:confident/2026-11-08/confident-harvest-2026-11-08/ask/Organizer/058.json",
+   "file": "058.json",
+   "sha256": "378e6a1ffe41faaa34890b7d4f4a84158c47c5885c627b46944e6606f7508bae",
+   "bytes": 638919
+  },
+  {
+   "name": "harvest",
+   "ref": "inputs:confident/2026-11-08/confident-harvest-2026-11-08/ask/Organizer/059.json",
+   "file": "059.json",
+   "sha256": "b6c9926f41af9c95af759742a44188501f23b256c8ba39dc20f46d9a80a5c12a",
+   "bytes": 642231
+  },
+  {
+   "name": "harvest",
+   "ref": "inputs:confident/2026-11-08/confident-harvest-2026-11-08/ask/Organizer/060.json",
+   "file": "060.json",
+   "sha256": "5ff8c414be13066e0330c94a42d374f77e1d123ae7ae19540c0034f1fb2a70a0",
+   "bytes": 640443
+  },
+  {
+   "name": "harvest",
+   "ref": "inputs:confident/2026-11-08/confident-harvest-2026-11-08/ask/Organizer/061.json",
+   "file": "061.json",
+   "sha256": "2e2a993a31289e452be9e0e52ae64bb22359be80a69ab3b8aba2ee15fc552437",
+   "bytes": 643807
+  },
+  {
+   "name": "harvest",
+   "ref": "inputs:confident/2026-11-08/confident-harvest-2026-11-08/ask/Organizer/062.json",
+   "file": "062.json",
+   "sha256": "a66b3b6436164bb3fa19b707348fdec92d91334aca26ade8000133c221aea3a0",
+   "bytes": 645051
+  },
+  {
+   "name": "harvest",
+   "ref": "inputs:confident/2026-11-08/confident-harvest-2026-11-08/ask/Organizer/063.json",
+   "file": "063.json",
+   "sha256": "85ec7bea73e24931beadf446c0def278b24851ad046ab1b9b1d7cabf30e73a48",
+   "bytes": 637253
+  },
+  {
+   "name": "harvest",
+   "ref": "inputs:confident/2026-11-08/confident-harvest-2026-11-08/ask/Organizer/064.json",
+   "file": "064.json",
+   "sha256": "d855392ac8707b1591110f66a639e852b653e20957f648b7dbba9c7418c84ec2",
+   "bytes": 626332
+  },
+  {
+   "name": "harvest",
+   "ref": "inputs:confident/2026-11-08/confident-harvest-2026-11-08/ask/Organizer/065.json",
+   "file": "065.json",
+   "sha256": "48ce611f66a5c897d362f35ed9cc4efae5dd93f2b6b79390dec4fa81ee917545",
+   "bytes": 638798
+  },
+  {
+   "name": "harvest",
+   "ref": "inputs:confident/2026-11-08/confident-harvest-2026-11-08/ask/Organizer/066.json",
+   "file": "066.json",
+   "sha256": "448165f7572fea7534d9fa33c0dc2733518f29be752788888b8ec5a4f5cdee79",
+   "bytes": 640669
+  },
+  {
+   "name": "harvest",
+   "ref": "inputs:confident/2026-11-08/confident-harvest-2026-11-08/ask/Organizer/067.json",
+   "file": "067.json",
+   "sha256": "abe79dfb144ead6aaddfb8e44e5d15de813995fa4472849ec3ab7e49265962bd",
+   "bytes": 632677
+  },
+  {
+   "name": "harvest",
+   "ref": "inputs:confident/2026-11-08/confident-harvest-2026-11-08/ask/Organizer/068.json",
+   "file": "068.json",
+   "sha256": "36b1c00a6c42402f9ec99878afcfbfbbedfc1af47e35ccb4e860f3e10b2a9209",
+   "bytes": 645111
+  },
+  {
+   "name": "harvest",
+   "ref": "inputs:confident/2026-11-08/confident-harvest-2026-11-08/ask/Organizer/069.json",
+   "file": "069.json",
+   "sha256": "2c7f5b1352bbc5df8a073cd9d8237742fd6be7108fd147e613baad6cbe957186",
+   "bytes": 297830
+  },
+  {
+   "name": "harvest",
+   "ref": "inputs:confident/2026-11-08/confident-harvest-2026-11-08/harvest.json",
+   "file": "harvest.json",
+   "sha256": "433ef487d4eaddfc3d6d47d9aaee0cd6ec10218c7c4c0b95871e5da52a5d7d36",
+   "bytes": 1164
+  },
+  {
+   "name": "harvest",
+   "ref": "inputs:confident/2026-11-08/confident-harvest-2026-11-08/log/delete-Academic_Field/001.json",
+   "file": "001.json",
+   "sha256": "f8ad431054ba8af9b587d6c2ac962d837aac084d2f8d79e0e0c8c8544555b842",
+   "bytes": 80821
+  },
+  {
+   "name": "harvest",
+   "ref": "inputs:confident/2026-11-08/confident-harvest-2026-11-08/log/delete-Country/001.json",
+   "file": "001.json",
+   "sha256": "c2e572d4c7ad46a8e5ec1abc96b6bb0fe1812392537c5de0f4b8e98e521d4647",
+   "bytes": 45
+  },
+  {
+   "name": "harvest",
+   "ref": "inputs:confident/2026-11-08/confident-harvest-2026-11-08/log/delete-Event/001.json",
+   "file": "001.json",
+   "sha256": "7a8a42bd5b8b04b42d35f264bf83756d3f3da168fa0fadf83575c65b48f49ce5",
+   "bytes": 86418
+  },
+  {
+   "name": "harvest",
+   "ref": "inputs:confident/2026-11-08/confident-harvest-2026-11-08/log/delete-Event/002.json",
+   "file": "002.json",
+   "sha256": "218e410e5dcac3736109ee820e46bb0dfdf4e92a1311da6ca590238d8cdb479f",
+   "bytes": 89949
+  },
+  {
+   "name": "harvest",
+   "ref": "inputs:confident/2026-11-08/confident-harvest-2026-11-08/log/delete-Event/003.json",
+   "file": "003.json",
+   "sha256": "f818849e3eb294485cb803a15cfb6a1bca21d33e183f2bec38988022ae1a8d28",
+   "bytes": 67793
+  },
+  {
+   "name": "harvest",
+   "ref": "inputs:confident/2026-11-08/confident-harvest-2026-11-08/log/delete-Event_Series/001.json",
+   "file": "001.json",
+   "sha256": "59a48a4d54fe7cc6fe300adae4db9883249eaafae68ce8dac83c3f219cb99efe",
+   "bytes": 26512
+  },
+  {
+   "name": "harvest",
+   "ref": "inputs:confident/2026-11-08/confident-harvest-2026-11-08/log/delete-Organization/001.json",
+   "file": "001.json",
+   "sha256": "bc16fa6a5cdb63791f0afffcd55aeda51148e559e328671456c6209e60f27681",
+   "bytes": 47509
+  },
+  {
+   "name": "harvest",
+   "ref": "inputs:confident/2026-11-08/confident-harvest-2026-11-08/log/merge-Academic_Field/001.json",
+   "file": "001.json",
+   "sha256": "c2e572d4c7ad46a8e5ec1abc96b6bb0fe1812392537c5de0f4b8e98e521d4647",
+   "bytes": 45
+  },
+  {
+   "name": "harvest",
+   "ref": "inputs:confident/2026-11-08/confident-harvest-2026-11-08/log/merge-Country/001.json",
+   "file": "001.json",
+   "sha256": "c2e572d4c7ad46a8e5ec1abc96b6bb0fe1812392537c5de0f4b8e98e521d4647",
+   "bytes": 45
+  },
+  {
+   "name": "harvest",
+   "ref": "inputs:confident/2026-11-08/confident-harvest-2026-11-08/log/merge-Event/001.json",
+   "file": "001.json",
+   "sha256": "c2e572d4c7ad46a8e5ec1abc96b6bb0fe1812392537c5de0f4b8e98e521d4647",
+   "bytes": 45
+  },
+  {
+   "name": "harvest",
+   "ref": "inputs:confident/2026-11-08/confident-harvest-2026-11-08/log/merge-Event_Series/001.json",
+   "file": "001.json",
+   "sha256": "c2e572d4c7ad46a8e5ec1abc96b6bb0fe1812392537c5de0f4b8e98e521d4647",
+   "bytes": 45
+  },
+  {
+   "name": "harvest",
+   "ref": "inputs:confident/2026-11-08/confident-harvest-2026-11-08/log/merge-Organization/001.json",
+   "file": "001.json",
+   "sha256": "c2e572d4c7ad46a8e5ec1abc96b6bb0fe1812392537c5de0f4b8e98e521d4647",
+   "bytes": 45
+  },
+  {
+   "name": "harvest",
+   "ref": "inputs:confident/2026-11-08/confident-harvest-2026-11-08/log/move-Academic_Field/001.json",
+   "file": "001.json",
+   "sha256": "5174f18043e086e16585773b319cc987278682a501c00be3c84f9bc7fa1281b4",
+   "bytes": 1071
+  },
+  {
+   "name": "harvest",
+   "ref": "inputs:confident/2026-11-08/confident-harvest-2026-11-08/log/move-Country/001.json",
+   "file": "001.json",
+   "sha256": "c2e572d4c7ad46a8e5ec1abc96b6bb0fe1812392537c5de0f4b8e98e521d4647",
+   "bytes": 45
+  },
+  {
+   "name": "harvest",
+   "ref": "inputs:confident/2026-11-08/confident-harvest-2026-11-08/log/move-Event/001.json",
+   "file": "001.json",
+   "sha256": "c2e572d4c7ad46a8e5ec1abc96b6bb0fe1812392537c5de0f4b8e98e521d4647",
+   "bytes": 45
+  },
+  {
+   "name": "harvest",
+   "ref": "inputs:confident/2026-11-08/confident-harvest-2026-11-08/log/move-Event_Series/001.json",
+   "file": "001.json",
+   "sha256": "c2e572d4c7ad46a8e5ec1abc96b6bb0fe1812392537c5de0f4b8e98e521d4647",
+   "bytes": 45
+  },
+  {
+   "name": "harvest",
+   "ref": "inputs:confident/2026-11-08/confident-harvest-2026-11-08/log/move-Organization/001.json",
+   "file": "001.json",
+   "sha256": "2d48e85bd759d44863881c24fede96075298b4fc99cbca2c8470cffcbd7b2070",
+   "bytes": 269
+  },
+  {
+   "name": "harvest",
+   "ref": "inputs:confident/2026-11-08/confident-harvest-2026-11-08/pages/Academic_Field-pages/001.json",
+   "file": "001.json",
+   "sha256": "29d986d625adfaae893f5f360f6e144ba5b38e8b43c55256cc157ded054c86c7",
+   "bytes": 35110
+  },
+  {
+   "name": "harvest",
+   "ref": "inputs:confident/2026-11-08/confident-harvest-2026-11-08/pages/Academic_Field-pages/002.json",
+   "file": "002.json",
+   "sha256": "824aed333e99d6140ca70d11940d310c97183939b3756cd4a6fc9677e4a62616",
+   "bytes": 35265
+  },
+  {
+   "name": "harvest",
+   "ref": "inputs:confident/2026-11-08/confident-harvest-2026-11-08/pages/Academic_Field-pages/003.json",
+   "file": "003.json",
+   "sha256": "16e2bdffec75810a446f4b041a8dd57accba3e60c0707c53252d138e66f7a719",
+   "bytes": 35362
+  },
+  {
+   "name": "harvest",
+   "ref": "inputs:confident/2026-11-08/confident-harvest-2026-11-08/pages/Academic_Field-pages/004.json",
+   "file": "004.json",
+   "sha256": "6675a8d7eedfc28fa32ec9c4b2e3ed30c1903ada043b96e1e2b28d4b36665476",
+   "bytes": 23616
+  },
+  {
+   "name": "harvest",
+   "ref": "inputs:confident/2026-11-08/confident-harvest-2026-11-08/pages/Academic_Field-redirects/001.json",
+   "file": "001.json",
+   "sha256": "1451c0ab1bdc8d920c570feefb020b1c4e0c29b29e644d3e3b62a53789e3cb35",
+   "bytes": 349
+  },
+  {
+   "name": "harvest",
+   "ref": "inputs:confident/2026-11-08/confident-harvest-2026-11-08/pages/Country-pages/001.json",
+   "file": "001.json",
+   "sha256": "eac139645fdc9525d89028946ade5e7a76ae5cee5a35174f36a02a4bb2dbb77f",
+   "bytes": 12043
+  },
+  {
+   "name": "harvest",
+   "ref": "inputs:confident/2026-11-08/confident-harvest-2026-11-08/pages/Country-redirects/001.json",
+   "file": "001.json",
+   "sha256": "38435ef9befbc6292b1c27ebc26430f4c80c44ff4e6b3ac2161a85b2e277bd58",
+   "bytes": 44
+  },
+  {
+   "name": "harvest",
+   "ref": "inputs:confident/2026-11-08/confident-harvest-2026-11-08/pages/Event-pages/001.json",
+   "file": "001.json",
+   "sha256": "61ef3b1acfc8bf3d8cc17991fcc08670335483e5b957596b99888aacf4f9145e",
+   "bytes": 40125
+  },
+  {
+   "name": "harvest",
+   "ref": "inputs:confident/2026-11-08/confident-harvest-2026-11-08/pages/Event-pages/002.json",
+   "file": "002.json",
+   "sha256": "d1879514e9ea1ace1f59a4034e55cdbc927bfa997fd9a9c025ee5b833679b72f",
+   "bytes": 40125
+  },
+  {
+   "name": "harvest",
+   "ref": "inputs:confident/2026-11-08/confident-harvest-2026-11-08/pages/Event-pages/003.json",
+   "file": "003.json",
+   "sha256": "3e28fd671afdb8276a489b1a2cfcbaa5ed3cddf1796c5793cabddc9426835a4a",
+   "bytes": 40125
+  },
+  {
+   "name": "harvest",
+   "ref": "inputs:confident/2026-11-08/confident-harvest-2026-11-08/pages/Event-pages/004.json",
+   "file": "004.json",
+   "sha256": "109418c0d19ba3254e2a431096a53e7dc9ad0a7639af5807df66db358f9d122d",
+   "bytes": 40125
+  },
+  {
+   "name": "harvest",
+   "ref": "inputs:confident/2026-11-08/confident-harvest-2026-11-08/pages/Event-pages/005.json",
+   "file": "005.json",
+   "sha256": "f56cfcfda97db46c08e46bedf81da624caeda626cc6ede312f177d13ce9339b0",
+   "bytes": 40125
+  },
+  {
+   "name": "harvest",
+   "ref": "inputs:confident/2026-11-08/confident-harvest-2026-11-08/pages/Event-pages/006.json",
+   "file": "006.json",
+   "sha256": "2000a8a02ecb62ae4a407d4e260a814fe80764d82f07ef7683e5a3882b044cdf",
+   "bytes": 40013
+  },
+  {
+   "name": "harvest",
+   "ref": "inputs:confident/2026-11-08/confident-harvest-2026-11-08/pages/Event-pages/007.json",
+   "file": "007.json",
+   "sha256": "33b1b9b82faee6735139b34348ed678c587b2b0ad122da50d1ee7e7cdc2de25c",
+   "bytes": 40097
+  },
+  {
+   "name": "harvest",
+   "ref": "inputs:confident/2026-11-08/confident-harvest-2026-11-08/pages/Event-pages/008.json",
+   "file": "008.json",
+   "sha256": "284d743dac70d2745d57e043cdcedcfcd235cc238d24d7bae5aefb7be2375ca3",
+   "bytes": 40125
+  },
+  {
+   "name": "harvest",
+   "ref": "inputs:confident/2026-11-08/confident-harvest-2026-11-08/pages/Event-pages/009.json",
+   "file": "009.json",
+   "sha256": "d572a2925421a0e343c2758c94cdbd54ce7975661993d593187a2b785e412eb7",
+   "bytes": 40068
+  },
+  {
+   "name": "harvest",
+   "ref": "inputs:confident/2026-11-08/confident-harvest-2026-11-08/pages/Event-pages/010.json",
+   "file": "010.json",
+   "sha256": "0d0289e6bf7337c368693667ec1d921827961c602abb8845f0c681fbc0a56e0e",
+   "bytes": 40125
+  },
+  {
+   "name": "harvest",
+   "ref": "inputs:confident/2026-11-08/confident-harvest-2026-11-08/pages/Event-pages/011.json",
+   "file": "011.json",
+   "sha256": "6d04ded373d6a5e0f9ce59cef6b8871938d76cf2c0e3ee271d0c0e8e35bf3fbb",
+   "bytes": 40125
+  },
+  {
+   "name": "harvest",
+   "ref": "inputs:confident/2026-11-08/confident-harvest-2026-11-08/pages/Event-pages/012.json",
+   "file": "012.json",
+   "sha256": "6ebf00dc325a5e4eb6d65212703bf7fd60fc49730e56737533eec7978bc4df64",
+   "bytes": 40125
+  },
+  {
+   "name": "harvest",
+   "ref": "inputs:confident/2026-11-08/confident-harvest-2026-11-08/pages/Event-pages/013.json",
+   "file": "013.json",
+   "sha256": "b147d0481ab846effde9b9663529bcf129360bbb674e8370e4f7ee7234710ea9",
+   "bytes": 40125
+  },
+  {
+   "name": "harvest",
+   "ref": "inputs:confident/2026-11-08/confident-harvest-2026-11-08/pages/Event-pages/014.json",
+   "file": "014.json",
+   "sha256": "01554e6fed8339c684ee379b88e81c8031bada45ed6844954ae6b4bc0030d7e7",
+   "bytes": 40125
+  },
+  {
+   "name": "harvest",
+   "ref": "inputs:confident/2026-11-08/confident-harvest-2026-11-08/pages/Event-pages/015.json",
+   "file": "015.json",
+   "sha256": "13cb0caf4f460f9d2cd81641ad47c26110fdac31f365126ca83f97efb485538a",
+   "bytes": 40125
+  },
+  {
+   "name": "harvest",
+   "ref": "inputs:confident/2026-11-08/confident-harvest-2026-11-08/pages/Event-pages/016.json",
+   "file": "016.json",
+   "sha256": "b25226d4627e2e4562f42f303e39a6df193c065ad89c4f9ca54e2239d667c77a",
+   "bytes": 35175
+  },
+  {
+   "name": "harvest",
+   "ref": "inputs:confident/2026-11-08/confident-harvest-2026-11-08/pages/Event-pages/017.json",
+   "file": "017.json",
+   "sha256": "31727056e081dd5ae139ae0e680d5ef7bc4521f4c3b3aa53760110f41eeb1e33",
+   "bytes": 26536
+  },
+  {
+   "name": "harvest",
+   "ref": "inputs:confident/2026-11-08/confident-harvest-2026-11-08/pages/Event-pages/018.json",
+   "file": "018.json",
+   "sha256": "e0a5382e8689a3769eed522578b1960604cd4d723d59c5a13358c5882317a3ad",
+   "bytes": 37616
+  },
+  {
+   "name": "harvest",
+   "ref": "inputs:confident/2026-11-08/confident-harvest-2026-11-08/pages/Event-pages/019.json",
+   "file": "019.json",
+   "sha256": "478d9c17ffe01145ae2d156d5594909c628c59a992306a501311688456cf4040",
+   "bytes": 37461
+  },
+  {
+   "name": "harvest",
+   "ref": "inputs:confident/2026-11-08/confident-harvest-2026-11-08/pages/Event-pages/020.json",
+   "file": "020.json",
+   "sha256": "7e3caccd6daa146a3e7505fb1f3bbdb1a7b17099c7d77f340ce5a19ff11f531f",
+   "bytes": 39674
+  },
+  {
+   "name": "harvest",
+   "ref": "inputs:confident/2026-11-08/confident-harvest-2026-11-08/pages/Event-pages/021.json",
+   "file": "021.json",
+   "sha256": "a8a9fc1c5de84923c9ab7bc6ebfc9fe39d15b7c77872975cdd7a29c8abcc087c",
+   "bytes": 33052
+  },
+  {
+   "name": "harvest",
+   "ref": "inputs:confident/2026-11-08/confident-harvest-2026-11-08/pages/Event-pages/022.json",
+   "file": "022.json",
+   "sha256": "0a3bfd4bf2f2a704790fd5833fa87c30ac671988510a9fa91e8fe772e3c727cd",
+   "bytes": 26951
+  },
+  {
+   "name": "harvest",
+   "ref": "inputs:confident/2026-11-08/confident-harvest-2026-11-08/pages/Event-pages/023.json",
+   "file": "023.json",
+   "sha256": "4ea029c07704e7e32e3d0eb307497b2ede36f0bf6d12a57b53714d64dd2e9bcb",
+   "bytes": 38727
+  },
+  {
+   "name": "harvest",
+   "ref": "inputs:confident/2026-11-08/confident-harvest-2026-11-08/pages/Event-pages/024.json",
+   "file": "024.json",
+   "sha256": "4f060c26af80472ef8bdd5f00d26892a9e81e95412e7b50c5e0e794dc6533838",
+   "bytes": 33879
+  },
+  {
+   "name": "harvest",
+   "ref": "inputs:confident/2026-11-08/confident-harvest-2026-11-08/pages/Event-pages/025.json",
+   "file": "025.json",
+   "sha256": "7058cc560f4038ceb4fe19dba3f74972242ac80e14dd1bfd8269fcb44353b8ef",
+   "bytes": 37790
+  },
+  {
+   "name": "harvest",
+   "ref": "inputs:confident/2026-11-08/confident-harvest-2026-11-08/pages/Event-pages/026.json",
+   "file": "026.json",
+   "sha256": "7d3d3cd508b6e57292307e266d9c0ede720ca55daa26f5279f61affb9b78af4a",
+   "bytes": 36672
+  },
+  {
+   "name": "harvest",
+   "ref": "inputs:confident/2026-11-08/confident-harvest-2026-11-08/pages/Event-pages/027.json",
+   "file": "027.json",
+   "sha256": "8bd9fae9bba0849dcc8bcbc1d39dc77f461a17edcf42935453fa42ef752690d6",
+   "bytes": 29314
+  },
+  {
+   "name": "harvest",
+   "ref": "inputs:confident/2026-11-08/confident-harvest-2026-11-08/pages/Event-pages/028.json",
+   "file": "028.json",
+   "sha256": "1ce9c33661a7e2763cda358229d1e24b0fedf36ed3e92923501b8c702ec52d29",
+   "bytes": 38135
+  },
+  {
+   "name": "harvest",
+   "ref": "inputs:confident/2026-11-08/confident-harvest-2026-11-08/pages/Event-pages/029.json",
+   "file": "029.json",
+   "sha256": "bd1765da5dfa5dc413ef3eebb0724619dc23af1af000fc816d6a478c0d93d02e",
+   "bytes": 32364
+  },
+  {
+   "name": "harvest",
+   "ref": "inputs:confident/2026-11-08/confident-harvest-2026-11-08/pages/Event-pages/030.json",
+   "file": "030.json",
+   "sha256": "601c054df1bbe361502b17ca24a5fcea327226a2bd64f3cd428a3f8d65b62aeb",
+   "bytes": 33535
+  },
+  {
+   "name": "harvest",
+   "ref": "inputs:confident/2026-11-08/confident-harvest-2026-11-08/pages/Event-pages/031.json",
+   "file": "031.json",
+   "sha256": "e0aa0afcb7764f2ba397b353e66439f335a368783c8f51f5374529a3b81d558a",
+   "bytes": 28568
+  },
+  {
+   "name": "harvest",
+   "ref": "inputs:confident/2026-11-08/confident-harvest-2026-11-08/pages/Event-pages/032.json",
+   "file": "032.json",
+   "sha256": "edef73d40f6194f445389fcb5864efaa955e05deee78200aa87033430eb2f8bf",
+   "bytes": 27782
+  },
+  {
+   "name": "harvest",
+   "ref": "inputs:confident/2026-11-08/confident-harvest-2026-11-08/pages/Event-pages/033.json",
+   "file": "033.json",
+   "sha256": "a891ee85e9af7ff50936bcfba9a7d73903adbc92395b7d77ec3cc3c6209a48e7",
+   "bytes": 28647
+  },
+  {
+   "name": "harvest",
+   "ref": "inputs:confident/2026-11-08/confident-harvest-2026-11-08/pages/Event-pages/034.json",
+   "file": "034.json",
+   "sha256": "b20edfdb16ae2712daac6a0b783616ad2135e73ee4f5ed30a77d7a59e34e8871",
+   "bytes": 26889
+  },
+  {
+   "name": "harvest",
+   "ref": "inputs:confident/2026-11-08/confident-harvest-2026-11-08/pages/Event-pages/035.json",
+   "file": "035.json",
+   "sha256": "11f6a4e51f6973eca3c6d4d87de96df67bd0b38ac9f9338a3cede4464fed78d7",
+   "bytes": 27722
+  },
+  {
+   "name": "harvest",
+   "ref": "inputs:confident/2026-11-08/confident-harvest-2026-11-08/pages/Event-pages/036.json",
+   "file": "036.json",
+   "sha256": "a39f59fb287996ddcb64cd68d69f9dadb8e22464ef770f57c839081ef52a7b07",
+   "bytes": 27740
+  },
+  {
+   "name": "harvest",
+   "ref": "inputs:confident/2026-11-08/confident-harvest-2026-11-08/pages/Event-pages/037.json",
+   "file": "037.json",
+   "sha256": "ddc12ae0fc1b59a04d0ffbf94f02920b3870ebbdbe71f73843ef0dde5f2d868b",
+   "bytes": 27286
+  },
+  {
+   "name": "harvest",
+   "ref": "inputs:confident/2026-11-08/confident-harvest-2026-11-08/pages/Event-pages/038.json",
+   "file": "038.json",
+   "sha256": "8c692415012bc41c65c6adbb8903e0aaa715c6ffc5dd06b969c3ed6db648d07f",
+   "bytes": 27561
+  },
+  {
+   "name": "harvest",
+   "ref": "inputs:confident/2026-11-08/confident-harvest-2026-11-08/pages/Event-pages/039.json",
+   "file": "039.json",
+   "sha256": "ae5a694005e7b2d90b742631708d6eae5e3c3e739e3a8bf6e3a283cb28bc5569",
+   "bytes": 28026
+  },
+  {
+   "name": "harvest",
+   "ref": "inputs:confident/2026-11-08/confident-harvest-2026-11-08/pages/Event-pages/040.json",
+   "file": "040.json",
+   "sha256": "c29877d7576cdbb592b6a2a0180dcf8e3cc6b83737c58173348f2f7ef84e1e27",
+   "bytes": 28256
+  },
+  {
+   "name": "harvest",
+   "ref": "inputs:confident/2026-11-08/confident-harvest-2026-11-08/pages/Event-pages/041.json",
+   "file": "041.json",
+   "sha256": "402a337e08690f49f3fdc54e8bf88308179ef894bd472feac6c75731917abd78",
+   "bytes": 21248
+  },
+  {
+   "name": "harvest",
+   "ref": "inputs:confident/2026-11-08/confident-harvest-2026-11-08/pages/Event-redirects/001.json",
+   "file": "001.json",
+   "sha256": "5328ef2ab490919661bab05718da7bec14da88649a37d85531f91444a20ba104",
+   "bytes": 25723
+  },
+  {
+   "name": "harvest",
+   "ref": "inputs:confident/2026-11-08/confident-harvest-2026-11-08/pages/Event_Series-pages/001.json",
+   "file": "001.json",
+   "sha256": "ee7c8e24e3263d0397589daa8bf514050cbf653810324b237d19771ea729806d",
+   "bytes": 43592
+  },
+  {
+   "name": "harvest",
+   "ref": "inputs:confident/2026-11-08/confident-harvest-2026-11-08/pages/Event_Series-pages/002.json",
+   "file": "002.json",
+   "sha256": "cb8c827802e46b378ead8ee2beb01fe65dc4cdf649ce3b45f8371197e2f709b3",
+   "bytes": 40498
+  },
+  {
+   "name": "harvest",
+   "ref": "inputs:confident/2026-11-08/confident-harvest-2026-11-08/pages/Event_Series-pages/003.json",
+   "file": "003.json",
+   "sha256": "26b3c134a8501e755f95ed82f75e288e47a78aa6411ea41bde14392efa0429e2",
+   "bytes": 36878
+  },
+  {
+   "name": "harvest",
+   "ref": "inputs:confident/2026-11-08/confident-harvest-2026-11-08/pages/Event_Series-pages/004.json",
+   "file": "004.json",
+   "sha256": "a8c29cf5a3cfaa623cabaf22f67441f6ce354530effa200d6b5d2a5e143e6400",
+   "bytes": 29070
+  },
+  {
+   "name": "harvest",
+   "ref": "inputs:confident/2026-11-08/confident-harvest-2026-11-08/pages/Event_Series-pages/005.json",
+   "file": "005.json",
+   "sha256": "4c8eab7d1c18721b0814fa152b4548873b72cd0f08d72bda37b6d39470d0b9c0",
+   "bytes": 14374
+  },
+  {
+   "name": "harvest",
+   "ref": "inputs:confident/2026-11-08/confident-harvest-2026-11-08/pages/Event_Series-redirects/001.json",
+   "file": "001.json",
+   "sha256": "38435ef9befbc6292b1c27ebc26430f4c80c44ff4e6b3ac2161a85b2e277bd58",
+   "bytes": 44
+  },
+  {
+   "name": "harvest",
+   "ref": "inputs:confident/2026-11-08/confident-harvest-2026-11-08/pages/Organization-pages/001.json",
+   "file": "001.json",
+   "sha256": "79e5c1b677e400ddb23fbd6949a463cc0bdf029cdf66ae2aa6791462dac079f3",
+   "bytes": 45129
+  },
+  {
+   "name": "harvest",
+   "ref": "inputs:confident/2026-11-08/confident-harvest-2026-11-08/pages/Organization-pages/002.json",
+   "file": "002.json",
+   "sha256": "b1b4c380644b5d217a8dd4aa657b89d505ab399dc462b9a706002ba4e00b024f",
+   "bytes": 49283
+  },
+  {
+   "name": "harvest",
+   "ref": "inputs:confident/2026-11-08/confident-harvest-2026-11-08/pages/Organization-pages/003.json",
+   "file": "003.json",
+   "sha256": "d43ea3f755b776c9d98dedd5b24497e1bbff8132acc6c8d95aee1f70c5dd92b8",
+   "bytes": 49728
+  },
+  {
+   "name": "harvest",
+   "ref": "inputs:confident/2026-11-08/confident-harvest-2026-11-08/pages/Organization-pages/004.json",
+   "file": "004.json",
+   "sha256": "9d509820c6f34488bc70717d653bd33260ff763e17ba5cdaa7065ce5099c5470",
+   "bytes": 49315
+  },
+  {
+   "name": "harvest",
+   "ref": "inputs:confident/2026-11-08/confident-harvest-2026-11-08/pages/Organization-pages/005.json",
+   "file": "005.json",
+   "sha256": "ae6fbd2b27534fa418704b58a59076c9cf35aaa1692ad76202b025282e86b66b",
+   "bytes": 44139
+  },
+  {
+   "name": "harvest",
+   "ref": "inputs:confident/2026-11-08/confident-harvest-2026-11-08/pages/Organization-pages/006.json",
+   "file": "006.json",
+   "sha256": "9ca4757c01b00e24ea3b214a9990413b8f9ca99e6352949a2fe4a919ddc20068",
+   "bytes": 47651
+  },
+  {
+   "name": "harvest",
+   "ref": "inputs:confident/2026-11-08/confident-harvest-2026-11-08/pages/Organization-pages/007.json",
+   "file": "007.json",
+   "sha256": "9e1d57227bf5e07afdba1fe8f711cfdfb4ca33a75c2ff005704dd2efa236ac5b",
+   "bytes": 40166
+  },
+  {
+   "name": "harvest",
+   "ref": "inputs:confident/2026-11-08/confident-harvest-2026-11-08/pages/Organization-pages/008.json",
+   "file": "008.json",
+   "sha256": "12b1f6380d4fb65729b9722bc32ca042c27e121b4ed44bfea5710983508dff27",
+   "bytes": 9506
+  },
+  {
+   "name": "harvest",
+   "ref": "inputs:confident/2026-11-08/confident-harvest-2026-11-08/pages/Organization-redirects/001.json",
+   "file": "001.json",
+   "sha256": "a8080a97e66df43542a7200ae20520210388d586166645e3ed224baaeb297f6a",
+   "bytes": 104
+  },
+  {
+   "name": "harvest",
+   "ref": "inputs:confident/2026-11-08/confident-harvest-2026-11-08/properties.json",
+   "file": "properties.json",
+   "sha256": "16a16ea76d8d61a1f420fceae1ec53e7b430572510013ef459b7dd31481e52c8",
+   "bytes": 62347
+  }
+ ],
+ "input_descriptions": {
+  "inputs:confident/2026-11-08": {
+   "title": "ConfIDent: harvest of the API (semantic data of all events, series, organisations, fields, countries and their subobjects; page IDs; log)",
+   "origin": "https://www.confident-conference.org/api.php (harvested 2026-11-08T18:51:59Z to 19:03:37Z with generators/confident/harvest.py)",
+   "description": "Ask API, 250 results per request, every typed property: 19,995 events, 2,229 series, 3,424 organisations, 1,796 academic fields, 250 countries, 17,116 organisers, 16,868 deadlines, 1,306 maintainers; page IDs of 28,332 pages and 326 redirects; 2,204 deletions and 5 moves. CC0.",
+   "date": "2026-11-08",
+   "note": "The raw API responses; published as the dataset confident (decision 0011)."
+  }
+ },
+ "status": "ok",
+ "finished": "2026-11-08T19:05:14Z",
+ "seconds": 5.7,
+ "notes": [],
+ "files": [
+  {
+   "path": "confident-log.ttl.gz",
+   "bytes": 54753,
+   "sha256": "59e924ab64ad389987dc77a4fa81c6a841a32311800c326473389cbb7be308ac",
+   "triples": 11085
+  },
+  {
+   "path": "confident-vocabulary.ttl.gz",
+   "bytes": 2569,
+   "sha256": "3caa1e4db3db95141f12c31643f3f725aeca1c5f1a4a33dc25854c65499f9897",
+   "triples": 381
+  },
+  {
+   "path": "confident.ttl.gz",
+   "bytes": 4473791,
+   "sha256": "df3157d4de755231cd01cbced26a58c6d7613e1287d2dd1be10999f66f4f6529",
+   "triples": 777063
+  }
+ ],
+ "version": "2026-11-08"
+}
