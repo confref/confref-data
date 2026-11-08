@@ -1,0 +1,113 @@
+{
+ "slug": "ls-confref-portal-events",
+ "run": "run-20261108T233944Z",
+ "generator": "generators/ls-confref-portal-events/generate.py",
+ "commit": "933fbf2f445c3b7f020aa4b30cf631ba5c365f7c",
+ "uncommitted": [],
+ "python": "3.15.0",
+ "params": {},
+ "input_overrides": [],
+ "started": "2026-11-08T23:39:44Z",
+ "shared_code": [
+  "generators/ls-springer-lod-events/events.py"
+ ],
+ "inputs": [
+  {
+   "name": "springer",
+   "ref": "springer-lod/2026-11-08/springer-lod-confref-2018.ttl.gz",
+   "file": "springer-lod-confref-2018.ttl.gz",
+   "sha256": "8be718f470be40dd190564aab68f0b0a155652f464c5c39a052b6b31ebc134e6",
+   "bytes": 447295
+  },
+  {
+   "name": "springer",
+   "ref": "springer-lod/2026-11-08/springer-lod-ontology.ttl.gz",
+   "file": "springer-lod-ontology.ttl.gz",
+   "sha256": "beeb0820456e8cc13b3566f5823f7ef154fe91c4c3d911bc028ea022eef1c60e",
+   "bytes": 1958
+  },
+  {
+   "name": "springer",
+   "ref": "springer-lod/2026-11-08/springer-lod.ttl.gz",
+   "file": "springer-lod.ttl.gz",
+   "sha256": "21d369c3bca40a38ba6f7b9b303ea433481d618a49be278df3281dcea337023e",
+   "bytes": 6368828
+  },
+  {
+   "name": "portal",
+   "ref": "confref-portal/2026-11-09/confref-portal-vocabulary.ttl.gz",
+   "file": "confref-portal-vocabulary.ttl.gz",
+   "sha256": "c84c707fc68b709c6de9a47602f09100c0b5d7ac43520ef72a32a0aa1cc31247",
+   "bytes": 840
+  },
+  {
+   "name": "portal",
+   "ref": "confref-portal/2026-11-09/confref-portal.ttl.gz",
+   "file": "confref-portal.ttl.gz",
+   "sha256": "ad0e6b9015d4888e583431bba235adcc3e4ce8fa4858f239cb53b96a6a1e36b7",
+   "bytes": 3292995
+  },
+  {
+   "name": "confident",
+   "ref": "confident/2026-11-08/confident-log.ttl.gz",
+   "file": "confident-log.ttl.gz",
+   "sha256": "59e924ab64ad389987dc77a4fa81c6a841a32311800c326473389cbb7be308ac",
+   "bytes": 54753
+  },
+  {
+   "name": "confident",
+   "ref": "confident/2026-11-08/confident-vocabulary.ttl.gz",
+   "file": "confident-vocabulary.ttl.gz",
+   "sha256": "3caa1e4db3db95141f12c31643f3f725aeca1c5f1a4a33dc25854c65499f9897",
+   "bytes": 2569
+  },
+  {
+   "name": "confident",
+   "ref": "confident/2026-11-08/confident.ttl.gz",
+   "file": "confident.ttl.gz",
+   "sha256": "df3157d4de755231cd01cbced26a58c6d7613e1287d2dd1be10999f66f4f6529",
+   "bytes": 4473791
+  },
+  {
+   "name": "wikidata",
+   "ref": "wikidata/2026-11-08/wikidata.ttl.gz",
+   "file": "wikidata.ttl.gz",
+   "sha256": "24690ef858082821465685960d248dce39afd46cec406f5a5cafd56c1c5f5422",
+   "bytes": 2980130
+  },
+  {
+   "name": "dblp",
+   "ref": "dblp/2026-11-08/dblp.ttl.gz",
+   "file": "dblp.ttl.gz",
+   "sha256": "b64ef95d5c2059478e226069d7f71c757db9f921089bf67774df61dc6ff6ab88",
+   "bytes": 16376345
+  },
+  {
+   "name": "ls_springer_dblp",
+   "ref": "ls-springer-lod-dblp/2026-11-09/ls-springer-lod-dblp.ttl.gz",
+   "file": "ls-springer-lod-dblp.ttl.gz",
+   "sha256": "c9e70bbffd4ab3a5010c50b94ae9a0c08920e674e03e34c2f0372eb892f65141",
+   "bytes": 8436
+  }
+ ],
+ "status": "ok",
+ "finished": "2026-11-08T23:40:10Z",
+ "seconds": 26.0,
+ "notes": [
+  "41,866 links of the events of confref-portal: to confident (agrees in number, date or acronym) 796, to confident (only event of the series in the year) 4,079, to dblp-event (agrees in number, date or acronym) 3,318, to dblp-event (only event of the series in the year) 28,005, to wikidata (agrees in number, date or acronym) 504, to wikidata (only event of the series in the year) 5,164."
+ ],
+ "files": [
+  {
+   "path": "ls-confref-portal-events-matches.tsv.gz",
+   "bytes": 2112502,
+   "sha256": "13c3100f7c376615d334acdea18ac7e05f90a1201afc28e4d75eb7f6c6e8855a"
+  },
+  {
+   "path": "ls-confref-portal-events.ttl.gz",
+   "bytes": 241501,
+   "sha256": "cb0d720b6728c587ceb2abc7d94fd6bc2b16781d43a01d9c9466dfe83c0a8e0f",
+   "triples": 41866
+  }
+ ],
+ "version": "2026-11-09"
+}

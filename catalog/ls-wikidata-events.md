@@ -3,6 +3,7 @@ slug = "ls-wikidata-events"
 title = "Wikidata events matched to the same events in dblp"
 author = "Kai Eckert"
 example = "http://www.wikidata.org/entity/Q54727677"
+stable = "2026-11-09"
 kind = "linkset"
 method = ["rule-based"]
 inputs = ["springer-lod", "confref-portal", "confident", "wikidata", "dblp", "ls-springer-lod-dblp"]
@@ -18,6 +19,36 @@ image = "https://licensebuttons.net/p/zero/1.0/88x31.png"
 [generator]
 repo = "https://github.com/confref/confref-data"
 path = "generators/ls-wikidata-events"
+
+[[versions]]
+version = "2026-11-09"
+issued = "2026-11-09"
+author = "Kai Eckert"
+commit = "933fbf2f445c3b7f020aa4b30cf631ba5c365f7c"
+description = "Made by the rules of events.py from springer-lod 2026-11-08, confref-portal 2026-11-09, confident, wikidata and dblp 2026-11-08 and ls-springer-lod-dblp 2026-11-09."
+
+  [[versions.files]]
+  path = "ls-wikidata-events-matches.tsv.gz"
+  bytes = 446011
+  sha256 = "f0567989e273d4f7a9713dc22c86d152198326af1b19f481a9161537644be5a8"
+
+  [[versions.files]]
+  path = "ls-wikidata-events.ttl.gz"
+  bytes = 52635
+  sha256 = "9b664ea4087d4cc51cd8b5200a362d8840f39e2f8a43abbf690df4a455780b00"
+  triples = 6446
+
+  [[versions.files]]
+  path = "ls-wikidata-events-meta.ttl.gz"
+  bytes = 2018
+  sha256 = "98c13172376c6a091bdc9530cee0d9ec26a939a5c5b419f484408412477edd82"
+  triples = 87
+
+[[changelog]]
+date = "2026-11-09"
+version = "2026-11-09"
+author = "Kai Eckert"
+text = "New version, made by the generator in confref-data (run-20261108T234036Z)."
 +++
 
 The events of `wikidata` linked to the same events of other sources (`cr:sameAs`), found by rules within series that
