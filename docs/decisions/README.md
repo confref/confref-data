@@ -18,3 +18,5 @@ decision, consequences. Short is better than complete.
 | [0010](0010-legacy-data.md) | The legacy data as datasets true to their source; both 2018 IRI sets; `tuwien-pc` for reference only | accepted | 2026-11-08 |
 | [0011](0011-confident.md) | ConfIDent as a dataset true to its source; needs regular updates to stay in sync | accepted | 2026-11-08 |
 | [0012](0012-logo-of-the-portal.md) | The logo is the "cr" mark of portal.confref.org, redrawn as SVG | accepted | 2026-11-08 |
+| [0013](0013-series-and-events.md) | Series and events: the model (series, events, proceedings; in series and held at, both many-to-many) | accepted | 2026-11-08 |
+| [0014](0014-landing-pages-iris-ontology.md) | Landing pages; the IRI scheme and the ontology are published | accepted | 2026-11-08 |
