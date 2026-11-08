@@ -1,0 +1,57 @@
+{
+ "slug": "springer-lod",
+ "run": "run-20261108T184623Z",
+ "generator": "generators/springer-lod/generate.py",
+ "commit": "c1e831f7ed41a5d0e6bc0da60db023985d99dc28",
+ "uncommitted": [],
+ "python": "3.15.0",
+ "params": {},
+ "input_overrides": [],
+ "started": "2026-11-08T18:46:23Z",
+ "shared_code": [
+  "generators/springer-lod/springer.py"
+ ],
+ "inputs": [
+  {
+   "name": "dump",
+   "ref": "inputs:springer/lod-2018/lodspringerdump.zip",
+   "file": "lodspringerdump.zip",
+   "sha256": "14951b6d8e917c2e947ab9aeab91918b62019b61c936312d56a79ede7783c2ef",
+   "bytes": 143950502
+  }
+ ],
+ "input_descriptions": {
+  "inputs:springer/lod-2018": {
+   "title": "lod.springer.com: the complete dump of the Springer conference LOD (conferences.ttl, ontology.ttl)",
+   "origin": "Handed over by Net Wise (Andrey Gromyko) on 2018-06-13 (mail 'Lod dump')",
+   "description": "1,764 conference series, 9,327 conferences, 59,684 books (proceedings volumes), 1,251,627 chapters; Springer LOD ontology; VoID dc:rights CC0. Exists nowhere else (lod.springer.com is offline, not archived).",
+   "date": "2018-06-04",
+   "note": "Source of the datasets springer-lod and springer-lod-chapters (decision 0010); the zip itself is not published."
+  }
+ },
+ "status": "ok",
+ "finished": "2026-11-08T18:48:12Z",
+ "seconds": 109.5,
+ "notes": [],
+ "files": [
+  {
+   "path": "springer-lod-confref-2018.ttl.gz",
+   "bytes": 447295,
+   "sha256": "8be718f470be40dd190564aab68f0b0a155652f464c5c39a052b6b31ebc134e6",
+   "triples": 70956
+  },
+  {
+   "path": "springer-lod-ontology.ttl.gz",
+   "bytes": 1958,
+   "sha256": "beeb0820456e8cc13b3566f5823f7ef154fe91c4c3d911bc028ea022eef1c60e",
+   "triples": 409
+  },
+  {
+   "path": "springer-lod.ttl.gz",
+   "bytes": 6368828,
+   "sha256": "21d369c3bca40a38ba6f7b9b303ea433481d618a49be278df3281dcea337023e",
+   "triples": 912826
+  }
+ ],
+ "version": "2026-11-08"
+}

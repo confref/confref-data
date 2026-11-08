@@ -8,3 +8,5 @@ The chapters of the lod.springer.com dump of 2018-06-04 (see `../springer-lod/RE
 
 Not loaded into the endpoint (papers, not conference data; also in Crossref). Oddities: as springer-lod
 (`copyrightHolder` typed `xsd:integer`).
+
+The run takes about 5 minutes and up to 21 GB of memory (the framework writes Turtle in memory; 2026-11-08).

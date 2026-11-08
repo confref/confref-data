@@ -1,0 +1,45 @@
+{
+ "slug": "tuwien-pc",
+ "run": "run-20261108T184632Z",
+ "generator": "generators/tuwien-pc/generate.py",
+ "commit": "c1e831f7ed41a5d0e6bc0da60db023985d99dc28",
+ "uncommitted": [],
+ "python": "3.15.0",
+ "params": {},
+ "input_overrides": [],
+ "started": "2026-11-08T18:46:32Z",
+ "shared_code": [
+  "generators/springer-lod/springer.py"
+ ],
+ "inputs": [
+  {
+   "name": "pc",
+   "ref": "inputs:tuwien/pc-2015/PC_data_1109.ttl",
+   "file": "PC_data_1109.ttl",
+   "sha256": "31950ee06796bd4b7da5257792b19b0680069a9d1482c8b80c340b37cca73cf4",
+   "bytes": 3137529
+  }
+ ],
+ "input_descriptions": {
+  "inputs:tuwien/pc-2015": {
+   "title": "TU Wien: programme committees of about 50 conferences (2015), RDF in the Springer LOD model",
+   "origin": "TU Wien IFS (Elmar Kiesling, Peb Aryan Ruswono, Amin Anjomshoaa), delivered by mail 2015-05-22 to 2015-11-09",
+   "description": "Scraped from conference websites and calls for papers by student groups, cleaned by hand, mapped with an extended RML processor; countries linked to DBpedia. PC_data_1109: 3,944 memberships in 43 committees. No e-mail hashes.",
+   "date": "2015-11-09",
+   "note": "Held back: informal OK to use it (Amin Anjomshoaa, 2018-09-23); a written OK before publishing (decision 0010)."
+  }
+ },
+ "status": "ok",
+ "finished": "2026-11-08T18:46:33Z",
+ "seconds": 0.6,
+ "notes": [],
+ "files": [
+  {
+   "path": "tuwien-pc.ttl.gz",
+   "bytes": 183413,
+   "sha256": "28c54324e98fa36eed8ff05d7428e74dc20c045602839773bef34b75c2993c0a",
+   "triples": 44378
+  }
+ ],
+ "version": "2026-11-08"
+}

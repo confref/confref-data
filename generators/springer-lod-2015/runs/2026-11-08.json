@@ -1,0 +1,72 @@
+{
+ "slug": "springer-lod-2015",
+ "run": "run-20261108T184630Z",
+ "generator": "generators/springer-lod-2015/generate.py",
+ "commit": "c1e831f7ed41a5d0e6bc0da60db023985d99dc28",
+ "uncommitted": [],
+ "python": "3.15.0",
+ "params": {},
+ "input_overrides": [],
+ "started": "2026-11-08T18:46:30Z",
+ "shared_code": [
+  "generators/springer-lod/springer.py"
+ ],
+ "inputs": [
+  {
+   "name": "data",
+   "ref": "inputs:springer/lod-2015/conference.data.nt",
+   "file": "conference.data.nt",
+   "sha256": "e75c46d577b48391d5e094f2ed4c372ac7f2a36f7831e5b4b2ec3c2ce15b2465",
+   "bytes": 23418094
+  },
+  {
+   "name": "data_prov",
+   "ref": "inputs:springer/lod-2015/conference.data.prov.nt",
+   "file": "conference.data.prov.nt",
+   "sha256": "5c9addc7b75f7062db50b6282f916095b442a4e4a77023d223e4353200a5a92a",
+   "bytes": 1253
+  },
+  {
+   "name": "schema",
+   "ref": "inputs:springer/lod-2015/dataschema.nt",
+   "file": "dataschema.nt",
+   "sha256": "5bab5218323175b3c97d6ec49e78f0f8c3e15e9565eaab7817a8f442948b3ea0",
+   "bytes": 17564
+  },
+  {
+   "name": "schema_prov",
+   "ref": "inputs:springer/lod-2015/dataschema.prov.nt",
+   "file": "dataschema.prov.nt",
+   "sha256": "935be42d5589f9e6b7509071c14efe285ba1e27faa7e15958a5b0389b6f88f92",
+   "bytes": 897
+  }
+ ],
+ "input_descriptions": {
+  "inputs:springer/lod-2015": {
+   "title": "Springer conference LOD, first public version (2015)",
+   "origin": "Springer LOD pilot (Uni Mannheim, Volha Bryl and Kai Eckert)",
+   "description": "7,126 conferences, 1,134 series with DBLP ID, 7,868 proceedings volumes; CC0 (provenance file).",
+   "date": "2015-02-06",
+   "note": "Source of the dataset springer-lod-2015 (decision 0010)."
+  }
+ },
+ "status": "ok",
+ "finished": "2026-11-08T18:46:32Z",
+ "seconds": 1.8,
+ "notes": [],
+ "files": [
+  {
+   "path": "springer-lod-2015-ontology.ttl.gz",
+   "bytes": 794,
+   "sha256": "b8184e546d8b18f2f187d3fe47b650a83f0e7b3809cd050a8a345d1fc79cb205",
+   "triples": 109
+  },
+  {
+   "path": "springer-lod-2015.ttl.gz",
+   "bytes": 863960,
+   "sha256": "8b599af21e6f0f70c9e9d8c8de9d110c06e897387b0cf3b1b4df0d0c7e04c4e0",
+   "triples": 145024
+  }
+ ],
+ "version": "2026-11-08"
+}
