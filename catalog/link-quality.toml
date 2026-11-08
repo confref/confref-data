@@ -94,14 +94,14 @@ report = "docs/reports/2026-11-09-link-quality.md"
 dataset = "springer-lod"
 property = "spr:hasDBLPID"
 source = "dblp-venue"
-accuracy = 0.952
-lower = 0.883
-upper = 0.981
-correct = 79
-wrong = 4
-undecidable = 17
+accuracy = 0.945
+lower = 0.908
+upper = 0.968
+correct = 224
+wrong = 13
+undecidable = 63
 links = 1763
-sample = 100
+sample = 300
 report = "docs/reports/2026-11-09-link-quality.md"
 
 [[unit]]
