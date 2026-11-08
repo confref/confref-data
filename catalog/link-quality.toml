@@ -5,3 +5,171 @@
 
 accuracy = 0.95
 lower = 0.90
+
+[[unit]]
+dataset = "confident"
+property = "cf:DBLP_Series_ID"
+source = "dblp-venue"
+accuracy = 0.990
+lower = 0.946
+upper = 0.998
+correct = 99
+wrong = 1
+undecidable = 0
+links = 606
+sample = 100
+report = "docs/reports/2026-11-09-link-quality.md"
+
+[[unit]]
+dataset = "confident"
+property = "cf:Wikidata_Series_ID"
+source = "wikidata"
+accuracy = 0.979
+lower = 0.926
+upper = 0.994
+correct = 93
+wrong = 2
+undecidable = 5
+links = 591
+sample = 100
+report = "docs/reports/2026-11-09-link-quality.md"
+
+[[unit]]
+dataset = "confref-portal"
+property = "portal:dblpId"
+source = "dblp-venue"
+accuracy = 0.990
+lower = 0.944
+upper = 0.998
+correct = 96
+wrong = 1
+undecidable = 3
+links = 4909
+sample = 100
+report = "docs/reports/2026-11-09-link-quality.md"
+
+[[unit]]
+dataset = "dblp"
+property = "owl:sameAs"
+source = "gnd"
+accuracy = 0.818
+lower = 0.523
+upper = 0.949
+correct = 9
+wrong = 2
+undecidable = 1
+links = 12
+sample = 12
+report = "docs/reports/2026-11-09-link-quality.md"
+
+[[unit]]
+dataset = "dblp"
+property = "owl:sameAs"
+source = "wikidata"
+accuracy = 1.000
+lower = 0.954
+upper = 1.000
+correct = 80
+wrong = 0
+undecidable = 20
+links = 6406
+sample = 100
+report = "docs/reports/2026-11-09-link-quality.md"
+
+[[unit]]
+dataset = "gnd"
+property = "owl:sameAs"
+source = "wikidata"
+accuracy = 0.973
+lower = 0.908
+upper = 0.993
+correct = 73
+wrong = 2
+undecidable = 25
+links = 6628
+sample = 100
+report = "docs/reports/2026-11-09-link-quality.md"
+
+[[unit]]
+dataset = "springer-lod"
+property = "spr:hasDBLPID"
+source = "dblp-venue"
+accuracy = 0.952
+lower = 0.883
+upper = 0.981
+correct = 79
+wrong = 4
+undecidable = 17
+links = 1763
+sample = 100
+report = "docs/reports/2026-11-09-link-quality.md"
+
+[[unit]]
+dataset = "springer-lod"
+property = "spr:hasGNDID"
+source = "gnd"
+accuracy = 1.000
+lower = 0.963
+upper = 1.000
+correct = 100
+wrong = 0
+undecidable = 0
+links = 5838
+sample = 100
+report = "docs/reports/2026-11-09-link-quality.md"
+
+[[unit]]
+dataset = "springer-lod-2015"
+property = "spr:hasDBLPID"
+source = "dblp-venue"
+accuracy = 0.929
+lower = 0.861
+upper = 0.965
+correct = 92
+wrong = 7
+undecidable = 1
+links = 1056
+sample = 100
+report = "docs/reports/2026-11-09-link-quality.md"
+
+[[unit]]
+dataset = "wikidata"
+property = "wdt:P227"
+source = "gnd"
+accuracy = 0.980
+lower = 0.930
+upper = 0.994
+correct = 98
+wrong = 2
+undecidable = 0
+links = 4987
+sample = 100
+report = "docs/reports/2026-11-09-link-quality.md"
+
+[[unit]]
+dataset = "wikidata"
+property = "wdt:P8926"
+source = "dblp-venue"
+accuracy = 1.000
+lower = 0.962
+upper = 1.000
+correct = 98
+wrong = 0
+undecidable = 2
+links = 4402
+sample = 100
+report = "docs/reports/2026-11-09-link-quality.md"
+
+[[unit]]
+dataset = "wikidata"
+property = "wdt:P8978"
+source = "dblp-rec"
+accuracy = 0.986
+lower = 0.923
+upper = 0.997
+correct = 69
+wrong = 1
+undecidable = 30
+links = 4311
+sample = 100
+report = "docs/reports/2026-11-09-link-quality.md"
