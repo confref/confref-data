@@ -10,7 +10,7 @@ the API, coined in the dataset namespace (data/confref-portal/vocab/; described 
 confref-portal-vocabulary.ttl.gz). Fields that are null are left out; every other value is stated as given, also the
 placeholders of the source (dates on 1 January, impossible years). Text: the HTML character references of the API
 are decoded ("f&#252;r" is "für"), nothing else is changed. Dates (YYYY-MM-DD) as xsd:date, the year as xsd:integer,
-the DBLP id as an IRI, keywords as one literal each. In addition: rdfs:label (the name; for areas the value) and the
+the DBLP id as an IRI (a literal where the portal gave only the key), keywords as one literal each. In addition: rdfs:label (the name; for areas the value) and the
 page of the conference on the portal (vocab:portalPage, offline since 2022).
 """
 

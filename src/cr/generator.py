@@ -266,11 +266,11 @@ class Run:
         info = turtle.write(self.path(rel), check.watch(triples), prefixes=prefixes)
         self.written[rel] = {"triples": info["triples"]}
         self.log(f"wrote {rel}: {info['triples']:,} triples, {info['bytes']:,} bytes")
-        if check.counts:   # IRIs not in canonical form (docs/iri-forms.md)
+        if check.counts:   # IRIs not in canonical form (domain.toml)
             self.written[rel]["noncanonical"] = check.summary()
             for k, v in check.summary().items():
                 self.log(f"  not canonical ({k}): {v['count']:,}, e.g. {', '.join(v['examples'])}")
-        if check.not_used:   # vocabularies we do not write (docs/iri-forms.md)
+        if check.not_used:   # vocabularies we do not write (domain.toml)
             raise GeneratorError(f"{rel}: terms of a vocabulary we do not use: " + "; ".join(
                 f"{term} ({n:,}): use {iris.instead(term)}" for term, n in sorted(check.not_used.items())))
         return info
