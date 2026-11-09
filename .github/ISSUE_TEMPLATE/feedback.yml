@@ -1,0 +1,38 @@
+name: Feedback on the data
+description: Something in the confref data is wrong or missing, above all in the linking of records and their grouping into series and events (filled in by the Feedback button of labs.confref.org)
+title: "Feedback: "
+labels: ["feedback"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Thank you for your feedback. It is public here, so that others can follow it.
+
+        Issues here are mainly about systematic errors: records linked wrongly, series or events joined or split
+        wrongly, rules that go wrong in many cases. A wrong or missing fact of a single record is best corrected at
+        its source, from where it reaches confref with the next harvest: data of ConfIDent can be added, edited and
+        discussed at https://www.confident-conference.org/index.php/ANNOUNCE, data of Wikidata corrected at
+        https://www.wikidata.org. More at https://www.confref.org/feedback/.
+  - type: input
+    id: iri
+    attributes:
+      label: About
+      description: The confref resource the feedback is about (a series, an event, a record or a dataset).
+      placeholder: https://id.confref.org/event/…
+  - type: input
+    id: page
+    attributes:
+      label: Page
+      description: Where you saw it.
+  - type: textarea
+    id: quote
+    attributes:
+      label: Selected text
+      description: The text on the page the feedback is about.
+  - type: textarea
+    id: description
+    attributes:
+      label: Feedback
+      description: What is wrong, and what should it be? Sources help; for a systematic error, two or three examples.
+    validations:
+      required: true

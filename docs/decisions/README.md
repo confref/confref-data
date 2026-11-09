@@ -26,3 +26,4 @@ decision, consequences. Short is better than complete.
 | [0018](0018-places.md) | Places: Wikidata items (`ls-places`, `wikidata-places`), matched by name where a source has only names | accepted | 2026-11-09 |
 | [0019](0019-fields-and-disciplines.md) | Academic fields (OECD FOS 2007, `oecd-fos`) and disciplines (Wikidata items), linked in `ls-fields` | accepted | 2026-11-09 |
 | [0020](0020-ratings.md) | Ratings: a kind of dataset of their own (`rating`), one dataset per source; `rating-systems` | accepted | 2026-11-09 |
+| [0021](0021-governance-of-the-identifiers.md) | Governance of the identifiers: kept by the generator of `ids` alone; every version of `ids` holds their full information | accepted | 2026-11-09 |

@@ -6,8 +6,6 @@
   P8926 (1), P10692 `conf/bncod` (a venue key, not an event).
 - **ConfIDent:** regular updates of `confident` to stay in sync (frequency open); later a process for following
   their curation (deletions, merges) and for reporting disagreements to them (decision 0011).
-- **Governance of the identifiers** (who keeps them, what happens if confref ends): a decision before publishing; asked
-  for by the reviewers of the DSJ paper and of ConfIDent 2.
 - **The 2015 Springer data** has IRIs in `lod.springer.com` like the 2018 dump; check overlaps when both are datasets.
 - **Identifiers with two records of one source** (`ids` 2026-11-09: 274 events, 130 series): mostly joint events
   whose partner conferences the portal lists separately and dblp under one table of contents (APPROX/RANDOM 2011,
