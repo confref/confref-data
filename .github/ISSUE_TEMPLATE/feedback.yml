@@ -1,5 +1,5 @@
 name: Feedback on the data
-description: Something in the confref data is wrong or missing, above all in the linking of records and their grouping into series and events (filled in by the Feedback button of labs.confref.org)
+description: Something in the confref data is wrong or missing (filled in by the Feedback button of labs.confref.org)
 title: "Feedback: "
 labels: ["feedback"]
 body:
@@ -8,11 +8,10 @@ body:
       value: |
         Thank you for your feedback. It is public here, so that others can follow it.
 
-        Issues here are mainly about systematic errors: records linked wrongly, series or events joined or split
-        wrongly, rules that go wrong in many cases. A wrong or missing fact of a single record is best corrected at
-        its source, from where it reaches confref with the next harvest: data of ConfIDent can be added, edited and
-        discussed at https://www.confident-conference.org/index.php/ANNOUNCE, data of Wikidata corrected at
-        https://www.wikidata.org. More at https://www.confref.org/feedback/.
+        Feedback of any kind is welcome, above all on how confref links records and groups them into series and
+        events. An error in a record of a source is best also corrected at the source; the ways to report to each
+        source (ConfIDent, Wikidata, dblp, the GND) are listed at https://www.confref.org/feedback/. Missing
+        conferences are added to ConfIDent (https://www.confident-conference.org/index.php/ANNOUNCE), not to confref.
   - type: input
     id: iri
     attributes:
@@ -33,6 +32,6 @@ body:
     id: description
     attributes:
       label: Feedback
-      description: What is wrong, and what should it be? Sources help; for a systematic error, two or three examples.
+      description: What is wrong, and what should it be? Sources and examples help.
     validations:
       required: true

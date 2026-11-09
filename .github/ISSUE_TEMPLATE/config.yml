@@ -1,8 +1,8 @@
 blank_issues_enabled: true
 contact_links:
-  - name: Add or correct a conference in ConfIDent
+  - name: Add a missing conference (ConfIDent)
     url: https://www.confident-conference.org/index.php/ANNOUNCE
-    about: Data of ConfIDent can be added, edited and discussed there; changes reach confref with the next harvest.
-  - name: Correct a conference in Wikidata
-    url: https://www.wikidata.org/
-    about: Anyone can correct Wikidata; changes reach confref with the next harvest.
+    about: confref creates no series or events of its own. Conferences added to ConfIDent reach confref with the next harvest.
+  - name: Correct a record in its source
+    url: https://www.confref.org/feedback/
+    about: How to report errors to ConfIDent, Wikidata, dblp and the GND; corrections reach confref with the next harvest.
