@@ -1,5 +1,5 @@
 {
- "checked": "2026-11-09T20:21:56Z",
+ "checked": "2026-11-09T21:17:56Z",
  "locations": {
   "dumps": {
    "archive": "https://archive.confref.org/store/"
@@ -52,6 +52,39 @@
        "path": "confident-meta.ttl.gz",
        "bytes": 2386,
        "sha256": "32fee372a15b7093099a4281406c524b0050d27dfafdb046158cf04b0161e724",
+       "locations": [
+        "archive"
+       ]
+      }
+     ]
+    }
+   ]
+  },
+  "confref-ontology": {
+   "title": "confref ontology",
+   "stable": "2026-11-09",
+   "replaces": [],
+   "replaced_by": [],
+   "withdrawn": null,
+   "catalogues": [],
+   "versions": [
+    {
+     "version": "2026-11-09",
+     "issued": "2026-11-09",
+     "status": "stable",
+     "files": [
+      {
+       "path": "confref-ontology.ttl.gz",
+       "bytes": 2796,
+       "sha256": "999d044fa8c4d25dbf62e5cb89ca97dfed820d0f650431c0dd60afbe1fecc207",
+       "locations": [
+        "archive"
+       ]
+      },
+      {
+       "path": "confref-ontology-meta.ttl.gz",
+       "bytes": 1545,
+       "sha256": "2de39dad7cd2ceb6e6e97ebbe2400bf82c0a9414d8d60e08da2ace1f11febad0",
        "locations": [
         "archive"
        ]
@@ -126,6 +159,39 @@
        "path": "confref-portal-meta.ttl.gz",
        "bytes": 2045,
        "sha256": "85a0d199d94e9297d32272bfbdff27c06c4b5512c24d00cba21ba104c432211e",
+       "locations": [
+        "archive"
+       ]
+      }
+     ]
+    }
+   ]
+  },
+  "confref-vocabulary": {
+   "title": "confref dataset vocabulary",
+   "stable": "2026-11-09",
+   "replaces": [],
+   "replaced_by": [],
+   "withdrawn": null,
+   "catalogues": [],
+   "versions": [
+    {
+     "version": "2026-11-09",
+     "issued": "2026-11-09",
+     "status": "stable",
+     "files": [
+      {
+       "path": "confref-vocabulary.ttl.gz",
+       "bytes": 2257,
+       "sha256": "5767ab2d26ca669a1b20c791842edd74e741055b5f2558b6235ae38c8dec2320",
+       "locations": [
+        "archive"
+       ]
+      },
+      {
+       "path": "confref-vocabulary-meta.ttl.gz",
+       "bytes": 1428,
+       "sha256": "b03453affbcf3bb8d0ff3ad114f9866dc3ea096c44e90d8e3142fbe1244a6c1b",
        "locations": [
         "archive"
        ]
