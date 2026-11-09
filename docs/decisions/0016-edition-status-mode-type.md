@@ -6,7 +6,7 @@ Status: accepted · Date: 2026-11-08 · Amends [0013](0013-series-and-events.md)
 
 ConfIDent records an ordinal, a status (as scheduled, postponed, canceled, to be confirmed), a mode (on site, online,
 hybrid) and, in DataCite, a type (Academic Conference, Workshop, …) for its events; Wikidata and other sources have
-some of these. An event can belong to several series ([0015](0015-joint-and-colocated-events.md)), and then it has an
+some of these. An event can belong to several series ([0017](0017-joint-and-colocated-events.md)), and then it has an
 edition number in each.
 
 ## Decision

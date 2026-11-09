@@ -11,7 +11,7 @@
 - **The 2015 Springer data** has IRIs in `lod.springer.com` like the 2018 dump; check overlaps when both are datasets.
 - **Identifiers with two records of one source** (`ids` 2026-11-09: 274 events, 130 series): mostly joint events
   whose partner conferences the portal lists separately and dblp under one table of contents (APPROX/RANDOM 2011,
-  ISPA/TrustCom 2016, SOCO-CISIS-ICEUTE 2013; allowed by decision 0015), and duplicates in the GND (FASE 2016). Some
+  ISPA/TrustCom 2016, SOCO-CISIS-ICEUTE 2013; allowed by decision 0017), and duplicates in the GND (FASE 2016). Some
   are wrong joins: AusAI 2013 and SGAI 2013 (both "AI 2013", portal events), the portal series NODE with JIT. To be
   reviewed; fixes as correction datasets or rules of the event linksets.
 - **Umbrella events and their parts** (federated and joint conferences): the main remaining risk of the event rules

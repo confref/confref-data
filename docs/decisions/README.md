@@ -21,5 +21,5 @@ decision, consequences. Short is better than complete.
 | [0013](0013-series-and-events.md) | Series and events: the model (series, events, proceedings; in series and held at, both many-to-many) | accepted | 2026-11-08 |
 | [0014](0014-landing-pages-iris-ontology.md) | Landing pages; the IRI scheme and the ontology are published | accepted | 2026-11-08 |
 | [0015](0015-site-and-dumps-on-bart.md) | The website (`www.confref.org`, `confref.org` redirects) and the dumps (`archive.confref.org`) on bart until the VMs exist | accepted | 2026-11-08 |
-| [0015](0015-joint-and-colocated-events.md) | Joint and co-located events: one event in several series, events held at a larger event, or separate events joint or co-located; the way of the source is kept | accepted | 2026-11-08 |
 | [0016](0016-edition-status-mode-type.md) | Facts of an event: edition number (per series), status and attendance mode (schema.org), type (AEON classes as values) | accepted | 2026-11-08 |
+| [0017](0017-joint-and-colocated-events.md) | Joint and co-located events: one event in several series, events held at a larger event, or separate events joint or co-located; the way of the source is kept | accepted | 2026-11-08 |

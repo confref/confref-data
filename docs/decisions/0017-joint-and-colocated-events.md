@@ -1,6 +1,6 @@
-# 0015 Joint and co-located events: every way of the sources is kept
+# 0017 Joint and co-located events: every way of the sources is kept
 
-Status: accepted · Date: 2026-11-08 · Amends [0013](0013-series-and-events.md)
+Status: accepted · Date: 2026-11-08 (numbered 0017 on 2026-11-09: 0015 was taken) · Amends [0013](0013-series-and-events.md)
 
 ## Context
 

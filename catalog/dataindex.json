@@ -1,0 +1,665 @@
+{
+ "checked": "2026-11-09T05:10:17Z",
+ "locations": {
+  "dumps": {
+   "archive": "https://archive.confref.org/store/"
+  },
+  "catalogues": {
+   "site": "https://www.confref.org/datasets/"
+  }
+ },
+ "datasets": {
+  "confident": {
+   "title": "ConfIDent: academic events, series and their organisers",
+   "stable": "2026-11-08",
+   "replaces": [],
+   "replaced_by": [],
+   "withdrawn": null,
+   "catalogues": [
+    "site"
+   ],
+   "versions": [
+    {
+     "version": "2026-11-08",
+     "issued": "2026-11-08",
+     "status": "stable",
+     "files": [
+      {
+       "path": "confident-log.ttl.gz",
+       "bytes": 54753,
+       "sha256": "59e924ab64ad389987dc77a4fa81c6a841a32311800c326473389cbb7be308ac",
+       "locations": [
+        "archive"
+       ]
+      },
+      {
+       "path": "confident-vocabulary.ttl.gz",
+       "bytes": 2569,
+       "sha256": "3caa1e4db3db95141f12c31643f3f725aeca1c5f1a4a33dc25854c65499f9897",
+       "locations": [
+        "archive"
+       ]
+      },
+      {
+       "path": "confident.ttl.gz",
+       "bytes": 4473791,
+       "sha256": "df3157d4de755231cd01cbced26a58c6d7613e1287d2dd1be10999f66f4f6529",
+       "locations": [
+        "archive"
+       ]
+      },
+      {
+       "path": "confident-meta.ttl.gz",
+       "bytes": 2386,
+       "sha256": "32fee372a15b7093099a4281406c524b0050d27dfafdb046158cf04b0161e724",
+       "locations": [
+        "archive"
+       ]
+      }
+     ]
+    }
+   ]
+  },
+  "confref-portal": {
+   "title": "confref portal: conferences of portal.confref.org (2020)",
+   "stable": "2026-11-09",
+   "replaces": [],
+   "replaced_by": [],
+   "withdrawn": null,
+   "catalogues": [
+    "site"
+   ],
+   "versions": [
+    {
+     "version": "2026-11-09",
+     "issued": "2026-11-09",
+     "status": "stable",
+     "files": [
+      {
+       "path": "confref-portal-vocabulary.ttl.gz",
+       "bytes": 840,
+       "sha256": "c84c707fc68b709c6de9a47602f09100c0b5d7ac43520ef72a32a0aa1cc31247",
+       "locations": [
+        "archive"
+       ]
+      },
+      {
+       "path": "confref-portal.ttl.gz",
+       "bytes": 3292995,
+       "sha256": "ad0e6b9015d4888e583431bba235adcc3e4ce8fa4858f239cb53b96a6a1e36b7",
+       "locations": [
+        "archive"
+       ]
+      },
+      {
+       "path": "confref-portal-meta.ttl.gz",
+       "bytes": 2110,
+       "sha256": "88531b20958d8070b8765c40d63f5cfdc60aed89095670bb5b04bc648768b435",
+       "locations": [
+        "archive"
+       ]
+      }
+     ]
+    },
+    {
+     "version": "2026-11-08",
+     "issued": "2026-11-08",
+     "status": "older",
+     "files": [
+      {
+       "path": "confref-portal-vocabulary.ttl.gz",
+       "bytes": 810,
+       "sha256": "ee3b548fb9aafe86cb5b9c0cccff1643315a9d2a7c887e4a66891bfb87ff118d",
+       "locations": [
+        "archive"
+       ]
+      },
+      {
+       "path": "confref-portal.ttl.gz",
+       "bytes": 3292916,
+       "sha256": "5b7cf5edb3730f918f76a773ef4f5ec13c1c1d377e7530136bec3ce7e43f8183",
+       "locations": [
+        "archive"
+       ]
+      },
+      {
+       "path": "confref-portal-meta.ttl.gz",
+       "bytes": 2045,
+       "sha256": "85a0d199d94e9297d32272bfbdff27c06c4b5512c24d00cba21ba104c432211e",
+       "locations": [
+        "archive"
+       ]
+      }
+     ]
+    }
+   ]
+  },
+  "dblp": {
+   "title": "dblp: conference series and their proceedings",
+   "stable": "2026-11-08",
+   "replaces": [],
+   "replaced_by": [],
+   "withdrawn": null,
+   "catalogues": [
+    "site"
+   ],
+   "versions": [
+    {
+     "version": "2026-11-08",
+     "issued": "2026-11-08",
+     "status": "stable",
+     "files": [
+      {
+       "path": "dblp.ttl.gz",
+       "bytes": 16376345,
+       "sha256": "b64ef95d5c2059478e226069d7f71c757db9f921089bf67774df61dc6ff6ab88",
+       "locations": [
+        "archive"
+       ]
+      },
+      {
+       "path": "dblp-meta.ttl.gz",
+       "bytes": 2072,
+       "sha256": "f379702a7b75a4e1a31617af47538b2ea6133ace266a698c1162fb40d66da43c",
+       "locations": [
+        "archive"
+       ]
+      }
+     ]
+    }
+   ]
+  },
+  "gnd": {
+   "title": "GND: the conferences, series and places our datasets name",
+   "stable": "2026-11-08",
+   "replaces": [],
+   "replaced_by": [],
+   "withdrawn": null,
+   "catalogues": [
+    "site"
+   ],
+   "versions": [
+    {
+     "version": "2026-11-08",
+     "issued": "2026-11-08",
+     "status": "stable",
+     "files": [
+      {
+       "path": "gnd-selection.tsv.gz",
+       "bytes": 80492,
+       "sha256": "35ff639a70dbd3ae904c9071d21db0aca3f228f8c70a647e3152fe9c593d666e",
+       "locations": [
+        "archive"
+       ]
+      },
+      {
+       "path": "gnd.ttl.gz",
+       "bytes": 1091491,
+       "sha256": "e88ff79b6eea01d469972502de8770ec884770b5c26ade989a4e49a80c1bb7c4",
+       "locations": [
+        "archive"
+       ]
+      },
+      {
+       "path": "gnd-meta.ttl.gz",
+       "bytes": 2277,
+       "sha256": "8fa779a115502324cf2874a3602ef5c3eee522cf291cadff1c5ca98fd2d7d556",
+       "locations": [
+        "archive"
+       ]
+      }
+     ]
+    }
+   ]
+  },
+  "ids": {
+   "title": "confref identifiers: conference series and events",
+   "stable": "2026-11-09",
+   "replaces": [],
+   "replaced_by": [],
+   "withdrawn": null,
+   "catalogues": [
+    "site"
+   ],
+   "versions": [
+    {
+     "version": "2026-11-09",
+     "issued": "2026-11-09",
+     "status": "stable",
+     "files": [
+      {
+       "path": "ids-history.ttl.gz",
+       "bytes": 93,
+       "sha256": "7f90b8fba5e79ed0a87bad541b628f11d86cf98c9ac5fb12b9b03e0068db4264",
+       "locations": [
+        "archive"
+       ]
+      },
+      {
+       "path": "ids-members.tsv.gz",
+       "bytes": 1205141,
+       "sha256": "21379b9309ef6cccaf433aba6fd0f91c00957691d17f0be15e344fc4da4b4ac0",
+       "locations": [
+        "archive"
+       ]
+      },
+      {
+       "path": "ids.ttl.gz",
+       "bytes": 4445216,
+       "sha256": "08de54c393fb0860e6de50c611c73afbb523a700144dff442cd1e05165e3ce3d",
+       "locations": [
+        "archive"
+       ]
+      },
+      {
+       "path": "ids-meta.ttl.gz",
+       "bytes": 2184,
+       "sha256": "4733f69ac1866134d68aa5039b7cbe6817f959c96de441b11143f1b1f798dbf4",
+       "locations": [
+        "archive"
+       ]
+      }
+     ]
+    }
+   ]
+  },
+  "ls-confident-events": {
+   "title": "ConfIDent events matched to the same events in Wikidata and dblp",
+   "stable": "2026-11-09",
+   "replaces": [],
+   "replaced_by": [],
+   "withdrawn": null,
+   "catalogues": [
+    "site"
+   ],
+   "versions": [
+    {
+     "version": "2026-11-09",
+     "issued": "2026-11-09",
+     "status": "stable",
+     "files": [
+      {
+       "path": "ls-confident-events-matches.tsv.gz",
+       "bytes": 518585,
+       "sha256": "99c16d8baa332e0eec260168f395bf88af5419303bcd5088d1c736d3ba6fe9e4",
+       "locations": [
+        "archive"
+       ]
+      },
+      {
+       "path": "ls-confident-events.ttl.gz",
+       "bytes": 57652,
+       "sha256": "fab0ed1d4cf612422fa5c04c8316b55b34d0894830af9c94e0639e64fd3b4bd8",
+       "locations": [
+        "archive"
+       ]
+      },
+      {
+       "path": "ls-confident-events-meta.ttl.gz",
+       "bytes": 2023,
+       "sha256": "b75de26fc32f919a0ea37ebfeaf6c19fb33103f320515e19ad016a86d7edaef4",
+       "locations": [
+        "archive"
+       ]
+      }
+     ]
+    }
+   ]
+  },
+  "ls-confref-portal-events": {
+   "title": "Events of the confref portal matched to the same events in ConfIDent, Wikidata and dblp",
+   "stable": "2026-11-09",
+   "replaces": [],
+   "replaced_by": [],
+   "withdrawn": null,
+   "catalogues": [
+    "site"
+   ],
+   "versions": [
+    {
+     "version": "2026-11-09",
+     "issued": "2026-11-09",
+     "status": "stable",
+     "files": [
+      {
+       "path": "ls-confref-portal-events-matches.tsv.gz",
+       "bytes": 2144820,
+       "sha256": "06d23f5c23afa3cab04f6f613c5f13dd046519ecd0f65627ad6b18911f4de618",
+       "locations": [
+        "archive"
+       ]
+      },
+      {
+       "path": "ls-confref-portal-events.ttl.gz",
+       "bytes": 245085,
+       "sha256": "ea4696a61de1a033fdc04f1b8ae89c3116bac10daefa669f1872b8c59a99f019",
+       "locations": [
+        "archive"
+       ]
+      },
+      {
+       "path": "ls-confref-portal-events-meta.ttl.gz",
+       "bytes": 2067,
+       "sha256": "db8080deba5e1fa5eebde470c8c6087fa907cc6f87798e51368c8b465a149b0b",
+       "locations": [
+        "archive"
+       ]
+      }
+     ]
+    }
+   ]
+  },
+  "ls-springer-lod-dblp": {
+   "title": "Springer series linked to dblp, judged one by one",
+   "stable": "2026-11-09",
+   "replaces": [],
+   "replaced_by": [],
+   "withdrawn": null,
+   "catalogues": [
+    "site"
+   ],
+   "versions": [
+    {
+     "version": "2026-11-09",
+     "issued": "2026-11-09",
+     "status": "stable",
+     "files": [
+      {
+       "path": "ls-springer-lod-dblp-decisions.tsv.gz",
+       "bytes": 15110,
+       "sha256": "759e60946661de3d53d74788be3e3f4891a437fccc428c75a670bb769fc88df2",
+       "locations": [
+        "archive"
+       ]
+      },
+      {
+       "path": "ls-springer-lod-dblp.ttl.gz",
+       "bytes": 8436,
+       "sha256": "c9e70bbffd4ab3a5010c50b94ae9a0c08920e674e03e34c2f0372eb892f65141",
+       "locations": [
+        "archive"
+       ]
+      },
+      {
+       "path": "ls-springer-lod-dblp-meta.ttl.gz",
+       "bytes": 2254,
+       "sha256": "6cdf74b1c71195e13b5dad7b8e4c34d0a653c9b86d6e866dfa524ee339a3b101",
+       "locations": [
+        "archive"
+       ]
+      }
+     ]
+    }
+   ]
+  },
+  "ls-springer-lod-events": {
+   "title": "Springer conferences matched to the same events in the portal, ConfIDent, Wikidata and dblp",
+   "stable": "2026-11-09",
+   "replaces": [],
+   "replaced_by": [],
+   "withdrawn": null,
+   "catalogues": [
+    "site"
+   ],
+   "versions": [
+    {
+     "version": "2026-11-09",
+     "issued": "2026-11-09",
+     "status": "stable",
+     "files": [
+      {
+       "path": "ls-springer-lod-events-matches.tsv.gz",
+       "bytes": 748084,
+       "sha256": "30067dab6474f4c4a43e25349de3da74db1aebbf344edcb1a06c41dce397cf40",
+       "locations": [
+        "archive"
+       ]
+      },
+      {
+       "path": "ls-springer-lod-events.ttl.gz",
+       "bytes": 90096,
+       "sha256": "558d00e7050d1cbf06de86b3190d50f9a1f7c7a616a178adf7078beac6a65506",
+       "locations": [
+        "archive"
+       ]
+      },
+      {
+       "path": "ls-springer-lod-events-meta.ttl.gz",
+       "bytes": 2076,
+       "sha256": "ddf379b73f86a7c06a3e8b1fb9b2b503af2a145792457b19155a52d2aa1ac505",
+       "locations": [
+        "archive"
+       ]
+      }
+     ]
+    }
+   ]
+  },
+  "ls-wikidata-events": {
+   "title": "Wikidata events matched to the same events in dblp",
+   "stable": "2026-11-09",
+   "replaces": [],
+   "replaced_by": [],
+   "withdrawn": null,
+   "catalogues": [
+    "site"
+   ],
+   "versions": [
+    {
+     "version": "2026-11-09",
+     "issued": "2026-11-09",
+     "status": "stable",
+     "files": [
+      {
+       "path": "ls-wikidata-events-matches.tsv.gz",
+       "bytes": 461382,
+       "sha256": "7828cb25e97a1c0b72a39078ed506b3633142f9fabb9aa84469a524379853f92",
+       "locations": [
+        "archive"
+       ]
+      },
+      {
+       "path": "ls-wikidata-events.ttl.gz",
+       "bytes": 54415,
+       "sha256": "a08f20dd9953e9f54ae244526a6d3a978d7a0341391475e718ee7ed0c659eef7",
+       "locations": [
+        "archive"
+       ]
+      },
+      {
+       "path": "ls-wikidata-events-meta.ttl.gz",
+       "bytes": 2015,
+       "sha256": "8f779a4532ced15a3dfa18317b4e6b790fd7bbe45f211cab9be96ca3f831d22b",
+       "locations": [
+        "archive"
+       ]
+      }
+     ]
+    }
+   ]
+  },
+  "springer-lod": {
+   "title": "Springer LOD: conference series, conferences and proceedings (2018)",
+   "stable": "2026-11-08",
+   "replaces": [],
+   "replaced_by": [],
+   "withdrawn": null,
+   "catalogues": [
+    "site"
+   ],
+   "versions": [
+    {
+     "version": "2026-11-08",
+     "issued": "2026-11-08",
+     "status": "stable",
+     "files": [
+      {
+       "path": "springer-lod-confref-2018.ttl.gz",
+       "bytes": 447295,
+       "sha256": "8be718f470be40dd190564aab68f0b0a155652f464c5c39a052b6b31ebc134e6",
+       "locations": [
+        "archive"
+       ]
+      },
+      {
+       "path": "springer-lod-ontology.ttl.gz",
+       "bytes": 1958,
+       "sha256": "beeb0820456e8cc13b3566f5823f7ef154fe91c4c3d911bc028ea022eef1c60e",
+       "locations": [
+        "archive"
+       ]
+      },
+      {
+       "path": "springer-lod.ttl.gz",
+       "bytes": 6368828,
+       "sha256": "21d369c3bca40a38ba6f7b9b303ea433481d618a49be278df3281dcea337023e",
+       "locations": [
+        "archive"
+       ]
+      },
+      {
+       "path": "springer-lod-meta.ttl.gz",
+       "bytes": 2345,
+       "sha256": "18bd992b1a669d654b71e2aa6e28004c1c3621c659472ecf641937a114b41dff",
+       "locations": [
+        "archive"
+       ]
+      }
+     ]
+    }
+   ]
+  },
+  "springer-lod-2015": {
+   "title": "Springer LOD: the first public version (2015)",
+   "stable": "2026-11-08",
+   "replaces": [],
+   "replaced_by": [],
+   "withdrawn": null,
+   "catalogues": [
+    "site"
+   ],
+   "versions": [
+    {
+     "version": "2026-11-08",
+     "issued": "2026-11-08",
+     "status": "stable",
+     "files": [
+      {
+       "path": "springer-lod-2015-ontology.ttl.gz",
+       "bytes": 794,
+       "sha256": "b8184e546d8b18f2f187d3fe47b650a83f0e7b3809cd050a8a345d1fc79cb205",
+       "locations": [
+        "archive"
+       ]
+      },
+      {
+       "path": "springer-lod-2015.ttl.gz",
+       "bytes": 863960,
+       "sha256": "8b599af21e6f0f70c9e9d8c8de9d110c06e897387b0cf3b1b4df0d0c7e04c4e0",
+       "locations": [
+        "archive"
+       ]
+      },
+      {
+       "path": "springer-lod-2015-meta.ttl.gz",
+       "bytes": 1884,
+       "sha256": "745d9e38e953cc0a52d771d8594ce7855f0ebb223178397e5bef11da617eae5d",
+       "locations": [
+        "archive"
+       ]
+      }
+     ]
+    }
+   ]
+  },
+  "springer-lod-chapters": {
+   "title": "Springer LOD: chapters of the books (2018)",
+   "stable": "2026-11-08",
+   "replaces": [],
+   "replaced_by": [],
+   "withdrawn": null,
+   "catalogues": [
+    "site"
+   ],
+   "versions": [
+    {
+     "version": "2026-11-08",
+     "issued": "2026-11-08",
+     "status": "stable",
+     "files": [
+      {
+       "path": "springer-lod-chapters-confref-2018.ttl.gz",
+       "bytes": 6049294,
+       "sha256": "14a0ef1942905a03125f3cb9f4e156452893125021af7d7e7efd2cd55e9490a4",
+       "locations": [
+        "archive"
+       ]
+      },
+      {
+       "path": "springer-lod-chapters.ttl.gz",
+       "bytes": 92752721,
+       "sha256": "5df0bd680b289ece6e1849de4718b3425573f0682d674e416c85381eb6d9666f",
+       "locations": [
+        "archive"
+       ]
+      },
+      {
+       "path": "springer-lod-chapters-meta.ttl.gz",
+       "bytes": 1985,
+       "sha256": "81a0b2be252d1d2a2bbbfcb22d17ed99b8dd4cd4aa07ee42d64a01d06511e264",
+       "locations": [
+        "archive"
+       ]
+      }
+     ]
+    }
+   ]
+  },
+  "tuwien-pc": {
+   "title": "TU Wien: programme committees of 45 conferences (2015)",
+   "stable": "2026-11-08",
+   "replaces": [],
+   "replaced_by": [],
+   "withdrawn": null,
+   "catalogues": [
+    "site"
+   ],
+   "versions": []
+  },
+  "wikidata": {
+   "title": "Wikidata: academic conferences, conference series and proceedings",
+   "stable": "2026-11-08",
+   "replaces": [],
+   "replaced_by": [],
+   "withdrawn": null,
+   "catalogues": [
+    "site"
+   ],
+   "versions": [
+    {
+     "version": "2026-11-08",
+     "issued": "2026-11-08",
+     "status": "stable",
+     "files": [
+      {
+       "path": "wikidata.ttl.gz",
+       "bytes": 2980130,
+       "sha256": "24690ef858082821465685960d248dce39afd46cec406f5a5cafd56c1c5f5422",
+       "locations": [
+        "archive"
+       ]
+      },
+      {
+       "path": "wikidata-meta.ttl.gz",
+       "bytes": 1912,
+       "sha256": "b886fcf1fc679bb293c06ee5e6313b8945bd6f08266329a5fc73337f318c3d4c",
+       "locations": [
+        "archive"
+       ]
+      }
+     ]
+    }
+   ]
+  }
+ }
+}
