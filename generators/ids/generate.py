@@ -23,7 +23,7 @@
 3. Facts, from the records in the precedence of the datasets (FACTS_ORDER): names and acronyms, the start date and
    the end date (if it is not before the start and at most 60 days after it), the place (schema:location: the Wikidata
    item of ls-places, a city before a region before a country, decision 0018; else the name as the source gives it),
-   the edition number (cr:edition where the event has one series), the series of an event (cr:inSeries), the status
+   the year (cr:year, also where no full date is known), the edition number (cr:edition where the event has one series), the series of an event (cr:inSeries), the status
    and attendance mode (ConfIDent, decision 0016), the website (schema:url, ConfIDent and Wikidata), the proceedings
    (cr:proceedings: the volumes of dblp, Springer and Wikidata that name the event), and the academic fields and
    disciplines (cr:field, cr:discipline, ls-fields, decision 0019): an event without its own takes those of its
@@ -31,7 +31,8 @@
 
 Files: ids.ttl.gz (the series and events: class, cr:sameAs to every record, facts), ids-history.ttl.gz (merges,
 splits, retirements; the history of the previous version is carried over), ids-members.tsv.gz (identifier, record,
-source, dataset). The date of the events of the history is the date of the run (data, not a version id).
+source, dataset), ids-conflicts.tsv.gz (the facts on which the records of an event disagree: start dates more than 2
+days apart, years, edition numbers, places more than 50 km apart; for review and for reports to the sources). The date of the events of the history is the date of the run (data, not a version id).
 """
 
 import gzip
@@ -446,6 +447,52 @@ def place_of(recs):
     return best[1] if best else None
 
 
+def place_coordinates(run):
+    """{Wikidata item: (longitude, latitude)} of the places of wikidata-places."""
+    out = {}
+    for s, p, o in run.triples("wikidata_places"):
+        if p == W + "P625":
+            m = re.match(r"\s*point\(\s*([-0-9.eE]+)\s+([-0-9.eE]+)\s*\)", val(o), re.I)
+            if m:
+                out.setdefault(str(s), (float(m.group(1)), float(m.group(2))))
+    return out
+
+
+def km(a, b):
+    from math import asin, cos, radians, sin, sqrt
+    (lon1, lat1), (lon2, lat2) = a, b
+    h = sin(radians(lat2 - lat1) / 2) ** 2 + cos(radians(lat1)) * cos(radians(lat2)) * sin(radians(lon2 - lon1) / 2) ** 2
+    return 2 * 6371 * asin(sqrt(min(1.0, h)))
+
+
+def disagreements(recs, coords):
+    """The facts on which the records of an event disagree: start dates more than 2 days apart, different years,
+    different edition numbers, city-level places more than 50 km apart. [(fact, [(source, value)])]"""
+    out = []
+    by = defaultdict(list)
+    for r in sorted(recs, key=rank):
+        src = SOURCE_DATASET.get(r.node[0], r.node[0])
+        for key in ("start", "year", "number"):
+            v = r.facts.get(key)
+            if v:
+                by[key].append((src, v))
+        city = [it for lev, it in sorted(r.facts.get("places", ())) if lev == 1 and it in coords]
+        if city:
+            by["place"].append((src, city[0]))
+    starts = by.get("start", [])
+    if starts:
+        days = [date_of(v) for _s, v in starts]
+        if (max(days) - min(days)).days > 2:
+            out.append(("start date", starts))
+    for key, fact in (("year", "year"), ("number", "edition number")):
+        if len({v for _s, v in by.get(key, [])}) > 1:
+            out.append((fact, by[key]))
+    places = by.get("place", [])
+    if any(km(coords[a], coords[b]) > 50 for _s, a in places for _t, b in places):
+        out.append(("place", [(s, v.rsplit("/", 1)[1]) for s, v in places]))
+    return out
+
+
 def union(recs, key):
     return set().union(*(r.facts.get(key, set()) for r in recs))
 
@@ -538,6 +585,8 @@ def generate(run):
         fields_of[i] = own[i][0] or set().union(*(own[series_index[s]][0] for s in sids)) if sids else own[i][0]
         disciplines_of[i] = own[i][1] or (set().union(*(own[series_index[s]][1] for s in sids)) if sids else set())
     triples, rows = set(), ["id\trecord\tsource\tdataset"]
+    conflicts = ["id\tfact\tvalues (source: value)"]
+    coords = place_coordinates(run)
     for i, (lev, recs) in enumerate(groups):
         ident = assigned[i]
         x = IRI(iri_of(ident))
@@ -556,6 +605,9 @@ def generate(run):
         for a in acronyms(recs)[:3]:
             triples.add((x, IRI(SCHEMA + "alternateName"), Literal(a, None, None)))
         if lev == "event":
+            year = first(recs, "year")
+            if year:
+                triples.add((x, IRI(CR + "year"), Literal(f"{year:04d}", XSD + "gYear", None)))
             start = first(recs, "start")
             if start:
                 triples.add((x, IRI(SCHEMA + "startDate"), Literal(start, XSD + "date", None)))
@@ -571,6 +623,8 @@ def generate(run):
                     triples.add((x, IRI(SCHEMA + "location"), Literal(place, None, None)))
             for p in sorted(union(recs, "proceedings")):
                 triples.add((x, IRI(CR + "proceedings"), IRI(p)))
+            for fact, vals in disagreements(recs, coords):
+                conflicts.append(f"{ident}\t{fact}\t" + "; ".join(f"{s}: {v}" for s, v in vals))
             sids = sorted({series_id[n] for r in recs for n in r.facts.get("series", ()) if n in series_id})
             for sid in sids:
                 triples.add((x, IRI(CR + "inSeries"), IRI(iri_of(sid))))
@@ -594,6 +648,12 @@ def generate(run):
     with gzip.GzipFile(filename="", mode="wb", fileobj=buf, compresslevel=9, mtime=0) as f:
         f.write(("\n".join(rows[:1] + sorted(rows[1:])) + "\n").encode("utf-8"))
     run.path("ids-members.tsv.gz").write_bytes(buf.getvalue())
+    buf = io.BytesIO()
+    with gzip.GzipFile(filename="", mode="wb", fileobj=buf, compresslevel=9, mtime=0) as f:
+        f.write(("\n".join(conflicts[:1] + sorted(conflicts[1:])) + "\n").encode("utf-8"))
+    run.path("ids-conflicts.tsv.gz").write_bytes(buf.getvalue())
+    run.note(f"conflicts between the sources of an event: " + ", ".join(
+        f"{k} {v:,}" for k, v in sorted(Counter(c.split("\t")[1] for c in conflicts[1:]).items())))
     run.write_turtle("ids.ttl.gz", triples)
     run.write_turtle("ids-history.ttl.gz", hist)
     c = Counter(lev for lev, _ in groups)
