@@ -2,7 +2,7 @@
 slug = "ids"
 title = "confref identifiers: conference series and events"
 author = "Kai Eckert"
-example = "https://id.confref.org/event/e1093fb"
+example = "https://id.confref.org/event/e10k0hm"
 stable = "2026-11-09-2"
 kind = "entity-pages"
 method = ["deterministic"]
