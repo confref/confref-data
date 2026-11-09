@@ -1,0 +1,33 @@
+{
+ "slug": "confref-vocabulary",
+ "run": "run-20261109T204109Z",
+ "generator": "generators/confref-vocabulary/generate.py",
+ "commit": "76d24c62773de9473b537b9ef808dbd076c3d090",
+ "uncommitted": [],
+ "python": "3.15.0",
+ "params": {},
+ "input_overrides": [],
+ "started": "2026-11-09T20:41:09Z",
+ "inputs": [
+  {
+   "name": "vocabulary",
+   "ref": "repo:catalog/vocabulary.toml",
+   "file": "vocabulary.toml",
+   "sha256": "df8e214ff57c474186e4ef383e7ab26c48f8289df33a84c2b9f023718dfd97a7",
+   "bytes": 5504
+  }
+ ],
+ "status": "ok",
+ "finished": "2026-11-09T20:41:09Z",
+ "seconds": 0.0,
+ "notes": [],
+ "files": [
+  {
+   "path": "confref-vocabulary.ttl.gz",
+   "bytes": 2257,
+   "sha256": "5767ab2d26ca669a1b20c791842edd74e741055b5f2558b6235ae38c8dec2320",
+   "triples": 154
+  }
+ ],
+ "version": "2026-11-09"
+}

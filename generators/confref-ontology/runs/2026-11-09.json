@@ -1,0 +1,25 @@
+{
+ "slug": "confref-ontology",
+ "run": "run-20261109T204059Z",
+ "mode": "import",
+ "commit": "d7ce6eff9c1dae5168800c1ae58b4b6587ee19a8",
+ "uncommitted": [],
+ "started": "2026-11-09T20:40:59Z",
+ "status": "ok",
+ "origin": "https://github.com/confref/confref-ontology/blob/911907a4659f4df76b278edefe176c22fd1b8b3b/confref-ontology.ttl",
+ "description": "The Turtle file of confref-ontology, generated from confref-ontology.md by generate.py, gzipped.",
+ "sources": [
+  "https://github.com/confref/confref-ontology/blob/911907a4659f4df76b278edefe176c22fd1b8b3b/generate.py"
+ ],
+ "notes": [],
+ "inputs": [],
+ "files": [
+  {
+   "path": "confref-ontology.ttl.gz",
+   "bytes": 2796,
+   "sha256": "999d044fa8c4d25dbf62e5cb89ca97dfed820d0f650431c0dd60afbe1fecc207",
+   "triples": 157
+  }
+ ],
+ "version": "2026-11-09"
+}
