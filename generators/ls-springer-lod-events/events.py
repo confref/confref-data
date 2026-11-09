@@ -6,7 +6,8 @@
    cf:Wikidata_Series_ID), Wikidata series and dblp venues (wdt:P8926), dblp venues and Wikidata (owl:sameAs).
 2. Events and their series: Springer conferences (spr:hasSeries), portal events (portal:series), ConfIDent events
    (cf:In_Event_Series), Wikidata items with a series (wdt:P179) and a date that are not proceedings or series, and the
-   events of dblp: the tables of contents (dblp:listedOnTocPage) of the proceedings published in a conference venue.
+   events of dblp: the tables of contents (dblp:listedOnTocPage) of the proceedings published in a conference venue;
+   the numbered parts of one event (conf/eccv/eccv2024-1 … -89) are one event, identified by its first part.
    Facts: year, edition number, start date, acronym, name, place. The year of a dblp event is the year in its key
    (eswc2016), else the most frequent year in the titles of its proceedings, else the year of publication; its number
    the ordinal in the titles ("13th").
@@ -231,11 +232,21 @@ def read(run):
             rec[str(s)]["title"] = val(o)
         elif p == DBLP + "yearOfPublication":
             rec[str(s)]["year"] = year_of(val(o))
+    parts = defaultdict(set)   # the event (key without the part number) -> its tables of contents
     for r in rec.values():
         for t in r.get("toc", []):
             x = node(t)
             if not x or x[0] != "dblp-event":
                 continue
+            m = PART.match(x[1])
+            parts[m.group(1) if m else x[1]].add(x[1])
+    first = {k: min(ks, key=part_order) for ks in parts.values() for k in ks}
+    for r in rec.values():
+        for t in r.get("toc", []):
+            x = node(t)
+            if not x or x[0] != "dblp-event":
+                continue
+            x = ("dblp-event", first[x[1]])
             d = toc[x]
             d["venues"] |= {v for v in (node(o) for o in r.get("venues", [])) if v and v[1].startswith("conf/")}
             if r.get("title"):
@@ -247,6 +258,8 @@ def read(run):
             continue
         e = Event("dblp-event", x[1], "https://dblp.org/db/" + x[1])
         events[x] = e
+        m = PART.match(x[1])
+        e.extra = {"https://dblp.org/db/" + k for k in parts[m.group(1) if m else x[1]]} - {e.iri}   # the other parts
         e.series = set(d["venues"])
         m = re.search(r"(19[5-9][0-9]|20[0-9]{2})", x[1].rsplit("/", 1)[-1])
         title_years = Counter(int(y) for t in d["titles"] for y in re.findall(r"\b(19[5-9][0-9]|20[0-9]{2})\b", t))
@@ -269,6 +282,15 @@ def workshops(e):
     a dblp event (dhandnlp-ws2020 is a workshop series of its own) and not "Workshops" in a name: many events publish
     "Workshops" proceedings themselves (JSAI-isAI, LWDA, AICOL)."""
     return e.source != "dblp-event" and bool(WORKSHOPS_ACRONYM.search(e.acronym or ""))
+
+
+# the parts of one event in dblp: tables of contents numbered after the year (conf/eccv/eccv2024-1 … -89)
+PART = re.compile(r"^(.*[0-9]{4})-([0-9]{1,3})$")
+
+
+def part_order(key):
+    m = PART.match(key)
+    return (m.group(1), int(m.group(2))) if m else (key, 0)
 
 
 def contradicts(a, b):
