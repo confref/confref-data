@@ -1,5 +1,5 @@
 {
- "checked": "2026-11-09T10:16:45Z",
+ "checked": "2026-11-09T20:21:56Z",
  "locations": {
   "dumps": {
    "archive": "https://archive.confref.org/store/"
@@ -402,7 +402,9 @@
    "replaces": [],
    "replaced_by": [],
    "withdrawn": null,
-   "catalogues": [],
+   "catalogues": [
+    "site"
+   ],
    "versions": [
     {
      "version": "2026-11-09",
@@ -443,7 +445,9 @@
    "replaces": [],
    "replaced_by": [],
    "withdrawn": null,
-   "catalogues": [],
+   "catalogues": [
+    "site"
+   ],
    "versions": [
     {
      "version": "2026-11-09",
@@ -613,7 +617,9 @@
    "replaces": [],
    "replaced_by": [],
    "withdrawn": null,
-   "catalogues": [],
+   "catalogues": [
+    "site"
+   ],
    "versions": [
     {
      "version": "2026-11-09",
@@ -646,7 +652,9 @@
    "replaces": [],
    "replaced_by": [],
    "withdrawn": null,
-   "catalogues": [],
+   "catalogues": [
+    "site"
+   ],
    "versions": [
     {
      "version": "2026-11-09",
@@ -679,7 +687,9 @@
    "replaces": [],
    "replaced_by": [],
    "withdrawn": null,
-   "catalogues": [],
+   "catalogues": [
+    "site"
+   ],
    "versions": [
     {
      "version": "2026-11-09",
@@ -852,7 +862,9 @@
    "replaces": [],
    "replaced_by": [],
    "withdrawn": null,
-   "catalogues": [],
+   "catalogues": [
+    "site"
+   ],
    "versions": [
     {
      "version": "2026-11-09",
@@ -885,7 +897,9 @@
    "replaces": [],
    "replaced_by": [],
    "withdrawn": null,
-   "catalogues": [],
+   "catalogues": [
+    "site"
+   ],
    "versions": [
     {
      "version": "2026-11-09",
