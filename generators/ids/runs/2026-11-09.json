@@ -1,0 +1,154 @@
+{
+ "slug": "ids",
+ "run": "run-20261109T001239Z",
+ "generator": "generators/ids/generate.py",
+ "commit": "1ab76e114998b8242df4d82bf72305aca77cf0dc",
+ "uncommitted": [],
+ "python": "3.15.0",
+ "params": {},
+ "input_overrides": [],
+ "started": "2026-11-09T00:12:39Z",
+ "shared_code": [
+  "generators/ls-springer-lod-events/events.py"
+ ],
+ "inputs": [
+  {
+   "name": "springer",
+   "ref": "springer-lod/2026-11-08/springer-lod-confref-2018.ttl.gz",
+   "file": "springer-lod-confref-2018.ttl.gz",
+   "sha256": "8be718f470be40dd190564aab68f0b0a155652f464c5c39a052b6b31ebc134e6",
+   "bytes": 447295
+  },
+  {
+   "name": "springer",
+   "ref": "springer-lod/2026-11-08/springer-lod-ontology.ttl.gz",
+   "file": "springer-lod-ontology.ttl.gz",
+   "sha256": "beeb0820456e8cc13b3566f5823f7ef154fe91c4c3d911bc028ea022eef1c60e",
+   "bytes": 1958
+  },
+  {
+   "name": "springer",
+   "ref": "springer-lod/2026-11-08/springer-lod.ttl.gz",
+   "file": "springer-lod.ttl.gz",
+   "sha256": "21d369c3bca40a38ba6f7b9b303ea433481d618a49be278df3281dcea337023e",
+   "bytes": 6368828
+  },
+  {
+   "name": "portal",
+   "ref": "confref-portal/2026-11-09/confref-portal-vocabulary.ttl.gz",
+   "file": "confref-portal-vocabulary.ttl.gz",
+   "sha256": "c84c707fc68b709c6de9a47602f09100c0b5d7ac43520ef72a32a0aa1cc31247",
+   "bytes": 840
+  },
+  {
+   "name": "portal",
+   "ref": "confref-portal/2026-11-09/confref-portal.ttl.gz",
+   "file": "confref-portal.ttl.gz",
+   "sha256": "ad0e6b9015d4888e583431bba235adcc3e4ce8fa4858f239cb53b96a6a1e36b7",
+   "bytes": 3292995
+  },
+  {
+   "name": "confident",
+   "ref": "confident/2026-11-08/confident-log.ttl.gz",
+   "file": "confident-log.ttl.gz",
+   "sha256": "59e924ab64ad389987dc77a4fa81c6a841a32311800c326473389cbb7be308ac",
+   "bytes": 54753
+  },
+  {
+   "name": "confident",
+   "ref": "confident/2026-11-08/confident-vocabulary.ttl.gz",
+   "file": "confident-vocabulary.ttl.gz",
+   "sha256": "3caa1e4db3db95141f12c31643f3f725aeca1c5f1a4a33dc25854c65499f9897",
+   "bytes": 2569
+  },
+  {
+   "name": "confident",
+   "ref": "confident/2026-11-08/confident.ttl.gz",
+   "file": "confident.ttl.gz",
+   "sha256": "df3157d4de755231cd01cbced26a58c6d7613e1287d2dd1be10999f66f4f6529",
+   "bytes": 4473791
+  },
+  {
+   "name": "wikidata",
+   "ref": "wikidata/2026-11-08/wikidata.ttl.gz",
+   "file": "wikidata.ttl.gz",
+   "sha256": "24690ef858082821465685960d248dce39afd46cec406f5a5cafd56c1c5f5422",
+   "bytes": 2980130
+  },
+  {
+   "name": "dblp",
+   "ref": "dblp/2026-11-08/dblp.ttl.gz",
+   "file": "dblp.ttl.gz",
+   "sha256": "b64ef95d5c2059478e226069d7f71c757db9f921089bf67774df61dc6ff6ab88",
+   "bytes": 16376345
+  },
+  {
+   "name": "ls_springer_dblp",
+   "ref": "ls-springer-lod-dblp/2026-11-09/ls-springer-lod-dblp.ttl.gz",
+   "file": "ls-springer-lod-dblp.ttl.gz",
+   "sha256": "c9e70bbffd4ab3a5010c50b94ae9a0c08920e674e03e34c2f0372eb892f65141",
+   "bytes": 8436
+  },
+  {
+   "name": "gnd",
+   "ref": "gnd/2026-11-08/gnd.ttl.gz",
+   "file": "gnd.ttl.gz",
+   "sha256": "e88ff79b6eea01d469972502de8770ec884770b5c26ade989a4e49a80c1bb7c4",
+   "bytes": 1091491
+  },
+  {
+   "name": "ls_springer_lod_events",
+   "ref": "ls-springer-lod-events/2026-11-09/ls-springer-lod-events.ttl.gz",
+   "file": "ls-springer-lod-events.ttl.gz",
+   "sha256": "558d00e7050d1cbf06de86b3190d50f9a1f7c7a616a178adf7078beac6a65506",
+   "bytes": 90096
+  },
+  {
+   "name": "ls_confref_portal_events",
+   "ref": "ls-confref-portal-events/2026-11-09/ls-confref-portal-events.ttl.gz",
+   "file": "ls-confref-portal-events.ttl.gz",
+   "sha256": "ea4696a61de1a033fdc04f1b8ae89c3116bac10daefa669f1872b8c59a99f019",
+   "bytes": 245085
+  },
+  {
+   "name": "ls_confident_events",
+   "ref": "ls-confident-events/2026-11-09/ls-confident-events.ttl.gz",
+   "file": "ls-confident-events.ttl.gz",
+   "sha256": "fab0ed1d4cf612422fa5c04c8316b55b34d0894830af9c94e0639e64fd3b4bd8",
+   "bytes": 57652
+  },
+  {
+   "name": "ls_wikidata_events",
+   "ref": "ls-wikidata-events/2026-11-09/ls-wikidata-events.ttl.gz",
+   "file": "ls-wikidata-events.ttl.gz",
+   "sha256": "a08f20dd9953e9f54ae244526a6d3a978d7a0341391475e718ee7ed0c659eef7",
+   "bytes": 54415
+  }
+ ],
+ "status": "ok",
+ "finished": "2026-11-09T00:13:40Z",
+ "seconds": 61.1,
+ "notes": [
+  "11,089 series and 78,280 events; 89,369 new identifiers (up to number 1,137,944); 0 in the previous version; history: 0 statements."
+ ],
+ "files": [
+  {
+   "path": "ids-history.ttl.gz",
+   "bytes": 93,
+   "sha256": "7f90b8fba5e79ed0a87bad541b628f11d86cf98c9ac5fb12b9b03e0068db4264",
+   "triples": 0
+  },
+  {
+   "path": "ids-members.tsv.gz",
+   "bytes": 1205141,
+   "sha256": "21379b9309ef6cccaf433aba6fd0f91c00957691d17f0be15e344fc4da4b4ac0"
+  },
+  {
+   "path": "ids.ttl.gz",
+   "bytes": 4445216,
+   "sha256": "08de54c393fb0860e6de50c611c73afbb523a700144dff442cd1e05165e3ce3d",
+   "triples": 766797
+  }
+ ],
+ "version": "2026-11-09"
+}

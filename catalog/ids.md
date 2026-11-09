@@ -3,6 +3,7 @@ slug = "ids"
 title = "confref identifiers: conference series and events"
 author = "Kai Eckert"
 example = "https://id.confref.org/event/e1093fb"
+stable = "2026-11-09"
 kind = "entity-pages"
 method = ["deterministic"]
 inputs = ["springer-lod", "confref-portal", "confident", "wikidata", "dblp", "gnd", "ls-springer-lod-dblp",
@@ -16,6 +17,42 @@ image = "https://licensebuttons.net/p/zero/1.0/88x31.png"
 [generator]
 repo = "https://github.com/confref/confref-data"
 path = "generators/ids"
+
+[[versions]]
+version = "2026-11-09"
+issued = "2026-11-09"
+author = "Kai Eckert"
+commit = "1ab76e114998b8242df4d82bf72305aca77cf0dc"
+description = "The first identifier set: 11,089 series and 78,280 events, numbers 32^4 to 1,137,944."
+
+  [[versions.files]]
+  path = "ids-history.ttl.gz"
+  bytes = 93
+  sha256 = "7f90b8fba5e79ed0a87bad541b628f11d86cf98c9ac5fb12b9b03e0068db4264"
+  triples = 0
+
+  [[versions.files]]
+  path = "ids-members.tsv.gz"
+  bytes = 1205141
+  sha256 = "21379b9309ef6cccaf433aba6fd0f91c00957691d17f0be15e344fc4da4b4ac0"
+
+  [[versions.files]]
+  path = "ids.ttl.gz"
+  bytes = 4445216
+  sha256 = "08de54c393fb0860e6de50c611c73afbb523a700144dff442cd1e05165e3ce3d"
+  triples = 766797
+
+  [[versions.files]]
+  path = "ids-meta.ttl.gz"
+  bytes = 2184
+  sha256 = "4733f69ac1866134d68aa5039b7cbe6817f959c96de441b11143f1b1f798dbf4"
+  triples = 110
+
+[[changelog]]
+date = "2026-11-09"
+version = "2026-11-09"
+author = "Kai Eckert"
+text = "New version, made by the generator in confref-data (run-20261109T001239Z)."
 +++
 
 The confref identifiers: one identifier for every conference series (`https://id.confref.org/series/<id>`) and
