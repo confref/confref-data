@@ -27,3 +27,4 @@ decision, consequences. Short is better than complete.
 | [0019](0019-fields-and-disciplines.md) | Academic fields (OECD FOS 2007, `oecd-fos`) and disciplines (Wikidata items), linked in `ls-fields` | accepted | 2026-11-09 |
 | [0020](0020-ratings.md) | Ratings: a kind of dataset of their own (`rating`), one dataset per source; `rating-systems` | accepted | 2026-11-09 |
 | [0021](0021-governance-of-the-identifiers.md) | Governance of the identifiers: kept by the generator of `ids` alone; every version of `ids` holds their full information | accepted | 2026-11-09 |
+| [0022](0022-feedback-and-corrections.md) | Feedback: issues on confref-data, mainly for systematic errors of linking and clustering; single records corrected at their source (ConfIDent, Wikidata) | accepted | 2026-11-09 |
