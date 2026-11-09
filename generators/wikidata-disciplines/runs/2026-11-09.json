@@ -1,0 +1,50 @@
+{
+ "slug": "wikidata-disciplines",
+ "run": "run-20261109T075521Z",
+ "generator": "generators/wikidata-disciplines/generate.py",
+ "commit": "cc69096c7b4a39c1d623d3b76b97c30b3994a6b2",
+ "uncommitted": [],
+ "python": "3.15.0",
+ "params": {},
+ "input_overrides": [],
+ "started": "2026-11-09T07:55:21Z",
+ "inputs": [
+  {
+   "name": "harvest",
+   "ref": "inputs:wikidata/fields-2026-11-09/wikidata-fields-2026-11-09/labels.nt",
+   "file": "labels.nt",
+   "sha256": "0fb7fdc86eee28adcd277fe6e80e82e25d0ea495b458e256743fd8758a994db4",
+   "bytes": 2340146
+  },
+  {
+   "name": "links",
+   "ref": "ls-fields/2026-11-09/ls-fields.ttl.gz",
+   "file": "ls-fields.ttl.gz",
+   "sha256": "18227e08d9a9dd739c35e303178653920a9fb99fcb2f7db471eebd9d52af0a99",
+   "bytes": 507673
+  }
+ ],
+ "input_descriptions": {
+  "inputs:wikidata/fields-2026-11-09": {
+   "title": "Wikidata: items for the academic fields and topics of the sources",
+   "origin": "https://qlever.dev/api/wikidata (queried 2026-11-09 with generators/ls-fields/harvest.py; complete Wikidata, dump of 2026-08-10 updated live)",
+   "description": "The names of ConfIDent's 1,796 academic fields (with case and hyphen variants) looked up as labels and aliases (en, mul); of these candidates, the topics (P921) of the conferences in Wikidata and the anchor items of the OECD fields: sitelinks, whether an academic discipline, direct parents (P279, P361), labels in en, de, mul. CC0.",
+   "date": "2026-11-09"
+  }
+ },
+ "status": "ok",
+ "finished": "2026-11-09T07:55:22Z",
+ "seconds": 1.0,
+ "notes": [
+  "1,536 disciplines named by ls-fields; 0 without a label in the harvest."
+ ],
+ "files": [
+  {
+   "path": "wikidata-disciplines.ttl.gz",
+   "bytes": 29883,
+   "sha256": "c9004620e54c27f83fa1ced9b49b6faee61ceb487325252b89592b52d9e60884",
+   "triples": 2904
+  }
+ ],
+ "version": "2026-11-09"
+}
