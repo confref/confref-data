@@ -1,0 +1,52 @@
+{
+ "slug": "ratings-springer-lod",
+ "run": "run-20261109T074906Z",
+ "generator": "generators/ratings-springer-lod/generate.py",
+ "commit": "cc4a2b86e138b56019be50fea2c073b789684af9",
+ "uncommitted": [],
+ "python": "3.15.0",
+ "params": {},
+ "input_overrides": [],
+ "started": "2026-11-09T07:49:06Z",
+ "shared_code": [
+  "generators/rating-systems/generate.py"
+ ],
+ "inputs": [
+  {
+   "name": "springer",
+   "ref": "springer-lod/2026-11-08/springer-lod-confref-2018.ttl.gz",
+   "file": "springer-lod-confref-2018.ttl.gz",
+   "sha256": "8be718f470be40dd190564aab68f0b0a155652f464c5c39a052b6b31ebc134e6",
+   "bytes": 447295
+  },
+  {
+   "name": "springer",
+   "ref": "springer-lod/2026-11-08/springer-lod-ontology.ttl.gz",
+   "file": "springer-lod-ontology.ttl.gz",
+   "sha256": "beeb0820456e8cc13b3566f5823f7ef154fe91c4c3d911bc028ea022eef1c60e",
+   "bytes": 1958
+  },
+  {
+   "name": "springer",
+   "ref": "springer-lod/2026-11-08/springer-lod.ttl.gz",
+   "file": "springer-lod.ttl.gz",
+   "sha256": "21d369c3bca40a38ba6f7b9b303ea433481d618a49be278df3281dcea337023e",
+   "bytes": 6368828
+  }
+ ],
+ "status": "ok",
+ "finished": "2026-11-09T07:49:11Z",
+ "seconds": 5.1,
+ "notes": [
+  "Ratings: ccf 118, core 408, gii-grin-scie 738, h5-index 346, h5-median 346, qualis 496."
+ ],
+ "files": [
+  {
+   "path": "ratings-springer-lod.ttl.gz",
+   "bytes": 28307,
+   "sha256": "e60c12ecb03d18f02f1983a78ffe9967e5508499690baab7e71487cf916ff612",
+   "triples": 12952
+  }
+ ],
+ "version": "2026-11-09"
+}

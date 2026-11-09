@@ -1,0 +1,27 @@
+{
+ "slug": "rating-systems",
+ "run": "run-20261109T074906Z",
+ "generator": "generators/rating-systems/generate.py",
+ "commit": "cc4a2b86e138b56019be50fea2c073b789684af9",
+ "uncommitted": [],
+ "python": "3.15.0",
+ "params": {},
+ "input_overrides": [],
+ "started": "2026-11-09T07:49:06Z",
+ "inputs": [],
+ "status": "ok",
+ "finished": "2026-11-09T07:49:06Z",
+ "seconds": 0.0,
+ "notes": [
+  "6 rating systems."
+ ],
+ "files": [
+  {
+   "path": "rating-systems.ttl.gz",
+   "bytes": 1028,
+   "sha256": "2499cff7576099f0c2efc3d35e1ecbe9e4e1613607a0e82cec04ca529b8e6299",
+   "triples": 50
+  }
+ ],
+ "version": "2026-11-09"
+}

@@ -1,0 +1,283 @@
+{
+ "slug": "ls-places",
+ "run": "run-20261109T074911Z",
+ "generator": "generators/ls-places/generate.py",
+ "commit": "cc4a2b86e138b56019be50fea2c073b789684af9",
+ "uncommitted": [],
+ "python": "3.15.0",
+ "params": {},
+ "input_overrides": [],
+ "started": "2026-11-09T07:49:11Z",
+ "shared_code": [
+  "generators/ls-places/places.py",
+  "generators/ls-springer-lod-events/events.py"
+ ],
+ "inputs": [
+  {
+   "name": "springer",
+   "ref": "springer-lod/2026-11-08/springer-lod-confref-2018.ttl.gz",
+   "file": "springer-lod-confref-2018.ttl.gz",
+   "sha256": "8be718f470be40dd190564aab68f0b0a155652f464c5c39a052b6b31ebc134e6",
+   "bytes": 447295
+  },
+  {
+   "name": "springer",
+   "ref": "springer-lod/2026-11-08/springer-lod-ontology.ttl.gz",
+   "file": "springer-lod-ontology.ttl.gz",
+   "sha256": "beeb0820456e8cc13b3566f5823f7ef154fe91c4c3d911bc028ea022eef1c60e",
+   "bytes": 1958
+  },
+  {
+   "name": "springer",
+   "ref": "springer-lod/2026-11-08/springer-lod.ttl.gz",
+   "file": "springer-lod.ttl.gz",
+   "sha256": "21d369c3bca40a38ba6f7b9b303ea433481d618a49be278df3281dcea337023e",
+   "bytes": 6368828
+  },
+  {
+   "name": "portal",
+   "ref": "confref-portal/2026-11-09/confref-portal-vocabulary.ttl.gz",
+   "file": "confref-portal-vocabulary.ttl.gz",
+   "sha256": "c84c707fc68b709c6de9a47602f09100c0b5d7ac43520ef72a32a0aa1cc31247",
+   "bytes": 840
+  },
+  {
+   "name": "portal",
+   "ref": "confref-portal/2026-11-09/confref-portal.ttl.gz",
+   "file": "confref-portal.ttl.gz",
+   "sha256": "ad0e6b9015d4888e583431bba235adcc3e4ce8fa4858f239cb53b96a6a1e36b7",
+   "bytes": 3292995
+  },
+  {
+   "name": "confident",
+   "ref": "confident/2026-11-08/confident-log.ttl.gz",
+   "file": "confident-log.ttl.gz",
+   "sha256": "59e924ab64ad389987dc77a4fa81c6a841a32311800c326473389cbb7be308ac",
+   "bytes": 54753
+  },
+  {
+   "name": "confident",
+   "ref": "confident/2026-11-08/confident-vocabulary.ttl.gz",
+   "file": "confident-vocabulary.ttl.gz",
+   "sha256": "3caa1e4db3db95141f12c31643f3f725aeca1c5f1a4a33dc25854c65499f9897",
+   "bytes": 2569
+  },
+  {
+   "name": "confident",
+   "ref": "confident/2026-11-08/confident.ttl.gz",
+   "file": "confident.ttl.gz",
+   "sha256": "df3157d4de755231cd01cbced26a58c6d7613e1287d2dd1be10999f66f4f6529",
+   "bytes": 4473791
+  },
+  {
+   "name": "wikidata",
+   "ref": "wikidata/2026-11-08/wikidata.ttl.gz",
+   "file": "wikidata.ttl.gz",
+   "sha256": "24690ef858082821465685960d248dce39afd46cec406f5a5cafd56c1c5f5422",
+   "bytes": 2980130
+  },
+  {
+   "name": "dblp",
+   "ref": "dblp/2026-11-08/dblp.ttl.gz",
+   "file": "dblp.ttl.gz",
+   "sha256": "b64ef95d5c2059478e226069d7f71c757db9f921089bf67774df61dc6ff6ab88",
+   "bytes": 16376345
+  },
+  {
+   "name": "ls_springer_dblp",
+   "ref": "ls-springer-lod-dblp/2026-11-09/ls-springer-lod-dblp.ttl.gz",
+   "file": "ls-springer-lod-dblp.ttl.gz",
+   "sha256": "c9e70bbffd4ab3a5010c50b94ae9a0c08920e674e03e34c2f0372eb892f65141",
+   "bytes": 8436
+  },
+  {
+   "name": "gnd",
+   "ref": "gnd/2026-11-08/gnd.ttl.gz",
+   "file": "gnd.ttl.gz",
+   "sha256": "e88ff79b6eea01d469972502de8770ec884770b5c26ade989a4e49a80c1bb7c4",
+   "bytes": 1091491
+  },
+  {
+   "name": "harvest",
+   "ref": "inputs:wikidata/places-2026-11-09/wikidata-places-2026-11-09/candidates.rq",
+   "file": "candidates.rq",
+   "sha256": "389570a4c9317b7eef2fffd0c521041a4ea66c93b2ebf15b4aa9e6db8ce11cab",
+   "bytes": 127003
+  },
+  {
+   "name": "harvest",
+   "ref": "inputs:wikidata/places-2026-11-09/wikidata-places-2026-11-09/candidates.tsv",
+   "file": "candidates.tsv",
+   "sha256": "6613e2a4ef5ca734b0a033a2a1f8f1cf647bc8d1aeb6f725ec86ed1bdcad1c90",
+   "bytes": 2269513
+  },
+  {
+   "name": "harvest",
+   "ref": "inputs:wikidata/places-2026-11-09/wikidata-places-2026-11-09/countries.nt",
+   "file": "countries.nt",
+   "sha256": "e0531ec73614fcae36677fb39cfbf1a21841fb902e244d5ed878daa3c1376b44",
+   "bytes": 23200
+  },
+  {
+   "name": "harvest",
+   "ref": "inputs:wikidata/places-2026-11-09/wikidata-places-2026-11-09/countries.rq",
+   "file": "countries.rq",
+   "sha256": "c70859230dfddccdb0ce15aa17c68a673c1a9866a68b9e444261094855ec7a88",
+   "bytes": 305
+  },
+  {
+   "name": "harvest",
+   "ref": "inputs:wikidata/places-2026-11-09/wikidata-places-2026-11-09/country-aliases.nt",
+   "file": "country-aliases.nt",
+   "sha256": "97fc0782d327ee0e2204c305e8cf298b6ba69b0d107f82fcb4041dec3b8deeb8",
+   "bytes": 567050
+  },
+  {
+   "name": "harvest",
+   "ref": "inputs:wikidata/places-2026-11-09/wikidata-places-2026-11-09/country-aliases.rq",
+   "file": "country-aliases.rq",
+   "sha256": "5a66da094d2bdd145c8007a804c3288593fe698163b87fb04b55a88f0ab9f129",
+   "bytes": 407
+  },
+  {
+   "name": "harvest",
+   "ref": "inputs:wikidata/places-2026-11-09/wikidata-places-2026-11-09/country-labels.nt",
+   "file": "country-labels.nt",
+   "sha256": "6f1d0a69a0c6471edec9f339a997758ad54dde3557cdc3a235558256ae0ba190",
+   "bytes": 214296
+  },
+  {
+   "name": "harvest",
+   "ref": "inputs:wikidata/places-2026-11-09/wikidata-places-2026-11-09/country-labels.rq",
+   "file": "country-labels.rq",
+   "sha256": "cffdc82387834505e600c12c4c2334950e60a14add8e19e4b8999c83b482c38d",
+   "bytes": 401
+  },
+  {
+   "name": "harvest",
+   "ref": "inputs:wikidata/places-2026-11-09/wikidata-places-2026-11-09/harvest.json",
+   "file": "harvest.json",
+   "sha256": "b8b5b9900ac7152dea339c6f7c386632d6a62214f68796a0bd0cdf892204cff0",
+   "bytes": 1391
+  },
+  {
+   "name": "harvest",
+   "ref": "inputs:wikidata/places-2026-11-09/wikidata-places-2026-11-09/labels.rq",
+   "file": "labels.rq",
+   "sha256": "be615701d48e15f1dd0789e93a3c779252a2416d72aea7aeec26c44b2806a4ef",
+   "bytes": 126921
+  },
+  {
+   "name": "harvest",
+   "ref": "inputs:wikidata/places-2026-11-09/wikidata-places-2026-11-09/names-aliases.rq",
+   "file": "names-aliases.rq",
+   "sha256": "cc9ba2a3630da58077063a2df78af2d9249451540280e6eaee7ff7d8c141aa0d",
+   "bytes": 49721
+  },
+  {
+   "name": "harvest",
+   "ref": "inputs:wikidata/places-2026-11-09/wikidata-places-2026-11-09/names-aliases.tsv",
+   "file": "names-aliases.tsv",
+   "sha256": "b2733be3482c5c45c09776b5c41e929fb27abc94f02b08b872a5f38239457006",
+   "bytes": 741280
+  },
+  {
+   "name": "harvest",
+   "ref": "inputs:wikidata/places-2026-11-09/wikidata-places-2026-11-09/names-labels.rq",
+   "file": "names-labels.rq",
+   "sha256": "cf311771dfc5937dba13ef7bc96b3a958f12875e7b35c2044cf1624537fb7391",
+   "bytes": 49718
+  },
+  {
+   "name": "harvest",
+   "ref": "inputs:wikidata/places-2026-11-09/wikidata-places-2026-11-09/names-labels.tsv",
+   "file": "names-labels.tsv",
+   "sha256": "479ff5fc7ac27916a66bc535d51d6867c64d8188a31aa61b2a3a9fefd4881534",
+   "bytes": 6475158
+  },
+  {
+   "name": "harvest",
+   "ref": "inputs:wikidata/places-2026-11-09/wikidata-places-2026-11-09/statements.nt",
+   "file": "statements.nt",
+   "sha256": "04060db95062d05a9a62365e1fd96d0f7e8d54dab2385eacf3b49b9cbfde3c70",
+   "bytes": 39756315
+  },
+  {
+   "name": "harvest",
+   "ref": "inputs:wikidata/places-2026-11-09/wikidata-places-2026-11-09/statements.rq",
+   "file": "statements.rq",
+   "sha256": "251f4c1e9500931e7193dedb6a6d6e13997cbd031c29727010910d64cb692906",
+   "bytes": 126941
+  },
+  {
+   "name": "harvest",
+   "ref": "inputs:wikidata/places-2026-11-09/wikidata-places-2026-11-09/subdivision-aliases.nt",
+   "file": "subdivision-aliases.nt",
+   "sha256": "76ea2001c8da2b8dcc84a333d8a8de4a60ca6f87180c092bb7ed936da48cb4d2",
+   "bytes": 3884175
+  },
+  {
+   "name": "harvest",
+   "ref": "inputs:wikidata/places-2026-11-09/wikidata-places-2026-11-09/subdivision-aliases.rq",
+   "file": "subdivision-aliases.rq",
+   "sha256": "34e8cfd32d1c0ec95cae56e43984f29f4aabaa7d6d71e25308fda85771038e60",
+   "bytes": 408
+  },
+  {
+   "name": "harvest",
+   "ref": "inputs:wikidata/places-2026-11-09/wikidata-places-2026-11-09/subdivision-labels.nt",
+   "file": "subdivision-labels.nt",
+   "sha256": "d9629f403636dfa17c30a29850f53c3f39e7c1f61a1eae029abeb6ea95939ad6",
+   "bytes": 4510567
+  },
+  {
+   "name": "harvest",
+   "ref": "inputs:wikidata/places-2026-11-09/wikidata-places-2026-11-09/subdivision-labels.rq",
+   "file": "subdivision-labels.rq",
+   "sha256": "38f64c900f22253a3a4aceb9b73f273054ec8e4119f3baff1b2ab281779feac1",
+   "bytes": 402
+  },
+  {
+   "name": "harvest",
+   "ref": "inputs:wikidata/places-2026-11-09/wikidata-places-2026-11-09/subdivisions.nt",
+   "file": "subdivisions.nt",
+   "sha256": "382bebc1a45ac9ca2a1243944404a5a0dcd46b304a90875218a300677931f6f9",
+   "bytes": 1191892
+  },
+  {
+   "name": "harvest",
+   "ref": "inputs:wikidata/places-2026-11-09/wikidata-places-2026-11-09/subdivisions.rq",
+   "file": "subdivisions.rq",
+   "sha256": "cc996e1b1f5e3db11e3102c0f593a70f6cc0adb9c9a41f8aab7d817befabd8d3",
+   "bytes": 345
+  }
+ ],
+ "input_descriptions": {
+  "inputs:wikidata/places-2026-11-09": {
+   "title": "Wikidata: places named by the sources (countries, subdivisions, candidates for the place names, the place items)",
+   "origin": "https://qlever.dev/api/wikidata (queried 2026-11-09T07:16:35Z to 07:19:50Z with generators/ls-places/harvest.py; complete Wikidata, dump of 2026-08-10 updated live)",
+   "description": "Countries (ISO 3166-1) and subdivisions (ISO 3166-2) with labels and aliases; 7,781 place names of springer-lod, confref-portal, confident and the dblp titles looked up as labels and aliases (9 languages); the facts (sitelinks, settlement) and statements (country, coordinates, class, located in, population, labels) of 49,781 candidate and named items. CC0.",
+   "date": "2026-11-09"
+  }
+ },
+ "status": "ok",
+ "finished": "2026-11-09T07:50:07Z",
+ "seconds": 55.9,
+ "notes": [
+  "139,680 event records with a place mention; 135,709 links. Per source and rule: confident: city 16,149, country 557, none 3,087, region 201; confref-portal: city 36,005, country 1,628, none 113, region 199; dblp: city 54,779, country 3,984, none 1,046, region 731; gnd: item 7,907; springer-lod: city 8,850, country 406, none 6, region 65; wikidata: country 160, item 8,158, none 2."
+ ],
+ "files": [
+  {
+   "path": "ls-places-matches.tsv.gz",
+   "bytes": 1508426,
+   "sha256": "dcdac727d98f8b3e7af31d6ddcacd740d77b4dc20aa127fcdf63dfddd387d441"
+  },
+  {
+   "path": "ls-places.ttl.gz",
+   "bytes": 809812,
+   "sha256": "a1505117bb7cc09c9cb34f5c4f3e706ed3d0a81519d1290791fa9804af9305fb",
+   "triples": 135709
+  }
+ ],
+ "version": "2026-11-09"
+}

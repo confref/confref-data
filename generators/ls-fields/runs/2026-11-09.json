@@ -1,0 +1,200 @@
+{
+ "slug": "ls-fields",
+ "run": "run-20261109T075022Z",
+ "generator": "generators/ls-fields/generate.py",
+ "commit": "cc4a2b86e138b56019be50fea2c073b789684af9",
+ "uncommitted": [],
+ "python": "3.15.0",
+ "params": {},
+ "input_overrides": [],
+ "started": "2026-11-09T07:50:22Z",
+ "shared_code": [
+  "generators/ls-fields/fields.py",
+  "generators/ls-springer-lod-events/events.py",
+  "generators/oecd-fos/generate.py"
+ ],
+ "inputs": [
+  {
+   "name": "springer",
+   "ref": "springer-lod/2026-11-08/springer-lod-confref-2018.ttl.gz",
+   "file": "springer-lod-confref-2018.ttl.gz",
+   "sha256": "8be718f470be40dd190564aab68f0b0a155652f464c5c39a052b6b31ebc134e6",
+   "bytes": 447295
+  },
+  {
+   "name": "springer",
+   "ref": "springer-lod/2026-11-08/springer-lod-ontology.ttl.gz",
+   "file": "springer-lod-ontology.ttl.gz",
+   "sha256": "beeb0820456e8cc13b3566f5823f7ef154fe91c4c3d911bc028ea022eef1c60e",
+   "bytes": 1958
+  },
+  {
+   "name": "springer",
+   "ref": "springer-lod/2026-11-08/springer-lod.ttl.gz",
+   "file": "springer-lod.ttl.gz",
+   "sha256": "21d369c3bca40a38ba6f7b9b303ea433481d618a49be278df3281dcea337023e",
+   "bytes": 6368828
+  },
+  {
+   "name": "portal",
+   "ref": "confref-portal/2026-11-09/confref-portal-vocabulary.ttl.gz",
+   "file": "confref-portal-vocabulary.ttl.gz",
+   "sha256": "c84c707fc68b709c6de9a47602f09100c0b5d7ac43520ef72a32a0aa1cc31247",
+   "bytes": 840
+  },
+  {
+   "name": "portal",
+   "ref": "confref-portal/2026-11-09/confref-portal.ttl.gz",
+   "file": "confref-portal.ttl.gz",
+   "sha256": "ad0e6b9015d4888e583431bba235adcc3e4ce8fa4858f239cb53b96a6a1e36b7",
+   "bytes": 3292995
+  },
+  {
+   "name": "confident",
+   "ref": "confident/2026-11-08/confident-log.ttl.gz",
+   "file": "confident-log.ttl.gz",
+   "sha256": "59e924ab64ad389987dc77a4fa81c6a841a32311800c326473389cbb7be308ac",
+   "bytes": 54753
+  },
+  {
+   "name": "confident",
+   "ref": "confident/2026-11-08/confident-vocabulary.ttl.gz",
+   "file": "confident-vocabulary.ttl.gz",
+   "sha256": "3caa1e4db3db95141f12c31643f3f725aeca1c5f1a4a33dc25854c65499f9897",
+   "bytes": 2569
+  },
+  {
+   "name": "confident",
+   "ref": "confident/2026-11-08/confident.ttl.gz",
+   "file": "confident.ttl.gz",
+   "sha256": "df3157d4de755231cd01cbced26a58c6d7613e1287d2dd1be10999f66f4f6529",
+   "bytes": 4473791
+  },
+  {
+   "name": "wikidata",
+   "ref": "wikidata/2026-11-08/wikidata.ttl.gz",
+   "file": "wikidata.ttl.gz",
+   "sha256": "24690ef858082821465685960d248dce39afd46cec406f5a5cafd56c1c5f5422",
+   "bytes": 2980130
+  },
+  {
+   "name": "dblp",
+   "ref": "dblp/2026-11-08/dblp.ttl.gz",
+   "file": "dblp.ttl.gz",
+   "sha256": "b64ef95d5c2059478e226069d7f71c757db9f921089bf67774df61dc6ff6ab88",
+   "bytes": 16376345
+  },
+  {
+   "name": "ls_springer_dblp",
+   "ref": "ls-springer-lod-dblp/2026-11-09/ls-springer-lod-dblp.ttl.gz",
+   "file": "ls-springer-lod-dblp.ttl.gz",
+   "sha256": "c9e70bbffd4ab3a5010c50b94ae9a0c08920e674e03e34c2f0372eb892f65141",
+   "bytes": 8436
+  },
+  {
+   "name": "harvest",
+   "ref": "inputs:wikidata/fields-2026-11-09/wikidata-fields-2026-11-09/candidates.rq",
+   "file": "candidates.rq",
+   "sha256": "4052da464933df0194f35b786835494d9deba7977cb8a1591fa00ae40b91420d",
+   "bytes": 44130
+  },
+  {
+   "name": "harvest",
+   "ref": "inputs:wikidata/fields-2026-11-09/wikidata-fields-2026-11-09/candidates.tsv",
+   "file": "candidates.tsv",
+   "sha256": "b8f3a2d14476fadb0bbda53e420d81cde173bd608932b968cab6a5cf2ebe5def",
+   "bytes": 752408
+  },
+  {
+   "name": "harvest",
+   "ref": "inputs:wikidata/fields-2026-11-09/wikidata-fields-2026-11-09/harvest.json",
+   "file": "harvest.json",
+   "sha256": "ec6e88c490452052e4f6f767eb8a4cc27a85d971021fb92de0fe976b6e3e9651",
+   "bytes": 492
+  },
+  {
+   "name": "harvest",
+   "ref": "inputs:wikidata/fields-2026-11-09/wikidata-fields-2026-11-09/labels.nt",
+   "file": "labels.nt",
+   "sha256": "0fb7fdc86eee28adcd277fe6e80e82e25d0ea495b458e256743fd8758a994db4",
+   "bytes": 2340146
+  },
+  {
+   "name": "harvest",
+   "ref": "inputs:wikidata/fields-2026-11-09/wikidata-fields-2026-11-09/labels.rq",
+   "file": "labels.rq",
+   "sha256": "ce1bc9109f2b8219e68f0e4a84f289bf461f5430bbbaee0bf4228852a175e3dc",
+   "bytes": 44005
+  },
+  {
+   "name": "harvest",
+   "ref": "inputs:wikidata/fields-2026-11-09/wikidata-fields-2026-11-09/names-aliases.rq",
+   "file": "names-aliases.rq",
+   "sha256": "16e73902ad2dfc4541e0d2c08196a4f1b4c30a7edbdd56d915a51cd18ab41432",
+   "bytes": 62222
+  },
+  {
+   "name": "harvest",
+   "ref": "inputs:wikidata/fields-2026-11-09/wikidata-fields-2026-11-09/names-aliases.tsv",
+   "file": "names-aliases.tsv",
+   "sha256": "56dccc6600921a48309cf4855de04a95da5620bf24641b567f2fa0e00e38867e",
+   "bytes": 109339
+  },
+  {
+   "name": "harvest",
+   "ref": "inputs:wikidata/fields-2026-11-09/wikidata-fields-2026-11-09/names-labels.rq",
+   "file": "names-labels.rq",
+   "sha256": "c70912a41990a55eda9851505e9c5bbb5af46490a2f8739220e14297a6ec205e",
+   "bytes": 62219
+  },
+  {
+   "name": "harvest",
+   "ref": "inputs:wikidata/fields-2026-11-09/wikidata-fields-2026-11-09/names-labels.tsv",
+   "file": "names-labels.tsv",
+   "sha256": "ff68a30e6bcb394b96b929e29c67b19a71f4bbb0e986a2cf6cbfaa82a7081b95",
+   "bytes": 924964
+  },
+  {
+   "name": "harvest",
+   "ref": "inputs:wikidata/fields-2026-11-09/wikidata-fields-2026-11-09/parents.rq",
+   "file": "parents.rq",
+   "sha256": "29628586096339c0037784701d9013ca45aeeacce17d1ee005c9f6cc9e447cb3",
+   "bytes": 43961
+  },
+  {
+   "name": "harvest",
+   "ref": "inputs:wikidata/fields-2026-11-09/wikidata-fields-2026-11-09/parents.tsv",
+   "file": "parents.tsv",
+   "sha256": "74db572951c9f6dd44c440b38fbf910f936e1e9270abef77450916b9987f643b",
+   "bytes": 504839
+  }
+ ],
+ "input_descriptions": {
+  "inputs:wikidata/fields-2026-11-09": {
+   "title": "Wikidata: items for the academic fields and topics of the sources",
+   "origin": "https://qlever.dev/api/wikidata (queried 2026-11-09 with generators/ls-fields/harvest.py; complete Wikidata, dump of 2026-08-10 updated live)",
+   "description": "The names of ConfIDent's 1,796 academic fields (with case and hyphen variants) looked up as labels and aliases (en, mul); of these candidates, the topics (P921) of the conferences in Wikidata and the anchor items of the OECD fields: sitelinks, whether an academic discipline, direct parents (P279, P361), labels in en, de, mul. CC0.",
+   "date": "2026-11-09"
+  }
+ },
+ "status": "ok",
+ "finished": "2026-11-09T07:51:14Z",
+ "seconds": 51.8,
+ "notes": [
+  "ConfIDent academic fields matched to a Wikidata discipline: 943 of 1,796; disciplines named 1,536. Statements: confident discipline 22,015, confident field 22,776, confref-portal discipline 37,873, confref-portal field 37,903, dblp field 65,244, discipline with field 1,082, springer-lod field 9,275, wikidata discipline 3,470"
+ ],
+ "files": [
+  {
+   "path": "ls-fields-disciplines.tsv.gz",
+   "bytes": 28968,
+   "sha256": "e9e0343c6e2a481a18866ca3d041ee98dca1526a7b0d9b53f8a2a0146f4509de"
+  },
+  {
+   "path": "ls-fields.ttl.gz",
+   "bytes": 507673,
+   "sha256": "18227e08d9a9dd739c35e303178653920a9fb99fcb2f7db471eebd9d52af0a99",
+   "triples": 199638
+  }
+ ],
+ "version": "2026-11-09"
+}
