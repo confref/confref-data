@@ -23,8 +23,13 @@ path = "generators/ids"
 version = "2026-11-09-2"
 issued = "2026-11-09"
 author = "Kai Eckert"
-commit = "cc4a2b86e138b56019be50fea2c073b789684af9"
-description = "Version 2: places as Wikidata items, end dates, websites, proceedings, academic fields and disciplines; the identifiers of 2026-11-09 unchanged."
+commit = "85a3fbca527a6fc0b9351718c06eb36c4b87511c"
+description = "Version 2: places as Wikidata items, years, end dates, websites, proceedings, academic fields and disciplines, the conflicts between the sources; the identifiers of 2026-11-09 unchanged."
+
+  [[versions.files]]
+  path = "ids-conflicts.tsv.gz"
+  bytes = 22945
+  sha256 = "0fc2411e292a2cf7c498f5a5edb07c758ef7a4023c448dddac0a0886d3c00320"
 
   [[versions.files]]
   path = "ids-history.ttl.gz"
@@ -39,15 +44,15 @@ description = "Version 2: places as Wikidata items, end dates, websites, proceed
 
   [[versions.files]]
   path = "ids.ttl.gz"
-  bytes = 5559325
-  sha256 = "5f3a038f1d8d3e62c4dd8fdaca38b78b15ced6fab905d7c1b9cbe759eaa26f8d"
-  triples = 1112387
+  bytes = 5681622
+  sha256 = "44745d6636415107d191a1d8b7e7400c2f81bdb8797327f502da2b35834f3bcb"
+  triples = 1190462
 
   [[versions.files]]
   path = "ids-meta.ttl.gz"
-  bytes = 2295
-  sha256 = "8c8918d074d3c679502c5fecfd47ec457742f4dc961c5415317dda44974a9d9c"
-  triples = 119
+  bytes = 2456
+  sha256 = "9b88429ee91b8fd425489511e7d5d1b5398bc66acdcf1c71e45245372034b682"
+  triples = 130
 
 [[versions]]
 version = "2026-11-09"
@@ -83,7 +88,7 @@ description = "The first identifier set: 11,089 series and 78,280 events, number
 date = "2026-11-09"
 version = "2026-11-09-2"
 author = "Kai Eckert"
-text = "New version, made by the generator in confref-data (run-20261109T075122Z)."
+text = "New version, made by the generator in confref-data (run-20261109T080046Z)."
 
 [[changelog]]
 date = "2026-11-09"

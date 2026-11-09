@@ -1,13 +1,13 @@
 {
  "slug": "ids",
- "run": "run-20261109T075122Z",
+ "run": "run-20261109T080046Z",
  "generator": "generators/ids/generate.py",
- "commit": "cc4a2b86e138b56019be50fea2c073b789684af9",
+ "commit": "85a3fbca527a6fc0b9351718c06eb36c4b87511c",
  "uncommitted": [],
  "python": "3.15.0",
  "params": {},
  "input_overrides": [],
- "started": "2026-11-09T07:51:22Z",
+ "started": "2026-11-09T08:00:46Z",
  "shared_code": [
   "generators/ls-springer-lod-events/events.py"
  ],
@@ -161,12 +161,18 @@
   }
  ],
  "status": "ok",
- "finished": "2026-11-09T07:52:53Z",
- "seconds": 91.1,
+ "finished": "2026-11-09T08:02:19Z",
+ "seconds": 92.9,
  "notes": [
+  "conflicts between the sources of an event: edition number 97, place 413, start date 1,352, year 5",
   "11,089 series and 78,280 events; 0 new identifiers (up to number 1,137,944); 89,369 in the previous version; history: 0 statements."
  ],
  "files": [
+  {
+   "path": "ids-conflicts.tsv.gz",
+   "bytes": 22945,
+   "sha256": "0fc2411e292a2cf7c498f5a5edb07c758ef7a4023c448dddac0a0886d3c00320"
+  },
   {
    "path": "ids-history.ttl.gz",
    "bytes": 95,
@@ -180,9 +186,9 @@
   },
   {
    "path": "ids.ttl.gz",
-   "bytes": 5559325,
-   "sha256": "5f3a038f1d8d3e62c4dd8fdaca38b78b15ced6fab905d7c1b9cbe759eaa26f8d",
-   "triples": 1112387,
+   "bytes": 5681622,
+   "sha256": "44745d6636415107d191a1d8b7e7400c2f81bdb8797327f502da2b35834f3bcb",
+   "triples": 1190462,
    "noncanonical": {
     "dblp-event": 174,
     "doi": 1
