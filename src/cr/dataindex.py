@@ -69,6 +69,8 @@ def update(assume=None, out=print, pause=0.3):
     warnings = []
     datasets = {}
     for slug, e in sorted(cat.entries.items()):
+        if e.internal:              # never in the index (decision 0023)
+            continue
         listed = [name for name, prefix in locs["catalogues"].items() if probe(f"{prefix}{quote(slug)}/", pause)[0]]
         versions = []
         for v in e.versions():
@@ -123,6 +125,9 @@ def sync(site, index_path=INDEX, add=(), out=print):
         if e is None:
             out(f"{slug}: in the site but not in the catalogue (left as it is)")
             continue
+        if e.internal:
+            out(f"{slug}: internal (decision 0023), not copied" + (" - remove it from the site" if slug in present else ""))
+            continue
         text = e.path.read_text(encoding="utf-8")
         end = text.index("+++", 3) + 3
         new = text[:end] + "\n" + COPY_NOTE.format(slug=slug) + text[end:].lstrip("\n")
@@ -140,7 +145,7 @@ def sync(site, index_path=INDEX, add=(), out=print):
                 if f.is_file() and (not (dest / f.name).exists() or (dest / f.name).read_bytes() != f.read_bytes()):
                     shutil.copyfile(f, dest / f.name)
                     out(f"{slug}: picture {f.name}")
-    missing = sorted(set(cat.entries) - present - set(add))
+    missing = sorted(s for s in set(cat.entries) - present - set(add) if not cat.entries[s].internal)
     if missing:
         out(f"not in the site (add with --add): {', '.join(missing)}")
     data = site / "data"

@@ -59,8 +59,9 @@ def version_files(cfg, e, v, verify=False):
         info = {"path": p, "bytes": f.get("bytes"), "sha256": f.get("sha256"),
                 "triples": f.get("triples", counted.get(p)), "public": True,
                 "description": e.file_description(p, v)}
-        if cfg.store:
-            local = cfg.store / e.name / v["version"] / p
+        store = cfg.store_of(e.name, required=False)
+        if store:
+            local = store / e.name / v["version"] / p
             info["local"] = str(local) if local.is_file() else None
             if not local.is_file():
                 info["store"] = "missing"
@@ -392,7 +393,7 @@ def resolve_files(cfg, ident):
             if not is_rdf(f["path"]):
                 continue
             if not f.get("local"):
-                raise LookupError(f"{slug}/{head}/{f['path']} is not in the store ({cfg.store})")
+                raise LookupError(f"{slug}/{head}/{f['path']} is not in the store ({cfg.store_of(slug, required=False)})")
             files.append((f["path"], Path(f["local"])))
     if path:
         files = [(n, x) for n, x in files if n == path]
@@ -557,7 +558,7 @@ def cmd_drop_version(args, cfg):
                                       and re.search(r'(?m)^version = "' + re.escape(vid) + '"$', b))]
     if len(keep) == len(blocks):
         return fail(f"{slug}: no version {vid} in the catalogue")
-    folder = cfg.require("store") / slug / vid
+    folder = cfg.store_of(slug) / slug / vid
     record = catalog.GENERATORS / slug / "runs" / f"{vid}.json"
     print(f"{slug}/{vid}: drop {len(blocks) - len(keep)} catalogue blocks, {folder}, {record.name}"
           + (" (dry run)" if args.dry_run else ""))

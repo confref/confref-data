@@ -45,6 +45,15 @@ class Config:
     def store(self):
         return self.path("store")
 
+    def store_of(self, slug, required=True):
+        """The store a dataset's versions are in: the internal store for an internal dataset (catalogue field
+        `internal`, decision 0023), else the store. required: raise ConfigError if it is not configured."""
+        if not hasattr(self, "_internal"):
+            from . import catalog
+            self._internal = {s for s, e in catalog.Catalog().entries.items() if e.internal}
+        key = "internal_store" if slug in self._internal else "store"
+        return self.require(key) if required else self.path(key)
+
     @property
     def build(self):
         return self.path("build")

@@ -59,6 +59,13 @@ class Entry:
         w = self.data.get("withdrawn")
         return w if isinstance(w, str) else None
 
+    @property
+    def internal(self):
+        """The reason, if the dataset is internal (decision 0023): its versions are in the internal store, never
+        published, not in the data index and not on the sites."""
+        i = self.data.get("internal")
+        return i if isinstance(i, str) else None
+
     def versions(self):
         v = self.data.get("versions", [])
         return [x for x in v if isinstance(x, dict)] if isinstance(v, list) else []
@@ -269,7 +276,7 @@ DATASET = {
                                                     for x in v),
                    f"a list of namespaces relative to {project.DATA}"),
     "replaces": SLUGS, "inputs": SLUGS, "generator": (lambda v: True, ""), "stable": TEXT,
-    "withdrawn": TEXT,
+    "withdrawn": TEXT, "internal": TEXT,
     "aliases": (lambda v: is_str_list(v) and all(x.startswith("/") for x in v), "a list of paths starting with /"),
     "files": (lambda v: True, ""), "versions": (lambda v: True, ""),
     "changelog": (lambda v: True, ""),

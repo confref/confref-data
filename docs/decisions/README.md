@@ -28,3 +28,4 @@ decision, consequences. Short is better than complete.
 | [0020](0020-ratings.md) | Ratings: a kind of dataset of their own (`rating`), one dataset per source; `rating-systems` | accepted | 2026-11-09 |
 | [0021](0021-governance-of-the-identifiers.md) | Governance of the identifiers: kept by the generator of `ids` alone; every version of `ids` holds their full information | accepted | 2026-11-09 |
 | [0022](0022-feedback-and-corrections.md) | Feedback: any feedback as issues on confref-data; errors of sources best also reported there (ConfIDent, Wikidata, dblp, GND); new conferences via ConfIDent | accepted | 2026-11-09 |
+| [0023](0023-internal-datasets.md) | Internal datasets (`internal`, internal store; not in the index, the sites or the platform); committee memberships as the first, only aggregates published | accepted | 2026-11-09 |

@@ -238,7 +238,6 @@ def add_versions(cfg, items, version=None, author=None, description=None, text=N
     if len({s for s, _ in items}) != len(items):
         raise VersionError("one run per dataset")
     batch = dict(items)
-    store = cfg.require("store")
     commit, dirty = framework_state()
     if dirty and not dry_run:
         raise VersionError(f"the framework has uncommitted changes ({', '.join(dirty)}); the -meta names its commit")
@@ -253,6 +252,7 @@ def add_versions(cfg, items, version=None, author=None, description=None, text=N
     jobs = []
     for slug, run_id in items:
         e, run, rec = check_run(cfg, cat, slug, run_id, batch)
+        store = cfg.store_of(slug)
         vid = version or default_version(e, store, slug, run)
         if not catalog.SLUG.match(vid) or vid in catalog.RESERVED_VERSIONS:
             raise VersionError(f"'{vid}' is not a valid version id")
@@ -323,7 +323,7 @@ def stage_files(cfg, j, dry_run):
         local = run["dir"] / f["path"]
         if not local.is_file() or catalog.sha256(local) != f["sha256"]:
             raise VersionError(f"{f['path']} in the run directory differs from the run record")
-    target = cfg.require("store") / slug / vid
+    target = cfg.store_of(slug) / slug / vid
     if dry_run:
         target = cfg.require("build") / slug / f"{j['run_id']}-as-{vid}"
         if target.exists():
@@ -427,7 +427,7 @@ def render_meta(cfg, slug, vid, dry_run=False, out=None):
     commit, dirty = framework_state()
     if dirty and not (dry_run or out):
         raise VersionError(f"the framework has uncommitted changes ({', '.join(dirty)}); the -meta names its commit")
-    base = cfg.require("store") / slug / vid
+    base = cfg.store_of(slug) / slug / vid
     mp = meta.meta_path(slug)
     public = [{k: f.get(k) for k in ("path", "bytes", "sha256", "triples", "description")}
               for f in v.get("files", []) if isinstance(f, dict) and f.get("path") != mp]
@@ -483,7 +483,7 @@ def import_version(cfg, slug, vid, description, origin=None, sources=(), notes=(
     commit, dirty = generator.code_state(slug)
     if dirty and not dry_run:
         raise VersionError(f"uncommitted changes ({', '.join(dirty)}); the record names the commit")
-    base = cfg.require("store") / slug / vid
+    base = cfg.store_of(slug) / slug / vid
     files = []
     for f in v.get("files", []):
         if not isinstance(f, dict) or f.get("path") == meta.meta_path(slug):
@@ -647,7 +647,7 @@ def remove_version(cfg, slug, vid, latest_ok=False, warn=print):
     entry_text = remove_version_text(e.path.read_text(encoding="utf-8"), e.data, vid)
     rec = runs.version_record(slug, vid) or {}
     e.path.write_text(entry_text, encoding="utf-8")
-    store = cfg.require("store") / slug / vid
+    store = cfg.store_of(slug) / slug / vid
     if store.exists():
         shutil.rmtree(store)
     rp = runs.record_path(slug, vid)

@@ -2,6 +2,7 @@
 # Paths are relative to the repository root; ../lokal is the workspace link to ~/lokal/confref (not synced).
 
 store = "../lokal/store"              # the store: the files of every version, <slug>/<version>/<path>
+internal_store = "../lokal/internal"  # the versions of internal datasets (decision 0023), never published
 build = "../lokal/build"              # build area: <slug>/<run-id>/
 # cache = "../lokal/build/.cache"     # canonical forms, by file checksum (default: <build>/.cache)
 inputs = "../lokal/inputs"            # the inputs area: <source>/<name>/ with input.toml
