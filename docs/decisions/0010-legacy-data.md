@@ -20,8 +20,8 @@ which never existed.
   ratings, review statistics, the Springer LOD ontology), with the lod.springer.com IRIs as in the source, **and a
   file stating for every lod.springer.com IRI its lod.confref.org IRI**. So both IRI sets of 2018 are the legacy base,
   without the broken SpringerLink links of the copy.
-- **`springer-lod-chapters`**: the 1.25M chapters, with their lod.confref.org IRIs in the same way; in the store, not
-  loaded into the endpoint.
+- **The chapters** (1.25M) are not published: data on the level of papers is not confref's (Crossref has it for all
+  publishers). They stay in the input `inputs:springer/lod-2018`.
 - **`springer-lod-2015`**: the first public version (2015-02).
 - **`confref-portal`**: the portal data of 2020, IRIs `https://id.confref.org/data/confref-portal/…`, terms in its
   namespace (`…/vocab/`), true to the API.

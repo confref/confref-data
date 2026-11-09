@@ -1,7 +1,7 @@
 # springer-lod: generator history
 
 The conference data of lod.springer.com (Springer LOD pilot, 2014-2018), as of 2018-06-04. Also holds the module
-`springer.py` shared by springer-lod, springer-lod-chapters, springer-lod-2015 and tuwien-pc.
+`springer.py` shared by springer-lod, springer-lod-2015 and tuwien-pc.
 
 ## History
 

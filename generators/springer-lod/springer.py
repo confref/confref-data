@@ -1,4 +1,4 @@
-"""Shared by the Springer LOD datasets (springer-lod, springer-lod-chapters, springer-lod-2015): reading the dumps and
+"""Shared by the Springer LOD datasets (springer-lod, springer-lod-2015): reading the dumps and
 writing them true to the source (decision 0010).
 
 True to the source means: every triple as Springer published it, with two changes that apply to every dataset

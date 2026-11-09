@@ -64,7 +64,7 @@ The conference data of lod.springer.com, the linked open data portal that Spring
 of Mannheim and Net Wise, as of 2018-06-04: 1,764 conference series (all with their DBLP id, many with ratings of
 CORE, GII-GRIN-SCIE, QUALIS and CCF and Google Scholar metrics), 9,327 conferences (dates, place, edition number,
 5,838 with their GND id, about 690 with review statistics) and 59,684 books (the proceedings volumes with ISBN, DOI and
-series, and other books). The 1.25 million chapters are in springer-lod-chapters. lod.springer.com is offline; this
+series, and other books). The 1.25 million chapters are not published; they stay in the input. lod.springer.com is offline; this
 dump exists nowhere else.
 
 As Springer published it (dcterms instead of the Dublin Core elements, GND IRIs with https), with the Springer LOD
