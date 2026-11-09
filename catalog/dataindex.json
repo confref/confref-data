@@ -1,5 +1,5 @@
 {
- "checked": "2026-11-09T21:17:56Z",
+ "checked": "2026-11-09T21:19:05Z",
  "locations": {
   "dumps": {
    "archive": "https://archive.confref.org/store/"
@@ -66,7 +66,9 @@
    "replaces": [],
    "replaced_by": [],
    "withdrawn": null,
-   "catalogues": [],
+   "catalogues": [
+    "site"
+   ],
    "versions": [
     {
      "version": "2026-11-09",
@@ -173,7 +175,9 @@
    "replaces": [],
    "replaced_by": [],
    "withdrawn": null,
-   "catalogues": [],
+   "catalogues": [
+    "site"
+   ],
    "versions": [
     {
      "version": "2026-11-09",
