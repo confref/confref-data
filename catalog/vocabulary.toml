@@ -34,7 +34,7 @@ label = "Correction"
 definition = "Corrections of the data of other datasets: triples it adds (its data) and triples it deletes from every graph that contains them (a SPARQL Update file); applied after all other datasets."
 
 [kind.values.entity-pages]
-label = "Entity pages"
+label = "Identifier set"
 definition = "The confref identifiers: one resource per entity (conference series, event), bringing together the records about it."
 
 [kind.values.ontology]
