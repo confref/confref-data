@@ -24,31 +24,31 @@ path = "generators/ls-springer-lod-events"
 version = "2026-11-09"
 issued = "2026-11-09"
 author = "Kai Eckert"
-commit = "0cabaf81e04ca2b1e79948a7d00335d635e0857e"
+commit = "60b860c5d5d6759339bdb2ce1bd1a47a3a999cf4"
 description = "Made by the rules of events.py from springer-lod 2026-11-08, confref-portal 2026-11-09, confident, wikidata and dblp 2026-11-08 and ls-springer-lod-dblp 2026-11-09."
 
   [[versions.files]]
   path = "ls-springer-lod-events-matches.tsv.gz"
-  bytes = 731292
-  sha256 = "9021a84da7d74342170f570445c5e134644a1fbda2985513ce15c97d5e4fa3b6"
+  bytes = 748084
+  sha256 = "30067dab6474f4c4a43e25349de3da74db1aebbf344edcb1a06c41dce397cf40"
 
   [[versions.files]]
   path = "ls-springer-lod-events.ttl.gz"
-  bytes = 88787
-  sha256 = "fe6ecf1ceaf9f1fe10981d6b498e87d8f1cc4e5fa6da8bd0a420e6934759a63b"
-  triples = 18187
+  bytes = 90096
+  sha256 = "558d00e7050d1cbf06de86b3190d50f9a1f7c7a616a178adf7078beac6a65506"
+  triples = 18585
 
   [[versions.files]]
   path = "ls-springer-lod-events-meta.ttl.gz"
-  bytes = 2079
-  sha256 = "b8debc10f7af3a8c352c8615bdaa1ff6037e77650e8a610952c6f1a688ad0661"
+  bytes = 2076
+  sha256 = "ddf379b73f86a7c06a3e8b1fb9b2b503af2a145792457b19155a52d2aa1ac505"
   triples = 87
 
 [[changelog]]
 date = "2026-11-09"
 version = "2026-11-09"
 author = "Kai Eckert"
-text = "New version, made by the generator in confref-data (run-20261108T235044Z)."
+text = "New version, made by the generator in confref-data (run-20261109T000838Z)."
 +++
 
 The events of `springer-lod` linked to the same events of other sources (`cr:sameAs`), found by rules within series that

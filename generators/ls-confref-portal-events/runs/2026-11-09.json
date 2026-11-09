@@ -1,13 +1,13 @@
 {
  "slug": "ls-confref-portal-events",
- "run": "run-20261108T235110Z",
+ "run": "run-20261109T000904Z",
  "generator": "generators/ls-confref-portal-events/generate.py",
- "commit": "0cabaf81e04ca2b1e79948a7d00335d635e0857e",
+ "commit": "60b860c5d5d6759339bdb2ce1bd1a47a3a999cf4",
  "uncommitted": [],
  "python": "3.15.0",
  "params": {},
  "input_overrides": [],
- "started": "2026-11-08T23:51:10Z",
+ "started": "2026-11-09T00:09:04Z",
  "shared_code": [
   "generators/ls-springer-lod-events/events.py"
  ],
@@ -91,22 +91,22 @@
   }
  ],
  "status": "ok",
- "finished": "2026-11-08T23:51:36Z",
- "seconds": 26.4,
+ "finished": "2026-11-09T00:09:31Z",
+ "seconds": 26.8,
  "notes": [
-  "41,866 links of the events of confref-portal: to confident (agrees in number, date or acronym) 796, to confident (only event of the series in the year) 4,079, to dblp-event (agrees in number, date or acronym) 3,318, to dblp-event (only event of the series in the year) 28,005, to wikidata (agrees in number, date or acronym) 504, to wikidata (only event of the series in the year) 5,164."
+  "42,523 links of the events of confref-portal: to confident (agrees in number, date or acronym) 796, to confident (only event of the series in the year) 4,079, to dblp-event (agrees in number, date or acronym) 3,272, to dblp-event (only event of the series in the year) 28,708, to wikidata (agrees in number, date or acronym) 504, to wikidata (only event of the series in the year) 5,164."
  ],
  "files": [
   {
    "path": "ls-confref-portal-events-matches.tsv.gz",
-   "bytes": 2112502,
-   "sha256": "13c3100f7c376615d334acdea18ac7e05f90a1201afc28e4d75eb7f6c6e8855a"
+   "bytes": 2144820,
+   "sha256": "06d23f5c23afa3cab04f6f613c5f13dd046519ecd0f65627ad6b18911f4de618"
   },
   {
    "path": "ls-confref-portal-events.ttl.gz",
-   "bytes": 241501,
-   "sha256": "cb0d720b6728c587ceb2abc7d94fd6bc2b16781d43a01d9c9466dfe83c0a8e0f",
-   "triples": 41866
+   "bytes": 245085,
+   "sha256": "ea4696a61de1a033fdc04f1b8ae89c3116bac10daefa669f1872b8c59a99f019",
+   "triples": 42523
   }
  ],
  "version": "2026-11-09"

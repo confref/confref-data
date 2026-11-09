@@ -24,31 +24,31 @@ path = "generators/ls-confref-portal-events"
 version = "2026-11-09"
 issued = "2026-11-09"
 author = "Kai Eckert"
-commit = "0cabaf81e04ca2b1e79948a7d00335d635e0857e"
+commit = "60b860c5d5d6759339bdb2ce1bd1a47a3a999cf4"
 description = "Made by the rules of events.py from springer-lod 2026-11-08, confref-portal 2026-11-09, confident, wikidata and dblp 2026-11-08 and ls-springer-lod-dblp 2026-11-09."
 
   [[versions.files]]
   path = "ls-confref-portal-events-matches.tsv.gz"
-  bytes = 2112502
-  sha256 = "13c3100f7c376615d334acdea18ac7e05f90a1201afc28e4d75eb7f6c6e8855a"
+  bytes = 2144820
+  sha256 = "06d23f5c23afa3cab04f6f613c5f13dd046519ecd0f65627ad6b18911f4de618"
 
   [[versions.files]]
   path = "ls-confref-portal-events.ttl.gz"
-  bytes = 241501
-  sha256 = "cb0d720b6728c587ceb2abc7d94fd6bc2b16781d43a01d9c9466dfe83c0a8e0f"
-  triples = 41866
+  bytes = 245085
+  sha256 = "ea4696a61de1a033fdc04f1b8ae89c3116bac10daefa669f1872b8c59a99f019"
+  triples = 42523
 
   [[versions.files]]
   path = "ls-confref-portal-events-meta.ttl.gz"
   bytes = 2067
-  sha256 = "759b294ef8adbed39fd649867c49e6644549c82d4b83b580368b102c6f2f0cf1"
+  sha256 = "db8080deba5e1fa5eebde470c8c6087fa907cc6f87798e51368c8b465a149b0b"
   triples = 87
 
 [[changelog]]
 date = "2026-11-09"
 version = "2026-11-09"
 author = "Kai Eckert"
-text = "New version, made by the generator in confref-data (run-20261108T235110Z)."
+text = "New version, made by the generator in confref-data (run-20261109T000904Z)."
 +++
 
 The events of `confref-portal` linked to the same events of other sources (`cr:sameAs`), found by rules within series that

@@ -1,13 +1,13 @@
 {
  "slug": "ls-springer-lod-events",
- "run": "run-20261108T235044Z",
+ "run": "run-20261109T000838Z",
  "generator": "generators/ls-springer-lod-events/generate.py",
- "commit": "0cabaf81e04ca2b1e79948a7d00335d635e0857e",
+ "commit": "60b860c5d5d6759339bdb2ce1bd1a47a3a999cf4",
  "uncommitted": [],
  "python": "3.15.0",
  "params": {},
  "input_overrides": [],
- "started": "2026-11-08T23:50:44Z",
+ "started": "2026-11-09T00:08:38Z",
  "shared_code": [
   "generators/ls-springer-lod-events/events.py"
  ],
@@ -91,22 +91,22 @@
   }
  ],
  "status": "ok",
- "finished": "2026-11-08T23:51:10Z",
- "seconds": 25.4,
+ "finished": "2026-11-09T00:09:04Z",
+ "seconds": 26.0,
  "notes": [
-  "18,187 links of the events of springer-lod: to confident (agrees in number, date or acronym) 163, to confident (only event of the series in the year) 1,041, to confref-portal (agrees in number, date or acronym) 460, to confref-portal (only event of the series in the year) 7,220, to dblp-event (agrees in number, date or acronym) 741, to dblp-event (only event of the series in the year) 6,602, to wikidata (agrees in number, date or acronym) 164, to wikidata (only event of the series in the year) 1,796."
+  "18,585 links of the events of springer-lod: to confident (agrees in number, date or acronym) 163, to confident (only event of the series in the year) 1,041, to confref-portal (agrees in number, date or acronym) 460, to confref-portal (only event of the series in the year) 7,220, to dblp-event (agrees in number, date or acronym) 813, to dblp-event (only event of the series in the year) 6,928, to wikidata (agrees in number, date or acronym) 164, to wikidata (only event of the series in the year) 1,796."
  ],
  "files": [
   {
    "path": "ls-springer-lod-events-matches.tsv.gz",
-   "bytes": 731292,
-   "sha256": "9021a84da7d74342170f570445c5e134644a1fbda2985513ce15c97d5e4fa3b6"
+   "bytes": 748084,
+   "sha256": "30067dab6474f4c4a43e25349de3da74db1aebbf344edcb1a06c41dce397cf40"
   },
   {
    "path": "ls-springer-lod-events.ttl.gz",
-   "bytes": 88787,
-   "sha256": "fe6ecf1ceaf9f1fe10981d6b498e87d8f1cc4e5fa6da8bd0a420e6934759a63b",
-   "triples": 18187
+   "bytes": 90096,
+   "sha256": "558d00e7050d1cbf06de86b3190d50f9a1f7c7a616a178adf7078beac6a65506",
+   "triples": 18585
   }
  ],
  "version": "2026-11-09"
