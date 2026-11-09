@@ -23,3 +23,6 @@ decision, consequences. Short is better than complete.
 | [0015](0015-site-and-dumps-on-bart.md) | The website (`www.confref.org`, `confref.org` redirects) and the dumps (`archive.confref.org`) on bart until the VMs exist | accepted | 2026-11-08 |
 | [0016](0016-edition-status-mode-type.md) | Facts of an event: edition number (per series), status and attendance mode (schema.org), type (AEON classes as values) | accepted | 2026-11-08 |
 | [0017](0017-joint-and-colocated-events.md) | Joint and co-located events: one event in several series, events held at a larger event, or separate events joint or co-located; the way of the source is kept | accepted | 2026-11-08 |
+| [0018](0018-places.md) | Places: Wikidata items (`ls-places`, `wikidata-places`), matched by name where a source has only names | accepted | 2026-11-09 |
+| [0019](0019-fields-and-disciplines.md) | Academic fields (OECD FOS 2007, `oecd-fos`) and disciplines (Wikidata items), linked in `ls-fields` | accepted | 2026-11-09 |
+| [0020](0020-ratings.md) | Ratings: a kind of dataset of their own (`rating`), one dataset per source; `rating-systems` | accepted | 2026-11-09 |

@@ -20,9 +20,14 @@
    (cr:splitInto, cr:splitDate) and every part gets a new identifier; an old identifier with no record left is
    retired (cr:retiredDate). New groups get numbers from one counter, above the highest number ever issued (32**4 in
    the first version), in the order of their smallest record IRI. No number is used twice.
-3. Facts, from the records in the precedence of the datasets (FACTS_ORDER): names and acronyms, the start date, the
-   place, the edition number (cr:edition where the event has one series), the series of an event (cr:inSeries), the
-   status and attendance mode (ConfIDent, decision 0016).
+3. Facts, from the records in the precedence of the datasets (FACTS_ORDER): names and acronyms, the start date and
+   the end date (if it is not before the start and at most 60 days after it), the place (schema:location: the Wikidata
+   item of ls-places, a city before a region before a country, decision 0018; else the name as the source gives it),
+   the edition number (cr:edition where the event has one series), the series of an event (cr:inSeries), the status
+   and attendance mode (ConfIDent, decision 0016), the website (schema:url, ConfIDent and Wikidata), the proceedings
+   (cr:proceedings: the volumes of dblp, Springer and Wikidata that name the event), and the academic fields and
+   disciplines (cr:field, cr:discipline, ls-fields, decision 0019): an event without its own takes those of its
+   series; a series has its own and those of at least FIELD_SHARE of its events.
 
 Files: ids.ttl.gz (the series and events: class, cr:sameAs to every record, facts), ids-history.ttl.gz (merges,
 splits, retirements; the history of the previous version is carried over), ids-members.tsv.gz (identifier, record,
@@ -32,7 +37,9 @@ source, dataset). The date of the events of the history is the date of the run (
 import gzip
 import io
 import re
+import urllib.parse
 from collections import Counter, defaultdict
+from datetime import date as date_of_iso, timedelta
 
 from cr import catalog, identifiers, project
 from cr.generator import GeneratorError, load_shared
@@ -44,8 +51,11 @@ _E = catalog.Catalog().entries
 INPUTS = {**events.INPUTS, "gnd": "gnd/2026-11-08",
           **{f"ls_{s.replace('-', '_')}_events": f"ls-{s}-events/2026-11-09"
              for s in ("springer-lod", "confref-portal", "confident", "wikidata")}}
+INPUTS |= {"ls_places": "ls-places/2026-11-09", "wikidata_places": "wikidata-places/2026-11-09",
+           "ls_fields": "ls-fields/2026-11-09"}
 if "ids" in _E and _E["ids"].stable:
-    INPUTS["previous"] = "ids/" + _E["ids"].stable
+    INPUTS["previous"] = f"ids/{_E['ids'].stable}/ids-members.tsv.gz"
+    INPUTS["previous_history"] = f"ids/{_E['ids'].stable}/ids-history.ttl.gz"
 PARAMS = {}
 
 BASE = project.BASE
@@ -69,6 +79,7 @@ STATUS = {"postponed": SCHEMA + "EventPostponed", "canceled": SCHEMA + "EventCan
 MODE = {"on site": SCHEMA + "OfflineEventAttendanceMode", "online": SCHEMA + "OnlineEventAttendanceMode",
         "hybrid": SCHEMA + "MixedEventAttendanceMode"}
 WD_SERIES = {WD + "Q47258130"}
+FIELD_SHARE = 0.3   # a field of at least this share of the events of a series is a field of the series
 
 # --- the form of an identifier (decision 0005) -------------------------------------------------------------------
 ALPHABET = "0123456789abcdefghjkmnpqrstvwxyz"
@@ -351,6 +362,94 @@ def acronyms(recs):
     return out
 
 
+def read_more(run, records):
+    """The facts of the records that events.py does not read (version 2): end dates, websites, proceedings, places
+    (ls-places, with their level from wikidata-places), fields and disciplines (ls-fields). Sets them in r.facts."""
+    by_iri = {r.iri: r for r in records.values()}
+    for r in list(records.values()):
+        for other in r.facts.get("parts", ()):
+            by_iri.setdefault(other, r)
+
+    def put(iri, key, value, many=False):
+        r = by_iri.get(str(iri))
+        if r is None or value in (None, ""):
+            return
+        if many:
+            r.facts.setdefault(key, set()).add(value)
+        else:
+            r.facts.setdefault(key, value)
+
+    for s, p, o in run.triples("springer"):
+        if p == SPR + "confEndDate":
+            put(s, "end", events.day_of(val(o)))
+        elif p == SPR + "proceedingsOf":
+            put(o, "proceedings", str(s), True)
+    for s, p, o in run.triples("portal"):
+        if p == PORTAL + "endDate":
+            put(s, "end", events.day_of(val(o)))
+    for s, p, o in run.triples("confident"):
+        if p == CF + "End_Date":
+            put(s, "end", events.day_of(val(o)))
+        elif p == CF + "Official_Website" and val(o).startswith("http"):
+            put(s, "url", val(o))
+    for s, p, o in run.triples("wikidata"):
+        if p == W + "P582":
+            put(s, "end", events.day_of(val(o)))
+        elif p == W + "P856":
+            put(s, "url", str(o))
+        elif p == W + "P4745":
+            put(o, "proceedings", str(s), True)
+    toc_of = defaultdict(list)
+    for s, p, o in run.triples("dblp"):
+        if p == DBLP + "listedOnTocPage":
+            put(o, "proceedings", str(s), True)
+    # places: the level of each place
+    level = {}
+    for s, p, o in run.triples("wikidata_places"):
+        if p == W + "P297":
+            level[str(s)] = 3
+        elif p == W + "P300":
+            level.setdefault(str(s), 2)
+        elif p == W + "P625":
+            level.setdefault(str(s), 1)
+    for s, p, o in run.triples("ls_places"):
+        r = by_iri.get(str(s))
+        if r is not None:
+            r.facts.setdefault("places", set()).add((level.get(str(o), 4), str(o)))
+    disc_field = defaultdict(set)
+    for s, p, o in run.triples("ls_fields"):
+        if p == CR + "field" and str(s) not in by_iri:
+            disc_field[str(s)].add(str(o))
+            continue
+        r = by_iri.get(str(s))
+        if r is not None:
+            r.facts.setdefault("fields" if p == CR + "field" else "disciplines", set()).add(str(o))
+    for r in records.values():
+        if r.facts.get("end"):
+            r.facts["end"] = r.facts["end"].isoformat()
+    return disc_field
+
+
+def date_of(iso):
+    return date_of_iso.fromisoformat(iso)
+
+
+def place_of(recs):
+    """The most specific place of the record first in precedence that has one (city before region before country)."""
+    best = None
+    for r in sorted(recs, key=rank):
+        for lev, item in sorted(r.facts.get("places", ())):
+            if best is None or lev < best[0]:
+                best = (lev, item)
+        if best and best[0] == 1:
+            break
+    return best[1] if best else None
+
+
+def union(recs, key):
+    return set().union(*(r.facts.get(key, set()) for r in recs))
+
+
 # --- identifiers and history -------------------------------------------------------------------------------------
 
 def read_previous(run):
@@ -366,7 +465,7 @@ def read_previous(run):
                     ident, iri = line.rstrip("\n").split("\t")[:2]
                     members[ident].add(iri)
                     high = max(high, parse_id(ident)[1])
-    for s, p, o in run.triples("previous", file="ids-history.ttl.gz"):
+    for s, p, o in run.triples("previous_history"):
         history.append((s, p, o))
         for t in (s, o):
             if isinstance(t, str) and t.startswith(BASE) and "/" in t[len(BASE):]:
@@ -376,6 +475,7 @@ def read_previous(run):
 
 def generate(run):
     groups, records, across = group(run)
+    read_more(run, records)
     run.log(f"groups: {Counter(lev for lev, _ in groups)}; links between levels (not joined): {dict(across)}")
     prev, high, history = read_previous(run)
     old_of = {iri: ident for ident, iris in prev.items() for iri in iris}
@@ -413,6 +513,30 @@ def generate(run):
         raise GeneratorError("two groups got the same identifier")
     # the series identifier of every series record, for cr:inSeries
     series_id = {r.node: assigned[i] for i, (lev, recs) in enumerate(groups) if lev == "series" for r in recs}
+    # fields and disciplines: an event without its own takes those of its series; a series takes those of its own
+    # records and those of at least FIELD_SHARE of its events
+    own = {i: (union(recs, "fields"), union(recs, "disciplines")) for i, (lev, recs) in enumerate(groups)}
+    series_index = {assigned[i]: i for i, (lev, _r) in enumerate(groups) if lev == "series"}
+    ev_series = {}
+    for i, (lev, recs) in enumerate(groups):
+        if lev == "event":
+            ev_series[i] = sorted({series_id[n] for r in recs for n in r.facts.get("series", ()) if n in series_id})
+    counts = defaultdict(lambda: (Counter(), Counter(), [0]))
+    for i, sids in ev_series.items():
+        for sid in sids:
+            f, d, n = counts[series_index[sid]]
+            f.update(own[i][0])
+            d.update(own[i][1])
+            n[0] += 1
+    fields_of, disciplines_of = {}, {}
+    for i, (lev, recs) in enumerate(groups):
+        if lev == "series":
+            f, d, n = counts[i]
+            fields_of[i] = own[i][0] | {k for k, v in f.items() if n[0] and v >= FIELD_SHARE * n[0]}
+            disciplines_of[i] = own[i][1] | {k for k, v in d.items() if n[0] and v >= FIELD_SHARE * n[0]}
+    for i, sids in ev_series.items():
+        fields_of[i] = own[i][0] or set().union(*(own[series_index[s]][0] for s in sids)) if sids else own[i][0]
+        disciplines_of[i] = own[i][1] or (set().union(*(own[series_index[s]][1] for s in sids)) if sids else set())
     triples, rows = set(), ["id\trecord\tsource\tdataset"]
     for i, (lev, recs) in enumerate(groups):
         ident = assigned[i]
@@ -435,9 +559,18 @@ def generate(run):
             start = first(recs, "start")
             if start:
                 triples.add((x, IRI(SCHEMA + "startDate"), Literal(start, XSD + "date", None)))
-            place = first(recs, "place")
-            if place and not re.fullmatch(r"Q[0-9]+", place):
-                triples.add((x, IRI(SCHEMA + "location"), Literal(place, None, None)))
+                end = first(recs, "end")
+                if end and end >= start and end <= (date_of(start) + timedelta(days=60)).isoformat():
+                    triples.add((x, IRI(SCHEMA + "endDate"), Literal(end, XSD + "date", None)))
+            place = place_of(recs)
+            if place:
+                triples.add((x, IRI(SCHEMA + "location"), IRI(place)))
+            else:
+                place = first(recs, "place")
+                if place and not re.fullmatch(r"Q[0-9]+", place):
+                    triples.add((x, IRI(SCHEMA + "location"), Literal(place, None, None)))
+            for p in sorted(union(recs, "proceedings")):
+                triples.add((x, IRI(CR + "proceedings"), IRI(p)))
             sids = sorted({series_id[n] for r in recs for n in r.facts.get("series", ()) if n in series_id})
             for sid in sids:
                 triples.add((x, IRI(CR + "inSeries"), IRI(iri_of(sid))))
@@ -448,6 +581,15 @@ def generate(run):
                 v = first(recs, key)
                 if v:
                     triples.add((x, IRI(SCHEMA + prop), IRI(v)))
+        url = first(recs, "url")
+        if url:
+            url = urllib.parse.quote(url.strip(), safe=":/?#[]@!$&'()*+,;=%~")
+            if re.fullmatch(r"https?://[^\s<>\"{}\\^`]+", url):
+                triples.add((x, IRI(SCHEMA + "url"), IRI(url)))
+        for f in sorted(fields_of.get(i, ())):
+            triples.add((x, IRI(CR + "field"), IRI(f)))
+        for d in sorted(disciplines_of.get(i, ())):
+            triples.add((x, IRI(CR + "discipline"), IRI(d)))
     buf = io.BytesIO()
     with gzip.GzipFile(filename="", mode="wb", fileobj=buf, compresslevel=9, mtime=0) as f:
         f.write(("\n".join(rows[:1] + sorted(rows[1:])) + "\n").encode("utf-8"))

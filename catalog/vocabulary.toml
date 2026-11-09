@@ -21,6 +21,10 @@ definition = "Records from one source about conference series, events, proceedin
 label = "Authority data"
 definition = "Records of an authority file selected because our datasets name them (e.g. the GND), kept as the source states them: reference points and evidence for links, not a source of series and events of its own. A source taken as a whole for its series and events (dblp, Wikidata, ConfIDent) is records."
 
+[kind.values.rating]
+label = "Ratings"
+definition = "Ratings of series or events by a rating system (rankings such as CORE or Qualis, citation indicators such as the h5-index), each with its system, value and date. Kept apart from the records: they are assessments made by others at a time, not facts about the events."
+
 [kind.values.complement]
 label = "Complement"
 definition = "Statements about the resources of other datasets that only add to them (normalised values, enrichments, links), without changing them."
