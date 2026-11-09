@@ -1,5 +1,5 @@
 {
- "checked": "2026-11-09T05:10:17Z",
+ "checked": "2026-11-09T10:16:45Z",
  "locations": {
   "dumps": {
    "archive": "https://archive.confref.org/store/"
@@ -214,7 +214,7 @@
   },
   "ids": {
    "title": "confref identifiers: conference series and events",
-   "stable": "2026-11-09",
+   "stable": "2026-11-09-2",
    "replaces": [],
    "replaced_by": [],
    "withdrawn": null,
@@ -223,9 +223,56 @@
    ],
    "versions": [
     {
-     "version": "2026-11-09",
+     "version": "2026-11-09-2",
      "issued": "2026-11-09",
      "status": "stable",
+     "files": [
+      {
+       "path": "ids-conflicts.tsv.gz",
+       "bytes": 22945,
+       "sha256": "0fc2411e292a2cf7c498f5a5edb07c758ef7a4023c448dddac0a0886d3c00320",
+       "locations": [
+        "archive"
+       ]
+      },
+      {
+       "path": "ids-history.ttl.gz",
+       "bytes": 95,
+       "sha256": "b34916b53402effd87381a2867baf703eb4e4a7f34e433d6963e459c574e81c6",
+       "locations": [
+        "archive"
+       ]
+      },
+      {
+       "path": "ids-members.tsv.gz",
+       "bytes": 1205141,
+       "sha256": "21379b9309ef6cccaf433aba6fd0f91c00957691d17f0be15e344fc4da4b4ac0",
+       "locations": [
+        "archive"
+       ]
+      },
+      {
+       "path": "ids.ttl.gz",
+       "bytes": 5681622,
+       "sha256": "44745d6636415107d191a1d8b7e7400c2f81bdb8797327f502da2b35834f3bcb",
+       "locations": [
+        "archive"
+       ]
+      },
+      {
+       "path": "ids-meta.ttl.gz",
+       "bytes": 2456,
+       "sha256": "9b88429ee91b8fd425489511e7d5d1b5398bc66acdcf1c71e45245372034b682",
+       "locations": [
+        "archive"
+       ]
+      }
+     ]
+    },
+    {
+     "version": "2026-11-09",
+     "issued": "2026-11-09",
+     "status": "older",
      "files": [
       {
        "path": "ids-history.ttl.gz",
@@ -341,6 +388,88 @@
        "path": "ls-confref-portal-events-meta.ttl.gz",
        "bytes": 2067,
        "sha256": "db8080deba5e1fa5eebde470c8c6087fa907cc6f87798e51368c8b465a149b0b",
+       "locations": [
+        "archive"
+       ]
+      }
+     ]
+    }
+   ]
+  },
+  "ls-fields": {
+   "title": "Academic fields and disciplines of the series and events",
+   "stable": "2026-11-09",
+   "replaces": [],
+   "replaced_by": [],
+   "withdrawn": null,
+   "catalogues": [],
+   "versions": [
+    {
+     "version": "2026-11-09",
+     "issued": "2026-11-09",
+     "status": "stable",
+     "files": [
+      {
+       "path": "ls-fields-disciplines.tsv.gz",
+       "bytes": 28968,
+       "sha256": "e9e0343c6e2a481a18866ca3d041ee98dca1526a7b0d9b53f8a2a0146f4509de",
+       "locations": [
+        "archive"
+       ]
+      },
+      {
+       "path": "ls-fields.ttl.gz",
+       "bytes": 507673,
+       "sha256": "18227e08d9a9dd739c35e303178653920a9fb99fcb2f7db471eebd9d52af0a99",
+       "locations": [
+        "archive"
+       ]
+      },
+      {
+       "path": "ls-fields-meta.ttl.gz",
+       "bytes": 2434,
+       "sha256": "23a8583f9249917cc9f92c78b9a17d23b2deeddb41b810e839c46565d0d2dc5b",
+       "locations": [
+        "archive"
+       ]
+      }
+     ]
+    }
+   ]
+  },
+  "ls-places": {
+   "title": "Places of the events, as Wikidata items",
+   "stable": "2026-11-09",
+   "replaces": [],
+   "replaced_by": [],
+   "withdrawn": null,
+   "catalogues": [],
+   "versions": [
+    {
+     "version": "2026-11-09",
+     "issued": "2026-11-09",
+     "status": "stable",
+     "files": [
+      {
+       "path": "ls-places-matches.tsv.gz",
+       "bytes": 1508426,
+       "sha256": "dcdac727d98f8b3e7af31d6ddcacd740d77b4dc20aa127fcdf63dfddd387d441",
+       "locations": [
+        "archive"
+       ]
+      },
+      {
+       "path": "ls-places.ttl.gz",
+       "bytes": 809812,
+       "sha256": "a1505117bb7cc09c9cb34f5c4f3e706ed3d0a81519d1290791fa9804af9305fb",
+       "locations": [
+        "archive"
+       ]
+      },
+      {
+       "path": "ls-places-meta.ttl.gz",
+       "bytes": 2491,
+       "sha256": "804ab055bd13952e33b34ee8cf6a8c40c54e0b0bc41a281073804ebabef62023",
        "locations": [
         "archive"
        ]
@@ -470,6 +599,105 @@
        "path": "ls-wikidata-events-meta.ttl.gz",
        "bytes": 2015,
        "sha256": "8f779a4532ced15a3dfa18317b4e6b790fd7bbe45f211cab9be96ca3f831d22b",
+       "locations": [
+        "archive"
+       ]
+      }
+     ]
+    }
+   ]
+  },
+  "oecd-fos": {
+   "title": "Fields of science and technology (OECD FOS 2007)",
+   "stable": "2026-11-09",
+   "replaces": [],
+   "replaced_by": [],
+   "withdrawn": null,
+   "catalogues": [],
+   "versions": [
+    {
+     "version": "2026-11-09",
+     "issued": "2026-11-09",
+     "status": "stable",
+     "files": [
+      {
+       "path": "oecd-fos.ttl.gz",
+       "bytes": 1866,
+       "sha256": "aeed45461d54e2fd9df40cc8f96bf7b85f3de35d331fd8e8533ad978c1647dac",
+       "locations": [
+        "archive"
+       ]
+      },
+      {
+       "path": "oecd-fos-meta.ttl.gz",
+       "bytes": 1512,
+       "sha256": "28b05d57e75a16e0bcde127e9148a21c2ba025d2e88e71307345a1fe45b1f3d7",
+       "locations": [
+        "archive"
+       ]
+      }
+     ]
+    }
+   ]
+  },
+  "rating-systems": {
+   "title": "Rating systems of conferences",
+   "stable": "2026-11-09",
+   "replaces": [],
+   "replaced_by": [],
+   "withdrawn": null,
+   "catalogues": [],
+   "versions": [
+    {
+     "version": "2026-11-09",
+     "issued": "2026-11-09",
+     "status": "stable",
+     "files": [
+      {
+       "path": "rating-systems.ttl.gz",
+       "bytes": 1028,
+       "sha256": "2499cff7576099f0c2efc3d35e1ecbe9e4e1613607a0e82cec04ca529b8e6299",
+       "locations": [
+        "archive"
+       ]
+      },
+      {
+       "path": "rating-systems-meta.ttl.gz",
+       "bytes": 1448,
+       "sha256": "1387ea0995791c989694cb354aad4fc0712b1588f84ce99e5d8dd0b43286b0f3",
+       "locations": [
+        "archive"
+       ]
+      }
+     ]
+    }
+   ]
+  },
+  "ratings-springer-lod": {
+   "title": "Ratings of conference series in Springer LOD (2017)",
+   "stable": "2026-11-09",
+   "replaces": [],
+   "replaced_by": [],
+   "withdrawn": null,
+   "catalogues": [],
+   "versions": [
+    {
+     "version": "2026-11-09",
+     "issued": "2026-11-09",
+     "status": "stable",
+     "files": [
+      {
+       "path": "ratings-springer-lod.ttl.gz",
+       "bytes": 28307,
+       "sha256": "e60c12ecb03d18f02f1983a78ffe9967e5508499690baab7e71487cf916ff612",
+       "locations": [
+        "archive"
+       ]
+      },
+      {
+       "path": "ratings-springer-lod-meta.ttl.gz",
+       "bytes": 1741,
+       "sha256": "7bae59c20008538e63720e7a4534cd842579288aa5b4b1865259d99194dee484",
        "locations": [
         "archive"
        ]
@@ -610,6 +838,72 @@
        "path": "wikidata-meta.ttl.gz",
        "bytes": 1912,
        "sha256": "b886fcf1fc679bb293c06ee5e6313b8945bd6f08266329a5fc73337f318c3d4c",
+       "locations": [
+        "archive"
+       ]
+      }
+     ]
+    }
+   ]
+  },
+  "wikidata-disciplines": {
+   "title": "Wikidata: the disciplines of the series and events",
+   "stable": "2026-11-09",
+   "replaces": [],
+   "replaced_by": [],
+   "withdrawn": null,
+   "catalogues": [],
+   "versions": [
+    {
+     "version": "2026-11-09",
+     "issued": "2026-11-09",
+     "status": "stable",
+     "files": [
+      {
+       "path": "wikidata-disciplines.ttl.gz",
+       "bytes": 29883,
+       "sha256": "c9004620e54c27f83fa1ced9b49b6faee61ceb487325252b89592b52d9e60884",
+       "locations": [
+        "archive"
+       ]
+      },
+      {
+       "path": "wikidata-disciplines-meta.ttl.gz",
+       "bytes": 1845,
+       "sha256": "a5ba9b99a26ff9a5cf6fd0544a076df37e27ca3d7f129496caa82dce6f996dec",
+       "locations": [
+        "archive"
+       ]
+      }
+     ]
+    }
+   ]
+  },
+  "wikidata-places": {
+   "title": "Wikidata: the places of the events",
+   "stable": "2026-11-09",
+   "replaces": [],
+   "replaced_by": [],
+   "withdrawn": null,
+   "catalogues": [],
+   "versions": [
+    {
+     "version": "2026-11-09",
+     "issued": "2026-11-09",
+     "status": "stable",
+     "files": [
+      {
+       "path": "wikidata-places.ttl.gz",
+       "bytes": 254922,
+       "sha256": "f3c4e55ad2e3169d33cf0483ffc59052e0f92050e7921d55c28e1e9b201f0804",
+       "locations": [
+        "archive"
+       ]
+      },
+      {
+       "path": "wikidata-places-meta.ttl.gz",
+       "bytes": 2000,
+       "sha256": "a9fd5ad15b6bad8ed5aef1e152d8c1dd149b21c8425d68bbfc30de778db2d947",
        "locations": [
         "archive"
        ]
