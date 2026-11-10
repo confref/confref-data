@@ -22,7 +22,7 @@ a store of files need nothing more.
   `rsync -rtp --exclude='.*' --exclude='/tuwien-pc/' ~/lokal/confref/store/ bart:/home/eckert/archive.confref.org/store/`.
   A commit deploys nothing.
 - **`tuwien-pc` is not copied** until TU Wien has given the short written OK (`PLAN-2026-11-08-setup-and-data.md`,
-  section 9); then the exclude goes.
+  section 9); then the exclude goes. Since 2026-11-10 it is internal ([0023](0023-internal-datasets.md)) and no longer in the store.
 - The landing page in `project.toml` stays `https://confref.org/` (it redirects); the platform VM `labs.confref.org`
   of [0007](0007-sparql-and-hosting.md) is unchanged.
 

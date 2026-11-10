@@ -1,5 +1,5 @@
 {
- "checked": "2026-11-09T21:19:05Z",
+ "checked": "2026-11-10T05:47:24Z",
  "locations": {
   "dumps": {
    "archive": "https://archive.confref.org/store/"
@@ -879,17 +879,6 @@
      ]
     }
    ]
-  },
-  "tuwien-pc": {
-   "title": "TU Wien: programme committees of 45 conferences (2015)",
-   "stable": "2026-11-08",
-   "replaces": [],
-   "replaced_by": [],
-   "withdrawn": null,
-   "catalogues": [
-    "site"
-   ],
-   "versions": []
   },
   "wikidata": {
    "title": "Wikidata: academic conferences, conference series and proceedings",

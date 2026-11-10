@@ -24,8 +24,17 @@ repository, catalogue entries, run records.
 - **Committee memberships** are the first internal datasets: the programme committees and organisers of events, from
   conference websites, the front matter of proceedings (CEUR-WS, Springer) and structured sources (researchr.org,
   ConfIDent where it has them). Kept: name, role, affiliation and identifiers (ORCID, dblp) as stated by the source,
-  the source page and the date. Not kept: e-mail addresses, photos, anything beyond the committee lists. The TU Wien
-  data (`tuwien-pc`, [0010](0010-legacy-data.md)) stays as it is.
+  the source page and the date. Not kept: e-mail addresses, photos, anything beyond the committee lists.
+- **The source pages are a dataset of their own,** internal as well, but without person data: per page its URL, the
+  event or series it is about, what it lists (programme committee, organisers), when it was fetched, the HTTP status
+  and a checksum of the content, and a web archive copy where one exists. The memberships refer to these pages. The
+  list allows the memberships to be made again by a new harvest, and can be given on request (to a source, to
+  reviewers of a publication) without giving any person data. The fetched pages themselves are inputs
+  (`inputs:committees/<date>`), kept locally like all inputs.
+- **The TU Wien data** (`tuwien-pc`, [0010](0010-legacy-data.md)) is retired from the public catalogue: the entry
+  becomes internal (its version moves to the internal store; it was never on the dumps location,
+  [0015](0015-site-and-dumps-on-bart.md)) and is an input of the committee datasets for 2009–2015. It names no
+  source pages. TU Wien's work is acknowledged on www.confref.org (about) as before.
 - **Harvesting** follows the rules of all harvests: the project User-Agent, robots.txt and a polite rate, no login.
 - **Legal basis:** processing of published personal data for research (GDPR Art. 6(1)(f), Art. 89). The information
   of the persons concerned (Art. 14) is given by a public description of the processing (this decision and a page on

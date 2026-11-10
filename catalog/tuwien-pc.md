@@ -5,6 +5,7 @@ author = "Kai Eckert"
 date = "2015-11-09"
 example = "http://lod.springer.com/data/conference/arcs2015/pc"
 stable = "2026-11-08"
+internal = "programme committee members: personal data; retired from the public catalogue 2026-11-10, an input of the committee datasets (decision 0023)"
 kind = "records"
 method = ["scraped", "curated", "rule-based"]   # rule-based: the DBpedia links (lookup by name)
 
@@ -38,6 +39,12 @@ description = "The last delivery of TU Wien (PC_data_1109, 2015-11-09), true to 
   triples = 66
 
 [[changelog]]
+date = "2026-11-10"
+version = "2026-11-08"
+author = "Kai Eckert"
+text = "Internal (decision 0023): retired from the public catalogue; the version moves to the internal store."
+
+[[changelog]]
 date = "2026-11-08"
 version = "2026-11-08"
 author = "Kai Eckert"
@@ -50,5 +57,5 @@ for the Springer LOD pilot: student groups extracted the committees from the con
 papers, cleaned them by hand and mapped them to RDF in the model of lod.springer.com; countries and some affiliations
 are linked to DBpedia. Shown as a pilot on lod.springer.com; TU Wien agreed to its use (2018).
 
-Kept for reference only: nothing in confref builds on it (decision 0010). Persons are not identified beyond their
-names.
+Internal since 2026-11-10 (decision 0023): not published, an input of the internal committee datasets. Persons are
+not identified beyond their names. The data has no source pages; it names the conferences only.
